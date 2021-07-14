@@ -19,18 +19,18 @@
 
 %---------------------------- Titeldefinitionen --------------------------------------
 
-\newcommand{\vorname}{Maria}
-\newcommand{\nachname}{Mustermann}
-\newcommand{\matrikelnummer}{1234567}
+\newcommand{\vorname}{Thomas}
+\newcommand{\nachname}{Gundlach}
+\newcommand{\matrikelnummer}{2038884}
 
-\newcommand{\titel}{Visualisierung von Aufgabenrelation innerhalb der Prozessengine Automation Automic\\[0.2ex] 
+\newcommand{\titel}{Visualisierung von Aufgabenrelation innerhalb der Prozessengine Automic\textsuperscript{\textregistered} Automation\\[0.2ex] 
 				\Large Anhand archivierter Daten}
 
-\newcommand{\erstpruef}{Prof. Vorname Nachname}
+\newcommand{\erstpruef}{Prof. Dr. Larissa Putzar}
 \newcommand{\zweitpruef}{Prof. Vorname Nachname}
 
 %\date{vorläufige Fassung vom \today}   % praktisch für Vorab-Versionen. 
-\date{\sffamily Hamburg, 2. 2. 2020}  % Abgabedatum!
+\date{\sffamily Hamburg, 27. 8. 2021}  % Abgabedatum!
 
 %--------------------------------------------------------------------------------------
 %----------------------------- hier gehts los! --------------------------------------
@@ -67,9 +67,9 @@ Der Ausdruck soll einseitig erfolgen (Simplex). Je nach Bindung ist ggf. die Bin
 
 %--------------------------- Text -------------------------------
 
-\chapter{Ein Kapitel}
+\chapter{Einleitung}
 
-\section{Unterkapitel mit Mathematik, Bildern und Querverweisen}
+\section{Motivation}
 
 Bilder werden in \LaTeX\ am einfachsten mit includegraphics eingebunden und in eine figure-Umgebung eingebettet. Sie können mit optionalen Parametern skaliert werden; in Abbildung \ref{b_trommelmik} ist die Bildbreite auf das 0.8-fache des Satzspiegels skaliert.
 
@@ -121,7 +121,7 @@ f_0 = \frac{1}{2\pi} \sqrt{\frac{s}{m}} \quad \mbox{[Hz]}
 Gleiches gilt für Funktionsnamen (sin, cos, arctan, log, ...). Für die meisten Funktionsnamen gibt es aber zur Vereinfachung entsprechende Befehle, sodass man nicht immer die mbox braucht.
 
 
-\section{Unterkapitel mit zwei Zitaten}
+\section{Problemstellung}
 
 Das wörtliche Zitat wird durch Kursivschrift und Anführungszeichen kenntlich gemacht, und natürlich kommt ein Quellenverweis dazu:
 
@@ -135,9 +135,13 @@ Alternativ kann man ein Zitat auch in den laufenden Text einflechten, denn wie s
 Die Quellenverweise werden weiter unten erklärt.
 
 
-\chapter{Ein anderes Kapitel}
+\section{Zielsetzung}
 
-\section{Unterkapitel mit Fußnote, Aufzählungen und Tabellen}\label{sec_fussnot}
+\section{Struktur der Arbeit}
+
+\chapter{Grundlagen}
+
+\section{Was ist eine Prozessengine?}\label{sec_fussnot}
 
 Fußnoten sollte man sparsam und bewusst verwenden, erklärende Zusätze und Quellenverweise möglichst in den Text integrieren. Damit bleiben Fußnoten v.A. reserviert für wenige Ergänzungen, die den Lesefluss stören würden, aber nicht weggelassen werden sollen\footnote{Und so sieht die Fußnote dann aus}.
 
@@ -209,7 +213,7 @@ Tabelle \ref{t_buli2} zeigt eine Variante die ein kompakteres und eleganteres Er
 
 
 
-\section{Unterkapitel mit drei exemplarischen Quellenverweisen}
+\section{Automic\textsuperscript{\textregistered} Automation}
 
 Quellenverweise werden mit Autorennamen und Jahr in runden Klammern gesetzt. Dazu wird hier das \LaTeX-natbib-Paket genutzt; der citep-Befehl erzeugt die Quellenangabe auf Basis der Einträge im Literaturverzeichnis \citep{bluray}. Auf gleiche Weise lassen sich auch mehrere Quellen zusammenfassen \citep{dooley_streicher,stephenson}. 
 
@@ -218,14 +222,41 @@ Auf Bücher oder andere umfangreichere Quellen soll mit Seitenangabe verwiesen we
 Die Quellen sollen im Literaturverzeichnis alphabetisch sortiert sein.
 
 
-\subsection{Unter-Unterkapitel zu Hyperlinks und Internetquellen}
+\subsection{Jobs}
+\subsection{Runs}
+\subsection{Reports}
 
 Die Beispiele unten im Literaturverzeichnis zeigen exemplarisch, welche Angaben zu den Quellen erforderlich sind (siehe dazu auch die Kommentare im \LaTeX-Quelltext). 
 
 Und noch eine \LaTeX-Spezialität zum Schluss: Durch die Einbindung von url- und hyperref-Paket im header werden die Quellenverweise im PDF-Dokument automatisch mit der jeweiligen Quelle im Literaturverzeichnis verlinkt, und bei Internetquellen werden die URLs anklickbar. Zudem werden die Verzeichnisse (Inhaltsverzeichnis, Abbildungs- und Tabellenverzeichnis) mit den jeweiligen Objekten verlinkt, und es werden Links zwischen jedem \emph{label} und  dazugehörigem \emph{ref} erzeugt, also z.B. zwischen Bildverweis im Text und dem Bild. Die Farben der Links können im header frei eingestellt werden. Im hier vorgeschlagenen Layout sind die URLs und die Quellenverweise Dunkelblau, die anderen Links sind nicht hervorgehoben (Schwarz). 
 
+\section{Automic\textsuperscript{\textregistered} Archive Browser}
+%\section{Java Development Kits}
+\section{JDK Implementierungen}
+%https://www.baeldung.com/oracle-jdk-vs-openjdk
+%https://en.wikipedia.org/wiki/List_of_Java_virtual_machines
+%https://stackoverflow.com/questions/16568253/difference-between-jvm-and-hotspot
+%\subsection{Oracle JDK}
+%\subsection{OpenJDK}
+%\subsection{Eclipse OpenJ9}
+\section{Java GUI-Frameworks}
+%\subsection{Swing}
+%\subsection{JavaFX}
+%\subsection{SWT}
+\section{Java Dateieingangsverarbeitung}
 
-\chapter{Ergebnisse}
+\chapter{Analyse}
+
+\section{Mittlung von Benutzeranforderungen}
+\subsection{Funktionsumfang Archive Browser}
+\subsection{Benutzeranforderungen}
+\subsection{Funktionsumfang Implementierung}
+
+\section{Archive Browser Datenstruktur}
+
+\section{Auswahl des JDK}
+
+\section{Auswahl des Java GUI-Framework}
 
 Der thematische Teil schließt mit einer klaren inhaltlichen, auf der Grundidee aufbauenden thematischen Zusammenfassung, insbesondere bezogen auf die in der Arbeit gewonnenen eigenen Erkenntnisse und deren mögliche Auswirkungen auf Forschung und Wissenschaft. 
 
@@ -233,10 +264,14 @@ Ganz am Schluss, nach eventuellen Anhängen, nach Abbildungs- und evtl. Tabellenv
 
 
 \appendix
-\chapter{Material}
+\chapter{Implementierung}
 
 \section{Fragebögen, Messprotokolle etc.}
 In den Anhängen landen ggf. Listings, Fragebögen, Datenblätter, Messprotokolle, Skizzen zu Versuchsaufbauten und ähnliches Material zur Arbeit. Im \LaTeX-Dokument leitet der Befehl appendix die Anhänge ein.
+
+\chapter{Zusammenfassung und Ausblick}
+\section{Zusammenfassung}
+\section{Ausblick}
 
 
 
