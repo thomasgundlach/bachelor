@@ -10,6 +10,10 @@
 \usepackage[latin1]{inputenc} % Inputencoding für PC/Win
 %\usepackage[utf8]{inputenc} % Inputencoding, universell
 %\usepackage[utf8x]{inputenc} % Inputencoding, universell
+%------------------------- Absatz anstatt einrücken -> Abstand
+\usepackage{parskip}
+\usepackage{setspace}
+\onehalfspacing% Zeilenabstand 1,5
 
 
 %------------------------ Titelblatt-Layout laden ----------------------------------
@@ -17,6 +21,11 @@
 \input{hawmt-bachelor-titelblatt}
 %\input{hawmt-master-titelblatt}
 
+%-----------------------------Absätze nicht einrücken-----------------------------
+%\setlength{\parindent}{0em}
+%-----------------------------Verweisdefinitionen
+\newcommand{\citeg}[1]{\citep[vgl.][]{#1}} %Literaturverzeichnis
+\newcommand{\refg}[1]{vgl. \ref{#1}} %Verknüpfungen
 %---------------------------- Titeldefinitionen --------------------------------------
 
 \newcommand{\vorname}{Thomas}
@@ -68,8 +77,7 @@ Der Ausdruck soll einseitig erfolgen (Simplex). Je nach Bindung ist ggf. die Bin
 %--------------------------- Text -------------------------------
 
 \chapter{Einleitung}
-Wenn Mitarbeiter mittelständischer und größerer Unternehmen oder Organisationen morgens mit der Arbeit beginnen werden viele Dinge für selbstverständlich genommen. Zügiges öffnen und anmelden an zentralen Systemen. Arbeitsaufträge die kategorisiert oder chronologisiert bereitstehen. Der Aufruf von Unterlagen die zur Bearbeitung entsprechender Aufträge benötigt werden. Auswertungen die vortags in Auftrag gegeben wurden. Zugriff auf historische Daten von erledigten Aufträgen. Und vieles mehr.
-
+Wenn Mitarbeiter mittelständischer und größerer Unternehmen oder Organisationen morgens mit der Arbeit beginnen werden viele Dinge für selbstverständlich genommen. Zügiges öffnen und anmelden an zentralen Systemen. Arbeitsaufträge die kategorisiert oder chronologisiert bereitstehen. Der Aufruf von Unterlagen die zur Bearbeitung entsprechender Aufträge benötigt werden. Auswertungen die vortags in Auftrag gegeben wurden. Zugriff auf historische Daten von erledigten Aufträgen. Und vieles mehr.\\
 Im Hintergrund müssen dafür an diversen Stellen jedoch zum Teil ungeahnt komplexe und teils mit einander verbundene Abläufe erfolgreich stattgefunden haben. Beispielsweise müssen zur Definition von Arbeitsaufträgen Eingangsdaten wie Posteingänge aus verschiedenen Medienkanäle wie Briefpost, E-Mail oder Kontaktschnittstellen verschiedenster Applikationen zusammengeführt und vorverarbeitet werden. An der Vorverarbeitung sind häufig eine Vielzahl von Applikationen beteiligt die die Daten durchlaufen müssen. All diese Prozessschritte müssen miteinander verknüpft werden damit die richtigen Arbeitsaufträge später beim richtigen Sachbearbeiter landen. Oder immer häufiger bereits vollautomatisiert bearbeitet werden.
 
 Fehler in diesen Prozessketten müssen, wenn möglich, automatisch behandelt werden. Falls nicht, muss die Verarbeitung automatisch angehalten werden um eine manuelle Behebung zu ermöglichen. Die Verantwortlichen müssen über den Fehler, und dass ein manuelles Eingreifen notwendig ist, umgehend in Kenntnis gesetzt werden. Nach erfolgreicher Behebung muss die Verarbeitung genau an dem Punkt wieder aufgenommen werden können an dem sie stehen geblieben ist. Und falls der Fehler nicht vollständig behoben wurde oder weitere Probleme auftreten muss der Schritt beliebig oft wiederholt werden können.
@@ -77,7 +85,7 @@ Fehler in diesen Prozessketten müssen, wenn möglich, automatisch behandelt werde
 Um zentrale Systeme zügig aufzurufen und auch historische Daten unverzüglich zur Verfügung stehen müssen die Datenbestände dieser Systeme regelmässig reorganisiert werden.
 
 All dies erfordert eine übergeordnete Einheit in der die Prozessschritte geplant, ausgeführt, mit einander verknüpft und überwacht werden. Damit ist es aber noch nicht getan. 
-Hintergrund ist, dass Unternehmen oder Organisationen in Ihrer Verarbeitung häufig regulatorischen Auflagen oder zumindest gesetzlichen Pflichten unterliegen. Dass bedeutet, dass es Vorgaben gibt wie eine Verarbeitung zu erfolgen hat oder was bei einer Verarbeitung zu beachten ist. Diese Vorgaben können je nach Sektor und Branche unterschiedlich sein. Insbesondere für Unternehmen oder Organisationen die durch Ihre Tätigkeit unter die kritischer Infrastruktur fallen können die Vorgaben restriktiv sein.
+Hintergrund ist, dass Unternehmen oder Organisationen in Ihrer Verarbeitung häufig regulatorischen Auflagen oder zumindest gesetzlichen Pflichten unterliegen. Dass bedeutet, dass es Vorgaben gibt wie eine Verarbeitung zu erfolgen hat oder was bei einer Verarbeitung zu beachten ist. Diese Vorgaben können je nach Sektor und Branche unterschiedlich sein. Insbesondere für Unternehmen oder Organisationen die durch Ihre Tätigkeit unter die kritischer Infrastruktur\footnote{\url{https://www.gesetze-im-internet.de/bsi-kritisv/BJNR095800016.html}} fallen können die Vorgaben restriktiv sein.
 Die Unternehmen oder Organisationen sind teils dazu verpflichtet die Einhaltung dieser Auflagen und Pflichten regelmässig durch zertifizierte Dritte überprüfen zu lassen. Diese Prüfungen können seitens der zuständigen Anstalt oder Behörde auch unregelmässig anlasslos oder anlassbezogen erfolgen. Entsprechend muss die Verarbeitung jederzeit nachweisbar und überprüfbar sein.
 Parallel ist es auch im eigenen Interesse eines Unternehmens oder einer Organisation eine nachweisbare und überprüfbare Verarbeitung vorweisen zu können. In juristischen Auseinandersetzungen mit Kunden oder Partnern müssen bestimmte Vorgänge ggf. gerichtsfest nachgewiesen werden können um unbegründete Forderungen oder Regressansprüche abwehren zu können.
 
@@ -90,7 +98,7 @@ In einem komplexen Geschäftsprozess ist die Einhaltung der Vorgaben anhand des P
 \section{Motivation}
 Als Mitverantwortlicher für die zentrale Prozessengine Automic\textsuperscript{\textregistered} Automation ist der Autor Ansprechpartner zu Fragen zum tatsächlichen Ablauf bestimmter Durchführungen von Geschäftsprozessen und Ermittlung von Ablaufnachweisen. Sofern die Protokolle zu den angefragten Abläufen bereits reorganisiert wurden entsteht durch die Recherche von Protokollen zu Teilprozessen und Aktivitäten eines angefragten Geschäftsprozesses zur Zeit im Zweifel ein hohes Arbeitsaufkommen. Im Prüfungsfall kann die Recherche auf Verlangen des Prüfers auch während einer Prüfung und im Beisein des Prüfers durchzuführen sein. Dies wirft in der Regel kein gutes Licht auf die Nachweisbarkeit und Nachvollziehbarkeit bzgl. der Durchführungen von Geschäftsprozessen innerhalb der Prüfung.
 
-Innerhalb der Prozessengine Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses über die Relationen zu Teilprozessen bis hin zu einer Aktivität zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Prozessengine Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für reorganisierte Protokolle zu harmonisieren.
+Innerhalb der Prozessengine Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Prozessengine Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für reorganisierte Protokolle zu harmonisieren.
 
 
 
@@ -100,7 +108,7 @@ Das wörtliche Zitat wird durch Kursivschrift und Anführungszeichen kenntlich gem
 
 % \emph = Texthervorhebung durch Schriftumschaltung (emphasize), \medskip: vertikaler Abstand (\smallskip, \bigskip)
 \medskip
-\emph{\glqq Ebenso wie die Sinne sind in der Klanggestalt die geistig-ideellen Bereiche mit den physisch-materiellen verbunden, d.h. die sängerische Intention muss sich den Prinzipien der Klangwahrnehmung unterordnen.\grqq} \citep[111]{sowodniok}.
+\emph{\glqq Ebenso wie die Sinne sind in der Klanggestalt die geistig-ideellen Bereiche mit den physisch-materiellen verbunden, d.h. die sängerische Intention muss sich den Prinzipien der Klangwahrnehmung unterordnen.\grqq} \citeg{sowodniok}.
 \medskip
 
 Alternativ kann man ein Zitat auch in den laufenden Text einflechten, denn wie schon Sowodniok bemerkte, muss sich 
@@ -195,7 +203,7 @@ Auf Bücher oder andere umfangreichere Quellen soll mit Seitenangabe verwiesen we
 Die Quellen sollen im Literaturverzeichnis alphabetisch sortiert sein.
 
 
-\subsection{Workflows}
+\subsection{Workflows}\label{ssec:workflow}
 \subsection{Jobs}
 \subsection{Runs}
 \subsection{Reports}
@@ -242,6 +250,9 @@ Ganz am Schluss, nach eventuellen Anhängen, nach Abbildungs- und evtl. Tabellenv
 
 
 \chapter{Implementierung}
+\section{Module}
+\section{Entwurfsmuster}
+\section{Klassendiagramm}
 
 
 \chapter{Zusammenfassung und Ausblick}
