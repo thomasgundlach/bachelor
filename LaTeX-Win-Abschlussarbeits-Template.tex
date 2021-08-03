@@ -10,10 +10,18 @@
 \usepackage[latin1]{inputenc} % Inputencoding für PC/Win
 %\usepackage[utf8]{inputenc} % Inputencoding, universell
 %\usepackage[utf8x]{inputenc} % Inputencoding, universell
+%Abkuerzungsverzeichnis
+\usepackage[nohyperlinks, printonlyused]{acronym}
+%Quellen in Abbildungen
+\usepackage{afterpage}
 %------------------------- Absatz anstatt einrücken -> Abstand
 \usepackage{parskip}
 \usepackage{setspace}
 \onehalfspacing% Zeilenabstand 1,5
+%------------------------- Padding Top/Bottom on Listings
+%\lstset{framesep=20pt}
+%------------------------- Margin left/right on Listings
+%\lstset{xleftmargin=10pt,xrightmargin=10pt}
 
 
 %------------------------ Titelblatt-Layout laden ----------------------------------
@@ -21,6 +29,8 @@
 \input{hawmt-bachelor-titelblatt}
 %\input{hawmt-master-titelblatt}
 
+%----Raute Funktion stdout-----------------
+\edef\zz{\string#}
 %-----------------------------Absätze nicht einrücken-----------------------------
 %\setlength{\parindent}{0em}
 %-----------------------------Verweisdefinitionen
@@ -98,25 +108,30 @@ In einem komplexen Geschäftsprozess ist die Einhaltung der Vorgaben anhand des P
 \section{Motivation}
 Als Mitverantwortlicher für die zentrale Prozessengine Automic\textsuperscript{\textregistered} Automation ist der Autor Ansprechpartner zu Fragen zum tatsächlichen Ablauf bestimmter Durchführungen von Geschäftsprozessen und Ermittlung von Ablaufnachweisen. Sofern die Protokolle zu den angefragten Abläufen bereits reorganisiert wurden entsteht durch die Recherche von Protokollen zu Teilprozessen und Aktivitäten eines angefragten Geschäftsprozesses zur Zeit im Zweifel ein hohes Arbeitsaufkommen. Im Prüfungsfall kann die Recherche auf Verlangen des Prüfers auch während einer Prüfung und im Beisein des Prüfers durchzuführen sein. Dies wirft in der Regel kein gutes Licht auf die Nachweisbarkeit und Nachvollziehbarkeit bzgl. der Durchführungen von Geschäftsprozessen innerhalb der Prüfung.
 
-Innerhalb der Prozessengine Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Prozessengine Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für reorganisierte Protokolle zu harmonisieren.
+Innerhalb der Prozessengine Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität~(\refg{ssec:job}) zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Prozessengine Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für reorganisierte Protokolle zu harmonisieren.
 
 
 
 \section{Problemstellung}
 
-Das wörtliche Zitat wird durch Kursivschrift und Anführungszeichen kenntlich gemacht, und natürlich kommt ein Quellenverweis dazu:
+Der Automic\textsuperscript{\textregistered} Archive Browser, das bestehende Betrachtungswerkzeug für reorganisierte Protokolle der Prozessengine Automic\textsuperscript{\textregistered} Automation, ist für eine flachen Recherche ausgelegt. Die dem zu Grunde liegenden Datenstrukturen der reorganisierte Protokolle sind entsprechend aufgebaut und nicht dokumentiert. Auch bietet der Automic\textsuperscript{\textregistered} Archive Browser keine zugängliche oder anwendbare API, die zum einlesen der Protokolle wiederverwendet oder auf die aufgebaut werden könnte.\\
+Parallel lässt sich die Abbildung der Relationen, die sich durch Ausführung verschiedener Geschäftsprozesse zwischen Teilprozessen und Aktivitäten in den Automic\textsuperscript{\textregistered} Automation Protokollen ergibt, bspw. nicht in einem binären Suchbaum überführen. Hintegrund ist, dass sich über alle Relationen hinweg keine allgemeingültige oder abstrakte Entscheidungsregel ableiten lässt in welchen Knoten ein Protokoll eingefügt werden muss. Zum anderen sind pro Teilbaum theoretisch beliebig viele Knoten möglich.
 
-% \emph = Texthervorhebung durch Schriftumschaltung (emphasize), \medskip: vertikaler Abstand (\smallskip, \bigskip)
-\medskip
-\emph{\glqq Ebenso wie die Sinne sind in der Klanggestalt die geistig-ideellen Bereiche mit den physisch-materiellen verbunden, d.h. die sängerische Intention muss sich den Prinzipien der Klangwahrnehmung unterordnen.\grqq} \citeg{sowodniok}.
-\medskip
+Daneben ergeben sich durch die Entwicklung in Java mehrere GUI-Framworks mit denen die grafische Darstellung realisiert werden kann. Diese verfügen über ganz unterschiedliche Vor- und Nachteile die gegeneinander abgewägt werden müssen. Dadurch dass die Protokollstände mehrerer Tage schnell eine fünf- oder sechsstellige Protokollanzahl erreichen können, muss das Framework grundsätzlich zur stabilben und performanten Darstellung großer Datenmengen geeignet sein.
 
-Alternativ kann man ein Zitat auch in den laufenden Text einflechten, denn wie schon Sowodniok bemerkte, muss sich 
-\emph{\glqq die sängerische Intention [...] den Prinzipien der Klangwahrnehmung unterordnen\grqq} \citep[111]{sowodniok}. 
-Die Quellenverweise werden weiter unten erklärt.
-
+Unter den beschrieben Aspekten wird die praktische Umsetzung eines relationsorientierten Betrachungswerkzeuges für reorganisierte Protokolle anhand von Automic\textsuperscript{\textregistered} Automation vorgestellt. Vordergründig wird die grundlegende Entwicklung des Betrachungswerkzeuges durchgeführt.\citeg{sowodniok}.
 
 \section{Zielsetzung}
+%Ziel der Arbeit ist, eine geeignete Struktur für eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen zu finden.
+Ziel der Arbeit ist eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl eines passenden Frameworks und das Erarbeiten einer entsprechenden Architektur. Besonderen Wert wird auf die Benutzerfreundlichkeit gelegt unter Berücksichtigung des angewendeten Frameworks. Zudem soll auf Grundlage einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
+\subsection{Anforderung}
+Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Davon ausgehend ist die technische Grundlage für ein relationsorientiertes Recherchewerkzeug für reorganisierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmer Protokolle komplexer Geschäftsprozesse und das traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von reorganisierten Daten, die Darstellung der Relationen der reorganiserten Daten sowie die Möglichkeit nach bestimmten Informationen zu filtern.
+
+\subsection{Abgrenzung}
+
+Diese Arbeit ist explorativ. Der Fokus liegt primär auf der Struktur der reorganisierten Daten der Prozessengine Automic\textsuperscript{\textregistered} Automation. Es können innerhalb des zeitlich begrenzten Rahmens der Bachelorarbeit keine umfangreichen Benutzer- oder Systemtests durchgeführt werden. Grafisch werden die Benutzerschnittstellen wie auch sämtliche Fensterkomponenten im Standardstil des ermittelten GUI-Frameworks angezeigt.\\
+Vorrangig geht es darum die Grundlage für ein performantes, stabiles, erweiterbares, portierbares und einfach wartbares Recherchewerkzeug zu erstellen, um die Grundfunktionen zum ermitteln bestimmter Audführungsprotokolle und die Nachverfolgung deren Abhängigkeiten zu realisieren.
+
 
 \section{Struktur der Arbeit}
 
@@ -124,93 +139,16 @@ Die Quellenverweise werden weiter unten erklärt.
 
 \section{Was ist eine Prozessengine?}\label{sec_fussnot}
 
-Fußnoten sollte man sparsam und bewusst verwenden, erklärende Zusätze und Quellenverweise möglichst in den Text integrieren. Damit bleiben Fußnoten v.A. reserviert für wenige Ergänzungen, die den Lesefluss stören würden, aber nicht weggelassen werden sollen\footnote{Und so sieht die Fußnote dann aus}.
-
-Für Aufzählungen stellt \LaTeX\ die beiden Umgebungen itemize und enumerate zur Verfügung. So sieht eine itemize-Aufzählung aus:
-
-\begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
-\item erster Punkt
-\item zweiter Punkt
-\end{itemize}
-
-Und das ist eine enumerate-Aufzählung:
-
-\begin{enumerate}\setlength{\itemsep}{0ex}
-\item erster Punkt
-\item zweiter Punkt
-\end{enumerate}
-
-Aufzählungen können auch verschachtelt werden. Als Beispiel dient hier eine enumerate-Umgebung innerhalb einer enumerate-Umgebung:
-
-\begin{enumerate}\setlength{\itemsep}{0ex}
-\item erster Punkt
-\item 
-	\begin{enumerate}\setlength{\itemsep}{-0.5ex}
-	\item erster Unterpunkt im zweiten Punkt
-	\item zweiter Unterpunkt im zweiten Punkt
-	\item dritter Unterpunkt im zweiten Punkt
-	\end{enumerate}
-\item dritter Punkt
-\end{enumerate}
-
-Als nächstes folgt ein Beispiel für eine einfache Tabelle. Wie auch die Bilder müssen die Tabellen stets Unterschrift und Nummer und zwingend einen Verweis im Text haben. In \LaTeX\ wird das wie bei den Abbildungen durch den caption-Befehl und das Befehlspaar label und ref gelöst (Tabelle \ref{t_buli}). Für ein modernes Tabellenlayout wird das \LaTeX-booktabs-Paket benutzt (siehe dazu die Kommentare im Quelltext). Die mittlere Spalte ist hier auf feste Breite (6 cm) gesetzt, damit bei viel Text ein automatischer Umbruch erfolgen kann.
-
-%----------- TABELLE START -------------
-\begin{table}[htp] 
-\centering
-\begin{tabular}{r|p{6cm}|c|c}  % Spalten nach Ausrichtung: l, c, r, p{breite}, mit zwei vertikalen Spaltentrennern
-%bitte nicht das kleine L "l" und den Vertikalstrich "|" verwechseln!!! :)
-% kleines L steht für eine linksbündige Spalte, Vertikalstrich erzeugt eine Trennlinie zwischen zwei Spalten
-\toprule
-\multicolumn{4}{c}{\large\bfseries Erste Bundesliga, Spielzeit 2011/2012}\\ \midrule
-Platz & Verein & TD & Punkte\\ \midrule
-1 & Borussia Dortmund & +20 & 29\\ \midrule
-2 & Borussia Mönchengladbach & +14 & 29\\ \midrule
-3 & FC Bayern München & +26 & 28\\ \midrule
-10 & Hertha BSC Berlin (Ballsportclub), Verein aus der Hauptstadt & $-$1 & 18 \\
-\bottomrule
-\end{tabular}
-\caption{Bundesligatabelle vom 14. Spieltag}\label{t_buli}
-\end{table}
-%--------- TABELLE ENDE ---------------
-
-Tabelle \ref{t_buli2} zeigt eine Variante die ein kompakteres und eleganteres Ergebnis liefert, ohne vertikale Striche, dafür mit eingefärbten Zeilen.
-
-%----------- TABELLE START -------------
-\begin{table}[htp] 
-\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
-\centering
-\begin{tabular}{rlcc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-\toprule
-\multicolumn{4}{c}{\large\sffamily Erste Bundesliga, Spielzeit 2011/2012}\\ \midrule
-1 & Borussia Dortmund & +20 & 29\\ 
-2 & Borussia Mönchengladbach & +14 & 29\\
-3 & FC Bayern München & +26 & 28\\
-10 & Hertha BSC Berlin & $-$1 & 18 \\ \bottomrule
-\end{tabular}
-\caption{Noch eine Bundesligatabelle vom 14. Spieltag}\label{t_buli2}
-\end{table}
-%--------- TABELLE ENDE ---------------
 
 
 
 \section{Automic\textsuperscript{\textregistered} Automation}
 
-Quellenverweise werden mit Autorennamen und Jahr in runden Klammern gesetzt. Dazu wird hier das \LaTeX-natbib-Paket genutzt; der citep-Befehl erzeugt die Quellenangabe auf Basis der Einträge im Literaturverzeichnis \citep{bluray}. Auf gleiche Weise lassen sich auch mehrere Quellen zusammenfassen \citep{dooley_streicher,stephenson}. 
-
-Auf Bücher oder andere umfangreichere Quellen soll mit Seitenangabe verwiesen werden. Dafür stellt der Befehle citep  einen optionalen Parameter zur Verfügung. Und so sieht dann die vollständige Quellenangabe aus \citep[116]{kuttruff}. 
-
-Die Quellen sollen im Literaturverzeichnis alphabetisch sortiert sein.
-
 
 \subsection{Workflows}\label{ssec:workflow}
-\subsection{Jobs}
+\subsection{Jobs}\label{ssec:job}
 \subsection{Runs}
 \subsection{Reports}
-
-Die Beispiele unten im Literaturverzeichnis zeigen exemplarisch, welche Angaben zu den Quellen erforderlich sind (siehe dazu auch die Kommentare im \LaTeX-Quelltext). 
-
-Und noch eine \LaTeX-Spezialität zum Schluss: Durch die Einbindung von url- und hyperref-Paket im header werden die Quellenverweise im PDF-Dokument automatisch mit der jeweiligen Quelle im Literaturverzeichnis verlinkt, und bei Internetquellen werden die URLs anklickbar. Zudem werden die Verzeichnisse (Inhaltsverzeichnis, Abbildungs- und Tabellenverzeichnis) mit den jeweiligen Objekten verlinkt, und es werden Links zwischen jedem \emph{label} und  dazugehörigem \emph{ref} erzeugt, also z.B. zwischen Bildverweis im Text und dem Bild. Die Farben der Links können im header frei eingestellt werden. Im hier vorgeschlagenen Layout sind die URLs und die Quellenverweise Dunkelblau, die anderen Links sind nicht hervorgehoben (Schwarz). 
 
 \section{Automic\textsuperscript{\textregistered} Archive Browser}
 %\section{Java Development Kits}
@@ -233,23 +171,100 @@ Und noch eine \LaTeX-Spezialität zum Schluss: Durch die Einbindung von url- und 
 
 \chapter{Analyse}
 
-\section{Mittlung von Benutzeranforderungen}
-\subsection{Funktionsumfang Archive Browser}
-\subsection{Benutzeranforderungen}
-\subsection{Funktionsumfang Implementierung}
+\section{Automic\textsuperscript{\textregistered} Archive Browser}
+\subsection{Mittlung von Benutzeranforderungen}
+\subsubsection{Funktionsumfang}
+\subsubsection{Benutzeranforderungen}
+\subsubsection{Funktionsumfang Implementierung}
+\subsection{Weiterentwicklung}
+In der Auslieferung des Automic\textsuperscript{\textregistered} Automation Image gab es bis zu der Version 11.2.6 den Ordner TOOLS\textbackslash SOURCE\textbackslash UCYBARBR mit dem Quellcode des Automic\textsuperscript{\textregistered} Archive Browser \citeg{wpdbmainaaeutil} in Microsoft \ac{vb}.\\
+An der Struktur des Projektes \citeg{vbmarshall} und der Format-Spezifikation im Quellcode (VERSION 5.0) ist zu erkennen, dass es sich um ein \ac{vb} 5.0 Projekt handelt.\\
 
-\section{Archive Browser Datenstruktur}
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Automic\textsuperscript{\textregistered} Archive Browser Microsoft \ac{vb} 5.0 Projekt, label=lst:module, language=bash]
+ Verzeichnis von  TOOLS\SOURCE\UCYBARBR
 
+25.08.2017  14:15    <DIR>          .
+25.08.2017  14:15    <DIR>          ..
+21.10.2015  23:14            28.226 Browse.bas
+21.10.2015  23:14            43.503 Browse.frm
+21.10.2015  23:14           300.458 Browse.frx
+21.10.2015  23:14            10.429 browsef.ctl
+21.10.2015  23:14               330 browsef.ctx
+21.10.2015  23:14             7.199 frmFind.frm
+21.10.2015  23:14                32 frmFind.frx
+21.10.2015  23:14             5.353 TooBig.frm
+21.10.2015  23:14             2.250 TooBig.frx
+21.10.2015  23:14             1.263 UCYBARbr.vbp
+              10 Datei(en),        399.043 Bytes
+               2 Verzeichnis(se)
+\end{lstlisting}
+\end{tabular}
+\end{center}
+
+
+Die \ac{vb} 5.0 Version basiert noch nicht auf dem .NET-Framework sondern ist rein objektbasiert \citeg{wikivbc}. Entsprechend stehen keine Sprachmittel aus dem .NET-Framework zur Verfügung. Für den Nachfolger des auf dem .NET-Framework basiernden \ac{vb} .NET \citeg{wikivbnet} hat Microsoft den Sprachumfang des .NET-Frameworks ab 2017 eingeschränkt. Damals änderte Microsoft seine Strategie bei der Weiterentwicklung der Programmiersprachen \ac{vb} und C\# \citeg{mslangstr}. Davor war die Strategie neue Features in beiden Sprachen zur Verfügung zu stellen. Seit dem Strategiewechsel gibt es eine Abstufung zwischen den beiden Sprachen. Neue .NET Features sind seit dem ggf. nicht mehr in \ac{vb} zu finden.\\
+2020 hat Microsoft bekanntgegeben \ac{vb} .NET als Sprache nicht mehr weiterzuentwickeln \citeg{msvbnet}. Von da an werden unter Umständen neue Funktionen aus dem .NET-Framework, die Änderungen an \ac{vb} .NET als Programmiersprache notwendig machen würden, von \ac{vb} .NET nicht mehr unterstützt.
+
+%----------- BILD ANFANG -------------
+%(Abb. \ref{b_vbdreaded})
+%\begin{figure}[htp]     % h=here, t=top, b=bottom, p=page
+%\centering
+%\includegraphics[width=0.5\textwidth]{bilder/vbdreaded} 
+% Bilddatei aus dem Unterverzeichnis bilder holen, skalieren auf 0.8*Satzspiegel
+%\caption{Liste der Programmiersprachen die Entwickler lieber nicht einsetzen\footnote{\url{https://insights.stackoverflow.com/survey/2016#technology-most-loved-dreaded-and-wanted}}}
+%\caption[Liste der Programmiersprachen die Entwickler lieber nicht einsetzen]{Liste der Programmiersprachen die Entwickler lieber nicht einsetzen\protect\footnotemark}
+%\caption[Liste der Programmiersprachen die Entwickler 2018 lieber nicht einsetzen]{Liste der Programmiersprachen die Entwickler lieber nicht einsetzen\protect\footnotemark}
+%\label{b_vbdreaded}
+%\end{figure}
+%\footnotetext{Quelle: Stackoverflow Developer Survey Results 2018 \url{https://insights.stackoverflow.com/survey/2018\#technology-_-most-loved-dreaded-and-wanted-languages} Aufruf: 28.07.2021}
+
+%----------- BILD ENDE -------------
+
+%----------- BILD ANFANG -------------
+%https://entwickler.de/dotnet/c-f-und-visual-basic-strategiewechsel-bei-microsofts-programmiersprachen/
+\afterpage{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/vbdreaded.jpg}
+        \caption[Liste der Programmiersprachen die Entwickler 2018 lieber nicht einsetzen]{Liste der Programmiersprachen die Entwickler lieber nicht einsetzen\footnotemark}
+    \label{fig:cited_img}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Stackoverflow Developer Survey Results 2018 \url{https://insights.stackoverflow.com/survey/2018\#technology-_-most-loved-dreaded-and-wanted-languages} Aufruf: 28.07.2021}
+}
+
+%------------- BILD ENDE ---------------
+
+Gefördert wurde diese Entwicklung durch Nutzer anderer Hochsprache wie Java, C oder C++ die eine syntaktische Nähe zu C\# und Distanz zu \ac{vb} haben. Zusätzlich gilt \ac{vb} in dieser Gemeinschaft als einfache Einstiegssprache mit einem schlechten Ruf \citeg{vbbad}.
+Das die Ökosysteme, die verbreitete Syntax und der Umfang von Sprachen wie Java oder C\# inzwischen \ac{vb} weitausüberlegen sind wird am Stack Overflow Developer Survey von 2018 (Abb. \ref{fig:cited_img}) deutlich. In diesem führte Visual Basic die Liste der Sprache an, die Nutzer ungerne einsetzen - Zugleich wurde \ac{vb} dort 2018 das letzte mal aufgeführt.
+Seit 2019 ist \ac{vb} nicht mehr Bestandteil der Erhebung des Stack Overflow Developer Survey. Mittlerweile führt der nahe Verwandte \ac{vba} die Rangliste \citeg{stacksurvey21}  nach COBOL an.
+
+Entsprechend ungeeignet ist \ac{vb} im Jahr 2021 als Grundlage für ein Softwareprojekt mit gängigen Anforderungen an Portierbarkeit, Erweiterbarkeit und Wartbarkeit.\\
+Eine Portierung des bestehenden Automic\textsuperscript{\textregistered} Archive Browser \ac{vb} 5.0 Projektes auf .NET Core würde eine Umstellung auf neue Technologien notwendig machen \citeg{vbport}. Der Aufwand hierzu, zusätzlich zur Erweiterung, wird als höher im Vergleich zu einer Neuentwicklung eingeschätzt.
+\subsection{Datenstruktur}
+some text
+more
+and other text
 \section{Auswahl des JDK}
-
+some textmore
+and other text
 \section{Auswahl des Java GUI-Framework}
-
-Der thematische Teil schließt mit einer klaren inhaltlichen, auf der Grundidee aufbauenden thematischen Zusammenfassung, insbesondere bezogen auf die in der Arbeit gewonnenen eigenen Erkenntnisse und deren mögliche Auswirkungen auf Forschung und Wissenschaft. 
-
-Ganz am Schluss, nach eventuellen Anhängen, nach Abbildungs- und evtl. Tabellenverzeichnis, und nach dem Literaturverzeichnis, folgt die Eigenständigkeitserklärung, die unterschrieben werden muss.
-
-
+some textmore
+and other textmore
+and other text
 \chapter{Implementierung}
+some textmore
+and other textmore
+and other textmore
+and other textmore
+and other textmore
+and other textmore
+and other textmore
+and other textmore
+and other textmore
+and other text
 \section{Module}
 \section{Entwurfsmuster}
 \section{Klassendiagramm}
@@ -265,6 +280,14 @@ Ganz am Schluss, nach eventuellen Anhängen, nach Abbildungs- und evtl. Tabellenv
 %--------------------- VERZEICHNISSE ----------------
 
 \listoffigures % Abbildungsverzeichnis erzeugen
+
+\chapter*{Abkürzungsverzeichhnis}
+\begin{acronym}
+
+\acro{vb}[VB]{Visual Basic}
+\acro{vba}[VBA]{Visual Basic for Applications}
+
+\end{acronym}
 \listoftables % Tabellenverzeichnis erzeugen
 \lstlistoflistings % Quellcodeverzeichnis erzeugen
 
@@ -272,6 +295,65 @@ Ganz am Schluss, nach eventuellen Anhängen, nach Abbildungs- und evtl. Tabellenv
 % Die Einträge sollen alphabetisch sortiert sein.
 
 \begin{thebibliography}{}
+
+% Formatierung für Internetquelle
+% Grundregel: Name, Vorname (falls vorhanden), Vö-Jahr (falls vorhanden), Titel in Anführungszeichen, URL, Datum des letzten Aufrufs
+% zur Formatierung der URL unbedingt den url-Befehl benutzen!!!
+\bibitem[UC4 Software GmbH(2013)]{wpdbmainaaeutil} 
+UC4 Software GmbH: 
+\emph{White paper Database Maintenance using the UC4 Utilities}, 
+\url{https://community.broadcom.com/HigherLogic/System/DownloadDocumentFile.ashx?DocumentFileKey=adda151c-7d71-44e2-b337-7d6d1a227cb8}, 2013, letzter Zugriff: 27. 7. 2021
+%https://community.broadcom.com/communities/community-home/digestviewer/viewthread?MID=781866
+%https://community.broadcom.com/enterprisesoftware/communities/community-home/digestviewer/viewthread?MessageKey=72644b38-6db5-4c18-916f-ac09dd458aee&CommunityKey=2e1b01c9-f310-4635-829f-aead2f6587c4&tab=digestviewer#bm72644b38-6db5-4c18-916f-ac09dd458aee
+
+\bibitem[MarshallSoft Computing, Inc.(2017)]{vbmarshall} 
+MarshallSoft Computing, Inc.: 
+\emph{Windows Standard Serial Communications for Visual Basic Programmer's Manual: Compiling Visual Basic 4/5/6 (32-bit) Programs}, 
+\url{http://www.marshallsoft.com/wsc_4vb.pdf}, 2017, letzter Zugriff: 28. 7. 2021
+
+\bibitem[Wikipedia(2021)]{wikivbc} 
+Wikipedia: 
+\emph{Visual Basic Classic}, 
+\url{https://de.wikipedia.org/wiki/Visual_Basic_Classic}, 2021, letzter Zugriff: 27. 7. 2021
+
+\bibitem[Wikipedia(2021)]{wikivbnet} 
+Wikipedia: 
+\emph{Visual Basic .NET}, 
+\url{https://de.wikipedia.org/wiki/Visual_Basic_.NET}, 2021, letzter Zugriff: 27. 7. 2021
+
+\bibitem[Microsoft(2017)]{mslangstr} 
+Microsoft: 
+\emph{The .NET Language Strategy}, 
+\url{https://devblogs.microsoft.com/dotnet/the-net-language-strategy/}, 2017, letzter Zugriff: 27. 7. 2021
+%https://winfuture.de/news,96054.html
+%https://windowsunited.de/strategiewechsel-macht-c-zur-haupt-programmiersprache-in-net/
+
+\bibitem[Microsoft(2020)]{msvbnet} 
+Microsoft: 
+\emph{Visual Basic support planned for .NET 5.0}, 
+\url{https://devblogs.microsoft.com/dotnet/the-net-language-strategy/}, 2020, letzter Zugriff: 27. 7. 2021
+%https://www.itmagazine.ch/artikel/71711/Microsoft_stellt_Weiterentwicklung_von_Visual_Basic__Net_ein.html
+
+\bibitem[Dev-Insider(2020)]{vbport} 
+Dev-Insider/Stephan Augsten
+\emph{.NET 5 soll Visual Basic unterstützen}, 
+\url{https://www.dev-insider.de/net-5-soll-visual-basic-unterstuetzen-a-913322/}, 2020, letzter Zugriff: 27. 7. 2021
+
+
+\bibitem[Heise-Medien(2020)]{vbbad} 
+Heise-Medien/Holger Schwichtenberg
+\emph{Gute und schlechte Nachrichten für Visual-Basic-.NET-Entwickler}, 
+\url{https://www.heise.de/developer/meldung/Gute-und-schlechte-Nachrichten-fuer-Visual-Basic-NET-Entwickler-4682163.html}, 2020, letzter Zugriff: 27. 7. 2021
+
+
+\bibitem[Stack Exchange Inc(2021)]{stacksurvey21} 
+Stack Exchange Inc
+\emph{Stack Overflow Developer Survey 2021}, 
+\url{https://insights.stackoverflow.com/survey/2021#technology-most-loved-dreaded-and-wanted}, 2021, letzter Zugriff: 27. 7. 
+
+
+
+
 
 % Formatierung für Internetquelle
 % Grundregel: Name, Vorname (falls vorhanden), Vö-Jahr (falls vorhanden), Titel in Anführungszeichen, URL, Datum des letzten Aufrufs
