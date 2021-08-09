@@ -42,7 +42,7 @@
 \newcommand{\nachname}{Gundlach}
 \newcommand{\matrikelnummer}{2038884}
 
-\newcommand{\titel}{Visualisierung von Aufgabenrelation innerhalb der Prozessengine Automic\textsuperscript{\textregistered} Automation\\[0.2ex] 
+\newcommand{\titel}{Visualisierung von Aufgabenrelation innerhalb der Process Engine Automic\textsuperscript{\textregistered} Automation\\[0.2ex] 
 				\Large Anhand archivierter Daten}
 
 \newcommand{\erstpruef}{Prof. Dr. Larissa Putzar}
@@ -99,22 +99,22 @@ Hintergrund ist, dass Unternehmen oder Organisationen in Ihrer Verarbeitung häuf
 Die Unternehmen oder Organisationen sind teils dazu verpflichtet die Einhaltung dieser Auflagen und Pflichten regelmässig durch zertifizierte Dritte überprüfen zu lassen. Diese Prüfungen können seitens der zuständigen Anstalt oder Behörde auch unregelmässig anlasslos oder anlassbezogen erfolgen. Entsprechend muss die Verarbeitung jederzeit nachweisbar und überprüfbar sein.
 Parallel ist es auch im eigenen Interesse eines Unternehmens oder einer Organisation eine nachweisbare und überprüfbare Verarbeitung vorweisen zu können. In juristischen Auseinandersetzungen mit Kunden oder Partnern müssen bestimmte Vorgänge ggf. gerichtsfest nachgewiesen werden können um unbegründete Forderungen oder Regressansprüche abwehren zu können.
 
-Um einen Vorgang nachweisen zu können muss es zum einen eine dokumentierte Richtlinie geben wie bzgl. des Vorganges verfahren wird. Zum anderen sollte der Geschäftsprozess anhand der technischen Artkefakten des Prozesses modeliiert werden können. Für eine Überprüfung muss nachgewiesen werden, dass die Richtlinie durch die Geschäftsprozessmodellierung in einem konkreten Fall auch so wie beschrieben umgesetzt wurde. Hierfür muss die Durchführung des Geschäftsprozesses protokolliert werden und die Protokolle bei Reorganisation unverändert und unveränderbar abgelegt werden.
+Um einen Vorgang nachweisen zu können muss es zum einen eine dokumentierte Richtlinie geben wie bzgl. des Vorganges verfahren wird. Zum anderen sollte der Geschäftsprozess anhand der technischen Artkefakten des Prozesses modeliiert werden können. Für eine Überprüfung muss nachgewiesen werden, dass die Richtlinie durch die Geschäftsprozessmodellierung~(\refg{ssec:businessprocessman}) in einem konkreten Fall auch so wie beschrieben umgesetzt wurde. Hierfür muss die Durchführung des Geschäftsprozesses protokolliert werden und die Protokolle bei Reorganisation unverändert und unveränderbar abgelegt werden.
 
 Im Prüfungsfall kann so theo. eine bestimmte Durchführung eines Geschäftsprozesses innerhalb des Aufbewahrungszeitraumes anhand des Protokolles nachgewiesen werden. In der Regel besteht ein Geschäftsprozess aber je nach Detaillierungsgrad aus mehreren Teilprozessen die ebenfalls aus Teilprozessen bestehen können und am Ende in einzelne Aktivitäten unterteilt sind.
 Jeder Geschäftsprozess, jeder Teilprozess und jede Aktivität verfügt über ein eigenes Protokoll mit entsprechendem Detaillierungsgrad.
-In einem komplexen Geschäftsprozess ist die Einhaltung der Vorgaben anhand des Protokolles des Geschäftsprozesses selbst aber ggf. nicht vollständig nachvollziehbar. Für eine Prüfung werden daher nicht selten auch die Protokolle der Teilprozesse und Aktivitäten benötigt. Eine Prüfung erfolgt in der Regel erst wenn die Protokolle reorganisiert wurden. Je nach Reorganisationssystematik der Prozessengine können die Relationen an sich zwischen Geschäftsprozess, Teilprozess und Aktivität bei der Reorganisation verloren gehen. Bietet das Betrachungswerkzeug für die reorganisierten Protokolle keine Möglichkeit die Relationen neu zu ermitteln und über diese zu traversieren müssen die Relationen im Prüfungsfall im Zweifel manuell recherchiert werden.
+In einem komplexen Geschäftsprozess ist die Einhaltung der Vorgaben anhand des Protokolles des Geschäftsprozesses selbst aber ggf. nicht vollständig nachvollziehbar. Für eine Prüfung werden daher nicht selten auch die Protokolle der Teilprozesse und Aktivitäten benötigt. Eine Prüfung erfolgt in der Regel erst wenn die Protokolle reorganisiert wurden. Je nach Reorganisationssystematik der Process Engine~(\refg{ssec:processengine}) können die Relationen an sich zwischen Geschäftsprozess, Teilprozess und Aktivität bei der Reorganisation verloren gehen. Bietet das Betrachungswerkzeug für die reorganisierten Protokolle keine Möglichkeit die Relationen neu zu ermitteln und über diese zu traversieren müssen die Relationen im Prüfungsfall im Zweifel manuell recherchiert werden.
 
 \section{Motivation}
-Als Mitverantwortlicher für die zentrale Prozessengine Automic\textsuperscript{\textregistered} Automation ist der Autor Ansprechpartner zu Fragen zum tatsächlichen Ablauf bestimmter Durchführungen von Geschäftsprozessen und Ermittlung von Ablaufnachweisen. Sofern die Protokolle zu den angefragten Abläufen bereits reorganisiert wurden entsteht durch die Recherche von Protokollen zu Teilprozessen und Aktivitäten eines angefragten Geschäftsprozesses zur Zeit im Zweifel ein hohes Arbeitsaufkommen. Im Prüfungsfall kann die Recherche auf Verlangen des Prüfers auch während einer Prüfung und im Beisein des Prüfers durchzuführen sein. Dies wirft in der Regel kein gutes Licht auf die Nachweisbarkeit und Nachvollziehbarkeit bzgl. der Durchführungen von Geschäftsprozessen innerhalb der Prüfung.
+Als Mitverantwortlicher für die zentrale Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation ist der Autor Ansprechpartner zu Fragen zum tatsächlichen Ablauf bestimmter Durchführungen von Geschäftsprozessen und Ermittlung von Ablaufnachweisen. Sofern die Protokolle zu den angefragten Abläufen bereits reorganisiert wurden entsteht durch die Recherche von Protokollen zu Teilprozessen und Aktivitäten eines angefragten Geschäftsprozesses zur Zeit im Zweifel ein hohes Arbeitsaufkommen. Im Prüfungsfall kann die Recherche auf Verlangen des Prüfers auch während einer Prüfung und im Beisein des Prüfers durchzuführen sein. Dies wirft in der Regel kein gutes Licht auf die Nachweisbarkeit und Nachvollziehbarkeit bzgl. der Durchführungen von Geschäftsprozessen innerhalb der Prüfung.
 
-Innerhalb der Prozessengine Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität~(\refg{ssec:job}) zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Prozessengine Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für reorganisierte Protokolle zu harmonisieren.
+Innerhalb der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität~(\refg{ssec:job}) zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für reorganisierte Protokolle zu harmonisieren.
 
 
 
 \section{Problemstellung}
 
-Der Automic\textsuperscript{\textregistered} Archive Browser, das bestehende Betrachtungswerkzeug für reorganisierte Protokolle der Prozessengine Automic\textsuperscript{\textregistered} Automation, ist für eine flachen Recherche ausgelegt. Die dem zu Grunde liegenden Datenstrukturen der reorganisierte Protokolle sind entsprechend aufgebaut und nicht dokumentiert. Auch bietet der Automic\textsuperscript{\textregistered} Archive Browser keine zugängliche oder anwendbare API, die zum einlesen der Protokolle wiederverwendet oder auf die aufgebaut werden könnte.\\
+Der Automic\textsuperscript{\textregistered} Archive Browser, das bestehende Betrachtungswerkzeug für reorganisierte Protokolle der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation, ist für eine flachen Recherche ausgelegt. Die dem zu Grunde liegenden Datenstrukturen der reorganisierte Protokolle sind entsprechend aufgebaut und nicht dokumentiert. Auch bietet der Automic\textsuperscript{\textregistered} Archive Browser keine zugängliche oder anwendbare API, die zum einlesen der Protokolle wiederverwendet oder auf die aufgebaut werden könnte.\\
 Parallel lässt sich die Abbildung der Relationen, die sich durch Ausführung verschiedener Geschäftsprozesse zwischen Teilprozessen und Aktivitäten in den Automic\textsuperscript{\textregistered} Automation Protokollen ergibt, bspw. nicht in einem binären Suchbaum überführen. Hintegrund ist, dass sich über alle Relationen hinweg keine allgemeingültige oder abstrakte Entscheidungsregel ableiten lässt in welchen Knoten ein Protokoll eingefügt werden muss. Zum anderen sind pro Teilbaum theoretisch beliebig viele Knoten möglich.
 
 Daneben ergeben sich durch die Entwicklung in Java mehrere GUI-Framworks mit denen die grafische Darstellung realisiert werden kann. Diese verfügen über ganz unterschiedliche Vor- und Nachteile die gegeneinander abgewägt werden müssen. Dadurch dass die Protokollstände mehrerer Tage schnell eine fünf- oder sechsstellige Protokollanzahl erreichen können, muss das Framework grundsätzlich zur stabilben und performanten Darstellung großer Datenmengen geeignet sein.
@@ -123,27 +123,80 @@ Unter den beschrieben Aspekten wird die praktische Umsetzung eines relationsorie
 
 \section{Zielsetzung}
 %Ziel der Arbeit ist, eine geeignete Struktur für eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen zu finden.
-Ziel der Arbeit ist eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl eines passenden Frameworks und das Erarbeiten einer entsprechenden Architektur. Besonderen Wert wird auf die Benutzerfreundlichkeit gelegt unter Berücksichtigung des angewendeten Frameworks. Zudem soll auf Grundlage einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
+Ziel der Arbeit ist eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl eines passenden Frameworks und das Erarbeiten einer entsprechenden Architektur. Besonderen Wert wird auf die Benutzerfreundlichkeit gelegt unter Berücksichtigung des angewendeten Frameworks. Zudem soll auf Basis einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
 \subsection{Anforderung}
-Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Davon ausgehend ist die technische Grundlage für ein relationsorientiertes Recherchewerkzeug für reorganisierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmer Protokolle komplexer Geschäftsprozesse und das traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von reorganisierten Daten, die Darstellung der Relationen der reorganiserten Daten sowie die Möglichkeit nach bestimmten Informationen zu filtern.
+Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Davon ausgehend ist der technische Bedarf für ein relationsorientiertes Recherchewerkzeug für reorganisierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmter Protokolle komplexer Geschäftsprozesse und das traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von reorganisierten Daten, die Darstellung der Relationen der reorganiserten Daten sowie die Möglichkeit nach bestimmten Informationen zu filtern.
 
 \subsection{Abgrenzung}
 
-Diese Arbeit ist explorativ. Der Fokus liegt primär auf der Struktur der reorganisierten Daten der Prozessengine Automic\textsuperscript{\textregistered} Automation. Es können innerhalb des zeitlich begrenzten Rahmens der Bachelorarbeit keine umfangreichen Benutzer- oder Systemtests durchgeführt werden. Grafisch werden die Benutzerschnittstellen wie auch sämtliche Fensterkomponenten im Standardstil des ermittelten GUI-Frameworks angezeigt.\\
-Vorrangig geht es darum die Grundlage für ein performantes, stabiles, erweiterbares, portierbares und einfach wartbares Recherchewerkzeug zu erstellen, um die Grundfunktionen zum ermitteln bestimmter Audführungsprotokolle und die Nachverfolgung deren Abhängigkeiten zu realisieren.
+Diese Arbeit ist explorativ. Der Fokus liegt primär auf der Struktur der reorganisierten Daten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation. Es können innerhalb des zeitlich begrenzten Rahmens der Bachelorarbeit keine umfangreichen Benutzer- oder Systemtests durchgeführt werden. Grafisch finden die Benutzerschnittstellen wie auch sämtliche Fensterkomponenten im Standardstil des ermittelten GUI-Frameworks Anwendung.\\
+Vorrangig geht es darum die Grundlage für ein performantes, stabiles, erweiterbares, portierbares und einfach wartbares Recherchewerkzeug zu erstellen, um die Grundfunktionen zum ermitteln bestimmter Ausführungsprotokolle und die Nachverfolgung deren Abhängigkeiten zu realisieren.
 
 
 \section{Struktur der Arbeit}
 
 \chapter{Grundlagen}
 
-\section{Was ist eine Prozessengine?}\label{sec_fussnot}
+\section{Was ist Business Process Management?}\label{ssec:businessprocessman}
+%http://www.bpm-guide.de/2009/07/18/referenzwerk-zu-bpm-veroffentlicht-zertifizierungen-ab-2010/
+Zu \ac{bpm} gibt es eine Vielzahl an unterschiedlichen Definitionen. 
+Eine sehr hilfreiche stammt von der \ac{eabpm}. Einer Institution die sich aus verschiedenen europäischen Vereinen zusammensetzt um ein international einheitliches Verständnis von \ac{bpm} zu schaffen. In der letzten Version und Ausgabe der deutschen Fassung des Leitfadens \glqq\ac{bpm} \ac{cbok}\grqq\, \citeg{eabpm} der \ac{eabpm} wird \ac{bpm} wie folgt definiert:
+\begin{quote}
+\medskip
+\emph{\glqq Die englische Bezeichnung \glqq Business Process Management\grqq\, oder BPM wird synonym
+verwendet für Geschäftsprozessmanagement oder auch einfach Prozessmanagement.
+Als Prozess wurde oben eine Reihe von festgelegten Aktivitäten definiert, die von
+Menschen oder Maschinen ausgeführt werden, um ein oder mehrere Ziele zu erreichen.
+Letztlich geht es darum, einen Kundennutzen zu schaffen und damit auch für das
+Unternehmen Wert zu generieren.\endgraf
+Business Process Management (BPM) ist ein systematischer Ansatz, um sowohl automatisierte als auch nicht-automatisierte Prozesse zu erfassen, zu gestalten, auszuführen, zu dokumentieren, zu messen, zu überwachen und zu steuern und damit nachhaltig die mit der Unternehmensstrategie abgestimmten Ziele zu erreichen.\\
+$[ \dots ]$\\
+BPM umfasst Strategien, Ziele, Kultur, Organisationsstrukturen, Rollen,
+Grundsätze, Regeln, Methoden und IT-Werkzeuge, um a) End-to-End-Prozesse
+zu analysieren, zu entwerfen, einzuführen, zu steuern und kontinuierlich zu verbessern und b) eine Prozess-Governance aufzubauen.\grqq} \citep[62]{eabpm} 
+\medskip
+\end{quote}
+
+Im \ac{bpm} oder einfacher Prozessmanagement geht es darum nicht nur Prozessfragemente zu bewerten, sondern Prozesse ganzheitlich zu verstehen und zu verbessern. In einer kombinierten Anwendung sowohl aus der organisatorischen Sicht als auch unter informationstechnischen Gesichtspunkten.
+
+%http://www.eabpm.org/wp-content/uploads/2010/05/Leseprobe_cbok.pdf
+%Workflow Engine: Automic Request Manager / Automic Job Request Management
+%https://docs.broadcom.com/doc/automic-request-management
+%UC4 Decision / UC4 Insight: -> https://de.wikipedia.org/wiki/Workflow-Management-System
+\section{Was ist eine Process Engine?}\label{ssec:processengine}
+%https://de.wikipedia.org/wiki/Business_Process_Engine
 
 
+Eine Process Engine dient zur Prozessautomatisierung definierter Prozesse aus dem \ac{bpm}. Die Process Engine ist dabei das zentrale System welches technische Prozessmodelle ausführt.
+Hervorzuheben ist hierbei, dass Prozessautomatisierung nicht in jedem Fall eine Automatisierung des gesamten Prozesses bedeutet. Die Process Engine steuert den Prozess vielmehr indem sie a.) zu erledigende Aufgaben bspw. an Sachbearbeiter deligiert sowie das Resultat weiterverarbeitet (Human Workflow Management) und b.) Schnittstellen interner/-externer Informationsdienste aufruft (Service-Orchestrierung).
+In diesem Zusammenhang bleibt ein automatisierter Prozess durch die Prozessbeteiligten beeinflussbar.
+Denn anhand des technischen Prozessmodells als auch des Resultates eines Service-Aufrufes oder einer beendeten Aufgabe entscheidet die Process Engine unter welchen Gegebenheiten welche Folgeaufgabe- oder aufruf ausgeführt wird.\\
+Abbildung \ref{fig:bpmn_processauto} veranschaulicht die Vorgehensweise verallgemeinert.
+
+%----------- BILD ANFANG -------------
+\afterpage{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/BPMN2_Prozessautomatisierung.png}
+        \caption[Prozessautomatisierung mit einer Process Engine]{Prozessautomatisierung mit einer Process Engine\footnotemark}
+    \label{fig:bpmn_processauto}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: \citep[7, Abb. 1.2]{freundruecker}}
+}
+
+%------------- BILD ENDE ---------------
+
+Abstrakt kann man Prozessautomatisierung als eine Form von Softwarentwicklung bezeichnen in der die Process Engine der Interpreter und der Quellcode das technische Prozessbild sind.
+Mit dem Unterschied, dass eine Process Engine für die Abbildung von Prozesslogik entwickelt ist. Sie verfügt über viele typische, fertige Komponenten und Eigenschaften die für die technische Umsetzung eines Prozessmodells benötigt werden und ansonsten mittels \ac{hll} aufwendig entwickelt werden müssten.
+Dennoch kann mit einer Process Engine keine allgemeine Softwareentwicklung erfolgen, da Ihre Sprachmittel und Komponenten auf die Abbildung von Prozessmodellen begrenzt sind.
+
+Eine Prozess Engine bietet die Möglichkeit jede Form von End-to-End-Prozessen plattform- und standortunabhängig umzusetzen.
+Damit vereint sie Workflow Management und Anwendungsintegration. Durch die Steuerung der Geschäftsprozesse bietet die Prozess Engine zugleich einen Überblick in Echtzeit über selbige. Sie verfügt über Informationen zur Ausführungsdauer eines gesamten Prozesses oder eines Teilprozesses sowie den Status jeder Aufgabe. Sie liefert damit Metriken für das Controlling der unternehmensweiten Prozesslandschaft. Auf dieser Basis kann die Process Engine zugleich eine stets aktuelle Prozessdokumentation für Management als auch IT bieten.
 
 
 \section{Automic\textsuperscript{\textregistered} Automation}
-
+%https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#_Common/Welcome/AWA/About_AWA.htm
 
 \subsection{Workflows}\label{ssec:workflow}
 \subsection{Jobs}\label{ssec:job}
@@ -287,6 +340,12 @@ and other text
 
 \acro{vb}[VB]{Visual Basic}
 \acro{vba}[VBA]{Visual Basic for Applications}
+\acro{bpm}[BPM]{Business Process Management}
+\acro{eabpm}[EABPM]{European Association of Business Process Management}
+\acro{cbok}[CBOK\textsuperscript{\textregistered}]{Common Body of Knowledge}
+\acro{hll}[HLL]{Höheren Programmiersprache (High-level programming language)}
+
+
 
 \end{acronym}
 \listoftables % Tabellenverzeichnis erzeugen
@@ -352,9 +411,26 @@ Stack Exchange Inc
 \emph{Stack Overflow Developer Survey 2021}, 
 \url{https://insights.stackoverflow.com/survey/2021#technology-most-loved-dreaded-and-wanted}, 2021, letzter Zugriff: 27. 7. 
 
+%Geschäftsprozessmodellierung mit BPMN 2.0: Business Process Model and Notation
+%https://books.google.de/books?id=XFhQ0joVjqAC&printsec=frontcover&hl=de#v=onepage&q&f=false
+\bibitem[Freund, Rücker(2014)]{freundruecker}
+Freund, Jakob (Hrsg.), 
+Rücker, Bernd (Hrsg.): 
+\glqq Einführung -- Business Process Management\grqq, 
+in: \emph{Praxishandbuch BPMN 2.0}, 4. Auflage, HANSER 2014
+%Praxishandbuch BPMN 2.0
+%https://books.google.de/books?id=kFZnBAAAQBAJ&printsec=frontcover&hl=de#v=onepage&q&f=false
+%https://books.google.de/books?id=uJefDwAAQBAJ&pg=PP22&lpg=PP22&dq=%22die+in+der+deutschen+Fassung+ihres+Referenzwerkes%22&source=bl&ots=8LHyyoIakR&sig=ACfU3U23GkrUa3l9hh0ymdiDHCakbO01FA&hl=de&sa=X&ved=2ahUKEwjY5dnXlqLyAhUYgP0HHSSeBiMQ6AF6BAgXEAM#v=onepage&q=%22die%20in%20der%20deutschen%20Fassung%20ihres%20Referenzwerkes%22&f=false
+\bibitem[EABPM(2014)]{eabpm}
+European Association of Business Process Management EABPM (Hrsg.): 
+\glqq Business Process Management -- Definitionen\grqq, 
+in: \emph{BPM CBOK\textsuperscript{\textregistered} - Business Process Management BPM Common Body of Knowledge Leitfaden für das Prozessmanagement Version 3.0}, 2. Auflage, Verlag Dr. Götz Schmidt 2014
+%https://sgo-verein.ch/wp-content/uploads/sites/2/2019/05/CBOK_Version_3.0-2._Auflage_2014.pdf
+%Praxishandbuch BPMN 2.0
+%https://books.google.de/books?id=kFZnBAAAQBAJ&printsec=frontcover&hl=de#v=onepage&q&f=false
 
-
-
+%Prozessautomatisierung mit BPMN 2.0 und Java. bernd.ruecker@camunda.com
+%https://docplayer.org/storage/24/2913667/1628451771/_EwnekRb9StRk3zk4f7oZg/2913667.pdf
 
 % Formatierung für Internetquelle
 % Grundregel: Name, Vorname (falls vorhanden), Vö-Jahr (falls vorhanden), Titel in Anführungszeichen, URL, Datum des letzten Aufrufs
