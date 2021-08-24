@@ -14,10 +14,6 @@
 \usepackage[nohyperlinks, printonlyused]{acronym}
 %Quellen in Abbildungen
 \usepackage{afterpage}
-%------------------------- Absatz anstatt einrücken -> Abstand
-\usepackage{parskip}
-\usepackage{setspace}
-\onehalfspacing% Zeilenabstand 1,5
 %------------------------- Padding Top/Bottom on Listings
 %\lstset{framesep=20pt}
 %------------------------- Margin left/right on Listings
@@ -123,9 +119,9 @@ Unter den beschrieben Aspekten wird die praktische Umsetzung eines relationsorie
 
 \section{Zielsetzung}
 %Ziel der Arbeit ist, eine geeignete Struktur für eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen zu finden.
-Ziel der Arbeit ist eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl eines passenden Frameworks und das Erarbeiten einer entsprechenden Architektur. Besonderen Wert wird auf die Benutzerfreundlichkeit gelegt unter Berücksichtigung des angewendeten Frameworks. Zudem soll auf Basis einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
+Ziel der Arbeit ist eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl einer passenden Umgebung als auch Frameworks und das Erarbeiten einer entsprechenden Architektur. Außerdem soll der rechtliche Hintergrund am Beispiel des Versicherungswesens betrachtet aus dem sich die Anforderung für ein relationsbasiertes Recherchewerkzeug für historische Protokolldaten ableitet. Bei der Umsetzung wird besonderen Wert auf die Benutzerfreundlichkeit gelegt unter Berücksichtigung des angewendeten Frameworks. Zudem soll auf Basis einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
 \subsection{Anforderung}
-Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Davon ausgehend ist der technische Bedarf für ein relationsorientiertes Recherchewerkzeug für reorganisierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmter Protokolle komplexer Geschäftsprozesse und das traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von reorganisierten Daten, die Darstellung der Relationen der reorganiserten Daten sowie die Möglichkeit nach bestimmten Informationen zu filtern.
+Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Parallel sollen rechtliche Hintergründe anhand des Versicherungswesens aufbereitet werden. Davon ausgehend ist der technische Bedarf für ein relationsorientiertes Recherchewerkzeug für reorganisierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmter Protokolle komplexer Geschäftsprozesse und das traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von reorganisierten Daten, die Darstellung der Relationen der reorganiserten Daten sowie die Möglichkeit nach bestimmten Informationen zu filtern.
 
 \subsection{Abgrenzung}
 
@@ -423,7 +419,7 @@ Entsprechend sollten Nachweise mind. 3 Jahre aufbewahrt werden da ein weiter zur
 %Sie dürfen nur zu den Zwecken genutzt werden, die Anlass für ihre Speicherung waren. Dies sind in der Regel die in einem Sicherheitskonzept festgelegten allgemeinen Kontrollen,
 %https://datenschutz.hessen.de/datenschutz/it-und-datenschutz/empfehlungen-zur-protokollierung-zentralen-it-verfahren-der
 
-\section{Java Implementierungen}
+\section{Java Implementierung}
 %https://www.baeldung.com/oracle-jdk-vs-openjdk
 %https://en.wikipedia.org/wiki/List_of_Java_virtual_machines
 %https://stackoverflow.com/questions/16568253/difference-between-jvm-and-hotspot
@@ -432,14 +428,14 @@ Entsprechend sollten Nachweise mind. 3 Jahre aufbewahrt werden da ein weiter zur
 %\subsection{Oracle JDK}
 %\subsection{OpenJDK}
 %\subsection{Eclipse OpenJ9}
-Eine Java Implementierung ist eine Implementierung der Java Virtual Machine JVM auf einer spezifischen Java Plattform nach der \ac{gjls} \citeg{jwikiplattform}. Die \ac{gjls} wird im \ac{gjcp}
- von \ac{gjsr} weiterentwickelt \citeg{jwikijcp}. Wobei ein angenommener und abschließend bestätigter \ac{gjsr} einen neuen Java-Standard definiert \citeg{jtutego7}. Zugleich stellt dieser eine Referenzimplementierung des neuen Java-Standards und ein \ac{gtck} hierfür zur Verfügung. Mit einem \ac{gtck} kann eine Java Implementierung gegen den entsprechenden Sprachstandard validiert werden und darf nach Zertifizierung anschließend als Java SE kompatibel bezeichnet werden \citeg{jgolem}.
+Eine Java Implementierung ist eine Implementierung der \ac{jjvm} auf einer spezifischen Java Plattform nach der \ac{gjls} \citeg{jwikiplattform}. Die \ac{gjls} wird im \ac{gjcp}
+ von \ac{gjsr} weiterentwickelt \citeg{jwikijcp}. Wobei ein angenommener und abschließend bestätigter \ac{gjsr} einen neuen Java-Standard definiert \citeg{jtutego7}. Zugleich stellt dieser eine Referenzimplementierung des neuen Java-Standards und ein \ac{gtck} hierfür zur Verfügung. Mit einem \ac{gtck} kann eine Java Implementierung gegen den entsprechenden Sprachstandard validiert werden und darf nach Zertifizierung anschließend als Java SE kompatibel bezeichnet werden \citeg{jgolem}. Eine Java Implementierung wird in der Regel als \ac{jjdk} veröffentlicht.
 
-\section{Java GUI-Frameworks}
-%\subsection{Swing}
-%\subsection{JavaFX}
-%\subsection{SWT}
-\section{Java Dateieingangsverarbeitung}
+\section{GUI-Framework}
+%https://coderslegacy.com/java-gui-frameworks-guide/
+
+Ein \ac{jgui} Framework \citeg{jguisiddiqi}  stellt mittels einer Bibliothek typische Steuerelemente zur Erstellung von grafischen Benutzeroberflächen zur Verfügung über die ein Endanwender mit einer dazugehörigen Anwendung interagieren kann. Dabei kappselt das Framework von primitiven, grafischen Objekten des Betriebssystems bis hin zu eigenen grafischen Elementen in geeignete Strukturen bzw. Klassen, erweitert diese um Funktionalität und stellt sie als Steuerelemente zur Verfügung. Für letzteres verfügt das Framework in der Regel über eine eigene Render-Engine. Mittels des Frameworks können so innerhalb integrierter Entwicklungsumgebungen oder auch unabhängig davon einfach grafische Benutzeroberflächen geschaffen werden, da die Steuerelemente oder Widgets \citeg{jwidgets} hierzu nicht mehr eigenständig entwickelt werden müssen.\\
+Viele \ac{jgui} Frameworks verfügen darüber hinaus über einen Designer zur mausgesteuerten Erstellung sowie einen Layoutmanager zur korrekten Anordnung der Steuerelemente.
 
 \chapter{Analyse}
 
@@ -525,23 +521,189 @@ and other text
 %https://softwareengineering.stackexchange.com/questions/406591/why-are-there-multiple-different-implementations-of-jvm
 %https://www.azul.com/oracle-java-alternatives-matrix/
 %https://f.hubspotusercontent10.net/hubfs/4036663/2021%20-%20Rebrand%20Assets/OpenJDKvsOracleJDK_ComparisonTable.pdf
-In die Analyse wurden nur die Implementierungen mit einem relevanten/hohen Verbreitungsgrad einbezogen
-Theo. könnte es mehrere Quellcodes für eine Java Implementierung geben. Praktisch ist aber nur der OpenJDK Quellcode\footnote{Quelle: JDK Project, \url{http://openjdk.java.net/projects/jdk/}, Aufruf: 30.07.2021}  relevant.
+%https://www.google.com/search?q=most+popular+jvms&oq=most+popular+jvms&aqs=chrome..69i57.8534j0j7&sourceid=chrome&ie=UTF-8
+Theo. gibt es mehrere Quellcodes für Java Implementierungen. Praktisch relevant ist inzwischen vermehrt der Quellcode des JDK Project\footnote{Quelle: JDK Project, \url{http://openjdk.java.net/projects/jdk/}, Aufruf: 30.07.2021}. Auf Basis dieses Quellcodes werden von verschiedenen Anbieter Java Implementierungen angeboten. Diese Anbieter werden umgangssprachlich auch im deutschen Sprachraum häufig als Java Vendor bezeichnet. Die Bezeichnung geht zurück auf interne Systemeinstellungen in Java in denen der Anbieter einer Java Implementierung über die Eigenschaft java.vendor seinen Eigennamen definiert. Die Systemeinstellungen können mittels der Methode getProperties() der Klasse System ausgelesen werden \citep[Abs. 31]{jmzvendor}.\\
+Java Implementierungen von verschiedenen Anbietern können sich in der Unterstützung verschiedener Prozessorarchitekturen wie x86, ARM, PPC, SPARC und deren unterschiedlichen Wortbreiten unterscheiden \citeg{jhwarchitekt}. Sowie in den zu diesen angbotenen Betriebssystemen und deren Distributionen. Darüber hinaus sind aus technischer Sicht die Implementierungen häufig auf bestimmte Anwendungszwecke optimiert und der Ursprungsquellcode entsprechend modifiziert. Neben individuellen Modifizierungen eines Anbieters bzgl. der Implementierung unterscheiden sich die angebotenen Implementierungen auch durch das beinhalten oder fehlen von Java Erweiterungen wie beispielsweise Java Mission Control, Java Flight Recorder oder JavaFx bzw. OpenJFX \citeg{jadoptmigrate}.\\
+Abgesehen von technischen Unterschieden wie Unterstützung und direkten Funktionsumfang gibt es auch Unterschiede bzgl. der Wartung. Die Anbieter bieten frei zugängliche Sicherheitspatches unterschiedlich an, veröffentlichen regelmässige Updates in unterschiedlichen Zyklen und definieren je Version unterschiedlich lange Lebenszyklen. Die Updates selbst werden je Anbieter mit unter über verschiedene Quellen und Schnittstellen angeboten als auch in verschiedenen Auslieferungsformaten. Insbesondere letzteres ist für standardisierte und automatisierte Updateverfahren seitens des Anwenders nicht zu unterschätzen. Auch wie beständig die Weiterentwicklung einer Implementierung ist sollte betrachtet werden. Hierzu sollte beispielsweise der Verbreitungsgrad und die Substanz des Anbieter selbst begutachtet werden.\\
+
+%----------- TABELLE START -------------
+%\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+\begin{tabular}{rlcc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+\toprule
+\multicolumn{2}{c}{\large\sffamily Verbreitung \ac{jjdk} nach Anbietern 2020}\\ \midrule
+\rowcolor{gray!50}
+Anbieter & \% verwendet\\
+Oracle & 74.78\\
+AdoptOpenJDK & 7.06\\
+IcedTea & 5.30\\
+Azul & 2.96\\
+IBM & 2.37\\
+Amazon & 2.18\\
+Unknown & 1.96\\
+Pivotal & 1.40\\
+SAP & 0.74\\
+Sun & 0.58\\
+Debian & 0.54\\
+Other & 0.10\\ \bottomrule
+\end{tabular}
+        \caption[Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020]{Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020\footnotemark}\label{t_jdkspread}
+\end{table}
+  \footnotetext{Quelle: The State of Java: Trends And Data For One of the World\'s Most Popular Programming Languages, \url{https://newrelic.com/blog/nerd-life/state-of-java}, Aufruf: 03.08.2021}
+%}
+
+%--------- TABELLE ENDE ---------------
+
+%----------- TABELLE START -------------
+\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+\begin{tabular}{rlcc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+\toprule
+\multicolumn{2}{c}{\large\sffamily Verbreitung \ac{jjdk} nach Anbietern 2021}\\ \midrule
+\rowcolor{gray!50}
+Anbieter & \% verwendet\\
+Oracle Java & 59\\
+Generic OpenJDK & 36\\
+Adopt OpenJDK & 22\\
+Amazon Corretto & 10\\
+Azul Zulu & 6\\
+GraalVM & 4\\
+OpenLogic JDK & 4\\
+Other & 4\\ \bottomrule
+\end{tabular}
+        \caption[Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2021]{Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2021\footnotemark}\label{t_jdkspread}
+\end{table}
+  \footnotetext{Quelle: JRebel 2021 Java Developer Productivity Report, \url{https://www.jrebel.com/system/files/2021-java-developer-productivity-report.pdf}, Aufruf: 10.08.2021}
+}
+
+%--------- TABELLE ENDE ---------------
+Aus organisatorischer und wirtschaftlicher Sicht stellt sich hingegen die Frage ob ein Anbieter seine Java Implementierung grundsätzlich kostenlos zur Verfügung stellt und ob der Betrieb der \ac{jjvm} in kommerziellen oder öffentlichen, produktiven Umgebungen ebenso unentgeldlich gestattet ist. Insbesondere dann ist aber auch immer von Interesse ob und zu welchen Konditionen ein Anbieter Unterstützungsleistungen anbietet, ob die Implementierungen zertifiziert sind oder mit welchen Testverfahren die Implementierungen validiert werden \citeg{jazulcompare}. Und zuletzt wie transparent der Implementierungsprozess ist.
+
+Die nachfolgenden Implementierungen wurden aufgrund Ihrer Eigenschaft und Verbreitungsgrades für die Umsetzung als relevant eingestuft und in die Analyse \citep[Abs. 4]{joreilvendors} einbezogen:
+
+\subsection{Amazon Corretto}
+Corretto \citeg{jamzcorretto} wird seit 2019 von Amazon angeboten und ist damit die jüngste aller Implementierungen. Dabei handelt es sich um eine plattformübergreifend (Linux, macOS, Windows und Docker) Distribution des OpenJDK welche unter der \ac{jgpl} mit Classpath Exception lizenziert ist und damit kostenlos in kommerziellen Produktionsumgebungen verwendet werden darf. Sie ist zertifiziert nach TCK wodurch sie offiziell kompatibel zum Java SE Standard ist. Amazon bietet Corretto mit \ac{jlts} inklusive eigenen Leistungsoptimierungen und Sicherheitspatches an. Updates werden mindestens quartalsweise veröffentlicht.
+Amazon setzt Corretto selbst in vielen produktiven Diensten in der \ac{jaws} ein und stellt für den Einsatz innerhalb dieser Support zur Verfügung.
+
+\subsection{Azul Zulu}
+Azul bietet unter dem Namen Zulu JDK \citeg{jazulzulu} eine eigene, kostenlose und plattformübergreifend (Linux, Windows, macOS, Solaris und Docker) OpenJDK Implementierung an. Diese kann ebenfalls  kostenlos in kommerziellen Produktionsumgebungen eingesetzt werden. Umgehende Patches zur Korrektur von Sicherheitslücken und Softwarefehlern stehen jedoch nur kostenpflichtig über die Azul Platform Core zur Verfügung \citeg{jazulsecure}. Azul zertifiziert das Zulu JDK mittels TCK und stellt damit offiziell eine Kompatibilität zum Java SE Standard her. Azul hält sich bei der Definition der Versionszyklen an Oracle JDK und verlängert den Lebenszyklus des Zulu JDK jeweils zusätzlich um ein Jahr. Darüberhinaus bietet Azul ein Archiv aller Veröffentlichtungen eines Majorrelease innerhalb des Lebenszykluses an. Der kostenlose Zugang zu dem Angebot ist Teil der Zulu Community. Es gibt hierzu jedoch keine explizite Zusicherung seitens Zulu dieses Angebot langfristig aufrechtzuerhalten \citeg{jbourquestack}.
+Azul stellt umfangreiche, kostenpflichtige Supportangebote zur Verfügung. Unter anderem auch für \ac{jmts} Veröffentlichungen sowie eine generelle 24x7 Erreichbarkeit. Das Supportangebot berechnet sich dabei nicht je CPU sondern je System. Parallel dazu bietet Azul unter Zing eine performanceorientierte Java Plattform an.
 
 
-release support
-security patches
-cost
-support
-transparenz
+\subsection{Eclipse Temurin}
+Eclipse Temurin \citeg{jecltemurin}  ist der Nachfolger des AdoptOpenJDK Projektes. Die 1. Implementierung wurde am 30. Juli 2021 durch die Adoptium Working Group \citeg{jecladoptium} veröffentlicht.
+Das Ziel des Temurin Projektes ist die Bereitstellung eines TCK-zertifizierten \ac{jjdk} unter Open-Source-Lizenz zur allgemeinen Verwendung im Java-Ökosystem.
+Zusätzlich zur TCK-Zertifizierung und der damit verbundenen offiziellen Java SE Kompatibilität durchlaufen die Veröffentlichungen die Eclipse-eigene AQAvit Testinfrastruktur \citeg{jeclaqavit}.
+Veröffentlich wird Temurin unter der \ac{jgpl} mit Classpath Exception.\\
+Das Temurin Projekt folgt für seine Veröffentlichungen der Roadmap des JDK Project: Neue Versionen mit neuen Features alle 6 Monate, Wartungs- und Sicherheitspatches quartalsweise sowie alle 3 Jahre eine Version mit \ac{jlts}. Versionen wie mit \ac{jlts} werden im Gegensatz zu Oracle's OpenJDK jedoch deutlich länger unterstützt und so weiter mit Updates versorgt. Das mindert einen permanenten Migrationsdruck und verringert so den Wartungsaufwand. Hinter der Adoptium Working Group stehen große IT-Konzerne wie Alibaba, Azul, Huawei, Karakun, Microsoft, Red Hat, IBM und weitere. Da Eclipse als gemeinnützige Gesellschaft nicht die Mittel hat eigene Sicherheitspatches zu entwickeln werden diese durch die Mitglieder bereitgestellt.\\
+Für Eclipse Temurin wird durch Eclipse selbst als gemeinnützige Gesellschaft kein kommerzieller Support angeboten. Es gibt lediglich begrenzte Unterstützung bei der Behebung von eindeutig auf die Applikation zurückzuführende Fehler. Azul bietet für Temurin parallel zum hauseigenen Zulu SDK kommerziellen Support an welcher sich im Umfang vom Support für das Zulu SDK selbst unterscheidet.
 
-\citeg{jbourquestack}
-\citeg{jdzone} 
+
+\subsection{IBM OpenJDK}
+IBM stellt als einziger der näher betrachteten Anbieter eine Virtual Machine auf Basis von J9 \citeg{jibmjavasdk} zur Verfügung und nicht HotSpot. Parallel ist sie statisch gesehen auch die einzige relevante \ac{jjvm} auf dem Markt die nicht auf HotSpot aufbaut. J9 ist eine auf geringeren Arbeitsspeicherverbrauch und geringere Start- als auch Anlaufphasen optimierte, plattformübergreifend (AIX, Linux, z/OS und IBM i) \ac{jjvm}. Sie ist damit auch unter anderem insbesondere für den Betrieb in Containern, wie sie bpsw. in Cloudumgebungen eingesetzt werden, optimiert. IBM hat die J9 Virtual Machine eigens entwickelt und im September 2017 Open-Source als OpenJ9 der Eclipse Foundation zur Verfügung gestellt - Wo Implementierungen über das AdoptOpenJDK Projekt bereitgestellt werden. Selbst stellt IBM seit dem für J9 nur noch Updates für \ac{jlts} Veröffentlichungen bereit. Zukünftige \ac{jlts} Veröffentlichung sollen nur noch unter OpenJ9 stattfinden. Der Einsatz von OpenJ9 als auch J9 ist in produktiven Umgebung kostenfrei. Im April 2021 kündigte IBM \citeg{jibmj9adoptium} an OpenJ9 TCK-zertifiziert kostenlos über die Adoptium Working Group zu veröffentich. Die TCK-Zertifizierung wird überwiegend als Hauptkriterium für die produktive Verwendung einer Java Implementierung angesehen. Bis zur Abgabe dieser Arbeit war dieses Vorhaben noch nicht umgesetzt.\\
+IBM bietet entsprechend kommerziellen Support sowohl für J9 als auch OpenJ9 \ac{jlts}  Veröffentlichung von AdoptOpenJDK an.\\
+Mit Hinblick auf Java 17 als nächste \ac{jlts} Version im September 2021 soll die Arbeit auf der letzten stabilen Java Version aufbauen um möglichst geringe Migrationsaufwände bei einer Portierung zu Java 17 zu generieren. Das schließt eine Umsetzung auf Grundlage von J9 leider aus weshalb das IBM OpenJDK auf Basis von J9 nicht weiter betrachtet wird.
+
+\subsection{Oracle Java SE}
+Oracle ist historisch und Aufgrund seiner anhaltend hohen Verbreitung der Hauptanbieter von Java Implementierungen. Bei dem Oracle Java SE \citeg{joraclejdk} handelt es sich in der aktuellen Version um eine plattformübergreifend (Linux, macOC, Windows) \ac{jjdk} Implementierung. Oracles Roadmap sieht vor alle 6 Monate eine neue Version mit neuen Feautres zu veröffentlichten, Wartungs- und Sicherheitspatches quartalsweise anzubieten sowie alle 3 Jahre eine Version mit \ac{jlts} herauszubringen. Das Oracle Java SE bildet den Java SE Standard.
+Bis 2019 und Version 8u202 war die Verwendung in produktiven Umgebungen kostenfrei möglich. Seit dem ist nur noch die Entwicklung mit Oracle Java SE kostenfrei gestattet. Für den Einsatz in produktiven Umgebungen muss eine \glqq Java SE Subscription\grqq abgeschlossen werden. Parallel damit bietet Oracle Support an.
+
+\subsection{Red Hat OpenJDK}
+Red Hat bietet mit seinem OpenJDK \citeg{jredhatjdk} eine plattformbeschränkte (Linux und Windows) Java Implementierung des Oracle OpenJDK an. Sie ist der Java-Standard des hauseigenen, kommerziellen Betriebssystems Red Hat Enterprise Linux und steht auch in dessen freien Fork CentOS zur Verfügung. Dadurch kann es auch kostenfrei in produktiven Umgebungen eingesetzt werden. Zusätzlich ist es in verschiedene Produkte der Red Hat Containerwelt integriert. Im Gegensatz zur Konkurrenz verfolgt Red Hat weniger eine breite Platte an unterstützten Plattformen sondern mehr eine besonders auf die jeweilige Plattform abgestimmte und damit besser integrierte Implementierung \citeg{jdzone} . Dadurch handelt es sich beim Red Hat OpenJDK um eine modifizierte Implementierung des Oracle OpenJDK.\\
+Updates werden von Red Hat mind. quartalsweise veröffentlich und analog zur Roadmap des JDK Project als \ac{jlts} Versionen angeboten.\\
+Red hat bietet für beide Plattformen Support-Optionen an.
+
+
+%----------- TABELLE START -------------
+%\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+\toprule
+\multicolumn{6}{c}{\large\sffamily Vergleich von \ac{jjdk} Anbietern auf Basis Java > 11}\\ \midrule
+\rowcolor{gray!50}
+Eigenschaften & Amazon Corretto & Azul Zulu & Eclipse Temurin & Oracle Java SE & Red Hat OpenJDK\\
+Open Source & X & X & X & - & X\\
+Produktiv kostenlos & X & X & X & - & X \\
+Updates kostenlos & X & X & X & - & X \\
+Update Rythmus  & 3 Monate & 3 Monate & 3 Monate & 3 Monate & 3 Monate \\
+kommerzieller Support  & nur \ac{jaws} & X & X & X & IBM, Azul \\
+Security-/Bugfixes kostenlos & X & O & X & - & X \\
+Lebenszyklus & 6 Jahre & 8 + 2 Jahr & 6 Jahre & 5 + 3 Jahre & 6 Jahre \\
+Validierung  & TCK & TCK & TCK, AQAvit & TCK & TCK \\
+Betriebssysteme  & Linux, Windows, macOS, Docker & Linux, Windows, macOS, Docker & Linux, Windows, macOS & Linux, Windows, macOS & Linux, Windows, OpenShift \\
+Installationsformate  & 7 & 6 & 5 & 5 & 4 \\
+OpenJFX / JavaFX  & - & X & - & X & - \\
+Java Flight Recorder & X & X & - & X & X \\
+Mission Control & - & X & - & X & X \\
+Besonderheit & cloudready & cloudready & OpenSource Projekt & Maintainer & Integration \\ \bottomrule
+\end{tabular}
+        \caption[Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern]{Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern\footnotemark}\label{t_vendorcompare}
+\end{table}
+  \footnotetext{Quellen: \citeg{jredhatjdk}, \citeg{jamzcorretto}, \citeg{jazulzulu}, \citeg{jecltemurin}, \citeg{jibmjavasdk}\\ OpenJDK vs Oracle JDK - Comparison Table, \url{https://www.azul.com/products/core/jdk-comparison-matrix/}, Aufruf: 05.08.2021}
+%}
+
+%--------- TABELLE ENDE ---------------
+
+\subsection{Ergebnis}
+Nach der Analyse fällt die Entscheidung für Eclipse Temurin. Eclipse Temurin bietet den Durchschnitt an Unterstützung bzgl. Prozessorarchitektur und Betriebssystemen. Eine Cloudunterstützung wird in der Umsetzung als Client- und Desktopanwendung nicht benötigt. Performancetechnisch sind alle Implementierungen im Allgemeinen gleich bis auf IBMs J9. Eine OpenJ9 Variante wurde bis Abgabe der Arbeit jedoch noch nicht TCK-zertifiziert durch die Adoptium Working Group veröffentlicht. Für produktive Umgebungen ist eine TCK-Zertifizierungen und damit eine Java SE Kompatibilität oft aufgrund interner Richtlinien und proprietärer Anwendungen maßgeblich. Für J9 als TCK-zertifizierte Variante existiert nur eine Java 11 Implementation - Keine Java 15 oder 16. Da mit Java 17 bereits im September das nächste LTS Release von Java erscheint und der Sprachstandard von Java 16 näher an Java 17 ist als der des letzten LTS Release Java 11 verringert dies in der Regel spätere Migrationsaufwände.\\ Parallel ist die Verbreitung des AdoptOpenJDK von 2020 auf 2021 in Folge der Lizenzkosten von Oracle Java SE am stärksten gestiegen~(\refg{t_jdkspread}). AdoptOpenJDK wurde bereits von vielen Fortune 500-Unternehmen \citeg{jadoptfortune} eingesetzt. Mit der Eclipse Temurin TCK-Zertifizierung wird sich diese Anzahl vermutlich noch erhöhen, da der maßgebliche Nachteil gegenüber anderen Anbietern abgebaut wurde. Neben der TCK-Zertifizierung wird die bereits unter AdoptOpenJDK angewendete Eclipse-eigene AQAvit Testinfrastruktur\citeg{jeclaqavit} weiterhin auch für Eclipse Temurin angewendet.\\
+Eclipse Temurin ist damit nicht nur free for production sondern auch production-ready, bietet außerhalb des Extended Supports der Konkurrenz  im Schnitt gleich lange Lebenszyklen für die veröffentlichten Versionen ink. Sicherheits-/Wartungspatches und verfügt im Gegensatz zu Azul Zulu über eine langfristige Opensource Strategie. Unter dem Dach der Eclipse Foundation wird dies gesichert durch eine vielzahl namenhafter IT-Konzerne die hinter dem Projekt stehen. Mittels OpenJFX können Erweiterungen auch zu Eclipse Temurin hinzugefügt. Zuletzt steht dieses Gesamtpaket frei zur Verfügung.
+
+%https://www.baeldung.com/oracle-jdk-vs-openjdk
+%https://en.wikipedia.org/wiki/List_of_Java_virtual_machines
+%https://stackoverflow.com/questions/16568253/difference-between-jvm-and-hotspot
+%https://dzone.com/articles/java-and-the-jdks-which-one-to-use
+%https://dzone.com/articles/an-overview-on-jdk-vendors
+%https://www.jetbrains.com/lp/devecosystem-2019/java/
+%https://adoptium.net/supported_platforms.html
+%https://adoptopenjdk.net/support.html
+%https://adoptium.net/support.html
+%https://blog.joda.org/2018/09/time-to-look-beyond-oracles-jdk.html
+%https://dwaves.de/2021/06/21/oracle-cashing-in-on-java-this-is-what-happens-if-developers-use-closed-source-non-opensource-non-gpl-licensed-programming-languages/
+%https://www.azul.com/products/core/jdk-comparison-matrix/
+%https://medium.com/@javachampions/java-is-still-free-2-0-0-6b9aa8d6d244
+%https://blog.joda.org/2018/09/time-to-look-beyond-oracles-jdk.html
+
 
 \section{Auswahl des Java GUI-Framework}
-some textmore
-and other textmore
-and other text
+\subsection{Swing}
+Swing erstellt. Dabei handelt es sich um ein UI-Toolkit, das ursprünglich von Sun entwickelt wurde. Dieses Toolkit ist nach wie vor weit verbreitet und auch in allen JDKs enthalten. Allerdings wird es nicht mehr weiterentwickelt oder gewartet. Der offizielle Nachfolger ist bereits im aktuellen JDK 8 integriert und trägt den Namen JavaFX.
+CSS-Feature wie in JavaFX sind in Swing nicht möglich
+Natürlich gibt es zusätzliche Bibliotheken für Swing, aber bestimmte Möglichkeiten wie beispielsweise Zooming sind einfach nicht vorgesehen. 
+Swing aussterben wird. Es wird uns wohl weiterhin im JDK erhalten
+Java swing is not are placement for abstract window Toolkit(AWT). It is an enhancement over existing api\'s of AWT due to its platform-independent feature.
+AWT and Swing are similar with most of AWT components have corresponding components in the swing.
+It is recommended though that AWT should be restricted only to the event handling mechanism and the UI components creation and rendering should be done only using swing.
+Following are the compelling reasons to use Java swing:
+
+Rich set of components easing the developer effort.
+Undo/Redo support built-in for components.
+2D graphics rendering simpler
+Plugable (customizable) look and feel.
+\subsection{JavaFX}
+JavaFX is an open source, next generation client application platform for desktop, mobile and embedded systems built on Java. It is a collaborative effort by many individuals and companies with the goal of producing a modern, efficient, and fully featured toolkit for developing rich client applications.
+
+The latest flagship of Java/Oracle. promising to be the facto standard in developing rich desktop or web applications.
+
+JavaFX. Dabei handelt es sich um eine moderne UI-Technologie mit der unter anderem Transformationen, Animationen, Web Browser, Touch-Eingaben oder ein Media-API ohne nennenswerten Aufwand verwendet werden können. Das ist natürlich nicht alles, denn das Styling einer Anwendung mittels CSS ist ein weiteres Killer-Feature. Im Prinzip ermöglicht JavaFX die Umsetzung von optisch ansprechenden Anwendungen ohne größere Einschränkungen.
+Applikation unter iOS oder Android zu starten. Mit JavaFX hingegen ist das machbar -> https://gluonhq.com/products/mobile/javafxports/ -> JavaFXPorts-Projekt -> kein offiziell von Oracle
+enn eine Anwendung "modern" sein muss, sollte ernsthaft über javafx nachdenken
+JavaFX Technologie für Desktopanwendungen
+Erstellung von Webanwendungen ist nicht vorgesehen
+\subsection{SWT}
+Created by IBM for Eclipse, they seemed to think that Swing was not suited for Eclipse at the time.
+
+By itself is pretty low-level, and it uses the platform\'s native widgets through JNI. It is not related to Swing and AWT at all.
+
+SWT is an open-source widget toolkit for Java designed to provide efficient, portable access to the user- interface facilities of the operating systems on which it is implemented.
+\section{Java Dateieingangsverarbeitung}
+
 \chapter{Implementierung}
 some textmore
 and other textmore
@@ -555,11 +717,15 @@ and other textmore
 and other text
 \section{Module}
 \section{Entwurfsmuster}
+Model-View-Controller(MVC)
+Observer Design Pattern
+%ggf. https://www.philipphauer.de/study/se/design-pattern/observer.php
 \section{Klassendiagramm}
 
 
 \chapter{Zusammenfassung und Ausblick}
 \section{Zusammenfassung}
+rechtliche rahmenbedingungen waren ausschweifend
 \section{Ausblick}
 \subsection{DORA}
 
@@ -612,6 +778,13 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{gjcp}[JCP]{Java Community Process}
 \acro{gjsr}[JSR]{Java Specification Request}
 \acro{gtck}[TCK]{Technology Compatibility Kit}
+\acro{jjdk}[JDK]{Java Development Kit}
+\acro{jjvm}[JVM]{Java Virtual Machine}
+\acro{jlts}[LTS]{Long Term Support}
+\acro{jmts}[MTS]{Medium Term Support}
+\acro{jaws}[AWS]{Amazon Web Services}
+\acro{jgpl}[GPL]{General Public License}
+\acro{jgui}[GUI]{Graphical User Interface}
 
 
 \end{acronym}
@@ -638,15 +811,24 @@ MarshallSoft Computing, Inc.:
 \emph{Windows Standard Serial Communications for Visual Basic Programmer's Manual: Compiling Visual Basic 4/5/6 (32-bit) Programs}, 
 \url{http://www.marshallsoft.com/wsc_4vb.pdf}, 2017, letzter Zugriff: 28. 7. 2021
 
-\bibitem[Wikipedia(2021)]{wikivbc} 
-Wikipedia: 
-\emph{Visual Basic Classic}, 
-\url{https://de.wikipedia.org/wiki/Visual_Basic_Classic}, 2021, letzter Zugriff: 27. 7. 2021
 
-\bibitem[Wikipedia(2021)]{wikivbnet} 
-Wikipedia: 
-\emph{Visual Basic .NET}, 
-\url{https://de.wikipedia.org/wiki/Visual_Basic_.NET}, 2021, letzter Zugriff: 27. 7. 2021
+\bibitem[ComputerWeekly.de(2016)]{wikivbc} 
+ComputerWeekly.de: 
+\emph{Visual Basic Classic}, 
+\url{https://www.computerweekly.com/de/definition/Visual-Basic-Classic}, 2016, letzter Zugriff: 27. 7. 2021
+%\bibitem[Wikipedia(2021)]{wikivbc} 
+%Wikipedia: 
+%\emph{Visual Basic Classic}, 
+%\url{https://de.wikipedia.org/wiki/Visual_Basic_Classic}, 2021, letzter Zugriff: 27. 7. 2021
+
+\bibitem[Thomas Theis(2017)]{wikivbnet} 
+Thomas Theis: 
+\emph{Visual Basic .NET (Programmiersprache)}, 
+\url{https://www.it-treff.de/it-lexikon/visual-basic-net-programmiersprache}, 2017, letzter Zugriff: 27. 7. 2021
+%\bibitem[Wikipedia(2021)]{wikivbnet} 
+%Wikipedia: 
+%\emph{Visual Basic .NET}, 
+%\url{https://de.wikipedia.org/wiki/Visual_Basic_.NET}, 2021, letzter Zugriff: 27. 7. 2021
 
 \bibitem[Microsoft(2017)]{mslangstr} 
 Microsoft: 
@@ -803,27 +985,158 @@ in: Stack Exchange Inc (Hrsg.): \emph{Difference between JVM and HotSpot?}
 \bibitem[Fernando Almeida(2018)]{jdzone} 
 Fernando Almeida
 \emph{The JDKs: Which One to Use?}
-\url{https://dzone.com/articles/java-and-the-jdks-which-one-to-use}, 10.12.2018, letzter Zugriff: 29. 7. 2021
+\url{https://dzone.com/articles/java-and-the-jdks-which-one-to-use}, 10.12.2018, letzter Zugriff: 05. 8. 2021
 
 \bibitem[Julius Stiebert(2007)]{jgolem} 
 Julius Stiebert
 \emph{Neue Lizenz für Java Compatibility Kit}
-\url{https://www.golem.de/0708/54044.html}, 10.08.2007, letzter Zugriff: 30. 7. 2021
+\url{https://www.golem.de/0708/54044.html}, 10.08.2007, letzter Zugriff: 05. 8. 2021
 
-\bibitem[Wikipedia(2021)]{jwikijcp} 
-Wikipedia: 
-\emph{Java Community Process}, 
-\url{https://en.wikipedia.org/wiki/Java_Community_Process}, 2021, letzter Zugriff: 30. 7. 2021
 
-\bibitem[Wikipedia(2021)]{jwikiplattform} 
-Wikipedia: 
-\emph{Java-Technologie}, 
-\url{https://de.wikipedia.org/wiki/Java-Technologie}, 2021, letzter Zugriff: 30. 7. 2021
+\bibitem[Oracle Corporation(2021)]{jwikijcp} 
+Java Community Process Management Office: 
+\emph{The Java Community Process(SM) Program - Introduction - Program Overview}, 
+\url{https://jcp.org/en/introduction/overview}, 2021, letzter Zugriff: 30. 7. 2021
+%\bibitem[Wikipedia(2021)]{jwikijcp} 
+%Wikipedia: 
+%\emph{Java Community Process}, 
+%\url{https://en.wikipedia.org/wiki/Java_Community_Process}, 2021, letzter Zugriff: 30. 7. 2021
+
+
+\bibitem[Oracle(2021)]{jwikiplattform} 
+Oracle: 
+\emph{Wo kann ich technische Informationen über Java erhalten?}, 
+\url{https://www.java.com/de/download/help/techinfo_de.html}, 2021, letzter Zugriff: 30. 7. 2021
+%\bibitem[Wikipedia(2021)]{jwikiplattform} 
+%Wikipedia: 
+%\emph{Java-Technologie}, 
+%\url{https://de.wikipedia.org/wiki/Java-Technologie}, 2021, letzter Zugriff: 30. 7. 2021
 
 \bibitem[tutego(2011)]{jtutego7} 
 tutego: 
 \emph{Die ultimativen Links zur Java 7, JDK 7 und OpenJDK 7}, 
 \url{https://www.tutego.de/java/jdk7-Java-SE-7.htm}, 2011, letzter Zugriff: 30. 7. 2021
+
+\bibitem[Ziegenbalg(2018)]{jmzvendor}
+Ziegenbalg, Michael (Hrsg.): 
+\emph{Objektorientierte Programmierung in Java: Software/Engineering mit Java}, BookRix GmbH \& Co. KG 2018
+%https://books.google.de/books?id=0hJnDwAAQBAJ&pg=PT194&lpg=PT194&dq=%22java+vendor%22&source=bl&ots=UiCtXdFZT6&sig=ACfU3U19uqR3rhljz2WU87BEzNp5WEEWCg&hl=de&sa=X&ved=2ahUKEwiOm6LI1MHyAhVzgf0HHWWCALcQ6AF6BAgSEAM#v=onepage&q=%22java%20vendor%22&f=false
+
+\bibitem[Hardware-Zone(2021)]{jhwarchitekt} 
+Hardware-Zone: 
+\emph{Architektur}, 
+\url{https://www.hardware-zone.de/architektur.html}, 2021, letzter Zugriff: 5. 8. 2021
+%https://dir.md/wiki/Datenwort?host=de.wikipedia.org
+%\bibitem[Wikipedia(2021)]{jwikiplattform} 
+%Wikipedia: 
+%\emph{64-Bit-Architektur}, 
+%\url{https://de.wikipedia.org/wiki/64-Bit-Architektur}, 2021, letzter Zugriff: 31. 7. 2021
+
+\bibitem[Informit(2005)]{jwidgets} 
+Pearson Education, Informit
+\emph{Java Widget Fundamentals}, 
+\url{https://www.informit.com/articles/article.aspx?p=354574}, 28.01.2005, letzter Zugriff: 14. 7. 2021
+
+\bibitem[Siddiqi(2020)]{jguisiddiqi} 
+Raahim Siddiqi
+\emph{Java GUI Frameworks Guide}, 
+\url{https://coderslegacy.com/java-gui-frameworks-guide/}, 24.08.2020, letzter Zugriff: 14. 7. 2021
+
+\bibitem[Eclipse Foundation, Inc.(2021)]{jadoptmigrate} 
+Eclipse Foundation, Inc.
+\emph{Architektur}, 
+\url{https://adoptium.net/migration.html}, 2021, letzter Zugriff: 8. 8. 2021
+\bibitem[Azul(2021)]{jazulcompare} 
+Azul
+\emph{OpenJDK vs Oracle JDK - Comparison Table}, 
+\url{https://www.azul.com/products/core/jdk-comparison-matrix/}, 2021, letzter Zugriff: 8. 8. 2021
+
+\bibitem[New Relic(2020)]{jnrstatejava20} 
+New Relic (Ben Evans)
+\emph{The State of Java: Trends And Data For One of the World\'s Most Popular Programming Languages}, 
+\url{https://newrelic.com/blog/nerd-life/state-of-java}, 13.02.2020, letzter Zugriff: 8. 8. 2021
+%https://thenewstack.io/what-tens-of-millions-of-vms-reveal-about-the-state-of-java/
+%https://entwickler.de/java/new-relics-the-state-of-java-adoptopenjdk-jagt-oracles-jdk/
+
+\bibitem[JAXenter(2021)]{jjaxstatejava21} 
+JAXenter (Rod Cope)
+\emph{The state of Java software development in 2021}, 
+\url{https://jaxenter.com/java-development-2021-173870.html}, 13.02.2020, letzter Zugriff: 9. 8. 2021
+
+
+\bibitem[Evans, Gough, Newland(2018)]{joreilvendors}
+Evans, Benjamin J. (Hrsg.): 
+Gough, James (Hrsg.): 
+Newland, Chris (Hrsg.): 
+\emph{Optimizing Java: Practical Techniques for Improving JVM Application Performance}, O'Reilly Media, Inc. 2018
+%https://books.google.de/books?id=beNVDwAAQBAJ&pg=PT40&lpg=PT40&dq=%22ibm%22+j9+production+subscription&source=bl&ots=2c8sTa3FFQ&sig=ACfU3U1rRERjiULc_feJZdmhAazc5MLNFg&hl=de&sa=X&ved=2ahUKEwjx887Z0MnyAhWzg_0HHbyqC3QQ6AF6BAgUEAM#v=onepage&q=%22ibm%22%20j9%20production%20subscription&f=false
+
+\bibitem[Amazon Web Services, Inc.(2021)]{jamzcorretto} 
+[Amazon Web Services, Inc.
+\emph{Amazon Corretto}, 
+\url{https://aws.amazon.com/corretto/}, 24.07.2021, letzter Zugriff: 9. 8. 2021
+
+\bibitem[Eclipse Foundation, Inc.(2021)]{jecladoptium} 
+Eclipse Foundation, Inc.
+\emph{Adoptium - Open source, prebuilt OpenJDK binaries}, 
+\url{https://adoptium.net/}, 13.08.2021, letzter Zugriff: 15. 8. 2021
+
+\bibitem[Azul(2021)]{jazulzulu} 
+Azul
+\emph{Download Azul Zulu Builds of OpenJDK}, 
+\url{https://www.azul.com/downloads/zulu/}, 23.07.2021, letzter Zugriff: 9. 8. 2021
+
+\bibitem[IBM(2021)]{jibmjavasdk} 
+IBM
+\emph{Java SDK}, 
+\url{https://www.ibm.com/support/pages/java-sdk}, 29.07.2021, letzter Zugriff: 9. 8. 2021
+%https://stackoverflow.com/questions/52431764/difference-between-openjdk-and-adoptium-adoptopenjdk
+
+\bibitem[Patel, Korando(2019)]{jadoptfortune} 
+Pratik Patel
+Billy Korando
+\emph{AdoptOpenJDK: An open Java distribution and community you can count on}, 
+\url{https://developer.ibm.com/blogs/adoptopenjdk-an-open-java-distribution-and-community-you-can-count-on/}, 19.01.2019, letzter Zugriff: 10. 8. 2021
+%https://www.ibm.com/de-de/cloud/support-for-runtimes
+
+\bibitem[Oracle Technology Network(2021)]{joraclejdk} 
+Oracle Technology Network
+\emph{Java SE Downloads}, 
+\url{https://www.oracle.com/technetwork/java/javase/downloads/index.html}, 20.07.2021, letzter Zugriff: 9. 8. 2021
+
+\bibitem[Red Hat Developer(2021)]{jredhatjdk} 
+Red Hat Developer
+\emph{OpenJDK Download | Red Hat Developer}, 
+\url{https://developers.redhat.com/products/openjdk/download/}, 27.07.2021, letzter Zugriff: 9. 8. 2021
+
+
+\bibitem[Azul(2020)]{jazulsecure} 
+Azul
+\emph{How to Keep Your Java Applications Secure}, 
+\url{https://www.azul.com/blog/how-to-keep-your-java-applications-secure/}, 20.08.2020, letzter Zugriff: 9. 8. 2021
+
+
+\bibitem[Eclipse Foundation(2021)]{jeclaqavit} 
+Eclipse Foundation
+\emph{Eclipse AQAvit}, 
+\url{https://projects.eclipse.org/projects/adoptium.aqavit}, 2021, letzter Zugriff: 15. 8. 2021
+
+\bibitem[Eclipse Foundation(2021)]{jecltemurin} 
+Eclipse Foundation
+\emph{Eclipse Temurin}, 
+\url{https://projects.eclipse.org/projects/adoptium.temurin}, 2021, letzter Zugriff: 15. 8. 2021
+
+\bibitem[IBM Developer Blog(2021)]{jibmj9adoptium} 
+Mark Stoodley,
+Samir Kamerkar
+\emph{IBM joins Eclipse Adoptium and offers free certified JDKs with Eclipse OpenJ9}, 
+\url{https://developer.ibm.com/blogs/ibm-joins-eclipse-adoptium-and-offers-free-certified-jdks-with-eclipse-openj9/}, 14.04.2021, letzter Zugriff: 10. 8. 2021
+
+
+
+
+%https://www.infoworld.com/article/3627503/eclipse-temurin-java-se-binaries-debut.html
+
 
 %
 
