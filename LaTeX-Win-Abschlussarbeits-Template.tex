@@ -19,6 +19,14 @@
 %------------------------- Margin left/right on Listings
 %\lstset{xleftmargin=10pt,xrightmargin=10pt}
 
+%Paket zum automatischen setzen von Zeilenumbrüchen
+\usepackage{tabularx}
+
+%Balkendiagramm mit pgfplots 1.17
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+
 
 %------------------------ Titelblatt-Layout laden ----------------------------------
 
@@ -515,7 +523,7 @@ Die \ac{vb} 5.0 Version basiert noch nicht auf dem .NET-Framework sondern ist re
 \toprule
 \multicolumn{2}{c}{\large\sffamily Gefürchtetste Programmiersprache 2018}\\ \midrule
 \rowcolor{gray!50}
-Programmiersprache & Unbeliebt\\
+\textbf{Programmiersprache} & \textbf{Unbeliebt}\\
 Visual Basic 6 & 89.9\%\\
 Cobol & 84.1\%\\
 CoffeeScript & 82.7\%\\
@@ -558,6 +566,21 @@ Entsprechend ungeeignet ist \ac{vb} im Jahr 2021 als Grundlage für ein Softwarep
 Erschwerend kommt hinzu, dass der Quellcode des Automic\textsuperscript{\textregistered} Archive Browser in der Auslieferung des aktuellen Automic\textsuperscript{\textregistered} Automation Image 12.3.6\footnote{Quelle: Automic Download Center \url{https://docs.automic.com/downloads} Aufruf: 03.08.2021} nicht mehr enthalten ist. Auch wenn der Automic\textsuperscript{\textregistered} Archive Browser nur noch gepflegt und nicht mehr weiterentwickelt wird \citeg{wpdbmainaaeutil}, kann es durch die Pflege zu Quellcodeanpassungen gekommen sein um die der öffentlichte Quellcode zusätzlich erweitert werden müsste.\\
 Eine Portierung des bestehenden Automic\textsuperscript{\textregistered} Archive Browser \ac{vb} 5.0 Projektes auf .NET Core würde eine Umstellung auf neue Technologien notwendig machen \citeg{vbport}. Der Aufwand hierzu, zusätzlich zur Erweiterung, wird als höher im Vergleich zu einer Neuentwicklung eingeschätzt.\\
 \subsection{Datenstruktur}
+
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Ermittlung Zeichenkodierungen reorganisierter Daten, label=lst:charset_reorg, language=bash]
+$ file -i ./*
+./UC_ACMT.TXT: inode/x-empty; charset=binary
+./UC_AH.IDX:   text/plain; charset=us-ascii
+./UC_AH.TXT:   text/plain; charset=iso-8859-1
+./UC_MELD.TXT: text/plain; charset=iso-8859-1
+./UC_RH.IDX:   text/plain; charset=us-ascii
+./UC_RH.TXT:   text/plain; charset=iso-8859-1
+\end{lstlisting}
+\end{tabular}
+\end{center}
+
 some text
 more 
 and other text
@@ -580,7 +603,7 @@ Abgesehen von technischen Unterschieden wie Unterstützung und direkten Funktions
 \toprule
 \multicolumn{2}{c}{\large\sffamily Verbreitung \ac{jjdk} nach Anbietern 2020}\\ \midrule
 \rowcolor{gray!50}
-Anbieter & \% verwendet\\
+\textbf{Anbieter} & \textbf{\% verwendet}\\
 Oracle & 74.78\\
 AdoptOpenJDK & 7.06\\
 IcedTea & 5.30\\
@@ -596,7 +619,7 @@ Other & 0.10\\ \bottomrule
 \end{tabular}
         \caption[Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020]{Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020\footnotemark}\label{t_jdkspread}
 \end{table}
-  \footnotetext{Quelle: The State of Java: Trends And Data For One of the World\'s Most Popular Programming Languages, \url{https://newrelic.com/blog/nerd-life/state-of-java}, Aufruf: 03.08.2021}
+  \footnotetext{Quelle: New Relic, Inc. - The State of Java: Trends And Data For One of the World\'s Most Popular Programming Languages 2020, \url{https://newrelic.com/blog/nerd-life/state-of-java}, Aufruf: 03.08.2021}
 %}
 
 %--------- TABELLE ENDE ---------------
@@ -610,7 +633,7 @@ Other & 0.10\\ \bottomrule
 \toprule
 \multicolumn{2}{c}{\large\sffamily Verbreitung \ac{jjdk} nach Anbietern 2021}\\ \midrule
 \rowcolor{gray!50}
-Anbieter & \% verwendet\\
+\textbf{Anbieter} & \textbf{\% verwendet}\\
 Oracle Java & 59\\
 Generic OpenJDK & 36\\
 Adopt OpenJDK & 22\\
@@ -662,41 +685,43 @@ Red Hat bietet mit seinem OpenJDK \citeg{jredhatjdk} eine plattformbeschränkte (
 Updates werden von Red Hat mind. quartalsweise veröffentlich und analog zur Roadmap des JDK Project als \ac{jlts} Versionen angeboten.\\
 Red hat bietet für beide Plattformen Support-Optionen an.
 
+\subsection{Ergebnis}
 
 %----------- TABELLE START -------------
-%\afterpage{
+\afterpage{
 \begin{table}[htp] 
 \rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
 \centering
 %\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+\begin{tabularx}{\textwidth}{@{}l *5{>{\centering\arraybackslash}X}@{}}
 \toprule
 \multicolumn{6}{c}{\large\sffamily Vergleich von \ac{jjdk} Anbietern auf Basis Java > 11}\\ \midrule
 \rowcolor{gray!50}
-Eigenschaften & Amazon Corretto & Azul Zulu & Eclipse Temurin & Oracle Java SE & Red Hat OpenJDK\\
+\textbf{Eigenschaften} & \textbf{Amazon Corretto} & \textbf{Azul Zulu} & \textbf{Eclipse Temurin} & \textbf{Oracle Java SE} & \textbf{Red Hat OpenJDK}\\
 Open Source & X & X & X & - & X\\
 Produktiv kostenlos & X & X & X & - & X \\
 Updates kostenlos & X & X & X & - & X \\
-Update Rythmus  & 3 Monate & 3 Monate & 3 Monate & 3 Monate & 3 Monate \\
+Updaterythmus  & 3 Monate & 3 Monate & 3 Monate & 3 Monate & 3 Monate \\
 kommerzieller Support  & nur \ac{jaws} & X & X & X & IBM, Azul \\
 Security-/Bugfixes kostenlos & X & O & X & - & X \\
 Lebenszyklus & 6 Jahre & 8 + 2 Jahr & 6 Jahre & 5 + 3 Jahre & 6 Jahre \\
 Validierung  & TCK & TCK & TCK, AQAvit & TCK & TCK \\
-Betriebssysteme  & Linux, Windows, macOS, Docker & Linux, Windows, macOS, Docker & Linux, Windows, macOS & Linux, Windows, macOS & Linux, Windows, OpenShift \\
+Betriebssysteme  & Linux, Windows, macOS, Docker & Linux, Windows, macOS, Docker & Linux, Windows, macOS & Linux, Windows, macOS & Linux, Windows, Open-Shift \\
 Installationsformate  & 7 & 6 & 5 & 5 & 4 \\
 OpenJFX / JavaFX  & - & X & - & X & - \\
 Java Flight Recorder & X & X & - & X & X \\
 Mission Control & - & X & - & X & X \\
-Besonderheit & cloudready & cloudready & OpenSource Projekt & Maintainer & Integration \\ \bottomrule
-\end{tabular}
+Besonderheit & cloud-ready & JavaFX bundled & Open Source Projekt & Main-tainer & Inte-gration \\ \bottomrule
+\end{tabularx}
         \caption[Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern]{Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern\footnotemark}\label{t_vendorcompare}
 \end{table}
-  \footnotetext{Quellen: \citeg{jredhatjdk}, \citeg{jamzcorretto}, \citeg{jazulzulu}, \citeg{jecltemurin}, \citeg{jibmjavasdk}\\ OpenJDK vs Oracle JDK - Comparison Table, \url{https://www.azul.com/products/core/jdk-comparison-matrix/}, Aufruf: 05.08.2021}
-%}
+  \footnotetext{Quellen: \citeg{jredhatjdk}, \citeg{jamzcorretto}, \citeg{jazulzulu}, \citeg{jecltemurin}, \citeg{jibmjavasdk}\\ Azul 2021: OpenJDK vs Oracle JDK - Comparison Table, \url{https://www.azul.com/products/core/jdk-comparison-matrix/}, Aufruf: 05.08.2021}
+}
 
 %--------- TABELLE ENDE ---------------
 
-\subsection{Ergebnis}
 Nach der Analyse fällt die Entscheidung für Eclipse Temurin. Eclipse Temurin bietet den Durchschnitt an Unterstützung bzgl. Prozessorarchitektur und Betriebssystemen. Eine Cloudunterstützung wird in der Umsetzung als Client- und Desktopanwendung nicht benötigt. Performancetechnisch sind alle Implementierungen im Allgemeinen gleich bis auf IBMs J9. Eine OpenJ9 Variante wurde bis Abgabe der Arbeit jedoch noch nicht TCK-zertifiziert durch die Adoptium Working Group veröffentlicht. Für produktive Umgebungen ist eine TCK-Zertifizierungen und damit eine Java SE Kompatibilität oft aufgrund interner Richtlinien und proprietärer Anwendungen maßgeblich. Für J9 als TCK-zertifizierte Variante existiert nur eine Java 11 Implementation - Keine Java 15 oder 16. Da mit Java 17 bereits im September das nächste LTS Release von Java erscheint und der Sprachstandard von Java 16 näher an Java 17 ist als der des letzten LTS Release Java 11 verringert dies in der Regel spätere Migrationsaufwände.\\ Parallel ist die Verbreitung des AdoptOpenJDK von 2020 auf 2021 in Folge der Lizenzkosten von Oracle Java SE am stärksten gestiegen~(\refg{t_jdkspread}). AdoptOpenJDK wurde bereits von vielen Fortune 500-Unternehmen \citeg{jadoptfortune} eingesetzt. Mit der Eclipse Temurin TCK-Zertifizierung wird sich diese Anzahl vermutlich noch erhöhen, da der maßgebliche Nachteil gegenüber anderen Anbietern abgebaut wurde. Neben der TCK-Zertifizierung wird die bereits unter AdoptOpenJDK angewendete Eclipse-eigene AQAvit Testinfrastruktur\citeg{jeclaqavit} weiterhin auch für Eclipse Temurin angewendet.\\
 Eclipse Temurin ist damit nicht nur free for production sondern auch production-ready, bietet außerhalb des Extended Supports der Konkurrenz  im Schnitt gleich lange Lebenszyklen für die veröffentlichten Versionen ink. Sicherheits-/Wartungspatches und verfügt im Gegensatz zu Azul Zulu über eine langfristige Opensource Strategie. Unter dem Dach der Eclipse Foundation wird dies gesichert durch eine vielzahl namenhafter IT-Konzerne die hinter dem Projekt stehen. Mittels OpenJFX können Erweiterungen auch zu Eclipse Temurin hinzugefügt. Zuletzt steht dieses Gesamtpaket frei zur Verfügung.
 
@@ -726,8 +751,8 @@ Im folgenden werden verschiedene Java GUI-Frameworks dazu betrachtet um eines al
 
 %https://www.mathematik.uni-marburg.de/~thormae/lectures/graphics1/graphics_2_2_ger_web.html#3
 
-Swing ist ein UI-Toolkit welches ursprünglich von Sun entwickelt wurde. Es erweitert das 1. native GUI-Framework \ac{jawt} von 1985 um die Swing-Komponenten und bildet zusammen mit der Java 2D-API, den Unterstützungstechnologien aus Java Accessibility, der Data Transfer-API und \ac{jawt} die \ac{jjfc} zur Erstellung grafischer Benutzeroberflächen \citeg{jthormaehlenswing}. Swing-Komponenten bauen zum Teil auf \ac{jawt} auf und verwenden insbesondere im Event-Handling noch viel \ac{jawt}-Klassen \citeg{jawtevent}. Swing zeichnet sich unter anderem durch eine Vielzahl von einfach zu verwendenen Komponenten und Widgets, Unterstützung von Undo-/Redo-Operationen, 2D Grafik Rendering und veränderbarem Look-and-Feel aus.\\
-Swing ist vollständig in Java geschrieben wodurch es plattformübergreifend nicht von spezifischen Bibliotheken abhängt. Der Nachteil daran ist, dass das Look-and-Feel einer Swing-Oberfläche sich von dem des nativen Betriebssystems unterscheiden kann und Swing im Zweifelsfall von schwerfälligen \ac{jawt}-Komponenten abhängig ist.\\
+Swing \citeg{jorcswing} ist ein UI-Toolkit welches ursprünglich von Sun entwickelt wurde. Es erweitert das 1. native GUI-Framework \ac{jawt} von 1985 um die Swing-Komponenten und bildet zusammen mit der Java 2D-API, den Unterstützungstechnologien aus Java Accessibility, der Data Transfer-API und \ac{jawt} die \ac{jjfc} zur Erstellung grafischer Benutzeroberflächen \citeg{jthormaehlenswing}. Swing-Komponenten bauen zum Teil auf \ac{jawt} auf und verwenden insbesondere im Event-Handling noch viel \ac{jawt}-Klassen \citeg{jawtevent}. Swing zeichnet sich unter anderem durch eine Vielzahl von einfach zu verwendenen Komponenten und Widgets, Unterstützung von Undo-/Redo-Operationen, 2D Grafik Rendering und veränderbarem Look-and-Feel aus.\\
+Swing ist vollständig in Java geschrieben wodurch es plattformübergreifend nicht von spezifischen Bibliotheken abhängt. Der Nachteil daran ist, dass das Look-and-Feel einer Swing-Oberfläche sich von dem des nativen Betriebssystems unterscheiden kann. Im Zweifelsfall ist Swing auch von \ac{jawt}-Komponenten abhängig.\\
 Zeitweise gab es mit Java 9 Überlegungen Swing zukünftig zum Vorteil von JavaFX aus der Java Standard Edition herauszulösen. Mit Java 11 ist das Gegenteil eingetreten und JavaFX wurde ausgegliedert \citeg{joraclesmithfx}. Swing ist damit quasi das einzig verbleibende GUI-Framework der Java Standard Edition. Aufgrund der anhaltend hohen Verbreitung ist es teilweise noch Bestandteil der Lehre und wird gerne als Einstieg in die GUI-Entwicklung unter Java verwendet. Es wird jedoch nicht mehr weiterentwickelt oder gewartet.
 
 \subsection{JavaFX}
@@ -749,7 +774,7 @@ Ehemalig sollte mit JavaFx in Verbindung mit Rich Internet Applications und Java
     \label{fig:javafx_arch}
     \end{center}
   \end{figure}
-  \footnotetext{Quelle: Oracle JavaFX: Getting Started with JavaFX, \url{https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-architecture.htm\#JFXST788}, Aufruf: 16.07.2021}
+  \footnotetext{Quelle: Oracle 2014 - JavaFX: Getting Started with JavaFX, \url{https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-architecture.htm\#JFXST788}, Aufruf: 16.07.2021}
 }
 
 %------------- BILD ENDE ---------------
@@ -757,55 +782,161 @@ Ehemalig sollte mit JavaFx in Verbindung mit Rich Internet Applications und Java
 JavaFX ist als eigenständige Bibliothek entworfen, bringt einen eigenen GUI Builder mit und ermöglicht mittels dem XML-basierten FXML-Format eine Trennung zwischen Darstellung und Logik.
 Durch die große Anzahl unterschiedlicher und ausgereifter Komponenten, der möglichen Gestaltung über \ac{jcss} oder der Unterstützung von 3D Darstellungen entspricht es moderneren Ansprüchen  \citep[1034]{jullenboominsel}. Dabei werden mit unter die Fähigkeiten neuerer Grafikprozessoren durch Hardwarebeschleunigung adäquat unterstützt. Der Umstieg von Swing auf JavaFx wird durch die Swing Integration erleichtert und sanfter gestaltet. Zuletzt ermöglicht JavaFX das Erstellen einer Applikation die keine bestehende Java Installation mehr vorausetzt indem bei der Paketierung bereits alles Notwendige mit eingebunden wird.
 
-Mit Java 11 entschiedt sich Oracle die Weiterentwicklung von JavaFX Open Source in das OpenJFX Projekt unter \ac{jgpl}v2 mit Classpath Exception auszugliedern und aus der Java Standard Edition zu entfernen. Innerhalb des OpenJFX Projektes ist es das Ziel verschiedener Unternehmen und Einzelpersonen gemeinschaftlich ein vollständiges, modernes und effiziertes GUI-Framework bereit zu stellen.
+Mit Java 11 entschiedt sich Oracle die Weiterentwicklung von JavaFX Open Source in das OpenJFX Projekt \citeg{jopenjfxpro}  unter \ac{jgpl}v2 mit Classpath Exception auszugliedern und aus der Java Standard Edition zu entfernen. Innerhalb des OpenJFX Projektes ist es das Ziel verschiedener Unternehmen und Einzelpersonen gemeinschaftlich ein vollständiges, modernes und effiziertes GUI-Framework bereit zu stellen.
 \subsection{SWT}
-Created by IBM for Eclipse, they seemed to think that Swing was not suited for Eclipse at the time.
-
-By itself is pretty low-level, and it uses the platform\'s native widgets through JNI. It is not related to Swing and AWT at all.
-
-SWT is an open-source widget toolkit for Java designed to provide efficient, portable access to the user- interface facilities of the operating systems on which it is implemented.
-
-more OS native
-faster than swing
-
-Pros SWT:
-
-uses native elements when possible, so always native behavior
-supported by eclipse, gui editor VEP (VEP also supports Swing and AWT)
-large number of examples online
-has an integrated awt/swt bridge to allow use of awt and swing components
-Cons SWT:
-
-requires native libraries for each supported system
-may not support every behavior on all systems because of native resources used (hint options)
-managing native resources, while native components will often be disposed with their parent other resources such as Fonts have to be manually released or registered as dispose listener to a component for automatic release.
+Das \ac{jswt} \citeg{jswtecl} ist ein von IBM, ursprünglich für die Entwicklungsumgebung Eclipse, als Ersatz zu \ac{jawt} entwickeltes GUI-Framework welches die nativen grafischen Elemente des darunterliegenden Betriebssystems über das \ac{jjni} verwenden kann. \ac{jswt} erfordert entsprechend keinerlei Abhängigkeiten zu \ac{jawt}/Swing. Jedoch zu den verwendeten nativen Elementen des Betriebssystemens und muss daher Applikationen immer mit systemspezifischen, dynamischen Bibliothek ausliefern. Die native Anbindung selbst führte Anfangs dazu, dass \ac{jswt} auf dem Zielsystem Windows deutlich performanter als Swing war \citep[1036]{jullenboominsel}. Plattformübergreifend kann dieser Vorteil jedoch schnell zu einem Nachteil werden, da die Voraussetzungen an die nativen UI-Elemente des Systems zumeist nicht gegeben sind und nachempfunden werden müssen. Parallel kann dies dazu führen, dass es im Zuge der Speicherverwaltung zu einem Mehraufwand in der Entwicklung kommen kann.\\ \ac{jswt} verfügt über eine breite Palette an Widgets und bietet die Möglichkeit optional \ac{jawt}/Swing Komponenten zu integrieren \citeg{jeplswingawtinteg}. Durch die Verwendung nativer UI-Elemente des Betriebssystems kann sich die Oberfläche und die Handhabung einer \ac{jswt}-Applikation mehr an die Optik und das Bedienerlebnis des Betriebssystemens anpassen. Die Entwicklung von \ac{jswt} wird, seit deren Gründung, durch die Eclipse Foundation fortgeführt. \ac{jswt} ist von dieser als Open Source unter der \ac{jepl} 2.0 lizenziert und gestattet damit in der Regel eine kommerzielle Nutzung.
 
 \subsection{Ergebnis}
-Unter Swing ist die Umsetzung der Arbeit deutlich aufwendiger als unter JavaFX oder \ac{jswt}, da eine TreeTable-Komponente kein elementarer Bestandteil von Swing ist. Eine solche Komponente müsste in Swing mit entsprechendem Aufwand eigens erstellt, erweitert und gewartet werden. Mit der Einstellung der Weiterentwicklung von Swing und der Definition von JavaFX als Nachfolger durch Oracle sollten Neuentwicklungen in der Regel nicht mehr unter Swing durchgeführt werden. Aus diesen Gründen besteht eine Entscheidung unter den vorgestellten Frameworks nur zwischen \ac{jswt} und JavaFX. Die ausführbaren Übersetzungen beider Frameworks können nicht plattformunabhängig verwendet werden. In verschiedenen Veröffentlichungen zu dem Thema wird davon ausgegangen, dass sich JavaFX durchsetzen wird \citep[1105]{jschildtninith} \citep[1036]{jullenboominsel}. Hintergrund sind die neuere Architektur und der damit einhergehende Funktionsumfang. Insbesondere auch für mobile oder eingebettete Systeme.\\
-Vergleicht man die Aktivität der Repositories weist \ac{jswt} \citeg{jeclswt} mehr als doppelt so viel wie JavaFX \citeg{jjfxcommit}  auf. Wobei zu sehen ist, dass etwa die Hälfte der Commits des \ac{jswt} Repositorys dem Eclipse Releng Bot entstammen und damit keine direkt Aktivität für das Repository darstellen. Eine Aktivität ist demnach für beide Frameworks ausreichend gegeben.\\
-Da im Codevergleich in der Regel aber weniger Zeilen für eine JavaFX-Anwendung als für eine \ac{jswt}-Anwendung benötigt werden, \ac{jswt} eine abstraktere Logik aufweist und JavaFX das modernere Framework an sich ist, fällt die Wahl auf JavaFX als GUI-Framework.
+Unter Swing ist die Umsetzung der Arbeit deutlich aufwendiger als unter JavaFX oder \ac{jswt}, da eine TreeTable-Komponente kein elementarer Bestandteil von Swing ist. Eine solche Komponente müsste in Swing mit entsprechendem Aufwand eigens erstellt, erweitert und gewartet werden. Mit der Einstellung der Weiterentwicklung von Swing und der Definition von JavaFX als Nachfolger durch Oracle sollten Neuentwicklungen in der Regel nicht mehr unter Swing durchgeführt werden. Aus diesen Gründen wird Swing für die Auswahl eines GUI-Frameworks nicht weiter verfolgt.\\Eine durch JavaFX oder \ac{jswt} übersetzte Applikation kann in beiden Fällen nicht plattformunabhängig verwendet werden. In verschiedenen Veröffentlichungen zu dem Thema wird davon ausgegangen, dass sich JavaFX durchsetzen wird \citep[1105]{jschildtninith}, \citep[1036]{jullenboominsel}. Hintergrund sind der geringere Entwicklungsaufwand, die neuere Architektur sowie der damit einhergehende Funktionsumfang. Insbesondere auch für mobile oder eingebettete Systeme.\\
+Vergleicht man die Aktivität der Repositories weist \ac{jswt} \citeg{jeclswt} mehr als doppelt so viel wie JavaFX \citeg{jjfxcommit}  auf. Wobei zu sehen ist, dass etwa die Hälfte der Commits des \ac{jswt} Repositorys dem Eclipse Releng Bot entstammen und damit keine direkt Aktivität für das Repository darstellen. Eine aktive Weiterentwicklung ist für beide Frameworks gegeben.\\
+Da im Codevergleich in der Regel weniger Zeilen für eine JavaFX-Anwendung als für eine \ac{jswt}-Anwendung benötigt werden, \ac{jswt} eine abstraktere Logik aufweist, \ac{jswt} durch die native Anbindung zu einer komplexeren Entwicklung sowie zu höherem Portieraufwand führen kann und JavaFX das modernere Framework an sich ist, fällt die Wahl auf JavaFX als GUI-Framework.
 %https://www.hameister.org/JavaSwingTreeTable.html
 
 
 \section{Java Dateieingangsverarbeitung}
 
+In Java gibt es innerhalb der Pakete \texttt{java.io} und \texttt{java.nio.file} unterschliedliche Klassen deren Funktionalität sich je nach gewünschter Dateioperation mehr oder weniger eignet.
+Um das Spektrum geeigneter Klassen für die jeweiligen Dateioperationen einzuschränken werden anhand der Fragestellungen aus Abb. \ref{t_fileopspossibles} die einzusetzenden Klassen ermittelt.
+
+%----------- TABELLE START -------------
+\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{5cm} *2{>{\centering\arraybackslash}X}@{}}
+\toprule
+\multicolumn{3}{c}{\large\sffamily Definition Dateioperation und zugehörige Klassen/Methoden}\\ \midrule
+\rowcolor{gray!50}
+\textbf{Fragen} & \textbf{Strukturdaten} & \textbf{Protokolle} \\
+Ist der Zugriff lesend, schreiben oder beides? & lesend & lesend \\
+Handelt es sich um Binär- oder Textdaten? & Text & Text \\
+Sind die Daten klein oder groß? & groß & klein \\
+Sollen die Daten zeilen-, zeichen- oder byteweise verarbeitet werden? & zeilenweise & byteweise \\
+Soll von Anfang oder ab einer bestimmten Position begonnen werden?  & Anfang & Position \\
+Sollen Daten in einer Schleife oder Anweisungen verarbeitet werden?  & Schleife & Anweisung \\ 
+Klassen/Methoden\footnotemark  & \texttt{InputStreamReader BufferedReader BufferedReader.readLine Files.newBufferedReader} & \texttt{FileChannel} \\ \bottomrule
+\end{tabularx}
+        \caption[Fragestellungen bzgl. Dateioperationen zur Ermittlung einsetzbarer Klassen oder Methoden]{Fragestellungen bzgl. Dateioperationen zur Ermittlung einsetzbarer Klassen oder Methoden}\label{t_fileopspossibles}
+\end{table}
+  \footnotetext{Quellen: \citeg{jwoltfileop1}, \citeg{jwoltfileop5}}
+}
+
+\subsection{Klasse/Methode für Protokolle}
+\begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
+\item Wenn Daten nur gelesen werden müssen, sind lediglich Reader-Klassen/-oder Methoden notwendig.
+\item Für rein textbasierte Daten müssen Binäroperationen nicht zwangsweise herangezogen werden.
+\item Kleine, vordefinierte Datenbestände ab einer bestimmten Position sollten innerhalb einer Anweisung in einem Stück gelesen werden um Zwischenschritte in der Verarbeitung zu vermeiden und die Zugriffe auf das Dateisystem möglichst konstant zu halten.
+\end{itemize}
+Hierdurch lassen sich die relevanten Klassen für die Strukturdaten auf die unter Abb. \ref{t_fileopspossibles} Klassen/Methoden eingrenzen. Die Analyse der Dateioperationen für die Protokolldaten hat die Klasse \texttt{FileChannel} zum lesen der Protokolle aus den Reorganisationsdateien ergeben.
+
+\subsection{Klasse/Methode für Strukturdaten}
+\begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
+\item Wenn Daten nur gelesen werden müssen, sind lediglich Reader-Klassen/-oder Methoden notwendig.
+\item Für rein textbasierte Daten müssen keine Binäroperationen herangezogen werden.
+\item Große Datenbestände sollten gepuffert (buffered) verarbeitet werden, sofern die Verarbeitungseinheit nicht der Blockgröße selbst entspricht oder ein Vielfaches davon ist. Bei gepufferten Dateioperationen werden die Daten vom Dateisystem in der unterliegenden Schicht blockweise verarbeitet und in einen Zwischespeicher (Puffer) geladen. Das verringert die effektiven Zugriffe auf das Dateisystem und erhöht somit die Geschwindigkeit, da die anschließende Verarbeitung aus dem Arbeitsspeicher deutlich schneller ist als aus dem Dateisystem. Optimalerweise sollte die Blockgröße zu der des Dateisystems passen. Durch eine Doppel- oder Dreifachpufferung kann der Effekt noch erhöht werden. Die intern verwendete Standard-Blockgröße von den aufgeführten Klassen beträgt in Java 8 Kilobyte.
+\item Zeilenweises auslesen der Daten verringert die I/O-Zugriffe und erhöht damit die Performanz.
+\item Wenn Daten aus einer Quelle von Anfang an gelesen werden sollen wird von der eingesetzten Klasse keine Positionierungsmethode verlangt.
+\item Wenn Daten in einer Schleife verarbeitet werden, sollten insbesondere große Daten nicht ungefiltert in Datenstrukturobjekte überführt werden um den Arbeitsspeicher zu schonen.
+\end{itemize}
+
+Die Verarbeitung der Strukturdaten erfolgt mittels \texttt{BufferedReader.readLine}  am schnellsten (vgl. Abb. \ref{fig:fileopsek}), weshalb das lesen der Strukturdaten aus den Reorganisationsdateien durch \texttt{BufferedReader.readLine} umgesetzt wird.
+
+
+%--------- TABELLE ENDE ---------------
+
+%http://www.statistiker-wg.de/pgf/tutorials/barplot.htm
+%\afterpage{
+%  \begin{figure}
+%    \begin{center}
+%\definecolor{myblue}{HTML}{92dcec}
+%\begin{tikzpicture}
+% 
+%  \draw (0cm,0cm) -- (11cm,0cm);  %Abzisse
+%  \draw (0cm,0cm) -- (0cm,-0.1cm);  %linkes Ende der Abzisse
+%  \draw (11cm,0cm) -- (11cm,-0.1cm);  %rechtes Ende der Abzisse
+%  
+%  \draw (-0.1cm,0cm) -- (-0.1cm,4.5cm);  %Ordinate
+%  \draw (-0.1cm,0cm) -- (-0.2cm,0cm);  %unteres Ende der Ordinate
+%  \draw (-0.1cm,4.5cm) -- (-0.2cm,4.5cm) node [left] {Min.};  %oberes Ende der Ordinate
+%
+%  \foreach \x in {1,...,4}  %Hilfslinien
+%    \draw[gray!50, text=black] (-0.2 cm,\x cm) -- (11 cm,\x cm) 
+%      node at (-0.5 cm,\x cm) {\x};  %Beschriftung der Hilfslinien
+%
+%    \node at (7.5cm,5cm) {Zeit zum einlesen von 100 MByte};  %Überschrift
+%
+%  \foreach \x/\y/\seconds/\country in {0.5/3.16/190/FileInputStream,  %\x ist Anfang der Säulen
+%                              2/3.16/190/Files.newInputStream,  %\y ist Höhe der Säulen
+%                              3.5/0.0045/0.27/BufferedInputStream,
+%                              5/0.063/3.8/InputStreamReader,
+%                              6.5/0.021/1.3/BufferedReader,
+%                              8/0.01/0.6/BufferedReader.readLine,
+%                              9.5/0.021/1.3/Files.newBufferedReader}
+%    {
+%     \draw[fill=myblue] (\x cm,0cm) rectangle (1cm+\x cm,\y cm) %die Säulen
+%       node at (0.5cm + \x cm,\y cm + 0.3cm) {\seconds\ s}; %die Prozente über den Säulen
+%     \node[rotate=45, left] at (0.6 cm +\x cm,-0.1cm) {\country}; %Säulenbeschriftung
+%    };
+%
+%\end{tikzpicture}
+%        \caption[Vergleich der Zeiten zum Einlesen einer 100 Millionen Byte großen Datei in Java]{Vergleich der Zeiten zum Einlesen einer 100 Millionen Byte großen Datei in Java\footnotemark}
+%    \label{fig:fileopmin}
+%    \end{center}
+%  \end{figure}
+%  \footnotetext{Quelle: Sven Woltmann - Dateien in Java, Teil 1: Übersicht Performance, \url{https://www.happycoders.eu/de/java/dateien-einfach-schnell-lesen/\#Ubersicht_Performance}, Aufruf: %16.07.2021}
+%}
+
+%\afterpage{
+  \begin{figure}
+    \begin{center}
+\definecolor{myblue}{HTML}{92dcec}
+\begin{tikzpicture}
+ 
+  \draw (0cm,0cm) -- (6.5cm,0cm);  %Abzisse
+  \draw (0cm,0cm) -- (0cm,-0.1cm);  %linkes Ende der Abzisse
+  \draw (6.5cm,0cm) -- (6.5cm,-0.1cm);  %rechtes Ende der Abzisse
+  
+  \draw (-0.1cm,0cm) -- (-0.1cm,4.5cm);  %Ordinate
+  \draw (-0.1cm,0cm) -- (-0.2cm,0cm);  %unteres Ende der Ordinate
+  \draw (-0.1cm,4.5cm) -- (-0.2cm,4.5cm) node [left] {Sek.};  %oberes Ende der Ordinate
+
+  \foreach \x in {1,...,4}  %Hilfslinien
+    \draw[gray!50, text=black] (-0.2 cm,\x cm) -- (6.5 cm,\x cm) 
+      node at (-0.5 cm,\x cm) {\x};  %Beschriftung der Hilfslinien
+
+    \node at (7.5cm,5cm) {Zeit zum einlesen von 100 MByte};  %Überschrift
+
+  \foreach \x/\y/\country in {
+%                              0.5/0.27/BufferedInputStream,  %\x ist Anfang der Säulen
+                              0.5/3.8/InputStreamReader,  %\y ist Höhe der Säulen
+                              2/1.3/BufferedReader,
+                              3.5/0.6/BufferedReader.readLine,
+                              5/1.3/Files.newBufferedReader}
+    {
+     \draw[fill=myblue] (\x cm,0cm) rectangle (1cm+\x cm,\y cm) %die Säulen
+       node at (0.5cm + \x cm,\y cm + 0.3cm) {\y\ s}; %die Prozente über den Säulen
+     \node[rotate=45, left] at (0.6 cm +\x cm,-0.1cm) {\country}; %Säulenbeschriftung
+    };
+
+\end{tikzpicture}
+        \caption[Vergleich der Zeiten zum Einlesen einer 100 Millionen Byte großen Datei in Java (buffered)]{Vergleich der Zeiten zum Einlesen einer 100 Millionen Byte großen Datei in Java (buffered)\footnotemark}
+    \label{fig:fileopsek}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Sven Woltmann - Dateien in Java, Teil 1: Übersicht Performance, \url{https://www.happycoders.eu/de/java/dateien-einfach-schnell-lesen/\#Ubersicht_Performance}, Aufruf: 16.07.2021}
+%}
+
 \chapter{Implementierung}
-some textmore
-and other textmore
-and other textmore
-and other textmore
-and other textmore
-and other textmore
-and other textmore
-and other textmore
-and other textmore
-and other text
 %jlink
-https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
+%https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
 \section{Module}
 
 \section{Entwurfsmuster}
 Model-View-Controller(MVC)
+
 Observer Design Pattern
 %ggf. https://www.philipphauer.de/study/se/design-pattern/observer.php
 \section{Klassendiagramm}
@@ -845,6 +976,8 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{jjfc}[JFC]{Java Foundation Classes}
 \acro{jcss}[CSS]{Cascading Style Sheets}
 \acro{jswt}[SWT]{Standard Widget Toolkit}
+\acro{jjni}[JNI]{Java Native Interface}
+\acro{jepl}[EPL]{Eclipse Public License}
 \acro{ghgb}[HGB]{Handelstgesetzbuch}
 \acro{ggodb}[GoDB]{Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form sowie zum Datenzugriff}
 \acro{gitsig}[ITSiG]{IT-Sicherheitsgesetz}
@@ -1163,6 +1296,16 @@ OpenJFX Project
 \emph{JavaFX}, 
 \url{https://openjfx.io/}, 2021, letzter Zugriff: 16. 8. 2021
 
+\bibitem[Eclipse Foundation(2021)]{jswtecl} 
+Eclipse Foundation
+\emph{SWT: The Standard Widget Toolkit}, 
+\url{https://www.eclipse.org/swt/}, 2021, letzter Zugriff: 16. 8. 2021
+
+\bibitem[Oracle(2021)]{jorcswing} 
+Oracle
+\emph{Trail: Creating a GUI With Swing}, 
+\url{https://docs.oracle.com/javase/tutorial/uiswing/}, 2021, letzter Zugriff: 15. 8. 2021
+
 \bibitem[Smith(2018)]{joraclesmithfx} 
 Donald Smith
 \emph{The Future of JavaFX and Other Java Client Roadmap Updates}, 
@@ -1179,6 +1322,12 @@ Frederik Kirsch
 \emph{JavaFX}, 
 \url{https://training.cherriz.de/cherriz-training/1.0.0/oberflaechen/javafx.html}, 2021, letzter Zugriff: 15. 8. 2021
 
+
+\bibitem[Eclipse Contributors(2021)]{jeplswingawtinteg} 
+Eclipse Contributors and others
+\emph{Help Eclipse Platform: Package org.eclipse.swt.awt}, 
+\url{https://help.eclipse.org/2021-06/index.jsp?topic=\%2Forg.eclipse.platform.doc.isv\%2Freference\%2Fapi\%2Forg\%2Feclipse\%2Fswt\%2Fawt\%2Fpackage-summary.html&cp\%3D2_1_0_192}, 2021, letzter Zugriff: 16. 8. 2021
+
 \bibitem[Eclipse Foundation(2021)]{jeclswt} 
 Eclipse Foundation, Inc.
 \emph{eclipse.platform.swt.git - stats}, 
@@ -1191,10 +1340,15 @@ GitHub, Inc.
 \url{https://github.com/openjdk/jfx/graphs/commit-activity}, 2021, letzter Zugriff: 16. 8. 2021
 %258 (254 + 4 of the week of 22.08)
 
+\bibitem[Woltmann(2019)]{jwoltfileop1} 
+Sven Woltmann
+\emph{Dateien in Java, Teil 1: Dateien komfortabel und schnell lesen}, 
+\url{https://www.happycoders.eu/de/java/dateien-einfach-schnell-lesen/}, 19.11.2019, letzter Zugriff: 18. 8. 2021
 
-
-
-
+\bibitem[Woltmann(2020)]{jwoltfileop5} 
+Sven Woltmann
+\emph{Dateien in Java, Teil 6: FileChannel, ByteBuffer, Memory-mapped I/O, Locks}, 
+\url{https://www.happycoders.eu/de/java/strukturierte-daten-schreiben-lesen-dataoutputstream-datainputstream/}, 26.02.2020, letzter Zugriff: 20. 8. 2021
 
 
 \bibitem[Petri(2021)]{jawtevent} 
