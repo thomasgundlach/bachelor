@@ -34,7 +34,7 @@
 \newcommand{\refg}[1]{vgl. \ref{#1}} %Verknüpfungen
 %---------------------------- Titeldefinitionen --------------------------------------
 
-\newcommand{\vorname}{Thomas}
+\newcommand{\vorname}{Jan Thomas}
 \newcommand{\nachname}{Gundlach}
 \newcommand{\matrikelnummer}{2038884}
 
@@ -42,10 +42,10 @@
 				\Large Anhand archivierter Daten}
 
 \newcommand{\erstpruef}{Prof. Dr. Larissa Putzar}
-\newcommand{\zweitpruef}{Prof. Vorname Nachname}
+\newcommand{\zweitpruef}{Dipl.Ing. (fh) Thorsten Wagener}
 
 %\date{vorläufige Fassung vom \today}   % praktisch für Vorab-Versionen. 
-\date{\sffamily Hamburg, 27. 8. 2021}  % Abgabedatum!
+\date{\sffamily Hamburg, 31. 8. 2021}  % Abgabedatum!
 
 %--------------------------------------------------------------------------------------
 %----------------------------- hier gehts los! --------------------------------------
@@ -113,7 +113,7 @@ Innerhalb der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript
 Der Automic\textsuperscript{\textregistered} Archive Browser, das bestehende Betrachtungswerkzeug für reorganisierte Protokolle der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation, ist für eine flachen Recherche ausgelegt. Die dem zu Grunde liegenden Datenstrukturen der reorganisierte Protokolle sind entsprechend aufgebaut und nicht dokumentiert. Auch bietet der Automic\textsuperscript{\textregistered} Archive Browser keine zugängliche oder anwendbare API, die zum einlesen der Protokolle wiederverwendet oder auf die aufgebaut werden könnte.\\
 Parallel lässt sich die Abbildung der Relationen, die sich durch Ausführung verschiedener Geschäftsprozesse zwischen Teilprozessen und Aktivitäten in den Automic\textsuperscript{\textregistered} Automation Protokollen ergibt, bspw. nicht in einem binären Suchbaum überführen. Hintegrund ist, dass sich über alle Relationen hinweg keine allgemeingültige oder abstrakte Entscheidungsregel ableiten lässt in welchen Knoten ein Protokoll eingefügt werden muss. Zum anderen sind pro Teilbaum theoretisch beliebig viele Knoten möglich.
 
-Daneben ergeben sich durch die Entwicklung in Java mehrere GUI-Framworks mit denen die grafische Darstellung realisiert werden kann. Diese verfügen über ganz unterschiedliche Vor- und Nachteile die gegeneinander abgewägt werden müssen. Dadurch dass die Protokollstände mehrerer Tage schnell eine fünf- oder sechsstellige Protokollanzahl erreichen können, muss das Framework grundsätzlich zur stabilben und performanten Darstellung großer Datenmengen geeignet sein.
+Daneben ergeben sich durch die Entwicklung in Java mehrere GUI-Frameworks mit denen die grafische Darstellung realisiert werden kann. Diese verfügen über ganz unterschiedliche Vor- und Nachteile die gegeneinander abgewägt werden müssen. Dadurch dass die Protokollstände mehrerer Tage schnell eine fünf- oder sechsstellige Protokollanzahl erreichen können, muss das Framework grundsätzlich zur stabilben und performanten Darstellung großer Datenmengen geeignet sein.
 
 Unter den beschrieben Aspekten wird die praktische Umsetzung eines relationsorientierten Betrachungswerkzeuges für reorganisierte Protokolle anhand von Automic\textsuperscript{\textregistered} Automation vorgestellt. Vordergründig wird die grundlegende Entwicklung des Betrachungswerkzeuges durchgeführt.\citeg{sowodniok}.
 
@@ -221,7 +221,7 @@ Vertrauensdienste und elektronische Signaturen (VDG, IVT)\\
 Vorschriften aus dem Bank- und Versicherungsrecht (VAG, VAIT)\\
 Zivil- und Strafrecht (ZPO, BGB, StGB, StPO)
 
-Im folgenden soll auf die Auswirkungen hieraus auf die Protokolldaten aus Geschäftsprozessen innerhalb des Versicherungswesen eingegangen werden.
+Im Folgenden soll auf die Auswirkungen hieraus auf die Protokolldaten aus Geschäftsprozessen innerhalb des Versicherungswesen eingegangen werden.
 
 \subsection{VAIT}
 In der Versicherungswirtschaft werden annährend alle Geschäftsprozesse EDV-gestützt abgewickelt. Entsprechend empfindlich treffen, insbesondere zentrale, Störungen der IT-Systeme den Betrieb und können schnell ein geschäftskritisches Ausmaß annehmen.
@@ -245,7 +245,7 @@ Für die Bereiche die zu \ac{kritis} zählen muss der Geltungsbereich gemäß \ac{gk
 
 %Diese sind unter anderem Prozesse- und Änderungsdokumentation (2.7), Geschäftsprozesse durch IT-Systeme/-Prozesse zu unterstützen (2.8), sicherstellen und überprüfen der Eignung der IT-Prozesse zum erreichen der Schutzziele (2.15), Berichtspflichten bzgl. Steuerungsprozessen (3.17), Überblick über bspw. Geschäftsprozesse sowie deren Abhängigkeiten und Schnittstellen (3.20), Informationssicherheitsrichtlinien zur Protokollierung (4.27), Analyse und angemessene Nachsorgemaßnahmen betroffener Geschäftsprozesse bei Informationssicherheitsvorfällen (4.31), Prozesse zur Protokollierung und Überwachung (5.40), manipulationssichere Implementierung der Protokollierung (5.41), Protokollierung der Systemaktivität (6.51), Prozess zur Analyse möglicher Korrelationen (7.63) oder Nachweiserbringung gemäß BSI-KritisV (9.72).
 
-\textbf{Im folgenden die verwiesenen Auszüge aus der \ac{gvait} dazu:}
+\textbf{Im Folgenden die verwiesenen Auszüge aus der \ac{gvait} dazu:}
 
 \ac{gvait} Abschnitt 2. IT-Governance Punkt 7:
 \begin{quote}
@@ -392,7 +392,7 @@ Laut \ac{bbsi} müssen die Betreiber Kritischer Infrastrukturen
 
 Laut \ac{bbsi} §8a Absatz 3 muss der Nachweis alle zwei Jahre durch ein KRITIS-Audit (Sicherheitsaudit, Prüfung oder Zertifizierung) erbracht werden.
 %https://www.fides-online.de/themen/7-schritte-so-laeuft-ein-umfassendes-kritis-audit-ab#:~:text=Die%20gesetzliche%20Pflicht%2C%20alle%20zwei,das%20Delta%20zum%20Pr%C3%BCfma%C3%9Fstab%20beschreibt.
-Die Prozessdokumentation ist unter anderem ein regulatorisches Erfordernis und Grundlage der Auditierung. Der Auditor kann sich darüber hinaus Protokolle von Prozessen zeigen lassen um beispielsweise die Einhaltung der Prozessdokumentation zu überprüfen.
+Die Prozessdokumentation ist unter anderem ein regulatorisches Erfordernis und Grundlage der Auditierung. Der Auditor kann sich darüber hinaus Protokolle von Prozessen und deren Abhängigkeiten zeigen lassen um beispielsweise die Einhaltung der Prozessdokumentation zu überprüfen.
 \subsection{DSGVO}
 
 Mit der \ac{gdsgvo} wird der rechtliche Rahmen zur Verarbeitung von personenbezogenen Daten durch öffentliche Einrichtungen und Unternehmen im europäischen Binnenmarkt harmonisiert \citeg{rintersoftdsgvo}.
@@ -434,7 +434,7 @@ Eine Java Implementierung ist eine Implementierung der \ac{jjvm} auf einer spezi
 \section{GUI-Framework}
 %https://coderslegacy.com/java-gui-frameworks-guide/
 
-Ein \ac{jgui} Framework \citeg{jguisiddiqi}  stellt mittels einer Bibliothek typische Steuerelemente zur Erstellung von grafischen Benutzeroberflächen zur Verfügung über die ein Endanwender mit einer dazugehörigen Anwendung interagieren kann. Dabei kappselt das Framework von primitiven, grafischen Objekten des Betriebssystems bis hin zu eigenen grafischen Elementen in geeignete Strukturen bzw. Klassen, erweitert diese um Funktionalität und stellt sie als Steuerelemente zur Verfügung. Für letzteres verfügt das Framework in der Regel über eine eigene Render-Engine. Mittels des Frameworks können so innerhalb integrierter Entwicklungsumgebungen oder auch unabhängig davon einfach grafische Benutzeroberflächen geschaffen werden, da die Steuerelemente oder Widgets \citeg{jwidgets} hierzu nicht mehr eigenständig entwickelt werden müssen.\\
+Ein \ac{jgui} Framework \citeg{jguisiddiqi}  stellt mittels einer Bibliothek typische Steuerelemente zur Erstellung von grafischen Benutzeroberflächen zur Verfügung über die ein Endanwender mit einer dazugehörigen Anwendung interagieren kann. Dabei kapselt das Framework von primitiven, grafischen Objekten des Betriebssystems bis hin zu eigenen grafischen Elementen in geeignete Strukturen bzw. Klassen, erweitert diese um Funktionalität und stellt sie als Steuerelemente zur Verfügung. Für letzteres verfügt das Framework in der Regel über eine eigene Render-Engine. Mittels des Frameworks können so innerhalb integrierter Entwicklungsumgebungen oder auch unabhängig davon einfach grafische Benutzeroberflächen geschaffen werden, da die Steuerelemente oder Widgets \citeg{jwidgets} hierzu nicht mehr eigenständig entwickelt werden müssen.\\
 Viele \ac{jgui} Frameworks verfügen darüber hinaus über einen Designer zur mausgesteuerten Erstellung sowie einen Layoutmanager zur korrekten Anordnung der Steuerelemente.
 
 \chapter{Analyse}
@@ -445,7 +445,7 @@ Viele \ac{jgui} Frameworks verfügen darüber hinaus über einen Designer zur mausg
 \subsubsection{Benutzeranforderungen}
 \subsubsection{Funktionsumfang Implementierung}
 \subsection{Weiterentwicklung}
-In der Auslieferung des Automic\textsuperscript{\textregistered} Automation Image gab es bis zu der Version 11.2.6 den Ordner TOOLS\textbackslash SOURCE\textbackslash UCYBARBR mit dem Quellcode des Automic\textsuperscript{\textregistered} Archive Browser \citeg{wpdbmainaaeutil} in Microsoft \ac{vb}.\\
+Vor einer Neuentwicklung wurde die Weiterentwicklung der bestehenden Lösung betrachtet. In der Auslieferung des Automic\textsuperscript{\textregistered} Automation Image gab es bis zu der Version 11.2.6 den Ordner TOOLS\textbackslash SOURCE\textbackslash UCYBARBR mit dem Quellcode des Automic\textsuperscript{\textregistered} Archive Browser \citeg{wpdbmainaaeutil} in Microsoft \ac{vb}.\\
 An der Struktur des Projektes \citeg{vbmarshall} und der Format-Spezifikation im Quellcode (VERSION 5.0) ist zu erkennen, dass es sich um ein \ac{vb} 5.0 Projekt handelt.\\
 
 \begin{center}
@@ -492,18 +492,63 @@ Die \ac{vb} 5.0 Version basiert noch nicht auf dem .NET-Framework sondern ist re
 
 %----------- BILD ANFANG -------------
 %https://entwickler.de/dotnet/c-f-und-visual-basic-strategiewechsel-bei-microsofts-programmiersprachen/
+%\afterpage{
+%  \begin{figure}
+%    \begin{center}
+%      \includegraphics[scale=0.55]{bilder/vbdreaded.jpg}
+%        \caption[Liste der Programmiersprachen die Entwickler 2018 lieber nicht einsetzen]{Liste der Programmiersprachen die Entwickler lieber nicht einsetzen\footnotemark}
+%    \label{fig:cited_img}
+%    \end{center}
+%  \end{figure}
+%  \footnotetext{Quelle: Stackoverflow Developer Survey Results 2018 \url{https://insights.stackoverflow.com/survey/2018\#technology-_-most-loved-dreaded-and-wanted-languages} Aufruf: %28.07.2021}
+%}
+
+%------------- BILD ENDE ---------------
+
+
+%----------- TABELLE START -------------
 \afterpage{
-  \begin{figure}
-    \begin{center}
-      \includegraphics[scale=0.55]{bilder/vbdreaded.jpg}
-        \caption[Liste der Programmiersprachen die Entwickler 2018 lieber nicht einsetzen]{Liste der Programmiersprachen die Entwickler lieber nicht einsetzen\footnotemark}
-    \label{fig:cited_img}
-    \end{center}
-  \end{figure}
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+\begin{tabular}{rlcc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+\toprule
+\multicolumn{2}{c}{\large\sffamily Gefürchtetste Programmiersprache 2018}\\ \midrule
+\rowcolor{gray!50}
+Programmiersprache & Unbeliebt\\
+Visual Basic 6 & 89.9\%\\
+Cobol & 84.1\%\\
+CoffeeScript & 82.7\%\\
+VB.NET & 80.9\%\\
+VBA & 80.0\%\\
+Matlab & 77.4\%\\
+Assembly & 71.4\%\\
+Perl & 71.3\%\\
+Objective-C & 70.3\%\\
+Lua & 68.2\%\\
+Groovy & 66.4\%\\
+Delphi/Object Pascal & 65.1\%\\
+C & 62.6\%\\
+Ocaml & 58.5\%\\
+PHP & 58.4\%\\
+Hack & 57.9\%\\
+C++ & 53.3\%\\
+Erlang & 52.8\%\\
+Ruby & 52.6\%\\
+R & 50.6\%\\
+Java & 49.3\%\\
+Julia & 47.2\%\\
+Haskell & 46.4\%\\
+CSS & 44.9\%\\
+HTML & 44.3\%\\ \bottomrule
+\end{tabular}
+                \caption[Liste der Programmiersprachen die Entwickler 2018 lieber nicht einsetzen]{Liste der Programmiersprachen die Entwickler lieber nicht einsetzen\footnotemark}
+    \label{t_cited_img}
+\end{table}
   \footnotetext{Quelle: Stackoverflow Developer Survey Results 2018 \url{https://insights.stackoverflow.com/survey/2018\#technology-_-most-loved-dreaded-and-wanted-languages} Aufruf: 28.07.2021}
 }
 
-%------------- BILD ENDE ---------------
+%--------- TABELLE ENDE ---------------
 
 Gefördert wurde diese Entwicklung durch Nutzer anderer Hochsprache wie Java, C oder C++ die eine syntaktische Nähe zu C\# und Distanz zu \ac{vb} haben. Zusätzlich gilt \ac{vb} in dieser Gemeinschaft als einfache Einstiegssprache mit einem schlechten Ruf \citeg{vbbad}.
 Das die Ökosysteme, die verbreitete Syntax und der Umfang von Sprachen wie Java oder C\# inzwischen \ac{vb} weitausüberlegen sind wird am Stack Overflow Developer Survey von 2018 (Abb. \ref{fig:cited_img}) deutlich. In diesem führte Visual Basic die Liste der Sprache an, die Nutzer ungerne einsetzen - Zugleich wurde \ac{vb} dort 2018 das letzte mal aufgeführt.
@@ -671,37 +716,77 @@ Eclipse Temurin ist damit nicht nur free for production sondern auch production-
 %https://blog.joda.org/2018/09/time-to-look-beyond-oracles-jdk.html
 
 
+
 \section{Auswahl des Java GUI-Framework}
+
+Für die Gestaltung der grafischen Oberfläche und Bereitstellung funktional passender Steuerelemente ist für die Umsetzung dieser Arbeit die Auswahl eines GUI-Framework notwendig.
+Im folgenden werden verschiedene Java GUI-Frameworks dazu betrachtet um eines als Grundlage für die Arbeit zu definieren.
+
 \subsection{Swing}
-Swing erstellt. Dabei handelt es sich um ein UI-Toolkit, das ursprünglich von Sun entwickelt wurde. Dieses Toolkit ist nach wie vor weit verbreitet und auch in allen JDKs enthalten. Allerdings wird es nicht mehr weiterentwickelt oder gewartet. Der offizielle Nachfolger ist bereits im aktuellen JDK 8 integriert und trägt den Namen JavaFX.
-CSS-Feature wie in JavaFX sind in Swing nicht möglich
-Natürlich gibt es zusätzliche Bibliotheken für Swing, aber bestimmte Möglichkeiten wie beispielsweise Zooming sind einfach nicht vorgesehen. 
-Swing aussterben wird. Es wird uns wohl weiterhin im JDK erhalten
-Java swing is not are placement for abstract window Toolkit(AWT). It is an enhancement over existing api\'s of AWT due to its platform-independent feature.
-AWT and Swing are similar with most of AWT components have corresponding components in the swing.
-It is recommended though that AWT should be restricted only to the event handling mechanism and the UI components creation and rendering should be done only using swing.
-Following are the compelling reasons to use Java swing:
 
-Rich set of components easing the developer effort.
-Undo/Redo support built-in for components.
-2D graphics rendering simpler
-Plugable (customizable) look and feel.
+%https://www.mathematik.uni-marburg.de/~thormae/lectures/graphics1/graphics_2_2_ger_web.html#3
+
+Swing ist ein UI-Toolkit welches ursprünglich von Sun entwickelt wurde. Es erweitert das 1. native GUI-Framework \ac{jawt} von 1985 um die Swing-Komponenten und bildet zusammen mit der Java 2D-API, den Unterstützungstechnologien aus Java Accessibility, der Data Transfer-API und \ac{jawt} die \ac{jjfc} zur Erstellung grafischer Benutzeroberflächen \citeg{jthormaehlenswing}. Swing-Komponenten bauen zum Teil auf \ac{jawt} auf und verwenden insbesondere im Event-Handling noch viel \ac{jawt}-Klassen \citeg{jawtevent}. Swing zeichnet sich unter anderem durch eine Vielzahl von einfach zu verwendenen Komponenten und Widgets, Unterstützung von Undo-/Redo-Operationen, 2D Grafik Rendering und veränderbarem Look-and-Feel aus.\\
+Swing ist vollständig in Java geschrieben wodurch es plattformübergreifend nicht von spezifischen Bibliotheken abhängt. Der Nachteil daran ist, dass das Look-and-Feel einer Swing-Oberfläche sich von dem des nativen Betriebssystems unterscheiden kann und Swing im Zweifelsfall von schwerfälligen \ac{jawt}-Komponenten abhängig ist.\\
+Zeitweise gab es mit Java 9 Überlegungen Swing zukünftig zum Vorteil von JavaFX aus der Java Standard Edition herauszulösen. Mit Java 11 ist das Gegenteil eingetreten und JavaFX wurde ausgegliedert \citeg{joraclesmithfx}. Swing ist damit quasi das einzig verbleibende GUI-Framework der Java Standard Edition. Aufgrund der anhaltend hohen Verbreitung ist es teilweise noch Bestandteil der Lehre und wird gerne als Einstieg in die GUI-Entwicklung unter Java verwendet. Es wird jedoch nicht mehr weiterentwickelt oder gewartet.
+
 \subsection{JavaFX}
-JavaFX is an open source, next generation client application platform for desktop, mobile and embedded systems built on Java. It is a collaborative effort by many individuals and companies with the goal of producing a modern, efficient, and fully featured toolkit for developing rich client applications.
+%https://www.educba.com/java-gui-framework/
+%https://openbook.rheinwerk-verlag.de/javainsel/17_001.html#u17
+%https://techsore.com/java-applications/#Swing
+%https://www.javatpoint.com/javafx-tutorial
+%https://training.cherriz.de/cherriz-training/1.0.0/oberflaechen/javafx.html
 
-The latest flagship of Java/Oracle. promising to be the facto standard in developing rich desktop or web applications.
+JavaFX ist der offiziell von Oracle etablierte Nachfolger von Swing \citeg{jorjavafxfaq}. Noch unter Sun entstand im Jahr 2008 die Version 1. Nach der Übernahme von Sun durch Oracle und einem Redesign von JavaFX mit der Version 2 gewann das Framework zunehmend an Reichweite. Mit Java 8 wurde die Versionierung an die Java Standard Editionsversionen gekoppelt.\\
+Ehemalig sollte mit JavaFx in Verbindung mit Rich Internet Applications und Java Webstart eine Konkurrenz zu Silverlight und Flash aufgebaut werden. Aufgrund der völlig neuen Architektur (Abb. \ref{fig:javafx_arch}) ohne Abhängigkeiten zu Swing und \ac{jawt} bietet es auch abseits davon einen deutlich gesteigerten Funktionsumfang und modernere Ansätze \citeg{jkirschfx}. Dies ermöglicht den Einsatz in verschiedenen Bereichen beispielsweise mit Medieninhalten, mobilen Systemen (iOS, Android) oder in stark von Grafiken geprägten Szenarien.
 
-JavaFX. Dabei handelt es sich um eine moderne UI-Technologie mit der unter anderem Transformationen, Animationen, Web Browser, Touch-Eingaben oder ein Media-API ohne nennenswerten Aufwand verwendet werden können. Das ist natürlich nicht alles, denn das Styling einer Anwendung mittels CSS ist ein weiteres Killer-Feature. Im Prinzip ermöglicht JavaFX die Umsetzung von optisch ansprechenden Anwendungen ohne größere Einschränkungen.
-Applikation unter iOS oder Android zu starten. Mit JavaFX hingegen ist das machbar -> https://gluonhq.com/products/mobile/javafxports/ -> JavaFXPorts-Projekt -> kein offiziell von Oracle
-enn eine Anwendung "modern" sein muss, sollte ernsthaft über javafx nachdenken
-JavaFX Technologie für Desktopanwendungen
-Erstellung von Webanwendungen ist nicht vorgesehen
+%----------- BILD ANFANG -------------
+\afterpage{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/jfxar_dt_001_arch-diag.png}
+        \caption[JavaFX Architektur]{JavaFX Architektur\footnotemark}
+    \label{fig:javafx_arch}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Oracle JavaFX: Getting Started with JavaFX, \url{https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-architecture.htm\#JFXST788}, Aufruf: 16.07.2021}
+}
+
+%------------- BILD ENDE ---------------
+
+JavaFX ist als eigenständige Bibliothek entworfen, bringt einen eigenen GUI Builder mit und ermöglicht mittels dem XML-basierten FXML-Format eine Trennung zwischen Darstellung und Logik.
+Durch die große Anzahl unterschiedlicher und ausgereifter Komponenten, der möglichen Gestaltung über \ac{jcss} oder der Unterstützung von 3D Darstellungen entspricht es moderneren Ansprüchen  \citep[1034]{jullenboominsel}. Dabei werden mit unter die Fähigkeiten neuerer Grafikprozessoren durch Hardwarebeschleunigung adäquat unterstützt. Der Umstieg von Swing auf JavaFx wird durch die Swing Integration erleichtert und sanfter gestaltet. Zuletzt ermöglicht JavaFX das Erstellen einer Applikation die keine bestehende Java Installation mehr vorausetzt indem bei der Paketierung bereits alles Notwendige mit eingebunden wird.
+
+Mit Java 11 entschiedt sich Oracle die Weiterentwicklung von JavaFX Open Source in das OpenJFX Projekt unter \ac{jgpl}v2 mit Classpath Exception auszugliedern und aus der Java Standard Edition zu entfernen. Innerhalb des OpenJFX Projektes ist es das Ziel verschiedener Unternehmen und Einzelpersonen gemeinschaftlich ein vollständiges, modernes und effiziertes GUI-Framework bereit zu stellen.
 \subsection{SWT}
 Created by IBM for Eclipse, they seemed to think that Swing was not suited for Eclipse at the time.
 
 By itself is pretty low-level, and it uses the platform\'s native widgets through JNI. It is not related to Swing and AWT at all.
 
 SWT is an open-source widget toolkit for Java designed to provide efficient, portable access to the user- interface facilities of the operating systems on which it is implemented.
+
+more OS native
+faster than swing
+
+Pros SWT:
+
+uses native elements when possible, so always native behavior
+supported by eclipse, gui editor VEP (VEP also supports Swing and AWT)
+large number of examples online
+has an integrated awt/swt bridge to allow use of awt and swing components
+Cons SWT:
+
+requires native libraries for each supported system
+may not support every behavior on all systems because of native resources used (hint options)
+managing native resources, while native components will often be disposed with their parent other resources such as Fonts have to be manually released or registered as dispose listener to a component for automatic release.
+
+\subsection{Ergebnis}
+Unter Swing ist die Umsetzung der Arbeit deutlich aufwendiger als unter JavaFX oder \ac{jswt}, da eine TreeTable-Komponente kein elementarer Bestandteil von Swing ist. Eine solche Komponente müsste in Swing mit entsprechendem Aufwand eigens erstellt, erweitert und gewartet werden. Mit der Einstellung der Weiterentwicklung von Swing und der Definition von JavaFX als Nachfolger durch Oracle sollten Neuentwicklungen in der Regel nicht mehr unter Swing durchgeführt werden. Aus diesen Gründen besteht eine Entscheidung unter den vorgestellten Frameworks nur zwischen \ac{jswt} und JavaFX. Die ausführbaren Übersetzungen beider Frameworks können nicht plattformunabhängig verwendet werden. In verschiedenen Veröffentlichungen zu dem Thema wird davon ausgegangen, dass sich JavaFX durchsetzen wird \citep[1105]{jschildtninith} \citep[1036]{jullenboominsel}. Hintergrund sind die neuere Architektur und der damit einhergehende Funktionsumfang. Insbesondere auch für mobile oder eingebettete Systeme.\\
+Vergleicht man die Aktivität der Repositories weist \ac{jswt} \citeg{jeclswt} mehr als doppelt so viel wie JavaFX \citeg{jjfxcommit}  auf. Wobei zu sehen ist, dass etwa die Hälfte der Commits des \ac{jswt} Repositorys dem Eclipse Releng Bot entstammen und damit keine direkt Aktivität für das Repository darstellen. Eine Aktivität ist demnach für beide Frameworks ausreichend gegeben.\\
+Da im Codevergleich in der Regel aber weniger Zeilen für eine JavaFX-Anwendung als für eine \ac{jswt}-Anwendung benötigt werden, \ac{jswt} eine abstraktere Logik aufweist und JavaFX das modernere Framework an sich ist, fällt die Wahl auf JavaFX als GUI-Framework.
+%https://www.hameister.org/JavaSwingTreeTable.html
+
+
 \section{Java Dateieingangsverarbeitung}
 
 \chapter{Implementierung}
@@ -715,7 +800,10 @@ and other textmore
 and other textmore
 and other textmore
 and other text
+%jlink
+https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
 \section{Module}
+
 \section{Entwurfsmuster}
 Model-View-Controller(MVC)
 Observer Design Pattern
@@ -753,6 +841,10 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{hll}[HLL]{Höheren Programmiersprache (High-level programming language)}
 \acro{isms}[ISMS]{Informationssicherheits-Managementsystem}
 \acro{gao}[AO]{Abgabenordnung}
+\acro{jawt}[AWT]{Abstract Widget Toolkit}
+\acro{jjfc}[JFC]{Java Foundation Classes}
+\acro{jcss}[CSS]{Cascading Style Sheets}
+\acro{jswt}[SWT]{Standard Widget Toolkit}
 \acro{ghgb}[HGB]{Handelstgesetzbuch}
 \acro{ggodb}[GoDB]{Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form sowie zum Datenzugriff}
 \acro{gitsig}[ITSiG]{IT-Sicherheitsgesetz}
@@ -1035,17 +1127,87 @@ Hardware-Zone:
 \bibitem[Informit(2005)]{jwidgets} 
 Pearson Education, Informit
 \emph{Java Widget Fundamentals}, 
-\url{https://www.informit.com/articles/article.aspx?p=354574}, 28.01.2005, letzter Zugriff: 14. 7. 2021
+\url{https://www.informit.com/articles/article.aspx?p=354574}, 28.01.2005, letzter Zugriff: 14. 8. 2021
 
 \bibitem[Siddiqi(2020)]{jguisiddiqi} 
 Raahim Siddiqi
 \emph{Java GUI Frameworks Guide}, 
-\url{https://coderslegacy.com/java-gui-frameworks-guide/}, 24.08.2020, letzter Zugriff: 14. 7. 2021
+\url{https://coderslegacy.com/java-gui-frameworks-guide/}, 24.08.2020, letzter Zugriff: 14. 8. 2021
+
+\bibitem[Ullenboom(2020)]{jullenboominsel}%1033
+Ullenboom, Christian (Hrsg.): 
+\emph{Java ist auch eine Insel}, Rheinwerk Computing 2020
+%https://www.rheinwerk-verlag.de/java-ist-auch-eine-insel/
+%https://openbook.rheinwerk-verlag.de/javainsel/17_001.html#u17 -> 1033
+
+\bibitem[Schildt(2014)]{jschildtninith}%1105
+Schildt, Herbert (Hrsg.): 
+\emph{Java: The Complete Reference, Ninth Edition}, McGraw-Hill Education 2014
+%https://www.google.de/books/edition/Java_The_Complete_Reference_Ninth_Editio/fY-bAgAAQBAJ?hl=de&gbpv=0&bsq=inauthor:%22Herbert%20Schildt%22
+%https://stackoverflow.com/questions/8047448/javafx-vs-swt-pros-and-cons/48387319#48387319 -> 1105
+
+\bibitem[Thormählen(2019)]{jthormaehlenswing} 
+Thorsten Thormählen
+\emph{Grafikprogrammierung GUIs mit Java}, 
+\url{https://www.mathematik.uni-marburg.de/~thormae/lectures/graphics1/graphics_2_2_ger_web.html#3}, 21.10.2019, letzter Zugriff: 15. 8. 2021
+
+\bibitem[Oracle(2018)]{jorjavafxfaq} 
+Oracle
+\glqq Is JavaFX replacing Swing as the new client UI library for Java SE?\grqq, 
+in: Oracle (Hrsg.): \emph{JavaFX Frequently Asked Questions}
+\url{https://www.oracle.com/java/technologies/javafx/faq-javafx.html#6}, 2018, letzter Zugriff: 15. 8. 2021
+%https://www.heise.de/developer/meldung/Oracle-gliedert-JavaFX-aus-dem-JDK-aus-3988711.html
+
+\bibitem[OpenJFX Project(2021)]{jopenjfxpro} 
+OpenJFX Project
+\emph{JavaFX}, 
+\url{https://openjfx.io/}, 2021, letzter Zugriff: 16. 8. 2021
+
+\bibitem[Smith(2018)]{joraclesmithfx} 
+Donald Smith
+\emph{The Future of JavaFX and Other Java Client Roadmap Updates}, 
+\url{https://blogs.oracle.com/java-platform-group/the-future-of-javafx-and-other-java-client-roadmap-updates}, 21.10.2019, letzter Zugriff: 15. 8. 2021
+%https://www.heise.de/developer/meldung/Oracle-gliedert-JavaFX-aus-dem-JDK-aus-3988711.html
+%\bibitem[Bernhard Steppan(2018)]{jsteppanjavafxout} 
+%Bernhard Steppan
+%\emph{Oracle will Java verschlanken}, 
+%\url{https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321}, 20.12.2018, letzter Zugriff: 15. 7. 2021
+%https://www.drwindows.de/news/oracle-veroeffentlicht-java-11-mit-grossen-veraenderungen
+
+\bibitem[Kirsch(2021)]{jkirschfx} 
+Frederik Kirsch
+\emph{JavaFX}, 
+\url{https://training.cherriz.de/cherriz-training/1.0.0/oberflaechen/javafx.html}, 2021, letzter Zugriff: 15. 8. 2021
+
+\bibitem[Eclipse Foundation(2021)]{jeclswt} 
+Eclipse Foundation, Inc.
+\emph{eclipse.platform.swt.git - stats}, 
+\url{https://git.eclipse.org/c/platform/eclipse.platform.swt.git/stats/?period=q&ofs=10}, 2021, letzter Zugriff: 16. 8. 2021
+%699 Commits am 26.08.2021
+
+\bibitem[GitHub(2021)]{jjfxcommit} 
+GitHub, Inc.
+\emph{openjdk/jfx - Commit Activity}, 
+\url{https://github.com/openjdk/jfx/graphs/commit-activity}, 2021, letzter Zugriff: 16. 8. 2021
+%258 (254 + 4 of the week of 22.08)
+
+
+
+
+
+
+
+\bibitem[Petri(2021)]{jawtevent} 
+Britta Petri,
+Björn Petri
+\emph{Was sind Events?}, 
+\url{https://www.java-tutorial.org/event-handling.html}, 2021, letzter Zugriff: 13. 8. 2021
 
 \bibitem[Eclipse Foundation, Inc.(2021)]{jadoptmigrate} 
 Eclipse Foundation, Inc.
 \emph{Architektur}, 
 \url{https://adoptium.net/migration.html}, 2021, letzter Zugriff: 8. 8. 2021
+
 \bibitem[Azul(2021)]{jazulcompare} 
 Azul
 \emph{OpenJDK vs Oracle JDK - Comparison Table}, 
