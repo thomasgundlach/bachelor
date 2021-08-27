@@ -96,7 +96,7 @@ Im Hintergrund müssen dafür an diversen Stellen jedoch zum Teil ungeahnt komplex
 
 Fehler in diesen Prozessketten müssen, wenn möglich, automatisch behandelt werden. Falls nicht, muss die Verarbeitung automatisch angehalten werden um eine manuelle Behebung zu ermöglichen. Die Verantwortlichen müssen über den Fehler, und dass ein manuelles Eingreifen notwendig ist, umgehend in Kenntnis gesetzt werden. Nach erfolgreicher Behebung muss die Verarbeitung genau an dem Punkt wieder aufgenommen werden können an dem sie stehen geblieben ist. Und falls der Fehler nicht vollständig behoben wurde oder weitere Probleme auftreten muss der Schritt beliebig oft wiederholt werden können.
 
-Um zentrale Systeme zügig aufzurufen und auch historische Daten unverzüglich zur Verfügung stehen müssen die Datenbestände dieser Systeme regelmäßig reorganisiert werden.
+Um zentrale Systeme zügig aufzurufen und auch historische Daten unverzüglich zur Verfügung stehen müssen die Datenbestände dieser Systeme regelmäßig reorganisiert und nötigenfalls archiviert werden.
 
 All dies erfordert eine übergeordnete Einheit in der die Prozessschritte geplant, ausgeführt, mit einander verknüpft und überwacht werden. Damit ist es aber noch nicht getan. 
 Hintergrund ist, dass Unternehmen oder Organisationen in Ihrer Verarbeitung häufig regulatorischen Auflagen oder zumindest gesetzlichen Pflichten unterliegen. Dass bedeutet, dass es Vorgaben gibt wie eine Verarbeitung zu erfolgen hat oder was bei einer Verarbeitung zu beachten ist. Diese Vorgaben können je nach Sektor und Branche unterschiedlich sein. Insbesondere für Unternehmen oder Organisationen die durch Ihre Tätigkeit unter die kritischer Infrastruktur\footnote{Quelle: Verordnung zur Bestimmung Kritischer Infrastrukturen nach dem BSI-Gesetz (BSI-Kritisverordnung - BSI-KritisV), \url{https://www.gesetze-im-internet.de/bsi-kritisv/BJNR095800016.html}, Aufruf: 12.07.2021} fallen können die Vorgaben restriktiv sein.
@@ -107,33 +107,33 @@ Um einen Vorgang nachweisen zu können muss es zum einen eine dokumentierte Richt
 
 Im Prüfungsfall kann so theoretisch eine bestimmte Durchführung eines Geschäftsprozesses innerhalb des Aufbewahrungszeitraumes anhand des Protokolls nachgewiesen werden. In der Regel besteht ein Geschäftsprozess aber je nach Detaillierungsgrad aus mehreren Teilprozessen die ebenfalls aus Teilprozessen bestehen können und am Ende in einzelne Aktivitäten unterteilt sind.
 Jeder Geschäftsprozess, jeder Teilprozess und jede Aktivität verfügt über ein eigenes Protokoll mit entsprechendem Detaillierungsgrad.
-In einem komplexen Geschäftsprozess ist die Einhaltung der Vorgaben anhand des Protokolls des Geschäftsprozesses selbst aber ggf. nicht vollständig nachvollziehbar. Für eine Prüfung werden daher nicht selten auch die Protokolle der Teilprozesse und Aktivitäten benötigt. Eine Prüfung erfolgt in der Regel erst wenn die Protokolle reorganisiert wurden. Je nach Reorganisationssystematik der Process Engine~(\refg{ssec:processengine}) können die Relationen an sich zwischen Geschäftsprozess, Teilprozess und Aktivität bei der Reorganisation verloren gehen. Bietet das Betrachtungswerkzeug  für die reorganisierten Protokolle keine Möglichkeit die Relationen neu zu ermitteln und über diese zu traversieren müssen die Relationen im Prüfungsfall im Zweifel manuell recherchiert werden.
+In einem komplexen Geschäftsprozess ist die Einhaltung der Vorgaben anhand des Protokolls des Geschäftsprozesses selbst aber ggf. nicht vollständig nachvollziehbar. Für eine Prüfung werden daher nicht selten auch die Protokolle der Teilprozesse und Aktivitäten benötigt. Eine Prüfung erfolgt in der Regel erst wenn die Protokolle reorganisiert und archiviert wurden. Je nach Reorganisationssystematik der Process Engine~(\refg{ssec:processengine}) können die Relationen an sich zwischen Geschäftsprozess, Teilprozess und Aktivität bei der Reorganisation und Archivierung verloren gehen. Bietet das Betrachtungswerkzeug  für die archivierten Protokolle keine Möglichkeit die Relationen neu zu ermitteln und über diese zu traversieren müssen die Relationen im Prüfungsfall im Zweifel manuell recherchiert werden.
 
 \section{Motivation}
-Als Mitverantwortlicher für die zentrale Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation ist der Autor Ansprechpartner zu Fragen zum tatsächlichen Ablauf bestimmter Durchführungen von Geschäftsprozessen und Ermittlung von Ablaufnachweisen. Sofern die Protokolle zu den angefragten Abläufen bereits reorganisiert wurden entsteht durch die Recherche von Protokollen zu Teilprozessen und Aktivitäten eines angefragten Geschäftsprozesses zurzeit  im Zweifel ein hohes Arbeitsaufkommen. Im Prüfungsfall kann die Recherche auf Verlangen des Prüfers auch während einer Prüfung und im Beisein des Prüfers durchzuführen sein. Dies wirft in der Regel kein gutes Licht auf die Nachweisbarkeit und Nachvollziehbarkeit bzgl. der Durchführungen von Geschäftsprozessen innerhalb der Prüfung.
+Als Mitverantwortlicher für die zentrale Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation ist der Autor Ansprechpartner zu Fragen zum tatsächlichen Ablauf bestimmter Durchführungen von Geschäftsprozessen und Ermittlung von Ablaufnachweisen. Sofern die Protokolle zu den angefragten Abläufen bereits reorganisiert und archiviert wurden entsteht durch die Recherche von Protokollen zu Teilprozessen und Aktivitäten eines angefragten Geschäftsprozesses zurzeit  im Zweifel ein hohes Arbeitsaufkommen. Im Prüfungsfall kann die Recherche auf Verlangen des Prüfers auch während einer Prüfung und im Beisein des Prüfers durchzuführen sein. Dies wirft in der Regel kein gutes Licht auf die Nachweisbarkeit und Nachvollziehbarkeit bzgl. der Durchführungen von Geschäftsprozessen innerhalb der Prüfung.
 
-Innerhalb der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität~(\refg{ssec:job}) zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für reorganisierte Protokolle zu harmonisieren.
+Innerhalb der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität~(\refg{ssec:job}) zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für archivierte Protokolle zu harmonisieren.
 
 
 
 \section{Problemstellung}
 
-Der Automic\textsuperscript{\textregistered} Archive Browser, das bestehende Betrachtungswerkzeug für reorganisierte Protokolle der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation, ist für eine flachen Recherche ausgelegt. Die dem zu Grunde liegenden Datenstrukturen der reorganisierten Protokolle sind entsprechend aufgebaut und nicht dokumentiert. Auch bietet der Automic\textsuperscript{\textregistered} Archive Browser keine zugängliche oder anwendbare API, die zum Einlesen der Protokolle wiederverwendet oder auf die aufgebaut werden könnte.\\
+Der Automic\textsuperscript{\textregistered} Archive Browser, das bestehende Betrachtungswerkzeug für archivierte Protokolle der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation, ist für eine flachen Recherche ausgelegt. Die dem zu Grunde liegenden Datenstrukturen der archivierten Protokolle sind entsprechend aufgebaut und nicht dokumentiert. Auch bietet der Automic\textsuperscript{\textregistered} Archive Browser keine zugängliche oder anwendbare API, die zum Einlesen der Protokolle wiederverwendet oder auf die aufgebaut werden könnte.\\
 Parallel lässt sich die Abbildung der Relationen, die sich durch Ausführung verschiedener Geschäftsprozesse zwischen Teilprozessen und Aktivitäten in den Automic\textsuperscript{\textregistered} Automation Protokollen ergibt, bspw. nicht in einem binären Suchbaum überführen. Hintergrund ist, dass sich über alle Relationen hinweg keine allgemeingültige oder abstrakte Entscheidungsregel ableiten lässt in welchen Knoten ein Protokoll eingefügt werden muss. Zum anderen sind pro Teilbaum theoretisch beliebig viele Knoten möglich.
 
 Daneben ergeben sich durch die Entwicklung in Java mehrere GUI-Frameworks mit denen die grafische Darstellung realisiert werden kann. Diese verfügen über ganz unterschiedliche Vor- und Nachteile die gegeneinander abgewägt werden müssen. Dadurch dass die Protokollstände mehrerer Tage schnell eine fünf- oder sechsstellige Protokollanzahl erreichen können, muss das Framework grundsätzlich zur stabilen und performanten Darstellung großer Datenmengen geeignet sein.
 
-Unter den beschrieben Aspekten wird die praktische Umsetzung eines relationsorientierten Betrachungswerkzeuges für reorganisierte Protokolle anhand von Automic\textsuperscript{\textregistered} Automation vorgestellt. Vordergründig wird die grundlegende Entwicklung des Betrachtungswerkzeuges durchgeführt.
+Unter den beschrieben Aspekten wird die praktische Umsetzung eines relationsorientierten Betrachungswerkzeuges für archivierte Protokolle anhand von Automic\textsuperscript{\textregistered} Automation vorgestellt. Vordergründig wird die grundlegende Entwicklung des Betrachtungswerkzeuges durchgeführt.
 
 \section{Zielsetzung}
 %Ziel der Arbeit ist, eine geeignete Struktur für eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen zu finden.
-Ziel der Arbeit ist eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl einer passenden Umgebung als auch Frameworks und das Erarbeiten einer entsprechenden Architektur. Außerdem soll der rechtliche Hintergrund am Beispiel des Versicherungswesens betrachtet aus dem sich die Anforderung für ein relationsbasiertes Recherchewerkzeug für historische Protokolldaten ableitet. Bei der Umsetzung wird besonderen Wert auf die Benutzerfreundlichkeit gelegt unter Berücksichtigung des angewendeten Frameworks. Zudem soll auf Basis einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
+Ziel der Arbeit ist eine relationsorientierte Darstellung von archivierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl einer passenden Umgebung als auch Frameworks und das Erarbeiten einer entsprechenden Architektur. Außerdem soll der rechtliche Hintergrund am Beispiel des Versicherungswesens betrachtet aus dem sich die Anforderung für ein relationsbasiertes Recherchewerkzeug für historische Protokolldaten ableitet. Bei der Umsetzung wird besonderen Wert auf die Benutzerfreundlichkeit gelegt unter Berücksichtigung des angewendeten Frameworks. Zudem soll auf Basis einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
 \subsection{Anforderung}
-Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Parallel sollen rechtliche Hintergründe anhand des Versicherungswesens aufbereitet werden. Davon ausgehend ist der technische Bedarf für ein relationsorientiertes Recherchewerkzeug für reorganisierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmter Protokolle komplexer Geschäftsprozesse und das traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von reorganisierten Daten, die Darstellung der Relationen der reorganisierten Daten sowie die Möglichkeit nach bestimmten Informationen zu filtern.
+Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Parallel sollen rechtliche Hintergründe anhand des Versicherungswesens aufbereitet werden. Davon ausgehend ist der technische Bedarf für ein relationsorientiertes Recherchewerkzeug für archivierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmter Protokolle komplexer Geschäftsprozesse und das traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von archivierten Daten, die Darstellung der Relationen der archivierten Daten sowie die Möglichkeit nach bestimmten Informationen zu filtern.
 
 \subsection{Abgrenzung}
 
-Diese Arbeit ist explorativ. Der Fokus liegt primär auf der Struktur der reorganisierten Daten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation. Die rechtlichen Aspekte werden mit Blick auf das Versicherungswesen betrachtet.\\
+Diese Arbeit ist explorativ. Der Fokus liegt primär auf der Struktur der archivierten Daten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation. Die rechtlichen Aspekte werden mit Blick auf das Versicherungswesen betrachtet.\\
 Es können innerhalb des zeitlich begrenzten Rahmens der Bachelorarbeit keine umfangreichen Benutzer- oder Systemtests durchgeführt werden. Grafisch finden die Benutzerschnittstellen wie auch sämtliche Fensterkomponenten im Standardstil des ermittelten GUI-Frameworks Anwendung.\\
 Vorrangig geht es darum die Grundlage für ein performantes, stabiles, erweiterbares, portierbares und einfach wartbares Recherchewerkzeug zu erstellen, um die Grundfunktionen zum Ermitteln bestimmter Ausführungsprotokolle und die Nachverfolgung deren Abhängigkeiten zu realisieren.
 
@@ -172,8 +172,8 @@ Im \ac{bpm} oder einfacher Prozessmanagement geht es darum nicht nur Prozessfrag
 %https://de.wikipedia.org/wiki/Business_Process_Engine
 
 
-Eine Process Engine dient zur Prozessautomatisierung definierter Prozesse aus dem \ac{bpm}. Die Process Engine ist dabei das zentrale System welches technische Prozessmodelle ausführt.
-Hervorzuheben ist hierbei, dass Prozessautomatisierung nicht in jedem Fall eine Automatisierung des gesamten Prozesses bedeutet. Die Process Engine steuert den Prozess vielmehr indem sie a.) zu erledigende Aufgaben bspw. an Sachbearbeiter delegiert  sowie das Resultat weiterverarbeitet (Human Workflow Management) und b.) Schnittstellen interner/-externer Informationsdienste aufruft (Service-Orchestrierung).
+Eine Process Engine, auch Workflow Engine genannt \citeg{freundruecker6}, dient zur Prozessautomatisierung definierter Prozesse aus dem \ac{bpm}. Die Process Engine ist dabei das zentrale System welches technische Prozessmodelle ausführt.
+Hervorzuheben ist hierbei, dass Prozessautomatisierung nicht in jedem Fall eine Automatisierung des gesamten Prozesses bedeutet. Die Process Engine steuert den Prozess vielmehr indem sie a.) zu erledigende Aufgaben bspw. an Sachbearbeiter delegiert  sowie das Resultat weiterverarbeitet (Human Workflow Management) und b.) Schnittstellen interner/-externer Informationsdienste aufruft (Dienst-Orchestrierung).
 In diesem Zusammenhang bleibt ein automatisierter Prozess durch die Prozessbeteiligten beeinflussbar.
 Denn anhand des technischen Prozessmodells als auch des Resultates eines Service-Aufrufes oder einer beendeten Aufgabe entscheidet die Process Engine unter welchen Gegebenheiten welche Folgeaufgabe oder -aufruf ausgeführt wird.\\
 Abbildung \ref{fig:bpmn_processauto} veranschaulicht die Vorgehensweise verallgemeinert.
@@ -202,6 +202,34 @@ Damit vereint sie Workflow Management und Anwendungsintegration. Durch die Steue
 
 \section{Automic\textsuperscript{\textregistered} Automation}
 %https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#_Common/Welcome/AWA/About_AWA.htm
+
+Automic Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwareprodukte mittels der plattformübergreifend IT-bezogene Aufgaben automatisiert und dokumentiert werden können. Die zugehörigen Softwareprodukte sind im Allgemeinen:
+\begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
+\item Die Automation Engine als Process Engine bestehend aus \citeg{aae_proctypes}:
+    \begin{itemize}
+      \item Einem \ac{apwp} der zentrale, nicht verteilbare Aufgaben wie Verwaltungsaufgaben durchführt.
+      \item Einem oder mehrere \ac{awp} die alle sonstigen, eingeplanten Aufgaben ausführen oder Serverrollen übernehmen. Jeder WP kann bei Bedarf zum \ac{apwp} werden.
+      \item Einem oder mehrere \ac{acp} die für die Kommunikation zwischen den Prozessen, Agenten auf Drittsystemen/-diensten und Schnittstellen zuständig sind.
+      \item Optional einem oder mehrere \ac{adwp} die für die Meldungen im \ac{aawi} verwendet werden.
+      \item Einem oder mehrere \ac{ajwp} die für speziell in Java entwickelte Dienste zur Verfügung stehen.
+      \item Einem \ac{ajcp} für spezielle Dienste- und Schnittstellen wie die REST-API.
+    \end{itemize}
+\item Agenten zur Steuerung dritter Systeme oder Dienste.
+\item Das \ac{aawi} als Benutzerschnittstelle.
+\item Der Plugin Manager zum verwalten von Packs im \ac{aawi}.
+\item Der Package Manager zum verwalten von Packs auf der Kommandozeile.
+\item Der Action Builder zum erstellen von Packs.
+\item Analytics On Premise für individuelle Statistiken.
+\item Verschiedene Dienstprogramme zur Verwaltung von Automic Automation. Relevant innerhalb dieser Arbeit sind dabei:
+    \begin{itemize}
+      \item AE DB Archive \citeg{aae_archiv}  archiviert Protokolldaten und markiert diese in der Datenbank als archiviert.
+      %\item AE DB Revision Report \citeg{aae_audit} erstellt Revisionsreports aus Auditdaten aus der Datenbank.
+      \item AE DB Reorg \citeg{aae_reorg} reorganisiert Daten in der Datenbank indem es für diese das Löschkennzeichen setzt.
+      \item AE DB Unload \citeg{aae_unload} kann archivierte oder reorganisierte Daten aus der Datenbank entfernten.
+      \item Archive Browser \citeg{aae_archbrow} zum Betrachten und Durchsuchen archivierter Protokolldaten.
+    \end{itemize}
+\end{itemize}
+
 
 \subsection{Workflows}\label{ssec:workflow}
 %abbild bspw. workflow
@@ -414,7 +442,7 @@ Für die Verarbeitung lassen sich dabei aus Art. 5 Abs. 1 \ac{gdsgvo} \citep[L 11
 In der \ac{gdsgvo} sind für die Verarbeitung als auch die technischen und organisatorischen Maßnahmen umfassende Rechenschaftspflichten verankert. Von dem verantwortlichen Unternehmen wird in Art. 5 Abs. 2 \ac{gdsgvo} \citep[L 119/36]{rdsgvo} gefordert die konforme Verarbeitung im Zweifel nachweisen zu können. Konkretisiert wird dies indem das Unternehmen nach Art. 24 Abs. 1 \ac{gdsgvo} \citep[L 119/47]{rdsgvo} geeignete technische und organisatorische Maßnahmen umzusetzen hat, um sicherzustellen nachweisen zu können dass die Verarbeitung gemäß \ac{gdsgvo} erfolgt \citeg{rplutte}.
 
 Die \ac{gdsgvo} definiert nicht wie lange ein solcher Nachweis rückblickend geführt werden muss. Für Bußgelder nach Art. 83 \ac{gdsgvo} \citep[L 119/82]{rdsgvo} wegen Verstöße gegen die \ac{gdsgvo} gelten nach § 41 Bundesdatenschutzgesetz die Vorschriften, und somit dessen Verjährungsvorschriften, des Gesetzes über Ordnungswidrigkeiten. In diesem ist in § 31 die Verfolgungsverjährung bzgl. Bußgeldverfahren gegenüber Aufsichtsbehörden festgeschrieben nach der ein Bußgeld nach Art. 83 \ac{gdsgvo} drei Jahre nach einer vorschriftswidrigen Verarbeitung verjährt ist \citeg{rwebersohn}.
-Entsprechend sollten Nachweise mind. 3 Jahre aufbewahrt werden da ein weiter zurückliegender Verstoß risikolos wäre - Ein Zeitraum indem zurückliegende Daten innerhalb einer Process Engine in der Regel teilweise bis vollständig reorganisiert werden.
+Entsprechend sollten Nachweise mind. 3 Jahre aufbewahrt werden da ein weiter zurückliegender Verstoß risikolos wäre - Ein Zeitraum indem zurückliegende Daten innerhalb einer Process Engine in der Regel teilweise bis vollständig reorganisiert und archiviert werden.
 
 
 %\subsection{ISMS / ISO 27001}
@@ -569,7 +597,7 @@ Eine Portierung des bestehenden Automic\textsuperscript{\textregistered} Archive
 
 \begin{center}
 \begin{tabular}{c}
-\begin{lstlisting}[caption=Ermittlung Zeichenkodierungen reorganisierter Daten, label=lst:charset_reorg, language=bash]
+\begin{lstlisting}[caption=Ermittlung Zeichenkodierungen archivierter Daten, label=lst:charset_reorg, language=bash]
 $ file -i ./*
 ./UC_ACMT.TXT: inode/x-empty; charset=binary
 ./UC_AH.IDX:   text/plain; charset=us-ascii
@@ -830,7 +858,7 @@ Klassen/Methoden\footnotemark  & \texttt{InputStreamReader BufferedReader Buffer
 \item Für rein textbasierte Daten müssen Binäroperationen nicht zwangsweise herangezogen werden.
 \item Kleine, vordefinierte Datenbestände ab einer bestimmten Position sollten innerhalb einer Anweisung in einem Stück gelesen werden um Zwischenschritte in der Verarbeitung zu vermeiden und die Zugriffe auf das Dateisystem möglichst konstant zu halten.
 \end{itemize}
-Hierdurch lassen sich die relevanten Klassen für die Strukturdaten auf die unter Abb. \ref{t_fileopspossibles} Klassen/Methoden eingrenzen. Die Analyse der Dateioperationen für die Protokolldaten hat die Klasse \texttt{FileChannel} zum Lesen der Protokolle aus den Reorganisationsdateien ergeben.
+Hierdurch lassen sich die relevanten Klassen für die Strukturdaten auf die unter Abb. \ref{t_fileopspossibles} Klassen/Methoden eingrenzen. Die Analyse der Dateioperationen für die Protokolldaten hat die Klasse \texttt{FileChannel} zum Lesen der Protokolle aus den Archivdateien ergeben.
 
 \subsection{Klasse/Methode für Strukturdaten}
 \begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
@@ -842,7 +870,7 @@ Hierdurch lassen sich die relevanten Klassen für die Strukturdaten auf die unter
 \item Wenn Daten in einer Schleife verarbeitet werden, sollten insbesondere große Daten nicht ungefiltert in Datenstrukturobjekte überführt werden um den Arbeitsspeicher zu schonen.
 \end{itemize}
 
-Die Verarbeitung der Strukturdaten erfolgt mittels \texttt{BufferedReader.readLine}  am schnellsten (vgl. Abb. \ref{fig:fileopsek}), weshalb das Lesen  der Strukturdaten aus den Reorganisationsdateien durch \texttt{BufferedReader.readLine} umgesetzt wird.
+Die Verarbeitung der Strukturdaten erfolgt mittels \texttt{BufferedReader.readLine}  am schnellsten (vgl. Abb. \ref{fig:fileopsek}), weshalb das Lesen  der Strukturdaten aus den Archivdateien durch \texttt{BufferedReader.readLine} umgesetzt wird.
 
 
 %--------- TABELLE ENDE ---------------
@@ -974,6 +1002,12 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{gao}[AO]{Abgabenordnung}
 \acro{jawt}[AWT]{Abstract Widget Toolkit}
 \acro{jjfc}[JFC]{Java Foundation Classes}
+\acro{awp}[WP]{Arbeitsprozesse}
+\acro{apwp}[PWP]{primären Arbeitsprozess}
+\acro{acp}[CP]{Kommunikationsprozesse}
+\acro{adwp}[DWP]{Dialogprozesse}
+\acro{ajwp}[JWP]{Java-Arbeitsprozesse}
+\acro{ajcp}[JCP]{Java-Kommunikationsprozess}
 \acro{jcss}[CSS]{Cascading Style Sheets}
 \acro{jswt}[SWT]{Standard Widget Toolkit}
 \acro{jjni}[JNI]{Java Native Interface}
@@ -1009,6 +1043,7 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{jmts}[MTS]{Medium Term Support}
 \acro{jaws}[AWS]{Amazon Web Services}
 \acro{jgpl}[GPL]{General Public License}
+\acro{aawi}[AWI]{Automic Web Interface}
 \acro{jgui}[GUI]{Graphical User Interface}
 
 
@@ -1148,9 +1183,15 @@ Frank Leymann, David Schumm
 Freund, Jakob (Hrsg.), 
 Rücker, Bernd (Hrsg.): 
 \glqq Einführung -- Business Process Management\grqq, 
-in: \emph{Praxishandbuch BPMN 2.0}, 4. Auflage, HANSER 2014
+in: \emph{Praxishandbuch BPMN 2.0}, 4. Auflage, Carl Hanser Verlag 2014
 %Praxishandbuch BPMN 2.0
 %https://books.google.de/books?id=kFZnBAAAQBAJ&printsec=frontcover&hl=de#v=onepage&q&f=false
+
+\bibitem[Freund, Rücker(2019)]{freundruecker6}
+Freund, Jakob (Hrsg.), 
+Rücker, Bernd (Hrsg.): 
+\glqq Einführung -- Business Process Management\grqq, 
+in: \emph{Praxishandbuch BPMN: Mit Einführung in DMN}, 6. Auflage, Carl Hanser Verlag 2019
 %https://books.google.de/books?id=uJefDwAAQBAJ&pg=PP22&lpg=PP22&dq=%22die+in+der+deutschen+Fassung+ihres+Referenzwerkes%22&source=bl&ots=8LHyyoIakR&sig=ACfU3U23GkrUa3l9hh0ymdiDHCakbO01FA&hl=de&sa=X&ved=2ahUKEwjY5dnXlqLyAhUYgP0HHSSeBiMQ6AF6BAgXEAM#v=onepage&q=%22die%20in%20der%20deutschen%20Fassung%20ihres%20Referenzwerkes%22&f=false
 
 \bibitem[X-INTEGRATE Software & Consulting GmbH(2021)]{xintegrate} 
@@ -1164,10 +1205,47 @@ European Association of Business Process Management EABPM (Hrsg.):
 \glqq Business Process Management -- Definitionen\grqq, 
 in: \emph{BPM CBOK\textsuperscript{\textregistered} - Business Process Management BPM Common Body of Knowledge Leitfaden für das Prozessmanagement Version 3.0}, 2. Auflage, Verlag Dr. Götz Schmidt 2014
 %https://sgo-verein.ch/wp-content/uploads/sites/2/2019/05/CBOK_Version_3.0-2._Auflage_2014.pdf
-
-
 %Prozessautomatisierung mit BPMN 2.0 und Java. bernd.ruecker@camunda.com
 %https://docplayer.org/storage/24/2913667/1628451771/_EwnekRb9StRk3zk4f7oZg/2913667.pdf
+
+
+\bibitem[Broadcom(2021)]{aae_awa} 
+Broadcom Inc.
+\emph{Info über Automic Automation}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#_Common/Welcome/AWA/About_AWA.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+\bibitem[Broadcom(2021)]{aae_archiv} 
+Broadcom Inc.
+\emph{AEDB Archive}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#Utilities/admin_AboutAEDBArchive.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+%\bibitem[Broadcom(2021)]{aae_audit} 
+%Broadcom Inc.
+%\emph{AE DB Revision Report}, 
+%\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#Utilities/admin_AboutAEDBRevisionReport.htm}, 2021, letzter %Zugriff: 19. 8. 2021
+
+\bibitem[Broadcom(2021)]{aae_reorg} 
+Broadcom Inc.
+\emph{AE DB Reorg}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#Utilities/admin_AE_DB_Reorg.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+\bibitem[Broadcom(2021)]{aae_unload} 
+Broadcom Inc.
+\emph{AE DB Unload}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#Utilities/admin_AE_DB_Unload.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+\bibitem[Broadcom(2021)]{aae_archbrow} 
+Broadcom Inc.
+\emph{Archive Browser}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#Utilities/admin_AboutArchiveBrowser.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+\bibitem[Broadcom(2021)]{aae_proctypes} 
+Broadcom Inc.
+\emph{Serverprozesstypen}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#AWA/Admin/admin_types_of_server_processes.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+
+
 
 \bibitem[Amtsblatt der Europäischen Union(2016)]{rdsgvo} 
 Amtsblatt der Europäischen Union
