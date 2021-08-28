@@ -560,17 +560,309 @@ Viele \ac{jgui} Frameworks verfügen darüber hinaus über einen Designer zur mausg
 \chapter{Analyse}
 
 \section{Automic\textsuperscript{\textregistered} Archive Browser}
-\subsection{Mittlung von Benutzeranforderungen}
+\subsection{Ermittlung von Benutzeranforderungen}
 %Todo: Strukturdaten -> Ausführungsdaten
 %	Aplhabetische Sortierung Abkürzungen
 %	Migration sven
 %	 - automation grundlagen sichern
 %	- links sichern broadcom
 %	- abkürzungen sichern automation
+Zur Umsetzung eines neuen Recherchewerkzeuges für Archivdaten müssen die Erwartungen und Bedürfnisse der Benutzer geklärt werden.
 \subsubsection{Funktionsumfang}
+In einem ersten Schritt wurde der bestehende Funktionsumfang (Abb. \ref{t_functionrangea} und Abb. \ref{t_functionrangeb}) ermittelt und als Grundlage für einen Workshop mit den Benutzern dokumentiert.
+%----------- TABELLE START -------------
+%\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
+\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+\toprule
+\multicolumn{5}{c}{\sffamily Definition Automic\textsuperscript{\textregistered} Archive Browser Funktionsumfang Teil 1}\\ \midrule
+\rowcolor{gray!50}
+\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Mandanten laden & X & X & X & X\\
+Mandanten laden mit mehreren Archiven & X & X & X & X\\
+Mehrere Mandanten laden & X & X & X & X\\
+Mehrere Mandanten laden mit mehreren Archiven & - & - & - & -\\
+Begrenzung Max.Lines & X & X & X & X\\
+Anzeige nur Ausführungsdaten (AH) & X & - & - & -\\
+Anzeige nur Protokolle (RH/RT) & - & X & - & -\\
+Anzeige nur Meldungen (MELD) & - & - & X & -\\
+Anzeige nur Kommentare (ACMT) & - & - & - & X\\
+Ausführungsdaten, Protokolle, Kommentare kombiniert & - & - & - & -\\
+Ausführungsdaten, Protokolle kombiniert & - & - & - & -\\
+Relationen ( RUN\#, Parent (ACT) ) & - & - & - & -\\
+Merken der markierten Zeile beim Filter & - & - & - & -\\
+Mitscrollen der markierten Zeile beim Filter & - & - & - & -\\
+Spalte Client & X & X & X & X\\
+Spalte User & X & - & X & X\\
+Spalte Department & X & - & X & X\\
+Spalte Archive Key 2 & X & - & - & -\\
+Spalte Object Type & X & - & - & -\\
+Spalte RUN\#/Add.Info & X & X & - & X\\
+Spalte Parent (ACT) & X & - & - & -\\
+Spalte Parent (PROC) & X & - & - & -\\
+Spalte Date & X & X & X & X\\
+Spalte Host & X & - & X & -\\
+Spalte Subtype & X & - & - & -\\
+Spalte Archive Key 1 & X & - & - & -\\
+Spalte Object Name & X & X & - & X\\
+Spalte Report Type & - & X & - & -\\
+Spalte Size & - & X & - & -\\
+Spalte Source & - & - & X & -\\
+Spalte Category & - & - & X & -\\
+Spalte Type & - & - & X & -\\
+Spalte Status & - & - & - & -\\
+Mehrfach sortieren & X & X & X & X\\
+Filter Client & X & X & X & X\\
+Filter User & X & - & X & X\\ \bottomrule
+\end{tabularx}
+        \caption[Useless Caption]{Funktionsumfang Teil 1 des Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463 (Abb. \ref{fig:aae_archbro})\protect\footnotemark}\label{t_functionrangea}
+\end{table}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Analyse Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463}
+%}
+
+%--------- TABELLE ENDE ---------------
+%----------- TABELLE START -------------
+\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
+\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+\toprule
+\multicolumn{5}{c}{\sffamily Definition Automic\textsuperscript{\textregistered} Archive Browser Funktionsumfang Teil 2}\\ \midrule
+\rowcolor{gray!50}
+\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Filter Department & X & - & X & X\\
+Filter Parent (ACT) & X & - & - & -\\
+Filter Date & X & X & X & X\\ 
+Filter RUN\#/Add.Info & X & X & - & -\\
+Filter Parent (PROC) & X & - & - & -\\
+Filter Host & X &  & X & X\\
+Filter Type & X & - & - & -\\
+Filter Archive Key 1 & X & - & - & -\\
+Filter Object Name & X & X & - & -\\
+Filter Message Text & - & - & X & X\\
+Filter Subtype & X & - & - & -\\
+Filter Archive Key 2 & X & - & - & -\\
+Filter Report Type & - & X & - & -\\
+Kombinierte Filter & X & X & X & X\\
+Übergreifende Filter & - & - & - & -\\ \bottomrule
+\end{tabularx}
+        \caption[Useless Caption]{Funktionsumfang Teil 2 des Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463 (Abb. \ref{fig:aae_archbro})\protect\footnotemark}\label{t_functionrangeb}
+\end{table}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Analyse Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463}
+}
+
+%--------- TABELLE ENDE ---------------
 \subsubsection{Benutzeranforderungen}
-Eine Umfrage unter den Benutzern hat ergeben
+In einem WebEx-Workshop vom 27.07.2021 wurde die Idee eines relationsbasierten Recherchewerkzeuges vorgestellt und auf Basis des bestehenden Funktionsumfangs daran geknüpfte Anforderungen der Benutzer definiert.\\
+Der Workshop hat für ein relationsbasiertes Recherchewerkzeug zu den Benutzeranforderung unter Abb. \ref{t_userrequirementa} und Abb. \ref{t_userrequirementb} geführt.
+%----------- TABELLE START -------------
+\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
+\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+\toprule
+\multicolumn{5}{c}{\sffamily Benutzeranforderungen relationsbasiertes Archivdaten-Recherchewerkzeug Teil 1}\\ \midrule
+\rowcolor{gray!50}
+\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Mandanten laden & X & X & - & X\\
+Mandanten laden mit mehreren Archiven & X & X & - & X\\
+Mehrere Mandanten laden & X & X & - & X\\
+Mehrere Mandanten laden mit mehreren Archiven & X & X & - & X\\
+Begrenzung Max.Lines & - & - & - & -\\
+Anzeige nur Ausführungsdaten (AH) & - & - & - & -\\
+Anzeige nur Protokolle (RH/RT) & - & - & - & -\\
+Anzeige nur Meldungen (MELD) & - & - & - & -\\
+Anzeige nur Kommentare (ACMT) & - & - & - & -\\
+Ausführungsdaten, Protokolle, Kommentare kombiniert & X & X & - & X\\
+Ausführungsdaten, Protokolle kombiniert & - & - & - & -\\
+Relationen ( RUN\#, Parent (ACT) ) & X & X & - & X\\
+Merken der markierten Zeile beim Filter & X & X & - & X\\
+Mitscrollen der markierten Zeile beim Filter & X & X & - & X\\
+Spalte Client & X & X & - & X\\
+Spalte User & - & - & - & -\\
+Spalte Department & - & - & - & -\\
+Spalte Archive Key 2 & X & X & - & X\\
+Spalte Object Type & X & X & - & X\\
+Spalte RUN\#/Add.Info & X & X & - & X\\
+Spalte Parent (ACT) & X & X & - & X\\
+Spalte Parent (PROC) & - & - & - & -\\
+Spalte Date & X & X & - & X\\
+Spalte Host & X & X & - & X\\
+Spalte Subtype & - & - & - & -\\
+Spalte Archive Key 1 & X & X & - & X\\ \bottomrule
+\end{tabularx}
+        \caption[Useless Caption]{Benutzeranforderungen Teil 1 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_userrequirementa}
+\end{table}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Workshop Relationsbasiertes Archivdaten Recherchewerkzeug vom 27.07.2021}
+}
+
+%--------- TABELLE ENDE ---------------
+%----------- TABELLE START -------------
+\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
+\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+\toprule
+\multicolumn{5}{c}{\sffamily Benutzeranforderungen relationsbasiertes Archivdaten-Recherchewerkzeug Teil 2}\\ \midrule
+\rowcolor{gray!50}
+\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Spalte Object Name & X & X & - & X\\
+Spalte Report Type & - & - & - & -\\
+Spalte Size & - & - & - & -\\
+Spalte Source & - & - & - & -\\
+Spalte Category & - & - & - & -\\
+Spalte Type & - & - & - & -\\
+Spalte Status & X & X & - & X\\
+Mehrfach sortieren & X & X & - & X\\
+Filter Client & X & X & - & X\\
+Filter User & - & - & - & -\\
+Filter Department & - & - & - & -\\
+Filter Parent (ACT) & X & X & - & X\\
+Filter Date & X & X & - & X\\
+Filter RUN\#/Add.Info & X & X & - & X\\
+Filter Parent (PROC) & - & - & - & -\\
+Filter Host & X & X & - & X\\
+Filter Type & X & X & - & X\\
+Filter Archive Key 1 & X & X & - & X\\
+Filter Object Name & X & X & - & X\\
+Filter Message Text & - & - & - & -\\
+Filter Subtype & - & - & - & -\\
+Filter Archive Key 2 & X & X & - & X\\
+Filter Report Type & - & - & - & -\\
+Kombinierte Filter & X & X & - & X\\
+Übergreifende Filter & X & X & - & X\\ \bottomrule
+\end{tabularx}
+        \caption[Useless Caption]{Benutzeranforderungen Teil 2 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_userrequirementb}
+\end{table}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Workshop Relationsbasiertes Archivdaten Recherchewerkzeug vom 27.07.2021}
+}
+
+%--------- TABELLE ENDE ---------------
 \subsubsection{Funktionsumfang Implementierung}
+Auf Grundlage der Benutzeranforderung (Abb. \ref{t_userrequirementa} und Abb. \ref{t_userrequirementb}) wurde der zu implementierende Funktionsumfang definiert.\\
+Innerhalb der Analyse der Abhängigkeiten zwischen den Archivdaten ist ein Softwarefehler im AE DB Archiv ucybdbar aufgefallen. Durch diesen werden ungültige RUNIDs in die Archivdaten für Kommentare UC\_ACMT.TXT geschrieben.
+Da die Kommentare über die RUNID mit den anderen Archivdaten in Relation gesetzt werden, können durch den Produktfehler die Kommentaren nicht in Relation mit den restlichen Archivdaten gesetzt werden. Daher ist die Benutzeranforderung an dieser Stelle innerhalb dieser Arbeit nicht erfüllbar und wurde für den zu implementierenden Funktionsumfang in dieser Arbeit zurückgestellt.
+Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
+
+Da die Meldungen grundsätzlich relationslos sind wurden sie durch die Benutzer als nicht relevant definiert und aus der Implementierung ausgeschlossen.
+
+Der zu implementierende Funktionsumfang für ein relationsbasiertes Archivdaten-Recherchewerkzeug ist in Abb. \ref{t_implfunctionrangea} und Abb. \ref{t_implfunctionrangeb} beschrieben.
+
+%----------- TABELLE START -------------
+\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
+\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+\toprule
+\multicolumn{5}{c}{\sffamily Funktionsumfang Implementierung relationsbasiertes Archivdaten-Recherchewerkzeug Teil 1}\\ \midrule
+\rowcolor{gray!50}
+\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Mandanten laden & X & X & - & -\\
+Mandanten laden mit mehreren Archiven & X & X & - & -\\
+Mehrere Mandanten laden & X & X & - & -\\
+Mehrere Mandanten laden mit mehreren Archiven & X & X & - & -\\
+Begrenzung Max.Lines & - & - & - & -\\
+Anzeige nur Ausführungsdaten (AH) & - & - & - & -\\
+Anzeige nur Protokolle (RH/RT) & - & - & - & -\\
+Anzeige nur Meldungen (MELD) & - & - & - & -\\
+Anzeige nur Kommentare (ACMT) & - & - & - & -\\
+Ausführungsdaten, Protokolle, Kommentare kombiniert & - & - & - & -\\
+Ausführungsdaten, Protokolle kombiniert & X & X & - & -\\
+Relationen ( RUN\#, Parent (ACT) ) & X & X & - & -\\
+Merken der markierten Zeile beim Filter & X & X & - & -\\
+Mitscrollen der markierten Zeile beim Filter & X & X & - & -\\
+Spalte Client & X & X & - & -\\
+Spalte User & - & - & - & -\\
+Spalte Department & - & - & - & -\\
+Spalte Archive Key 2 & X & X & - & -\\
+Spalte Object Type & X & X & - & -\\
+Spalte RUN\#/Add.Info & X & X & - & -\\
+Spalte Parent (ACT) & X & X & - & -\\
+Spalte Parent (PROC) & - & - & - & -\\
+Spalte Date & X & X & - & -\\
+Spalte Host & X & X & - & -\\
+Spalte Subtype & - & - & - & -\\
+Spalte Archive Key 1 & X & X & - & -\\ \bottomrule
+\end{tabularx}
+        \caption[Useless Caption]{Zu implementierender Funktionsumfang Teil 1 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_implfunctionrangea}
+\end{table}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021}
+}
+
+%--------- TABELLE ENDE ---------------
+
+%----------- TABELLE START -------------
+\afterpage{
+\begin{table}[htp] 
+\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
+\centering
+%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
+%\begin{tabularx}{\linewidth}{XXXXXXX}
+%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
+\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+\toprule
+\multicolumn{5}{c}{\sffamily Funktionsumfang Implementierung relationsbasiertes Archivdaten-Recherchewerkzeug Teil 2}\\ \midrule
+\rowcolor{gray!50}
+\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Spalte Object Name & X & X & - & -\\
+Spalte Report Type & - & - & - & -\\
+Spalte Size & - & - & - & -\\
+Spalte Source & - & - & - & -\\
+Spalte Category & - & - & - & -\\
+Spalte Type & - & - & - & -\\
+Spalte Status & X & X & - & -\\
+Mehrfach sortieren & X & X & - & -\\
+Filter Client & X & X & - & -\\
+Filter User & - & - & - & -\\
+Filter Department & - & - & - & -\\
+Filter Parent (ACT) & X & X & - & -\\
+Filter Date & X & X & - & -\\
+Filter RUN\#/Add.Info & X & X & - & -\\
+Filter Parent (PROC) & - & - & - & -\\
+Filter Host & X & X & - & -\\
+Filter Type & X & X & - & -\\
+Filter Archive Key 1 & X & X & - & -\\
+Filter Object Name & X & X & - & -\\
+Filter Message Text & - & - & - & -\\
+Filter Subtype & - & - & - & -\\
+Filter Archive Key 2 & X & X & - & -\\
+Filter Report Type & - & - & - & -\\
+Kombinierte Filter & X & X & - & -\\
+Übergreifende Filter & X & X & - & -\\ \bottomrule
+\end{tabularx}
+        \caption[Useless Caption]{Zu implementierender Funktionsumfang Teil 2 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_implfunctionrangeb}
+\end{table}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021}
+}
+
+%--------- TABELLE ENDE ---------------
 \subsection{Weiterentwicklung}
 Vor einer Neuentwicklung wurde die Weiterentwicklung der bestehenden Lösung betrachtet. In der Auslieferung des Automic\textsuperscript{\textregistered} Automation Image gab es bis zu der Version 11.2.6 den Ordner TOOLS\textbackslash SOURCE\textbackslash UCYBARBR mit dem Quellcode des Automic\textsuperscript{\textregistered} Archive Browser \citeg{wpdbmainaaeutil} in Microsoft \ac{vb}.\\
 An der Struktur des Projektes \citeg{vbmarshall} und der Format-Spezifikation im Quellcode (VERSION 5.0) ist zu erkennen, dass es sich um ein \ac{vb} 5.0 Projekt handelt, siehe Auflistung \ref{lst:module}.\\
@@ -1354,6 +1646,11 @@ Broadcom Inc.
 Broadcom Inc.
 \emph{Ausführungsphasen}, 
 \url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#AWA/Executions/obj_ExecStages_overview.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+\bibitem[Capture(2021)]{aae_captureucybdbar} 
+Jan Thomas Gundlach
+\emph{Ticket 0013299: AE DB Archive $(ucybdbar)$: Erzeugt in UC\_ACMT.TXT ungültige RUNIDs}, 
+\url{https://ticketing.capture.eu/view.php?id=13299}, 2021, letzter Zugriff: 19. 8. 2021
 
 \bibitem[Ahrends(2010)]{aae_runs} 
 Johannes Ahrends
