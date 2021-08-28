@@ -112,7 +112,7 @@ In einem komplexen Geschäftsprozess ist die Einhaltung der Vorgaben anhand des P
 \section{Motivation}
 Als Mitverantwortlicher für die zentrale Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation ist der Autor Ansprechpartner zu Fragen zum tatsächlichen Ablauf bestimmter Durchführungen von Geschäftsprozessen und Ermittlung von Ablaufnachweisen. Sofern die Protokolle zu den angefragten Abläufen bereits reorganisiert und archiviert wurden entsteht durch die Recherche von Protokollen zu Teilprozessen und Aktivitäten eines angefragten Geschäftsprozesses zurzeit  im Zweifel ein hohes Arbeitsaufkommen. Im Prüfungsfall kann die Recherche auf Verlangen des Prüfers auch während einer Prüfung und im Beisein des Prüfers durchzuführen sein. Dies wirft in der Regel kein gutes Licht auf die Nachweisbarkeit und Nachvollziehbarkeit bzgl. der Durchführungen von Geschäftsprozessen innerhalb der Prüfung.
 
-Innerhalb der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen bis hin zu einer Aktivität~(\refg{ssec:job}) zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für archivierte Protokolle zu harmonisieren.
+Innerhalb der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation existiert für nicht reorganisierte Protokolle die Möglichkeit zu einer Ausführung eines Geschäftsprozesses~(\refg{ssec:workflow}) über die Relationen zu Teilprozessen~(\refg{ssec:job}) bis hin zu einer Aktivität~(\refg{ssec:run}) zu traversieren. Dies ermöglicht eine deutlich übersichtlichere und schnellere Recherche durch die Protokolle komplexer Geschäftsprozesse. Daraus entstand der Anreiz die Recherchemöglichkeiten der Process Engine~(\refg{ssec:processengine}) Automic\textsuperscript{\textregistered} Automation und des Betrachtungswerkzeuges für archivierte Protokolle zu harmonisieren.
 
 
 
@@ -203,7 +203,7 @@ Damit vereint sie Workflow Management und Anwendungsintegration. Durch die Steue
 \section{Automic\textsuperscript{\textregistered} Automation}
 %https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#_Common/Welcome/AWA/About_AWA.htm
 
-Automic Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwareprodukte mittels der plattformübergreifend IT-bezogene Aufgaben automatisiert und dokumentiert werden können. Die zugehörigen Softwareprodukte sind im Allgemeinen:
+Automic\textsuperscript{\textregistered} Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwareprodukte mittels der plattformübergreifend IT-bezogene Aufgaben automatisiert und dokumentiert werden können. Die zugehörigen Softwareprodukte sind im Allgemeinen:
 \begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
 \item Die Automation Engine als Process Engine bestehend aus \citeg{aae_proctypes}:
     \begin{itemize}
@@ -220,7 +220,7 @@ Automic Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwarepro
 \item Der Package Manager zum verwalten von Packs auf der Kommandozeile.
 \item Der Action Builder zum erstellen von Packs.
 \item Analytics On Premise für individuelle Statistiken.
-\item Verschiedene Dienstprogramme zur Verwaltung von Automic Automation. Relevant innerhalb dieser Arbeit sind dabei:
+\item Verschiedene Dienstprogramme zur Verwaltung von Automic\textsuperscript{\textregistered} Automation. Relevant innerhalb dieser Arbeit sind dabei:
     \begin{itemize}
       \item AE DB Archive \citeg{aae_archiv}  archiviert Protokolldaten und markiert diese in der Datenbank als archiviert.
       %\item AE DB Revision Report \citeg{aae_audit} erstellt Revisionsreports aus Auditdaten aus der Datenbank.
@@ -232,18 +232,85 @@ Automic Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwarepro
 
 
 \subsection{Workflows}\label{ssec:workflow}
-%abbild bspw. workflow
+
+%----------- BILD ANFANG -------------
+\afterpage{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/workflow.png}
+        \caption[Beispiel eines Workflows am Reorganisationsprozess]{Beispiel eines Workflows am Reorganisationsprozess\footnotemark}
+    \label{fig:aae_workflow}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
+}
+
+%------------- BILD ENDE ---------------
+
+Ein Workflow (Abb. \ref{fig:aae_workflow}) orchestriert die automatische Durchführung einzelner Aufgaben von beispielsweise Jobs anhand von Bedingungen und Relationen und beschreibt damit deren Abfolge \citeg{aae_workflow}. Betrachtet man einen Workflow aus einem abstrahierten Modellierungsgrad ist die Instanz eines Workflows selbst wieder eine Aufgabe.\\
+Mittels Workflows können Geschäftsprozesse oder Teilprozesse aus dem \ac{bpm} technisch beschrieben werden.
+
+
 \subsection{Jobs}\label{ssec:job}
-%abbild bspw. job
-\subsection{Runs}
+%----------- BILD ANFANG -------------
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/job.png}
+        \caption[Job-Beispiel anhand eines generischen Jobs]{Job-Beispiel anhand eines generischen Jobs\footnotemark}
+    \label{fig:aae_job}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
+%------------- BILD ENDE ---------------
+Ein Job (Abb. \ref{fig:aae_job}) ist eine Vorlage für eine Aufgabe die eine oder mehrere Anweisungen in einer definierten Reihenfolge für eine durch sie spezifizierte Umgebung enthält \citeg{aae_jobs} . Dadurch sind Jobs Basisbausteine innerhalb von automatisierten Prozessen.\\
+Ein Job beschreibt innerhalb des \ac{bpm} einen Teilprozess.
+
+\subsection{Ausführungen}\label{ssec:run}
 %abbild bspw. executions
+%Eine Ausführungen ergibt sich durch die Einplanung einer Aufgabe wie einem Job oder einem Workflow in bestimmten Intervallen oder zu einem definierten Zeitpunkt.
+%Sie besteht dabei aus der Aktivierung, Generierung, Verarbeitung und dem Abschluss der Aufgabe.
+
+%Durch das Einplanen eines Jobs oder eines Workflows zu einem bestimmten Zeitpunkt oder einer Folge an Zeitpunkten wird mit dessen Aktivierung eine Instanz des selben als Aufgabe erzeugt.
+Durch die Ausführung eines Workflows oder Jobs wird als Instanz dessen eine Aufgabe erzeugt. Die Aufgabe durchläuft anschließend während der Ausführung die Phasen Aktivierung, Generierung, Verarbeitung und Abschluss \citeg{aae_runs} .
+Eine Aufgabe beschreibt innerhalb des \ac{bpm} eine Aktivität und eine Ausführung (Abb. \ref{fig:aae_runs}) dessen Resultat.
+
+%----------- BILD ANFANG -------------
+\afterpage{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/runs.png}
+        \caption[Eine Liste von Ausführungen und deren Abhängigkeiten]{Eine Liste von Ausführungen und deren Abhängigkeiten\footnotemark}
+    \label{fig:aae_runs}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
+}
+%------------- BILD ENDE ---------------
+
 \subsection{Reports}
 %abbild bspw. report
+Beim Erzeugen einer Aufgabe werden alle Ausführungsphasen zwecks Rückverfolgbarkeit und Prüfbarkeit in enem Report protokolliert.
+
 \subsection{Reorganisation}
-%abbild bspw. reorg-tool
+Unter dem ständigen und insbesondere schnellem Wachstum einer Datenbank kann die Performanz als auch deren Wartbarkeit leiden. Parallel steigen durch den physikalischen Bedarf die Betriebskosten. Um diesem entgegen zu wirken sollten Datenbanken regelmässig reorganisiert werden.\\
+Bei einer Reorganisation (Abb. \ref{fig:aae_workflow}) werden nicht mehr benötige oder verwaiste gelöscht und bestehende Daten ggf. neu strukturiert \citeg{aae_reorg}.
 
 \section{Automic\textsuperscript{\textregistered} Archive Browser}
+Der Automic\textsuperscript{\textregistered} Archive Browser (Abb. \ref{fig:aae_archbro}) ist ein Dienstprogramm mit dem archivierten Datensätzen aus Automic\textsuperscript{\textregistered} Automation zur Anzeige gebracht werden können und mit dem in diesen recherchiert werden kann \citeg{aae_archbrow}.
 %\section{Java Development Kits}
+%----------- BILD ANFANG -------------
+%\afterpage{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/archivbrowser.png}
+        \caption[Ansicht archivierter Datensätze im Automic\textsuperscript{\textregistered} Archive Browser]{Ansicht archivierter Datensätze im Automic\textsuperscript{\textregistered} Archive Browser\footnotemark}
+    \label{fig:aae_archbro}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
+%}
+%------------- BILD ENDE ---------------
+
 \section{Rechtliche Grundlagen}
 %https://www.prosoft.de/blog/auditsicheres-log-management/
 %https://www.juraforum.de/ratgeber/arbeitsrecht/gesetzliche-aufbewahrungsfristen-mit-rechtsgrundlagen-von-a-bis-z-tabelle
@@ -591,9 +658,11 @@ Dass die Ökosysteme, die verbreitete Syntax und der Umfang von Sprachen wie Java
 Seit 2019 ist \ac{vb} nicht mehr Bestandteil der Erhebung des Stack Overflow Developer Survey. Mittlerweile führt der nahe Verwandte \ac{vba} die Rangliste \citeg{stacksurvey21}  nach COBOL an.
 
 Entsprechend ungeeignet ist \ac{vb} im Jahr 2021 als Grundlage für ein Softwareprojekt mit gängigen Anforderungen an Portierbarkeit, Erweiterbarkeit und Wartbarkeit.\\
-Erschwerend kommt hinzu, dass der Quellcode des Automic\textsuperscript{\textregistered} Archive Browser in der Auslieferung des aktuellen Automic\textsuperscript{\textregistered} Automation Image 12.3.6\footnote{Quelle: Automic Download Center \url{https://docs.automic.com/downloads} Aufruf: 03.08.2021} nicht mehr enthalten ist. Auch wenn der Automic\textsuperscript{\textregistered} Archive Browser nur noch gepflegt und nicht mehr weiterentwickelt wird \citeg{wpdbmainaaeutil}, kann es durch die Pflege zu Quellcodeanpassungen gekommen sein um die der öffentliche  Quellcode zusätzlich erweitert werden müsste.\\
+Erschwerend kommt hinzu, dass der Quellcode des Automic\textsuperscript{\textregistered} Archive Browser in der Auslieferung des aktuellen Automic\textsuperscript{\textregistered} Automation Image 12.3.6\footnote{Quelle: Automic\textsuperscript{\textregistered} Download Center \url{https://docs.automic.com/downloads} Aufruf: 03.08.2021} nicht mehr enthalten ist. Auch wenn der Automic\textsuperscript{\textregistered} Archive Browser nur noch gepflegt und nicht mehr weiterentwickelt wird \citeg{wpdbmainaaeutil}, kann es durch die Pflege zu Quellcodeanpassungen gekommen sein um die der öffentliche  Quellcode zusätzlich erweitert werden müsste.\\
 Eine Portierung des bestehenden Automic\textsuperscript{\textregistered} Archive Browser \ac{vb} 5.0 Projektes auf .NET Core würde eine Umstellung auf neue Technologien notwendig machen \citeg{vbport}. Der Aufwand hierzu, zusätzlich zur Erweiterung, wird als höher im Vergleich zu einer Neuentwicklung eingeschätzt.\\
 \subsection{Datenstruktur}
+
+%https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#Utilities/admin_AboutAEDBArchive.htm#link7
 
 \begin{center}
 \begin{tabular}{c}
@@ -1043,7 +1112,7 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{jmts}[MTS]{Medium Term Support}
 \acro{jaws}[AWS]{Amazon Web Services}
 \acro{jgpl}[GPL]{General Public License}
-\acro{aawi}[AWI]{Automic Web Interface}
+\acro{aawi}[AWI]{Automic\textsuperscript{\textregistered} Web Interface}
 \acro{jgui}[GUI]{Graphical User Interface}
 
 
@@ -1211,7 +1280,7 @@ in: \emph{BPM CBOK\textsuperscript{\textregistered} - Business Process Managemen
 
 \bibitem[Broadcom(2021)]{aae_awa} 
 Broadcom Inc.
-\emph{Info über Automic Automation}, 
+\emph{Info über Automic\textsuperscript{\textregistered} Automation}, 
 \url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#_Common/Welcome/AWA/About_AWA.htm}, 2021, letzter Zugriff: 19. 8. 2021
 
 \bibitem[Broadcom(2021)]{aae_archiv} 
@@ -1244,8 +1313,25 @@ Broadcom Inc.
 \emph{Serverprozesstypen}, 
 \url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#AWA/Admin/admin_types_of_server_processes.htm}, 2021, letzter Zugriff: 19. 8. 2021
 
+\bibitem[Broadcom(2021)]{aae_workflow} 
+Broadcom Inc.
+\emph{Info über Automic\textsuperscript{\textregistered} Automation - Orchestrieren von Prozessen: Workflows}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/Content/_Common/Welcome/AWA/About_AWA.htm\#link6}, 2021, letzter Zugriff: 19. 8. 2021
 
+\bibitem[Broadcom(2021)]{aae_jobs} 
+Broadcom Inc.
+\emph{Info über Automic\textsuperscript{\textregistered} Automation - Jobs}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/Content/_Common/Welcome/AWA/About_AWA.htm\#link4}, 2021, letzter Zugriff: 19. 8. 2021
 
+\bibitem[Broadcom(2021)]{aae_runs} 
+Broadcom Inc.
+\emph{Ausführungsphasen}, 
+\url{https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic\%20Automation\%20Guides/help.htm\#AWA/Executions/obj_ExecStages_overview.htm}, 2021, letzter Zugriff: 19. 8. 2021
+
+\bibitem[Ahrends(2010)]{aae_runs} 
+Johannes Ahrends
+\emph{Datenbank Reorganisation - Sinn oder Unsinn?}, 
+\url{https://www.doag.org/formes/pubfiles/2272689/114-2010-K-DB-Ahrends-Datenbank_Reorganisation-PRAESENTATION.pdf}, 2010, letzter Zugriff: 20. 8. 2021
 
 \bibitem[Amtsblatt der Europäischen Union(2016)]{rdsgvo} 
 Amtsblatt der Europäischen Union
