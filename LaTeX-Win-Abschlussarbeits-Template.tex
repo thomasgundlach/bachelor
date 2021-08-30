@@ -228,7 +228,7 @@ Eine Prozess Engine bietet die Möglichkeit, jede Form von End-to-End-Prozessen p
 Damit vereint sie Workflow Management und Anwendungsintegration. Durch die Steuerung der Geschäftsprozesse bietet die Prozess Engine zugleich einen Überblick in Echtzeit über selbige. Sie verfügt über Informationen zur Ausführungsdauer eines gesamten Prozesses oder eines Teilprozesses sowie den Status jeder Aufgabe. Sie liefert damit Metriken für das Controlling der unternehmensweiten Prozesslandschaft. Auf dieser Basis kann die Process Engine zugleich eine stets aktuelle Prozessdokumentation für Management als auch IT bieten.
 
 
-\section{Automic\textsuperscript{\textregistered} Automation}
+\section{Automic\textsuperscript{\textregistered} Automation}\label{ssec:aae_awa}
 %https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#_Common/Welcome/AWA/About_AWA.htm
 
 Automic\textsuperscript{\textregistered} Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwareprodukte, mittels der plattformübergreifend IT-bezogene Aufgaben automatisiert und dokumentiert werden können. Die zugehörigen Softwareprodukte sind im Allgemeinen:
@@ -723,7 +723,8 @@ Spalte Size & - & - & - & -\\
 Spalte Source & - & - & - & -\\
 Spalte Category & - & - & - & -\\
 Spalte Type & - & - & - & -\\
-Spalte Status & X & X & - & X\\
+Spalte Status & - & - & - & -\\
+%Spalte Status & X & X & - & X\\
 Mehrfach sortieren & X & X & - & X\\
 Filter Client & X & X & - & X\\
 Filter User & - & - & - & -\\
@@ -748,13 +749,12 @@ Kombinierte Filter & X & X & - & X\\
 \subsubsection{Funktionsumfang Implementierung}
 Auf Grundlage der Benutzeranforderung (Tab.~\ref{t_userrequirement}) wurde der zu implementierende Funktionsumfang definiert.\\
 Innerhalb der Analyse der Abhängigkeiten zwischen den Archivdaten ist ein Softwarefehler im AE DB Archiv $(ucybdbar)$ aufgefallen. Durch diesen werden ungültige RUNIDs in die Archivdaten für Kommentare $(UC\_ACMT.TXT)$ geschrieben.
-Da die Kommentare über die RUNID mit den anderen Archivdaten in Relation gesetzt werden, können durch den Produktfehler die Kommentaren nicht in Relation mit den restlichen Archivdaten gesetzt werden. Daher ist die Benutzeranforderung an dieser Stelle innerhalb dieser Arbeit nicht erfüllbar und wurde für den zu implementierenden Funktionsumfang in dieser Arbeit zurückgestellt.
+Obwohl Kommentare über die RunID mit den anderen Archivdaten in Relation gesetzt werden könnten, ist innerhalb der Analyse ein Produktfehler im Dienstprogramm AE DB Archive festgestellt worden der dies unterbindet. Daher ist die Benutzeranforderung an dieser Stelle innerhalb dieser Arbeit nicht erfüllbar und wurde für den zu implementierenden Funktionsumfang in dieser Arbeit zurückgestellt.
 Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
 
-Da die Meldungen grundsätzlich relationslos sind wurden sie durch die Benutzer als nicht relevant definiert und aus der Implementierung ausgeschlossen.
+Da die Meldungen von Ihrer Datenstruktur grundsätzlich relationslos in Bezug auf Ausführungen abgelegt werden, wurden sie durch die Benutzer als nicht relevant definiert und aus der Implementierung ausgeschlossen.
 
 Der zu implementierende Funktionsumfang für ein relationsbasiertes Archivdaten-Recherchewerkzeug ist in Tab.~\ref{t_implfunctionrange} beschrieben.
-
 
 %----------- TABELLE START -------------
 \rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
@@ -813,7 +813,8 @@ Spalte Size & - & - & - & -\\
 Spalte Source & - & - & - & -\\
 Spalte Category & - & - & - & -\\
 Spalte Type & - & - & - & -\\
-Spalte Status & X & X & - & -\\
+%Spalte Status & X & X & - & -\\
+Spalte Status & - & - & - & -\\
 Mehrfach sortieren & X & X & - & -\\
 Filter Client & X & X & - & -\\
 Filter User & - & - & - & -\\
@@ -951,19 +952,21 @@ Eine Portierung des bestehenden Automic\textsuperscript{\textregistered} Archive
 \subsection{Datenstruktur}
 %https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#Utilities/admin_AboutAEDBArchive.htm#link7
 
+Die archivierten Daten von Ausführungen und Protokollen werden durch das Dienstprogramm AE DB Archive~(\refg{ssec:aae_awa}) in einer Ordnerstruktur (Lst.~\ref{lst:folders_reorg}) mit 3 Ebenen abgelegt. 
+
 \begin{center}
 \begin{tabular}{c}
-\begin{lstlisting}[caption=Ermittlung von Zeichenkodierungen archivierter Daten, label=lst:charset_reorg, language=bash]
-$ file -i ./*
-./UC_ACMT.TXT: inode/x-empty; charset=binary
-./UC_AH.IDX:   text/plain; charset=us-ascii
-./UC_AH.TXT:   text/plain; charset=iso-8859-1
-./UC_MELD.TXT: text/plain; charset=iso-8859-1
-./UC_RH.IDX:   text/plain; charset=us-ascii
-./UC_RH.TXT:   text/plain; charset=iso-8859-1
+\begin{lstlisting}[caption=Ordnerstruktur von archivierten Daten, label=lst:folders_reorg, language=bash]
+Struktur:
+<ARCHIVORDNER>/<MANDANT>/<ARCHIVIERUNGSLAUF>
+
+Beispiel:
+AAE_DEV-REORG-01.05/0004/UC_ARCHIV_20210501_55
 \end{lstlisting}
 \end{tabular}
 \end{center}
+
+Die regulär in ISO 8859-1 kodierten, archivierten Ausführungsdaten und Protokolle unterteilen sich je Tag, Mandant und Archivierungslauf in sechs Dateien (Lst.~\ref{lst:charset_reorg}). Die Datenstruktur der jeweiligen Dateien und deren Abhängigkeiten zueinander sind unter Abb.~\ref{fig:uml_archiv_datastruct} dargestellt.
 
 
 % Graphic for TeX using PGF
@@ -1501,7 +1504,7 @@ $ file -i ./*
 }
 % setfont left to latex
 \end{tikzpicture}
-        \caption[UML-Diagramm Archivdatenformat Datenstruktur]{UML-Diagramm Archivdatenformat Datenstruktur\footnotemark}
+        \caption[UML-Diagramm Archivdateien Datenstruktur]{UML-Diagramm Archivdateien Datenstruktur\footnotemark}
     \label{fig:uml_archiv_datastruct}
     \end{center}
   \end{figure}
@@ -1511,6 +1514,91 @@ $ file -i ./*
 %------------- BILD ENDE ---------------
 
 
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Ermittlung von Zeichenkodierungen archivierter Daten, label=lst:charset_reorg, language=bash]
+$ file -i ./*
+./UC_ACMT.TXT: inode/x-empty; charset=binary
+./UC_AH.IDX:   text/plain; charset=us-ascii
+./UC_AH.TXT:   text/plain; charset=iso-8859-1
+./UC_MELD.TXT: text/plain; charset=iso-8859-1
+./UC_RH.IDX:   text/plain; charset=us-ascii
+./UC_RH.TXT:   text/plain; charset=iso-8859-1
+\end{lstlisting}
+\end{tabular}
+\end{center}
+
+\subsubsection{Indexdatei für Ausführungsdaten: UC\_AH.IDX}\label{ssec:ucahidx}
+Die Datei UC\_AH.IDX dient als Index zum schnellen Zugriff auf die Datei UC\_AH.TXT~(\refg{ssec:ucahtxt}). In UC\_AH.IDX sind zeilenweise (Lst.~\ref{lst:ucahidx}) je Aufgabe die primären Ausführungsdaten durch Strichpunkt getrennt gespeichert sowie die Position in Byte, die Zeilennummer und die Länge der vollständigen Ausführungsdaten aus UC\_AH.TXT.
+
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Beispielzeile aus Indexdatei für Ausführungsdaten: UC\_AH.IDX, label=lst:ucahidx, language=bash,basicstyle=\tiny]
+H2;3000;FISCHER;HANSEMERKUR;SCRI;<PERIOD>;2474844;;2021.05.01 00:31:11;2475290;2475290;;;SC.PERIODICAL_STARTS;
+0;1;52;271
+\end{lstlisting}
+\end{tabular}
+\end{center}
+
+Zur Gewährleistung der Konsistenz der Daten wurde sichergestellt (Lst.~\ref{lst:ucahidx_runid}), dass eine RunID in der Datei UC\_AH.IDX nur einmal vorkommt.
+
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Überprüfung der Eindeutigkeit einer RunID innerhalb von UC\_AH.IDX, label=lst:ucahidx_runid, language=bash]
+[NB-2014299] $ awk -F";" '{print $7}' UC_AH.IDX | sort \
+  | uniq -c | awk '$1>=2{print $0}'
+[NB-2014299] $ 
+\end{lstlisting}
+\end{tabular}
+\end{center}
+
+\subsubsection{Ausführungsdaten: UC\_AH.TXT}\label{ssec:ucahtxt}
+In der Datei UC\_AH.TXT sind die Ausführungsdaten der archivierten Aufgaben gespeichert. Zum Auslesen der Ausführungsdaten einzelner Aufgaben werden die Posistions- und Größenangaben aus UC\_AH.IDX~(\refg{ssec:ucahidx}) benötigt.
+
+\subsubsection{Indexdatei für Protokolle: UC\_RH.IDX}\label{ssec:ucrhidx}
+Die Datei UC\_RH.IDX dient als Index zum schnellen Zugriff auf die Datei UC\_RH.TXT~(\refg{ssec:ucrhtxt}). In UC\_RH.IDX sind zeilenweise (Lst.~\ref{lst:ucrhidx}) je Aufgabe die Protokolleigenschaften durch Strichpunkt getrennt gespeichert sowie die Position in Byte, die Zeilennummer und die Länge der Protokollabschnitte aus UC\_RH.TXT.
+
+Je RunID gibt es mehrere, eigenständigen Zeilen.
+
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Beispielzeile aus Indexdatei für Protokolle: UC\_RH.IDX, label=lst:ucrhidx, language=bash,basicstyle=\tiny]
+H3;3000;ACT;SC.PERIODICAL_STARTS;2474844;2021.05.01 00:31:11;2021.05.01 00:31:11;0;1;52;2164
+\end{lstlisting}
+\end{tabular}
+\end{center}
+
+\subsubsection{Protokolle: UC\_RH.TXT}\label{ssec:ucrhtxt}
+In der Datei UC\_RH.TXT sind die Protokolle der archivierten Aufgaben gespeichert. Zum Auslesen der Protokolle einzelner Aufgaben werden die Posistions- und Größenangaben aus UC\_RH.IDX~(\refg{ssec:ucrhidx}) benötigt.
+
+Je RunID gibt es mehrere, eigenständigen Datensätze hintereinander.
+
+\subsubsection{Meldungsarchiv: UC\_MELD.TXT}\label{ssec:ucmeldtxt}
+Meldungen enthalten Informationen über den Zustand von ausgeführten Aufgaben oder Prozessstatus. Zur Einordnung werden sie in die drei Prioritätsklassen Fehler, Warnungen und Meldungen eingeteilt.\\
+Die Eigenschaften der Meldungen werden bei der Archivierung durch Strichpunkt getrennt zeilenweise (Lst.~\ref{lst:ucmeldtxt}) in die Datei UC\_MELD.TXT abgelegt.
+Meldungen können aufgrund Ihrer archivierten Eigenschaften nicht automatisiert mit dritten Ausführungsdaten in Relation gesetzt werden da ein eindeutiges Kriterium hierfür fehlt.
+
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Beispielzeile aus Meldungsarchiv: UC\_MELD.TXT, label=lst:ucmeldtxt, language=bash,basicstyle=\tiny]
+M;3000;FISCHER;HANSEMERKUR;2021.04.30 02:00:07;Automation Engine;Nachricht;Information;;
+U00012109 Script 'SC.PERIODICAL_STARTS' (RunID '0002471778') normal beendet.
+\end{lstlisting}
+\end{tabular}
+\end{center}
+
+\subsubsection{Kommentararchiv: UC\_ACMT.TXT}\label{ssec:acmttxt}
+Zu der Ausführung einer Aufgabe kann programmatisch oder manuell ein Kommentar mit individuellen Informationen zur Ausführung hinzugefügt oder abgerufen werden (wie beispielsweise eine Ticket-Referenz bei Aufgabenabbruch). Mit Archivierung werden Kommentare und deren Eigenschaften separat zu den Ausführungsdaten und referenzierbar über die Eigenschaft RunID in die Datei UC\_ACMT.TXT abgelegt. Die Ablage von Eigenschaften und Kommentaren erfolgt ebenfalls zeilenweise getrennt durch Strichpunkt (Lst.~\ref{lst:ucacmttxt}).\\
+Innnerhalb der Analyse der Datenstrukturen ist ein Produktfehler im Dienstprogramm AE DB Archive festgestellt worden, welcher die Relation zwischen Ausführungsdaten und Kommentaren unterbindet. Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
+
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}[caption=Beispielzeile aus Kommentararchiv: UC\_ACMT.TXT, label=lst:ucacmttxt, language=bash,basicstyle=\tiny]
+ACMT;3000;FISCHER/HANSEMERKUR;JP.HUM020;140428253184894;2021.05.01 01:25:20;66;
+Der Jobplan wurde durch das Script SC.CLEAN_CANCEL inaktiv gesetzt
+\end{lstlisting}
+\end{tabular}
+\end{center}
 
 
 \section{Auswahl der Java Implementierung}
@@ -1860,18 +1948,19 @@ Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.rea
 %jlink
 %https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
 %screenshot Ergebnis mit Erklärung (Punkte in Grafik + Tabelle die Punkte erklärt)
+\section{Programmstruktur}
+\subsection{Klassen}
+\subsection{Methoden}
+
 \section{Datenstruktur}
 daraus kann über die runid und die parent runid (ACT) ein graph erstellt werden.
 hierzu werden alle parent runids in einer tabelle mit ihren Adjazenzmengen verknüpft.
 In einer weiteren Tabelle werden alle runids mit Ihren Ausfuehrungsdaten in Form eines Feldes verknüpft.
 Zuletzt wird die differenzmenge Parent-RunIds/RunIds und darüber alle RunIds bestimmt zu denen keine Parent-RunIds bekannt sind. Diese bilden die Wurzelebene des TableTree.
 
-\section{Module}
-
-\section{Entwurfsmuster}
-Model-View-Controller(MVC)
-
-Observer Design Pattern
+%\section{Entwurfsmuster}
+%Model-View-Controller(MVC)
+%Observer Design Pattern
 %ggf. https://www.philipphauer.de/study/se/design-pattern/observer.php
 \section{Klassendiagramm}
 
