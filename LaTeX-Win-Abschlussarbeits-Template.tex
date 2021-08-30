@@ -94,18 +94,24 @@
 \selectlanguage{english}
 \section*{\centering\abstractname}
 %\section*{\centering\abstractname}
-Form and layout of this \LaTeX-template incorporate the guidelines for theses in the Media Technology Department \glqq Richtlinien zur Erstellung schriftlicher Arbeiten, vorrangig Bachelor-Thesis (BA) und Master-Thesis (MA) im Department Medientechnik in der Fa\-kul\-tät DMI an der HAW Hamburg\grqq\ in the version of December 6, 2012 by Prof.\ Wolfgang Willaschek. 
-
-The thesis should be printed single-sided (simplex). The binding correction (loss at the left aper edge due to binding) might be adjusted, according to the type of binding. This template incorporates a binding correction as BCOR=1mm (suitable for adhesive binding) in the \LaTeX\ document header.
-
-{\bfseries This is the english version of the opening abstract} (don't forget to set \LaTeX's language setting back to ngerman after the english text). 
+This thesis deals with the requirement and development of a relation-oriented retrieval tool for archived log data from a process engine. The
+implementation is based on the Automic\textsuperscript{\textregistered} Automation Engine. For the requirement the legal background is worked out using the insurance industry as an example and the structure of the process engine is described. The basis for the development and the scope of functions for the search tool is a fundamental part of the thesis as well as the implementation.
+The result is the prototype of a utility, with which the dependencies of archived protocols of a process engine can be traced. The resulting concept is based on a combination of Eclipse Temurin and OpenJFX. Finally, an outlook on future requirements and the further development of the prototype is described.
  
  
 \selectlanguage{ngerman}
 \section*{\centering\abstractname}
-Diese Arbeit behandelt die Anforderung und Entwicklung eines relationsorientierten Recherchewerkzeugs für archivierte Protokolldaten aus einer Process Engine. Die Umsetzung erfolgt am Beispiel der Automic\textsuperscript{\textregistered} Automation Engine. Für die Anforderung wird der rechtliche Hintergrund am Beispiel des Versicherungswesens erarbeitet und der Aufbau der Process Engine beschrieben. Thematisiert wird die Auswahl der Grundlagen für die Entwicklung und des Funktionsumfangs für das Recherchewerkzeug mit der daraus folgenden Implementierung.
-
-Ergebnis ist der Prototyp eines Dienstprogramms mit dem die Abhängigkeiten von archivierten Protokollen einer Process Engine dargestellt und mit dem über diese traversiert werden können. Dabei setzt das entstandene Konzept auf eine Kombination aus Eclipse Temurin und OpenJFX. Abschließend wird ein Ausblick auf kommende Anforderungen und die Weiterentwicklung des Prototypes gegeben.
+Diese Arbeit behandelt die Anforderung und Entwicklung eines relationsorientierten Recherchewerkzeugs für archivierte Protokolldaten aus einer Process Engine. Die
+Umsetzung erfolgt am Beispiel der Automic\textsuperscript{\textregistered} Automation Engine. Für die Anforde-
+rung wird der rechtliche Hintergrund am Beispiel des Versicherungswesens erarbeitet
+und der Aufbau der Process Engine beschrieben. Thematisiert wird die Auswahl der
+Grundlagen für die Entwicklung und des Funktionsumfangs für das Recherchewerk-
+zeug mit der daraus folgenden Implementierung.\\
+Ergebnis ist der Prototyp eines Dienstprogramms, mit dem die Abhängigkeiten von
+archivierten Protokollen einer Process Engine dargestellt und mit dem über diese tra-
+versiert werden können. Dabei setzt das entstandene Konzept auf eine Kombination
+aus Eclipse Temurin und OpenJFX. Abschließend wird ein Ausblick auf kommende
+Anforderungen und die Weiterentwicklung des Prototyps gegeben.
 
 
 %--------------------------- Text -------------------------------
@@ -959,9 +965,554 @@ $ file -i ./*
 \end{tabular}
 \end{center}
 
-some text
-more 
-and other text
+
+% Graphic for TeX using PGF
+% Title: C:\Users\Jan\Documents\HAW\BA-Arbeiten\dia\DatenstrukturArchivBrowser.dia
+% Creator: Dia v0.97.2
+% CreationDate: Mon Aug 30 03:54:24 2021
+% For: Jan
+% \usepackage{tikz}
+% The following commands are not supported in PSTricks at present
+% We define them conditionally, so when they are implemented,
+% this pgf file will use them.
+\ifx\du\undefined
+  \newlength{\du}
+\fi
+\setlength{\du}{15\unitlength}
+
+%----------- BILD ANFANG -------------
+%\afterpage{
+  \begin{figure}
+    \begin{center}
+\begin{tikzpicture}
+\pgftransformxscale{1.000000}
+\pgftransformyscale{-1.000000}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (0.150000\du,-1.850000\du)--(0.150000\du,-0.450000\du)--(12.710000\du,-0.450000\du)--(12.710000\du,-1.850000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (0.150000\du,-1.850000\du)--(0.150000\du,-0.450000\du)--(12.710000\du,-0.450000\du)--(12.710000\du,-1.850000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node at (6.430000\du,-0.850000\du){UC\_AH.IDX};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (0.150000\du,-0.450000\du)--(0.150000\du,12.350000\du)--(12.710000\du,12.350000\du)--(12.710000\du,-0.450000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (0.150000\du,-0.450000\du)--(0.150000\du,12.350000\du)--(12.710000\du,12.350000\du)--(12.710000\du,-0.450000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,0.140000\du){+Blockcode: String = H2};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,0.840000\du){+Mandant: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,1.540000\du){+Benutzer: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,2.240000\du){+Abteilung: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,2.940000\du){+Objekttyp: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,3.640000\du){+Starttyp: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,4.340000\du){+RunID: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,5.040000\du){+Hostname: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,5.740000\du){+Startzeit/Startdatum: Date};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,6.440000\du){+RunID-Parent (ACT): int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,7.140000\du){+RunID-Parent (PRC): int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,7.840000\du){+Archivekey 1: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,8.540000\du){+Archivekey 2: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,9.240000\du){+Objektname: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,9.940000\du){+Byteposition in UC\_AH.TXT: long};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,10.640000\du){+Zeilenposition in UC\_AH.TXT: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,11.340000\du){+Archivnummer: byte};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.300000\du,12.040000\du){+UC\_AH.TXT-Recordlength in Byte: int};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (0.150000\du,12.350000\du)--(0.150000\du,12.750000\du)--(12.710000\du,12.750000\du)--(12.710000\du,12.350000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (0.150000\du,12.350000\du)--(0.150000\du,12.750000\du)--(12.710000\du,12.750000\du)--(12.710000\du,12.350000\du)--cycle;
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (17.455000\du,-0.145000\du)--(17.455000\du,1.255000\du)--(30.015000\du,1.255000\du)--(30.015000\du,-0.145000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (17.455000\du,-0.145000\du)--(17.455000\du,1.255000\du)--(30.015000\du,1.255000\du)--(30.015000\du,-0.145000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node at (23.735000\du,0.855000\du){UC\_RH.IDX};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (17.455000\du,1.255000\du)--(17.455000\du,9.155000\du)--(30.015000\du,9.155000\du)--(30.015000\du,1.255000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (17.455000\du,1.255000\du)--(17.455000\du,9.155000\du)--(30.015000\du,9.155000\du)--(30.015000\du,1.255000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,1.845000\du){+Blockcode: String = H3};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,2.545000\du){+Mandant: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,3.245000\du){+Reporttyp: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,3.945000\du){+Objektname: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,4.645000\du){+RunID: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,5.345000\du){+Reporterstellung: Date};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,6.045000\du){+Reportaenderung: Date};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,6.745000\du){+Byteposition in UC\_RH.TXT: long};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,7.445000\du){+Zeilenposition in UC\_RH.TXT: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,8.145000\du){+Archivnummer: byte};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (17.605000\du,8.845000\du){+UC\_RH.TXT-Recordlength in Byte: int};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (17.455000\du,9.155000\du)--(17.455000\du,9.555000\du)--(30.015000\du,9.555000\du)--(30.015000\du,9.155000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (17.455000\du,9.155000\du)--(17.455000\du,9.555000\du)--(30.015000\du,9.555000\du)--(30.015000\du,9.155000\du)--cycle;
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (18.105000\du,13.305000\du)--(18.105000\du,14.705000\du)--(26.645000\du,14.705000\du)--(26.645000\du,13.305000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (18.105000\du,13.305000\du)--(18.105000\du,14.705000\du)--(26.645000\du,14.705000\du)--(26.645000\du,13.305000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node at (22.375000\du,14.305000\du){UC\_MELD.TXT};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (18.105000\du,14.705000\du)--(18.105000\du,21.905000\du)--(26.645000\du,21.905000\du)--(26.645000\du,14.705000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (18.105000\du,14.705000\du)--(18.105000\du,21.905000\du)--(26.645000\du,21.905000\du)--(26.645000\du,14.705000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,15.295000\du){+Blockcode: char = M};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,15.995000\du){+Mandant: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,16.695000\du){+Benutzer: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,17.395000\du){+Abteilung: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,18.095000\du){+Meldungserzeugung: Date};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,18.795000\du){+Quelle: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,19.495000\du){+Kategorie: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,20.195000\du){+Typ: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,20.895000\du){+Host: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (18.255000\du,21.595000\du){+Meldungstext: String};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (18.105000\du,21.905000\du)--(18.105000\du,22.305000\du)--(26.645000\du,22.305000\du)--(26.645000\du,21.905000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (18.105000\du,21.905000\du)--(18.105000\du,22.305000\du)--(26.645000\du,22.305000\du)--(26.645000\du,21.905000\du)--cycle;
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (0.205000\du,23.405000\du)--(0.205000\du,24.805000\du)--(9.750000\du,24.805000\du)--(9.750000\du,23.405000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (0.205000\du,23.405000\du)--(0.205000\du,24.805000\du)--(9.750000\du,24.805000\du)--(9.750000\du,23.405000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node at (4.977500\du,24.405000\du){UC\_ACMT.TXT};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (0.205000\du,24.805000\du)--(0.205000\du,30.605000\du)--(9.750000\du,30.605000\du)--(9.750000\du,24.805000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (0.205000\du,24.805000\du)--(0.205000\du,30.605000\du)--(9.750000\du,30.605000\du)--(9.750000\du,24.805000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,25.395000\du){+Blockcode: String = M};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,26.095000\du){+Mandant: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,26.795000\du){+Benutzer/Abteilung: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,27.495000\du){+Objektname: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,28.195000\du){+RunID: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,28.895000\du){+Kommentarerzeugung: Date};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,29.595000\du){+Recordlength in Byte: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (0.355000\du,30.295000\du){+Meldungstext: String};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (0.205000\du,30.605000\du)--(0.205000\du,31.005000\du)--(9.750000\du,31.005000\du)--(9.750000\du,30.605000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (0.205000\du,30.605000\du)--(0.205000\du,31.005000\du)--(9.750000\du,31.005000\du)--(9.750000\du,30.605000\du)--cycle;
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (15.905000\du,22.805000\du)--(15.905000\du,24.205000\du)--(30.475000\du,24.205000\du)--(30.475000\du,22.805000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (15.905000\du,22.805000\du)--(15.905000\du,24.205000\du)--(30.475000\du,24.205000\du)--(30.475000\du,22.805000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node at (23.190000\du,23.805000\du){UC\_AH.TXT};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (15.905000\du,24.205000\du)--(15.905000\du,34.205000\du)--(30.475000\du,34.205000\du)--(30.475000\du,24.205000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (15.905000\du,24.205000\du)--(15.905000\du,34.205000\du)--(30.475000\du,34.205000\du)--(30.475000\du,24.205000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,24.795000\du){+Blockcode: String = H2};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,25.495000\du){+Mandant: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,26.195000\du){+Benutzer: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,26.895000\du){+Abteilung: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,27.595000\du){+Objekttyp: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,28.295000\du){+Starttyp: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,28.995000\du){+RunID: int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,29.695000\du){+Hostname: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,30.395000\du){+Startzeit/Startdatum: Date};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,31.095000\du){+RunID-Parent (ACT): int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,31.795000\du){+RunID-Parent (PRC): int};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,32.495000\du){+Archivekey 1: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,33.195000\du){+Archivekey 2: String};
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,33.895000\du){+Objektname: String};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (15.905000\du,34.205000\du)--(15.905000\du,35.105000\du)--(30.475000\du,35.105000\du)--(30.475000\du,34.205000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (15.905000\du,34.205000\du)--(15.905000\du,35.105000\du)--(30.475000\du,35.105000\du)--(30.475000\du,34.205000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (16.055000\du,34.795000\du){+getStat(Position:long,Length:int): String};
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (15.555000\du,10.005000\du)--(15.555000\du,11.405000\du)--(30.795000\du,11.405000\du)--(30.795000\du,10.005000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (15.555000\du,10.005000\du)--(15.555000\du,11.405000\du)--(30.795000\du,11.405000\du)--(30.795000\du,10.005000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node at (23.175000\du,11.005000\du){UC\_RH.TXT};
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (15.555000\du,11.405000\du)--(15.555000\du,11.805000\du)--(30.795000\du,11.805000\du)--(30.795000\du,11.405000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (15.555000\du,11.405000\du)--(15.555000\du,11.805000\du)--(30.795000\du,11.805000\du)--(30.795000\du,11.405000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
+\pgfsetfillcolor{dialinecolor}
+\fill (15.555000\du,11.805000\du)--(15.555000\du,12.705000\du)--(30.795000\du,12.705000\du)--(30.795000\du,11.805000\du)--cycle;
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (15.555000\du,11.805000\du)--(15.555000\du,12.705000\du)--(30.795000\du,12.705000\du)--(30.795000\du,11.805000\du)--cycle;
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (15.705000\du,12.395000\du){+getReport(Position:long,Length:int): String};
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetbuttcap
+{
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetfillcolor{dialinecolor}
+% was here!!!
+\pgfsetarrowsend{to}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (12.710000\du,4.200000\du)--(0.205000\du,28.055000\du);
+}
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (2.412500\du,21.900000\du){\{Relation mit RunID durch Bug defekt\}};
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\pgfsetmiterjoin
+\pgfsetbuttcap
+{
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetfillcolor{dialinecolor}
+% was here!!!
+\pgfsetarrowsstart{to}
+\pgfsetarrowsend{to}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (12.710000\du,4.200000\du)--(14.500000\du,4.200000\du)--(14.500000\du,4.505000\du)--(17.455000\du,4.505000\du);
+}
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (14.600000\du,4.152500\du){RunID};
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{}{0pt}
+\pgfsetmiterjoin
+\pgfsetbuttcap
+{
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetfillcolor{dialinecolor}
+% was here!!!
+\pgfsetarrowsstart{to}
+\pgfsetarrowsend{to}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (12.710000\du,4.200000\du)--(14.600000\du,4.200000\du)--(14.600000\du,28.855000\du)--(15.905000\du,28.855000\du);
+}
+% setfont left to latex
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\node[anchor=west] at (14.700000\du,16.327500\du){RunID};
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetmiterjoin
+\pgfsetbuttcap
+{
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetfillcolor{dialinecolor}
+% was here!!!
+\pgfsetarrowsend{to}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (12.710000\du,9.800000\du)--(13.550000\du,9.800000\du)--(13.550000\du,34.655000\du)--(15.905000\du,34.655000\du);
+}
+% setfont left to latex
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetmiterjoin
+\pgfsetbuttcap
+{
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetfillcolor{dialinecolor}
+% was here!!!
+\pgfsetarrowsend{to}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (12.710000\du,11.900000\du)--(13.550000\du,11.900000\du)--(13.550000\du,34.655000\du)--(15.905000\du,34.655000\du);
+}
+% setfont left to latex
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetmiterjoin
+\pgfsetbuttcap
+{
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetfillcolor{dialinecolor}
+% was here!!!
+\pgfsetarrowsend{to}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (17.455000\du,6.605000\du)--(14.000000\du,6.605000\du)--(14.000000\du,12.255000\du)--(15.555000\du,12.255000\du);
+}
+% setfont left to latex
+\pgfsetlinewidth{0.100000\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetdash{{0.400000\du}{0.400000\du}}{0\du}
+\pgfsetmiterjoin
+\pgfsetbuttcap
+{
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetfillcolor{dialinecolor}
+% was here!!!
+\pgfsetarrowsend{to}
+\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
+\pgfsetstrokecolor{dialinecolor}
+\draw (17.455000\du,8.705000\du)--(14.000000\du,8.705000\du)--(14.000000\du,12.255000\du)--(15.555000\du,12.255000\du);
+}
+% setfont left to latex
+\end{tikzpicture}
+        \caption[UML-Diagramm Archivdatenformat Datenstruktur]{UML-Diagramm Archivdatenformat Datenstruktur\footnotemark}
+    \label{fig:uml_archiv_datastruct}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Dia}
+%}
+
+%------------- BILD ENDE ---------------
+
+
+
+
 \section{Auswahl der Java Implementierung}
 %https://www.jetbrains.com/lp/devecosystem-2021/java/
 %https://softwareengineering.stackexchange.com/questions/406591/why-are-there-multiple-different-implementations-of-jvm
@@ -1309,6 +1860,12 @@ Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.rea
 %jlink
 %https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
 %screenshot Ergebnis mit Erklärung (Punkte in Grafik + Tabelle die Punkte erklärt)
+\section{Datenstruktur}
+daraus kann über die runid und die parent runid (ACT) ein graph erstellt werden.
+hierzu werden alle parent runids in einer tabelle mit ihren Adjazenzmengen verknüpft.
+In einer weiteren Tabelle werden alle runids mit Ihren Ausfuehrungsdaten in Form eines Feldes verknüpft.
+Zuletzt wird die differenzmenge Parent-RunIds/RunIds und darüber alle RunIds bestimmt zu denen keine Parent-RunIds bekannt sind. Diese bilden die Wurzelebene des TableTree.
+
 \section{Module}
 
 \section{Entwurfsmuster}
