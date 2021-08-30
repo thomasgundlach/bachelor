@@ -949,7 +949,7 @@ Seit 2019 ist \ac{vb} nicht mehr Bestandteil der Erhebung des Stack Overflow Dev
 Entsprechend ungeeignet ist \ac{vb} im Jahr 2021 als Grundlage für ein Softwareprojekt mit gängigen Anforderungen an Portierbarkeit, Erweiterbarkeit und Wartbarkeit.\\
 Erschwerend kommt hinzu, dass der Quellcode des Automic\textsuperscript{\textregistered} Archive Browser in der Auslieferung des aktuellen Automic\textsuperscript{\textregistered} Automation Image 12.3.6\footnote{Quelle: Automic\textsuperscript{\textregistered} Download Center \url{https://docs.automic.com/downloads} Aufruf: 03.08.2021} nicht mehr enthalten ist. Auch wenn der Automic\textsuperscript{\textregistered} Archive Browser nur noch gepflegt und nicht mehr weiterentwickelt wird \citeg{wpdbmainaaeutil}, kann es durch die Pflege zu Quellcodeanpassungen gekommen sein, um die der öffentliche  Quellcode zusätzlich erweitert werden müsste.\\
 Eine Portierung des bestehenden Automic\textsuperscript{\textregistered} Archive Browser \ac{vb} 5.0 Projektes auf .NET Core würde eine Umstellung auf neue Technologien notwendig machen \citeg{vbport}. Der Aufwand hierzu, zusätzlich zur Erweiterung, wird als höher im Vergleich zu einer Neuentwicklung eingeschätzt.\\
-\subsection{Datenstruktur}
+\subsection{Datenstruktur}\label{ssec:analysedatastruct}
 %https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#Utilities/admin_AboutAEDBArchive.htm#link7
 
 Die archivierten Daten von Ausführungen und Protokollen werden durch das Dienstprogramm AE DB Archive~(\refg{ssec:aae_awa}) in einer Ordnerstruktur (Lst.~\ref{lst:folders_reorg}) mit 3 Ebenen abgelegt. 
@@ -1948,15 +1948,198 @@ Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.rea
 %jlink
 %https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
 %screenshot Ergebnis mit Erklärung (Punkte in Grafik + Tabelle die Punkte erklärt)
-\section{Programmstruktur}
-\subsection{Klassen}
+%\section{Programmstruktur}
+
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\tiny\ttfamily,
+  moredelim=[il][\textcolor{pgrey}]{$$},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+
+
+%\begin{lstlisting}[caption=Klasse, label=lst:class]
+%/**
+% * This is a doc comment.
+% */
+%package com.ociweb.jnb.lombok;
+%
+%import java.util.Date;
+%import lombok.Data;
+%import lombok.EqualsAndHashCode;
+%import lombok.NonNull;
+%
+%$$@Data
+%$$@EqualsAndHashCode(exclude={"address","city","state","zip"})
+%public class Person {
+%    enum Gender { Male, Female }
+%
+%    // another comment
+%
+%    %%@NonNull%% private String firstName;
+%    %%@NonNull%% private String lastName;
+%    %%@NonNull%% private final Gender gender;
+%    %%@NonNull%% private final Date dateOfBirth;
+%
+%    private String ssn;
+%    private String address;
+%    private String city;
+%    private String state;
+%    private String zip;
+%}
+%\end{lstlisting}
+
+\section{Klasse ArchiveData}
+Diese Klasse (Lst.~\ref{lst:ArchiveData}) bietet Methoden zum Laden von Automic Automation Engine Archivdaten
+und Überführen dieser in verknüpfte Adjazenzmengen und eine Streuwerttabelle.
+Die Adjazenzmengen dienen zusammen mit der Streuwerttabelle Drittklassen zur Darstellung
+der Archivdaten in einer Baumstruktur.
+Zusätzlich steht eine Methode zum Laden von Protokollen aus den Archivdaten zur Verfügung,
+die von den jeweiligen Knoten aus der Streuwerttabelle referenziert werden.
+
+\begin{lstlisting}[caption=ArchiveData Klassenkopf mit Attributen, label=lst:ArchiveData]
+/*--
+ * Java Version: 16.0.2+7
+ * Entwicklungsumgebung: Eclipse IDE for Java Developoers
+ * Betriebssystem: Windows 10 64bit
+ * JavaJFX Version: 16
+ *
+ * @category   FileOperations, Archive, Automic
+ * @package    com.hm.aae
+ * @author     Jan Thomas Gundlach <thomas.gundlach@haw-hamburg.de>
+ * @copyright  GPLv2
+ * @version    0.5
+ *
+ ***/
+public class ArchiveData {
+
+	// Anhand Hashmap verknuepfte Adjazenzmengen
+	private HashMap<Integer,HashSet<Integer>> parents = new HashMap<>();
+	// Streuwerttabelle Knoten mit Referenz auf Ausfuehungsdaten
+	private HashMap<Integer,String[]> runids = new HashMap<>();
+	
+	// Indexkonstanten zum verwalten und zugreifen der
+	// Ausfuehungsdaten der run-ID Knoten der Streuwerttabelle
+	public final int AH_CLIENT = 0;
+	public final int AH_OBJECTTYPE = 1;
+	public final int AH_RUNID = 2;
+	public final int AH_HOSTNAME = 3;
+	public final int AH_STARTDATE = 4;
+	public final int AH_ARCHIVKEY1 = 5;
+	public final int AH_ARCHIVKEY2 = 6;
+	public final int AH_OBJECTNAME = 7;
+	public final int AH_REPORTPOS = 8;
+	public final int AH_REPORTSIZE = 9;
+	public final int AH_ARCHIVPATH = 10;
+
+	// Automic Automation Engine Archivdateinamen
+	private final String AH_INDEX_FILE  = "UC_AH.IDX";
+	private final String RH_REPORT_FILE  = "UC_RH.TXT";
+	private final String RH_INDEX_FILE  = "UC_RH.IDX";
+...
+}
+\end{lstlisting}
+
+
+\subsubsection{Konstruktor ArchiveData}
+Der Konstruktor (Lst.~\ref{lst:KArchiveData}) initialisiert dieses Objekt nach dem instanzieren.
+	 Er stösst das rekursive Suchen nach Indexdateien und das Einlesen dieser
+	 in die Datenstruktur dieser Klasse durch Folgeaufrufe an.
+\begin{lstlisting}[caption= Konstruktor der Klasse ArchiveData, label=lst:KArchiveData]
+	public ArchiveData(File rootPath) {
+		// Auslesen des ausgewaehlten Ordners
+		walkArchiveTree(rootPath);
+	}
+\end{lstlisting}
+
+
+\subsection{Methoden}
+
+\subsubsection{getParents}
+Diese Methode (Lst.~\ref{lst:getParents}) stellt die verknüpften Adjazenzmengen Drittklassen zur Verfügung.
+\begin{lstlisting}[caption=getParents Methodenkopf, label=lst:getParents]
+	public HashMap<Integer,HashSet<Integer>> getParents();
+\end{lstlisting}
+
+\subsubsection{getRunids}
+Diese Methode (Lst.~\ref{lst:getRunids}) ermöglicht Drittklassen einen fortwährenden Zugriff auf alle RunID-Knoten und deren Eigenschaften mittels einer Streuwerttabelle.
+\begin{lstlisting}[caption=getRunids Methodenkopf, label=lst:getRunids]
+	public HashMap<Integer,String[]> getRunids();
+\end{lstlisting}
+
+\subsubsection{loadReport}
+Diese Methode (Lst.~\ref{lst:loadReport}) ermöglicht das Laden eines archivierten Aufgabenprotokolls anhand einer RunID. Sie greift dazu mittels der RunID über die Streuwerttabelle auf die Positionsdaten der Aufgabe zu
+und liest das angefragte Protokoll aus dem Protokollarchiv.
+\begin{lstlisting}[caption=loadReport Methodenkopf, label=lst:loadReport]
+	public String loadReport(int runId);
+\end{lstlisting}
+
+\subsubsection{walkArchiveTree}
+Diese Methode (Lst.~\ref{lst:walkArchiveTree}) öffnet einen ausgewählten Ordner im Dateisystem und durchsucht ihn rekursiv nach Indexdateien
+nebensliegend Ausführungdaten- oder Protokollarchiven.
+Gefundene Indexdateien werden üeber Drittmethoden ausgelesen sowie der Streuwerttabelle und den Adjazenzmengen
+über diese hinzugefügt.
+Diese Methode ist nicht sicher gegen nicht alphabetisch sortierten Ordnerstrukturen.
+\begin{lstlisting}[caption=walkArchiveTree Methodenkopf, label=lst:walkArchiveTree]
+	private void walkArchiveTree(File rootPath);
+\end{lstlisting}
+
+\subsubsection{collectDataStatics}
+Diese Methode (Lst.~\ref{lst:collectDataStatics}) lädt eine gefundene Ausführungsdaten-Indexdatei und ermittelt alle Parent-Aufgaben
+	 sowie deren Adjazenzmengen.
+	 Parallel liest sie je Ausführungseintrag (Zeile) alle als Indexkonstanten definierten Spalten unter
+	 dem Eintrag der Aufgabe in der Streuwerttabelle ein.
+
+\begin{lstlisting}[caption=collectDataStatics Methodenkopf, label=lst:collectDataStatics]
+	private void collectDataStatics(Path path);
+\end{lstlisting}
+
+\subsubsection{collectDataReports}
+Diese Methode lädt eine gefundene Protokoll-Indexdatei und ermittelt alle Positionsdaten zu den
+	 Protokollen der Aufgaben. Die gefundenen Positionsdaten werden den jeweiligen Aufgabeneinträgen in der
+	 Streuwerttabelle hinzugefügt.
+(Lst.~\ref{lst:collectDataReports})
+\begin{lstlisting}[caption=collectDataReports Methodenkopf, label=lst:collectDataReports]
+	private void collectDataReports(Path path);
+\end{lstlisting}
+
+
+\section{Klasse ArchiveTreeTable}
+%\subsubsection{}
+%(Lst.~\ref{lst:})
+%\begin{lstlisting}[caption= Methodenkopf, label=lst:]
+%
+%\end{lstlisting}
 \subsection{Methoden}
 
 \section{Datenstruktur}
-daraus kann über die runid und die parent runid (ACT) ein graph erstellt werden.
-hierzu werden alle parent runids in einer tabelle mit ihren Adjazenzmengen verknüpft.
-In einer weiteren Tabelle werden alle runids mit Ihren Ausfuehrungsdaten in Form eines Feldes verknüpft.
-Zuletzt wird die differenzmenge Parent-RunIds/RunIds und darüber alle RunIds bestimmt zu denen keine Parent-RunIds bekannt sind. Diese bilden die Wurzelebene des TableTree.
+
+\subsection{Aufbau der Baumstruktur}\label{ssec:imptreedata}
+In der vorgestellt Archivdatenstruktur~(\refg{ssec:analysedatastruct}) der Automic\textsuperscript{\textregistered} Automation Engine kann über die RunID und die Parent RunID (ACT) aus der Indexdatei für Ausführungsdaten~(\refg{ssec:ucahidx}) eine Baumstruktur erstellt werden mit einer logischen Ursprungsaufgabe als Wurzel.
+Hierzu werden alle Parent Runids in einer Streuwerttabelle mit ihren Adjazenzmengen verknüpft. In einer weiteren Streuwerttabelle werden alle RunIDs mit Ihren Ausführungsdaten in Form eines Feldes verknüpft.
+Zuletzt wird die Differenzmenge von Parent-RunIDs und RunIDs bestimmt und darüber alle Parent-RunIDs bestimmt deren Parent-RunIDs selbst nicht bekannt sind.
+Diese verbleibenden Parent-RundIDs bilden zusammen mit den bereits ermittelten RunIDs der Tiefe 1 das Niveau 1 des Baumes.
+Von dieser Ebene ausgehend können anhand der Streuwerttabelle mit den Parent RunIDs nun alle nachfolgenden Ebenen ermittelt werden.
+
+\subsection{Darstellung der Baumstruktur}
+
+Die Baumstruktur kann in JavaFx durch das Control\\ \texttt{javafx.scene.control.TreeTableView} dargestellt werden.
+Der Baum besteht dabei aus Objekten von \texttt{javafx.scene.control.TreeItem}. Jedes \texttt{TreeItem} bildet einen Knoten.
+Von der Wurzel mit der logischen RunID 0 aus werden dabei alle RunID-Kindsknoten einer Adjazenzmenge eines Parent-RunID \texttt{TreeItem} Objekts diesem via \texttt{TreeItem.getChildren().add(child)} hinzugefügt.
+Zum Schluss wird das Wurzel \texttt{TreeItem} Objekt im \texttt{TreeTableView} Control als Wurzel definiert und so der Baum im \texttt{TreeTableView} dargestellt.
+
 
 %\section{Entwurfsmuster}
 %Model-View-Controller(MVC)
@@ -1969,7 +2152,11 @@ Zuletzt wird die differenzmenge Parent-RunIds/RunIds und darüber alle RunIds bes
 \section{Fazit}
 rechtliche rahmenbedingungen waren ausschweifend
 Analyse der Software hat unbekannten Bug zum Vorscheinen gebracht
+Die ursprüngliche Vorstellung nur einen Baum verknüpfter RunIDs im Arbeitsspeicher zu halten und alle anderen Ausführungsdaten ausschließlich bei Bedarf nachzuladen konnte aufgrund der Schnittstellen von \texttt{javafx.scene.control.TreeItem} und \texttt{javafx.scene.control.TreeTableView} in einem Prototypen nicht umgesetzt werden. Ein erhöhter Arbeitsspeicherbedarf wurde daher vorerst in Kauf genommen. In Tests ergab sich dieser jedoch insbesondere beim filtern des Protokollbaumes oder beim neu laden von Archivdaten als überproportional hoch. Daher wurden für den Testbetrieb übergangsweise Garbage Collection Anreize an diesen Stellen in den Quellcode implementiert.
+Bei hohem und komplexen Archivdaten kam es seitens des TreeTableView zu reproduzierbaren Fehlanzeigen einiger spezieller \texttt{TreeItems}. Die Analyse diesbzgl. ist bisher ergebnisoffen.
 \section{Ausblick}
+\subsection{Bugs}
+Eine genaue Analyse zum Hintergrund steht noch aus.
 \subsection{Features}
 ansicht mit kommentaren sobald fehler behoben
 hinzufügen von reportgröße als spalte
