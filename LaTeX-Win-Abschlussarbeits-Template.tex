@@ -94,18 +94,24 @@
 \selectlanguage{english}
 \section*{\centering\abstractname}
 %\section*{\centering\abstractname}
-Form and layout of this \LaTeX-template incorporate the guidelines for theses in the Media Technology Department \glqq Richtlinien zur Erstellung schriftlicher Arbeiten, vorrangig Bachelor-Thesis (BA) und Master-Thesis (MA) im Department Medientechnik in der Fa\-kul\-tät DMI an der HAW Hamburg\grqq\ in the version of December 6, 2012 by Prof.\ Wolfgang Willaschek. 
-
-The thesis should be printed single-sided (simplex). The binding correction (loss at the left aper edge due to binding) might be adjusted, according to the type of binding. This template incorporates a binding correction as BCOR=1mm (suitable for adhesive binding) in the \LaTeX\ document header.
-
-{\bfseries This is the english version of the opening abstract} (don't forget to set \LaTeX's language setting back to ngerman after the english text). 
+This thesis deals with the requirement and development of a relation-oriented retrieval tool for archived log data from a process engine. The
+implementation is based on the Automic\textsuperscript{\textregistered} Automation Engine. For the requirement the legal background is worked out using the insurance industry as an example and the structure of the process engine is described. The basis for the development and the scope of functions for the search tool is a fundamental part of the thesis as well as the implementation.
+The result is the prototype of a utility, with which the dependencies of archived protocols of a process engine can be traced. The resulting concept is based on a combination of Eclipse Temurin and OpenJFX. Finally, an outlook on future requirements and the further development of the prototype is described.
  
  
 \selectlanguage{ngerman}
 \section*{\centering\abstractname}
-Diese Arbeit behandelt die Anforderung und Entwicklung eines relationsorientierten Recherchewerkzeugs für archivierte Protokolldaten aus einer Process Engine. Die Umsetzung erfolgt am Beispiel der Automic\textsuperscript{\textregistered} Automation Engine. Für die Anforderung wird der rechtliche Hintergrund am Beispiel des Versicherungswesens erarbeitet und der Aufbau der Process Engine beschrieben. Thematisiert wird die Auswahl der Grundlagen für die Entwicklung und des Funktionsumfangs für das Recherchewerkzeug mit der daraus folgenden Implementierung.
-
-Ergebnis ist der Prototyp eines Dienstprogramms mit dem die Abhängigkeiten von archivierten Protokollen einer Process Engine dargestellt und mit dem über diese traversiert werden können. Dabei setzt das entstandene Konzept auf eine Kombination aus Eclipse Temurin und OpenJFX. Abschließend wird ein Ausblick auf kommende Anforderungen und die Weiterentwicklung des Prototypes gegeben.
+Diese Arbeit behandelt die Anforderung und Entwicklung eines relationsorientierten Recherchewerkzeugs für archivierte Protokolldaten aus einer Process Engine. Die
+Umsetzung erfolgt am Beispiel der Automic\textsuperscript{\textregistered} Automation Engine. Für die Anforde-
+rung wird der rechtliche Hintergrund am Beispiel des Versicherungswesens erarbeitet
+und der Aufbau der Process Engine beschrieben. Thematisiert wird die Auswahl der
+Grundlagen für die Entwicklung und des Funktionsumfangs für das Recherchewerk-
+zeug mit der daraus folgenden Implementierung.\\
+Ergebnis ist der Prototyp eines Dienstprogramms, mit dem die Abhängigkeiten von
+archivierten Protokollen einer Process Engine dargestellt und mit dem über diese tra-
+versiert werden können. Dabei setzt das entstandene Konzept auf eine Kombination
+aus Eclipse Temurin und OpenJFX. Abschließend wird ein Ausblick auf kommende
+Anforderungen und die Weiterentwicklung des Prototyps gegeben.
 
 
 %--------------------------- Text -------------------------------
@@ -958,6 +964,7 @@ $ file -i ./*
 \end{lstlisting}
 \end{tabular}
 \end{center}
+
 
 % Graphic for TeX using PGF
 % Title: C:\Users\Jan\Documents\HAW\BA-Arbeiten\dia\DatenstrukturArchivBrowser.dia
@@ -1853,6 +1860,12 @@ Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.rea
 %jlink
 %https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
 %screenshot Ergebnis mit Erklärung (Punkte in Grafik + Tabelle die Punkte erklärt)
+\section{Datenstruktur}
+daraus kann über die runid und die parent runid (ACT) ein graph erstellt werden.
+hierzu werden alle parent runids in einer tabelle mit ihren Adjazenzmengen verknüpft.
+In einer weiteren Tabelle werden alle runids mit Ihren Ausfuehrungsdaten in Form eines Feldes verknüpft.
+Zuletzt wird die differenzmenge Parent-RunIds/RunIds und darüber alle RunIds bestimmt zu denen keine Parent-RunIds bekannt sind. Diese bilden die Wurzelebene des TableTree.
+
 \section{Module}
 
 \section{Entwurfsmuster}
