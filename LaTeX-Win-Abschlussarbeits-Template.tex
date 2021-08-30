@@ -34,7 +34,6 @@
 %\usepackage{pstricks}
 %\usepackage{auto-pst-pdf}
 
-
 %------------------------ Titelblatt-Layout laden ----------------------------------
 
 \input{hawmt-bachelor-titelblatt}
@@ -61,6 +60,22 @@
 
 %\date{vorläufige Fassung vom \today}   % praktisch für Vorab-Versionen. 
 \date{\sffamily Hamburg, 31. 8. 2021}  % Abgabedatum!
+
+
+%-------------------------
+% lower upper case acronyms
+%-------------------------
+\usepackage{etoolbox}
+\makeatletter
+\newif\if@in@acrolist
+\AtBeginEnvironment{acronym}{\@in@acrolisttrue}
+\newrobustcmd{\LU}[2]{\if@in@acrolist#1\else#2\fi}
+
+\newcommand{\ACF}[1]{{\@in@acrolisttrue\acf{#1}}}
+\makeatother
+
+%-------------------------
+%-------------------------
 
 %--------------------------------------------------------------------------------------
 %----------------------------- hier gehts los! --------------------------------------
@@ -96,15 +111,15 @@ Ergebnis ist der Prototyp eines Dienstprogramms mit dem die Abhängigkeiten von a
 %--------------------------- Text -------------------------------
 
 \chapter{Einleitung}
-Wenn Mitarbeiter mittelständischer und größerer Unternehmen oder Organisationen morgens mit der Arbeit beginnen werden viele Dinge für selbstverständlich genommen. Zügiges Öffnen und Anmelden an zentralen Systemen. Arbeitsaufträge, die kategorisiert oder chronologisiert bereitstehen. Der Aufruf von Unterlagen, die zur Bearbeitung entsprechender Aufträge benötigt werden. Auswertungen, die Vortags in Auftrag gegeben wurden. Zugriff auf historische Daten von erledigten Aufträgen und vieles mehr.\\
+Wenn Mitarbeiter mittelständischer und größerer Unternehmen oder Organisationen morgens mit der Arbeit beginnen, werden viele Dinge für selbstverständlich genommen. Zügiges Öffnen und Anmelden an zentralen Systemen. Arbeitsaufträge, die kategorisiert oder chronologisiert bereitstehen. Der Aufruf von Unterlagen, die zur Bearbeitung entsprechender Aufträge benötigt werden. Auswertungen, die Vortags in Auftrag gegeben wurden. Zugriff auf historische Daten von erledigten Aufträgen und vieles mehr.\\
 Im Hintergrund müssen dafür an diversen Stellen jedoch zum Teil ungeahnt komplexe und teils miteinander verbundene Abläufe erfolgreich stattgefunden haben. Beispielsweise müssen zur Definition von Arbeitsaufträgen Eingangsdaten wie Posteingänge aus verschiedenen Medienkanälen wie Briefpost, E-Mail oder anderen Kontaktschnittstellen verschiedenster Applikationen zusammengeführt und vorverarbeitet werden. An der Vorverarbeitung sind häufig eine Vielzahl von Applikationen beteiligt, die die Daten durchlaufen müssen. All diese Prozessschritte müssen miteinander verknüpft werden, damit die richtigen Arbeitsaufträge später beim zuständigen Sachbearbeiter landen oder bereits vollautomatisiert bearbeitet werden können.
 
-Fehler in diesen Prozessketten müssen, wenn möglich, automatisch behandelt werden. Falls nicht, muss die Verarbeitung automatisch angehalten werden, um eine manuelle Behebung zu ermöglichen. Die Verantwortlichen müssen über den Fehler und dass ein manuelles Eingreifen notwendig ist, umgehend in Kenntnis gesetzt werden. Nach erfolgreicher Behebung muss die Verarbeitung genau an dem Punkt wieder aufgenommen werden können, an dem sie stehen geblieben ist. Falls jedoch der Fehler nicht vollständig behoben wurde oder weitere Probleme auftreten muss der Schritt beliebig oft wiederholt werden können.
+Fehler in diesen Prozessketten müssen, wenn möglich, automatisch behandelt werden. Falls nicht, muss die Verarbeitung automatisch angehalten werden, um eine manuelle Behebung zu ermöglichen. Die Verantwortlichen müssen über den Fehler und dass ein manuelles Eingreifen notwendig ist, umgehend in Kenntnis gesetzt werden. Nach erfolgreicher Behebung muss die Verarbeitung genau an dem Punkt wieder aufgenommen werden können, an dem sie stehen geblieben ist. Falls jedoch der Fehler nicht vollständig behoben wurde oder weitere Probleme auftreten, muss der Schritt beliebig oft wiederholt werden können.
 
 Um zentrale Systeme zügig aufzurufen und auch historische Daten unverzüglich zur Verfügung zu stellen, müssen die Datenbestände dieser Systeme regelmäßig reorganisiert und nötigenfalls archiviert werden können.
 
 All dies erfordert eine übergeordnete Einheit, in der die Prozessschritte geplant, ausgeführt, mit einander verknüpft und überwacht werden. Damit ist es aber noch nicht getan. 
-Hintergrund ist, dass Unternehmen oder Organisationen in ihrer Verarbeitung häufig regulatorischen Auflagen oder zumindest gesetzlichen Pflichten unterliegen. Dass bedeutet, dass es Vorgaben gibt, wie eine Verarbeitung zu erfolgen hat oder was bei einer Verarbeitung zu beachten ist. Diese Vorgaben können je nach Sektor und Branche unterschiedlich sein. Insbesondere für Unternehmen oder Organisationen, die durch ihre Tätigkeit zur kritischen Infrastruktur \footnote{Quelle: Verordnung zur Bestimmung Kritischer Infrastrukturen nach dem BSI-Gesetz (BSI-Kritisverordnung - BSI-KritisV), \url{https://www.gesetze-im-internet.de/bsi-kritisv/BJNR095800016.html}, Aufruf: 12.07.2021} gehören, können die Vorgaben restriktiv sein.
+Hintergrund ist, dass Unternehmen oder Organisationen in ihrer Verarbeitung häufig regulatorischen Auflagen oder zumindest gesetzlichen Pflichten unterliegen. Das bedeutet, dass es Vorgaben gibt, wie eine Verarbeitung zu erfolgen hat oder was bei einer Verarbeitung zu beachten ist. Diese Vorgaben können je nach Sektor und Branche unterschiedlich sein. Insbesondere für Unternehmen oder Organisationen, die durch ihre Tätigkeit zur kritischen Infrastruktur \footnote{Quelle: Verordnung zur Bestimmung Kritischer Infrastrukturen nach dem BSI-Gesetz (BSI-Kritisverordnung - BSI-KritisV), \url{https://www.gesetze-im-internet.de/bsi-kritisv/BJNR095800016.html}, Aufruf: 12.07.2021} gehören, können die Vorgaben restriktiv sein.
 Die Unternehmen oder Organisationen sind teilweise dazu verpflichtet, die Einhaltung dieser Auflagen und Pflichten regelmäßig durch zertifizierte Dritte überprüfen zu lassen. Diese Prüfungen können seitens der zuständigen Anstalt oder Behörde auch unregelmäßig  anlasslos oder anlassbezogen erfolgen. Entsprechend muss die Verarbeitung jederzeit nachweisbar und überprüfbar sein.
 Parallel ist es auch im eigenen Interesse eines Unternehmens oder einer Organisation, eine nachweisbare und überprüfbare Verarbeitung vorweisen zu können. In juristischen Auseinandersetzungen mit Kunden oder Partnern müssen bestimmte Vorgänge ggf. gerichtsfest nachgewiesen werden können, um unbegründete Forderungen oder Regressansprüche abwehren zu können.
 
@@ -152,7 +167,7 @@ Vorrangig geht es darum, die Grundlage für ein performantes, stabiles, erweiterb
 \section{Was ist Business Process Management?}\label{ssec:businessprocessman}
 %http://www.bpm-guide.de/2009/07/18/referenzwerk-zu-bpm-veroffentlicht-zertifizierungen-ab-2010/
 Zu \ac{bpm} gibt es eine Vielzahl an unterschiedlichen Definitionen. 
-Unter anderen von der \ac{eabpm}, die sich aus verschiedenen europäischen Vereinen zusammensetzt, um ein international einheitliches Verständnis von \ac{bpm} zu schaffen. In der letzten Version und Ausgabe der deutschen Fassung des Leitfadens \glqq\ac{bpm} \ac{cbok}\grqq\, \citeg{eabpm} der \ac{eabpm} wird \ac{bpm} wie folgt definiert:
+Unter anderen gibt es eine Definition von der \ac{eabpm}, die sich aus verschiedenen europäischen Vereinen zusammensetzt, um ein international einheitliches Verständnis von \ac{bpm} zu schaffen. In der letzten Version und Ausgabe der deutschen Fassung des Leitfadens \glqq\ac{bpm} \ac{cbok}\grqq\, \citeg{eabpm} der \ac{eabpm} wird \ac{bpm} wie folgt definiert:
 \begin{quote}
 \medskip
 \emph{\glqq Die englische Bezeichnung \glqq Business Process Management\grqq\, oder BPM wird synonym
@@ -169,7 +184,7 @@ zu analysieren, zu entwerfen, einzuführen, zu steuern und kontinuierlich zu verb
 \medskip
 \end{quote}
 
-Im \ac{bpm} oder einfachen Prozessmanagement geht es entsprechend darum, nicht nur Prozessfragmente zu bewerten, sondern Prozesse ganzheitlich zu verstehen und zu verbessern. Dies geschieht in einer kombinierten Anwendung sowohl aus der organisatorischen Sicht als auch unter informationstechnischen Gesichtspunkten.
+Im \ac{bpm} wie auch im einfachen Prozessmanagement geht es entsprechend darum, nicht nur Prozessfragmente zu bewerten, sondern Prozesse ganzheitlich zu verstehen und zu verbessern. Dies geschieht in einer kombinierten Anwendung sowohl aus der organisatorischen Sicht als auch unter informationstechnischen Gesichtspunkten.
 
 %http://www.eabpm.org/wp-content/uploads/2010/05/Leseprobe_cbok.pdf
 %Workflow Engine: Automic Request Manager / Automic Job Request Management
@@ -180,7 +195,7 @@ Im \ac{bpm} oder einfachen Prozessmanagement geht es entsprechend darum, nicht n
 
 
 Eine Process Engine, auch Workflow Engine genannt \citeg{freundruecker6}, dient zur Prozessautomatisierung definierter Prozesse aus dem \ac{bpm}. Die Process Engine ist dabei das zentrale System, welches technische Prozessmodelle ausführt.
-Hervorzuheben ist hierbei, dass Prozessautomatisierung nicht in jedem Fall eine Automatisierung des gesamten Prozesses bedeutet. Die Process Engine steuert den Prozess vielmehr, indem sie a.) zu erledigende Aufgaben bspw. an Sachbearbeiter delegiert und das Resultat weiterverarbeitet (Human Workflow Management) und b.) Schnittstellen interner/-externer Informationsdienste aufruft (Dienst-Orchestrierung).
+Hervorzuheben ist hierbei, dass die Prozessautomatisierung nicht in jedem Fall eine Automatisierung des gesamten Prozesses bedeutet. Die Process Engine steuert den Prozess vielmehr, indem sie a.) zu erledigende Aufgaben bspw. an Sachbearbeiter delegiert und das Resultat weiterverarbeitet (Human Workflow Management) und b.) Schnittstellen interner/-externer Informationsdienste aufruft (Dienst-Orchestrierung).
 So bleibt ein automatisierter Prozess durch die Prozessbeteiligten beeinflussbar.
 Anhand des technischen Prozessmodells als auch des Resultates eines Service-Aufrufes oder einer beendeten Aufgabe entscheidet die Process Engine, unter welchen Gegebenheiten welche Folgeaufgabe oder -aufruf ausgeführt wird.\\
 Abb.~\ref{fig:bpmn_processauto} veranschaulicht die Vorgehensweise verallgemeinert.
@@ -199,39 +214,39 @@ Abb.~\ref{fig:bpmn_processauto} veranschaulicht die Vorgehensweise verallgemeine
 
 %------------- BILD ENDE ---------------
 
-Abstrakt kann man Prozessautomatisierung als eine Form von Softwareentwicklung bezeichnen in der die Process Engine der Interpreter und der Quellcode das technische Prozessbild sind.
+Abstrakt kann man Prozessautomatisierung als eine Form von Softwareentwicklung bezeichnen, in der die Process Engine der Interpreter und der Quellcode das technische Prozessbild sind.
 Dabei ist zu beachten, dass eine Process Engine für die Abbildung von Prozesslogik entwickelt ist. Sie verfügt über viele typische, fertige Komponenten und Eigenschaften, die für die technische Umsetzung eines Prozessmodells benötigt werden, welche ansonsten mittels \ac{hll} aufwendig entwickelt werden müssten.
 Dennoch kann mit einer Process Engine keine allgemeine Softwareentwicklung erfolgen, da ihre Sprachmittel und Komponenten auf die Abbildung von Prozessmodellen begrenzt sind.
 
-Eine Prozess Engine bietet die Möglichkeit jede Form von End-to-End-Prozessen plattform- und standortunabhängig umzusetzen.
+Eine Prozess Engine bietet die Möglichkeit, jede Form von End-to-End-Prozessen plattform- und standortunabhängig umzusetzen.
 Damit vereint sie Workflow Management und Anwendungsintegration. Durch die Steuerung der Geschäftsprozesse bietet die Prozess Engine zugleich einen Überblick in Echtzeit über selbige. Sie verfügt über Informationen zur Ausführungsdauer eines gesamten Prozesses oder eines Teilprozesses sowie den Status jeder Aufgabe. Sie liefert damit Metriken für das Controlling der unternehmensweiten Prozesslandschaft. Auf dieser Basis kann die Process Engine zugleich eine stets aktuelle Prozessdokumentation für Management als auch IT bieten.
 
 
 \section{Automic\textsuperscript{\textregistered} Automation}
 %https://docs.automic.com/documentation/webhelp/german/ALL/components/DOCU/12.3/Automic%20Automation%20Guides/help.htm#_Common/Welcome/AWA/About_AWA.htm
 
-Automic\textsuperscript{\textregistered} Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwareprodukte mittels der plattformübergreifend IT-bezogene Aufgaben automatisiert und dokumentiert werden können. Die zugehörigen Softwareprodukte sind im Allgemeinen:
+Automic\textsuperscript{\textregistered} Automation \citeg{aae_awa} ist eine Gruppe zusammengehöriger Softwareprodukte, mittels der plattformübergreifend IT-bezogene Aufgaben automatisiert und dokumentiert werden können. Die zugehörigen Softwareprodukte sind im Allgemeinen:
 \begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
 \item Die Automation Engine als Process Engine bestehend aus \citeg{aae_proctypes}:
     \begin{itemize}
-      \item Einem \ac{apwp} der zentrale, nicht verteilbare Aufgaben wie Verwaltungsaufgaben durchführt.
-      \item Einem oder mehrere \ac{awp} die alle sonstigen, eingeplanten Aufgaben ausführen oder Serverrollen übernehmen. Jeder WP kann bei Bedarf zum \ac{apwp} werden.
-      \item Einem oder mehrere \ac{acp} die für die Kommunikation zwischen den Prozessen, Agenten auf Drittsystemen/-diensten und Schnittstellen zuständig sind.
-      \item Optional einem oder mehrere \ac{adwp} die für die Meldungen im \ac{aawi} verwendet werden.
-      \item Einem oder mehrere \ac{ajwp} die für speziell in Java entwickelte Dienste zur Verfügung stehen.
+      \item Einem \ac{apwp}, der zentrale, nicht verteilbare Aufgaben wie Verwaltungsaufgaben durchführt.
+      \item Einem oder mehrere \ac{awp}, die alle sonstigen, eingeplanten Aufgaben ausführen oder Serverrollen übernehmen. Jeder WP kann bei Bedarf zum \ac{apwp} werden.
+      \item Einem oder mehrere \ac{acp}, die für die Kommunikation zwischen den Prozessen, Agenten auf Drittsystemen/-diensten und Schnittstellen zuständig sind.
+      \item Optional einem oder mehreren \ac{adwp}, die für die Meldungen im \ac{aawi} verwendet werden.
+      \item Einem oder mehreren \ac{ajwp}, die für speziell in Java entwickelte Dienste zur Verfügung stehen.
       \item Einem \ac{ajcp} für spezielle Dienste- und Schnittstellen wie die REST-API.
     \end{itemize}
 \item Agenten zur Steuerung dritter Systeme oder Dienste.
 \item Das \ac{aawi} als Benutzerschnittstelle.
-\item Der Plugin Manager zum verwalten von Packs im \ac{aawi}.
-\item Der Package Manager zum verwalten von Packs auf der Kommandozeile.
-\item Der Action Builder zum erstellen von Packs.
+\item Der Plugin Manager zum Verwalten von Packs im \ac{aawi}.
+\item Der Package Manager zum Verwalten von Packs auf der Kommandozeile.
+\item Der Action Builder zum Erstellen von Packs.
 \item Analytics On Premise für individuelle Statistiken.
 \item Verschiedene Dienstprogramme zur Verwaltung von Automic\textsuperscript{\textregistered} Automation. Relevant innerhalb dieser Arbeit sind dabei:
     \begin{itemize}
       \item AE DB Archive \citeg{aae_archiv}  archiviert Protokolldaten und markiert diese in der Datenbank als archiviert.
       %\item AE DB Revision Report \citeg{aae_audit} erstellt Revisionsreports aus Auditdaten aus der Datenbank.
-      \item AE DB Reorg \citeg{aae_reorg} reorganisiert Daten in der Datenbank indem es für diese das Löschkennzeichen setzt.
+      \item AE DB Reorg \citeg{aae_reorg} reorganisiert Daten in der Datenbank, indem es für diese das Löschkennzeichen setzt.
       \item AE DB Unload \citeg{aae_unload} kann archivierte oder reorganisierte Daten aus der Datenbank entfernten.
       \item Archive Browser \citeg{aae_archbrow} zum Betrachten und Durchsuchen archivierter Protokolldaten.
     \end{itemize}
@@ -254,7 +269,7 @@ Automic\textsuperscript{\textregistered} Automation \citeg{aae_awa} ist eine Gru
 
 %------------- BILD ENDE ---------------
 
-Ein Workflow (Abb.~\ref{fig:aae_workflow}) orchestriert die automatische Durchführung einzelner Aufgaben von beispielsweise Jobs anhand von Bedingungen und Relationen und beschreibt damit deren Abfolge \citeg{aae_workflow}. Betrachtet man einen Workflow aus einem abstrahierten Modellierungsgrad ist die Instanz eines Workflows selbst wieder eine Aufgabe.\\
+Ein Workflow (Abb.~\ref{fig:aae_workflow}) orchestriert die automatische Durchführung einzelner Aufgaben von beispielsweise Jobs anhand von Bedingungen und Relationen und beschreibt damit deren Abfolge \citeg{aae_workflow}. Betrachtet man einen Workflow aus einem abstrahierten Modellierungsgrad, ist die Instanz eines Workflows selbst wieder eine Aufgabe.\\
 Mittels Workflows können Geschäftsprozesse oder Teilprozesse aus dem \ac{bpm} technisch beschrieben werden.
 
 \subsection{Jobs}\label{ssec:job}
@@ -269,7 +284,7 @@ Mittels Workflows können Geschäftsprozesse oder Teilprozesse aus dem \ac{bpm} te
   \end{figure}
   \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
 %------------- BILD ENDE ---------------
-Ein Job (Abb.~\ref{fig:aae_job}) ist eine Vorlage für eine Aufgabe die eine oder mehrere Anweisungen in einer definierten Reihenfolge für eine durch sie spezifizierte Umgebung enthält \citeg{aae_jobs} . Dadurch sind Jobs Basisbausteine innerhalb von automatisierten Prozessen.\\
+Ein Job (Abb.~\ref{fig:aae_job}) ist eine Vorlage für eine Aufgabe, die eine oder mehrere Anweisungen in einer definierten Reihenfolge für eine durch sie spezifizierte Umgebung enthält \citeg{aae_jobs} . Dadurch sind Jobs Basisbausteine innerhalb von automatisierten Prozessen.\\
 Ein Job beschreibt innerhalb des \ac{bpm} einen Teilprozess.
 
 \subsection{Ausführungen}\label{ssec:run}
@@ -300,12 +315,12 @@ Eine Aufgabe beschreibt innerhalb des \ac{bpm} eine Aktivität und eine Ausführun
 Beim Erzeugen einer Aufgabe werden alle Ausführungsphasen zwecks Rückverfolgbarkeit und Prüfbarkeit in enem Report protokolliert.
 \subsection{Reorganisation}
 %abbild bspw. reorg-tool
-Unter dem ständigen und insbesondere schnellem Wachstum einer Datenbank kann die Performanz als auch deren Wartbarkeit leiden. Parallel steigen durch den physikalischen Bedarf die Betriebskosten. Um diesem entgegen zu wirken sollten Datenbanken regelmässig reorganisiert werden.\\
-Bei einer Reorganisation (Abb.~\ref{fig:aae_workflow}) werden nicht mehr benötige oder verwaiste gelöscht und bestehende Daten ggf. neu strukturiert \citeg{aae_reorg}.
+Unter dem ständigen und insbesondere schnellen Wachstum einer Datenbank kann die Performanz als auch deren Wartbarkeit leiden. Parallel steigen durch den physikalischen Bedarf die Betriebskosten. Um diesem entgegen zu wirken, sollten Datenbanken regelmässig reorganisiert werden.\\
+Bei einer Reorganisation (Abb.~\ref{fig:aae_workflow}) werden nicht mehr benötige oder verwaiste Daten gelöscht und bestehende Daten ggf. neu strukturiert \citeg{aae_reorg}.
 
 \section{Automic\textsuperscript{\textregistered} Archive Browser}
 
-Der Automic\textsuperscript{\textregistered} Archive Browser (Abb.~\ref{fig:aae_archbro}) ist ein Dienstprogramm mit dem archivierten Datensätzen aus Automic\textsuperscript{\textregistered} Automation zur Anzeige gebracht werden können und mit dem in diesen recherchiert werden kann \citeg{aae_archbrow}.
+Der Automic\textsuperscript{\textregistered} Archive Browser (Abb.~\ref{fig:aae_archbro}) ist ein Dienstprogramm, mit dem archivierte Datensätze aus Automic\textsuperscript{\textregistered} Automation zur Anzeige gebracht werden können und mit dem in diesen recherchiert werden kann \citeg{aae_archbrow}.
 %----------- BILD ANFANG -------------
 %\afterpage{
   \begin{figure}
@@ -422,6 +437,8 @@ Die Definition des Begriffes \glqq Informationssicherheitsvorfall\grqq \ nach Ar
 \medskip
 \end{quote}
 
+\newpage
+
 \ac{gvait} Abschnitt 5. Benutzerberechtigungsmanagement Punkt 40:
 \begin{quote}
 \medskip
@@ -459,6 +476,8 @@ Geeignete Vorkehrungen können sein:}
 \medskip
 \end{quote}
 
+\newpage
+
 \ac{gvait} Abschnitt 7. IT-Betrieb (inkl. Datensicherung) Punkt 63: %Jira- Jobabbruch Ticketgenerierung
 \begin{quote}
 \medskip
@@ -492,7 +511,7 @@ Die vom \ac{gitsig} abgeleitete \ac{gkritisv} definiert, wer Betreiber von \ac{k
 %https://netzwerk.de/gesetzliche-anforderungen/it-sicherheitsgesetz-itsig/
 Die Schutzziele des \ac{gitsig} sind im Kern:\\
 \begin{itemize}
-\item Die \textbf{Verfügbarkeit} von informationstechnischen Systemen und Komponenten sicher zu stellen.
+\item Die \textbf{Verfügbarkeit} von informationstechnischen Systemen und Komponenten sicherzustellen.
 \item Die \textbf{Integrität} von übertragenen Daten zu gewährleisten.
 \item Die \textbf{Vertraulichkeit} von schützenswerten Daten zu garantieren.
 \item Die \textbf{Authentizität} der Identität von Kommunikationspartnern festzustellen.
@@ -519,11 +538,11 @@ Diese müssen seit dem 25. Mai 2018 beispielsweise im Ablauf von Geschäftsprozess
 Somit modernisiert die \ac{gdsgvo} die EU-Datenschutzrichtlinie in der Europäischen Union hinsichtlich einer fortschreitenden Digitalisierung und daraus ableitender Datenverarbeitung \citeg{rbmwi}.
 
 Besonders relevant für diese Arbeit sind die Rechtsgrundlagen für Datenverarbeitungen der \ac{gdsgvo}. Die \ac{gdsgvo} findet Anwendung, sobald eine automatisierte Verarbeitung personenbezogener Daten durchgeführt wird (Art. 2 Abs. 1 \ac{gdsgvo}) \citep[L 119/32]{rdsgvo}. Auch bei einer nichtautomatisierten Verarbeitung gilt die \ac{gdsgvo}, wenn personenbezogene Daten in einem Dateisystem gespeichert sind oder gespeichert werden (Art. 2 Abs. 1 \ac{gdsgvo}) \citep[L 119/32]{rdsgvo}.
-Für die Verarbeitung lassen sich dabei aus Art. 5 Abs. 1 \ac{gdsgvo} \citep[L 119/35-36]{rdsgvo} unmittelbar verschiedenen Anforderungen u. a. Transparenz, Zweckbindung, Richtigkeit, Integrität und Vertraulichkeit ableiten \citep[13]{rdsk}. Parallel verlangt die \ac{gdsgvo} von einem Unternehmen \glqq geeignete technische und organisatorische Maßnahmen\grqq zu ergreifen, um diese Schutzziele der \ac{gdsgvo} zu erreichen. In Art. 32 Abs. 1 lit. b \ac{gdsgvo} \citep[L 119/52]{rdsgvo} werden als solche Maßnahmen explizit \textit{\glqq Vertraulichkeit, Integrität, Verfügbarkeit und Belastbarkeit der Systeme\grqq} und in Art. 32 Abs. 1 lit. d \ac{gdsgvo} \citep[L 119/52]{rdsgvo} \textit{\glqq regelmäßigen Überprüfung, Bewertung und Evaluierung der Wirksamkeit der technischen und organisatorischen Maßnahmen\grqq} benannt.
+Für die Verarbeitung lassen sich dabei aus Art. 5 Abs. 1 \ac{gdsgvo} \citep[L 119/35-36]{rdsgvo} unmittelbar verschiedene Anforderungen u. a. Transparenz, Zweckbindung, Richtigkeit, Integrität und Vertraulichkeit ableiten \citep[13]{rdsk}. Parallel verlangt die \ac{gdsgvo} von einem Unternehmen, \glqq geeignete technische und organisatorische Maßnahmen\grqq zu ergreifen, um diese Schutzziele der \ac{gdsgvo} zu erreichen. In Art. 32 Abs. 1 lit. b \ac{gdsgvo} \citep[L 119/52]{rdsgvo} werden als solche Maßnahmen explizit \textit{\glqq Vertraulichkeit, Integrität, Verfügbarkeit und Belastbarkeit der Systeme\grqq} und in Art. 32 Abs. 1 lit. d \ac{gdsgvo} \citep[L 119/52]{rdsgvo} \textit{\glqq regelmäßigen Überprüfung, Bewertung und Evaluierung der Wirksamkeit der technischen und organisatorischen Maßnahmen\grqq} benannt.
 
 In der \ac{gdsgvo} sind für die Verarbeitung als auch die technischen und organisatorischen Maßnahmen umfassende Rechenschaftspflichten verankert. Von dem verantwortlichen Unternehmen wird in Art. 5 Abs. 2 \ac{gdsgvo} \citep[L 119/36]{rdsgvo} gefordert, die konforme Verarbeitung im Zweifel nachweisen zu können. Konkretisiert wird dies, indem das Unternehmen nach Art. 24 Abs. 1 \ac{gdsgvo} \citep[L 119/47]{rdsgvo} geeignete technische und organisatorische Maßnahmen umzusetzen hat, um den Nachweis sicherzustellen, dass die Verarbeitung gemäß \ac{gdsgvo} erfolgt \citeg{rplutte}.
 
-Die \ac{gdsgvo} definiert nicht wie lange ein solcher Nachweis rückblickend geführt werden muss. Für Bußgelder nach Art. 83 \ac{gdsgvo} \citep[L 119/82]{rdsgvo} wegen Verstößen gegen die \ac{gdsgvo} gelten nach § 41 Bundesdatenschutzgesetz die Vorschriften, und somit auch dessen Verjährungsvorschriften, des Gesetzes über Ordnungswidrigkeiten. In diesem ist in § 31 die Verfolgungsverjährung bzgl. Bußgeldverfahren gegenüber Aufsichtsbehörden festgeschrieben, nach der ein Bußgeld nach Art. 83 \ac{gdsgvo} drei Jahre nach einer vorschriftswidrigen Verarbeitung verjährt ist \citeg{rwebersohn}.
+Die \ac{gdsgvo} definiert nicht, wie lange ein solcher Nachweis rückblickend geführt werden muss. Für Bußgelder nach Art. 83 \ac{gdsgvo} \citep[L 119/82]{rdsgvo} wegen Verstößen gegen die \ac{gdsgvo} gelten nach § 41 Bundesdatenschutzgesetz die Vorschriften und somit auch dessen Verjährungsvorschriften, des Gesetzes über Ordnungswidrigkeiten. In diesem ist in § 31 die Verfolgungsverjährung bzgl. Bußgeldverfahren gegenüber Aufsichtsbehörden festgeschrieben, nach der ein Bußgeld nach Art. 83 \ac{gdsgvo} drei Jahre nach einer vorschriftswidrigen Verarbeitung verjährt ist \citeg{rwebersohn}.
 Entsprechend sollten Nachweise mind. 3 Jahre aufbewahrt werden, da ein weiter zurückliegender Verstoß risikolos wäre. Dies ist ein Zeitraum, in dem zurückliegende Daten innerhalb einer Process Engine in der Regel teilweise bis vollständig reorganisiert und archiviert werden.
 
 
@@ -552,7 +571,7 @@ Eine Java Implementierung ist eine Implementierung der \ac{jjvm} auf einer spezi
 \section{GUI-Framework}
 %https://coderslegacy.com/java-gui-frameworks-guide/
 
-Ein \ac{jgui} Framework \citeg{jguisiddiqi}  stellt mittels einer Bibliothek typische Steuerelemente zur Erstellung von grafischen Benutzeroberflächen zur Verfügung, über die ein Endanwender mit einer dazugehörigen Anwendung interagieren kann. Das Framework kapselt dabei primitive, grafische Objekte des Betriebssystems bis hin zu eigenen grafischen Elementen in geeignete Strukturen bzw. Klassen. Es kann außerdem diese um Funktionalität erweitern und sie als Bedienelemente zur Verfügung stellen. Für letzteres verfügt das Framework in der Regel über eine eigene Render-Engine. Mittels des Frameworks können so innerhalb integrierter Entwicklungsumgebungen oder auch unabhängig davon einfache grafische Benutzeroberflächen geschaffen werden, da die Steuerelemente oder Widgets \citeg{jwidgets} hierzu nicht mehr eigenständig entwickelt werden müssen.\\
+Ein \ac{jgui} Framework \citeg{jguisiddiqi}  stellt mittels einer Bibliothek typische Steuerelemente zur Erstellung von grafischen Benutzeroberflächen zur Verfügung, über die ein Endanwender mit einer dazugehörigen Anwendung interagieren kann. Das Framework kapselt dabei primitive, grafische Objekte des Betriebssystems bis hin zu eigenen grafischen Elementen in geeignete Strukturen bzw. Klassen. Es kann außerdem diese um Funktionalität erweitern und sie als Bedienelemente zur Verfügung stellen. Für letztere verfügt das Framework in der Regel über eine eigene Render-Engine. Mittels des Frameworks können so innerhalb integrierter Entwicklungsumgebungen oder auch unabhängig davon einfache grafische Benut\-zeroberflächen geschaffen werden, da die Steuerelemente oder Widgets \citeg{jwidgets} hierzu nicht mehr eigenständig entwickelt werden müssen.\\
 Viele \ac{jgui} Frameworks verfügen darüber hinaus über einen Designer zur mausgesteuerten Erstellung sowie einen Layoutmanager zur korrekten Anordnung der Steuerelemente.
 
 \chapter{Analyse}
@@ -838,8 +857,8 @@ An der Struktur des Projektes \citeg{vbmarshall} und der Format-Spezifikation im
 \end{center}
 
 
-Die \ac{vb} 5.0 Version basiert noch nicht auf dem .NET-Framework, sondern ist rein objektbasiert \citeg{wikivbc}. Entsprechend stehen keine Sprachmittel aus dem .NET-Framework zur Verfügung. Für den Nachfolger des auf dem .NET-Framework basierenden \ac{vb} .NET \citeg{wikivbnet} hat Microsoft den Sprachumfang des .NET-Frameworks ab 2017 eingeschränkt. Damals änderte Microsoft seine Strategie bei der Weiterentwicklung der Programmiersprachen \ac{vb} und C\# \citeg{mslangstr}. Davor war die Strategie neue Features in beiden Sprachen zur Verfügung zu stellen. Seit dem Strategiewechsel gibt es eine Abstufung zwischen den beiden Sprachen. Neue .NET Features sind seitdem ggf. nicht mehr in \ac{vb} zu finden.\\
-2020 hat Microsoft bekanntgegeben \ac{vb} .NET als Sprache nicht mehr weiterzuentwickeln \citeg{msvbnet}. Von da an werden unter Umständen neue Funktionen aus dem .NET-Framework, die Änderungen an \ac{vb} .NET als Programmiersprache notwendig machen würden, von \ac{vb} .NET nicht mehr unterstützt.
+Die \ac{vb} 5.0 Version basiert noch nicht auf dem .NET-Framework, sondern ist rein objektbasiert \citeg{wikivbc}. Entsprechend stehen keine Sprachmittel aus dem .NET-Framework zur Verfügung. Für den Nachfolger des auf dem .NET-Framework basierenden \ac{vb} .NET \citeg{wikivbnet} hat Microsoft den Sprachumfang des .NET-Frameworks ab 2017 eingeschränkt. Damals änderte Microsoft seine Strategie bei der Weiterentwicklung der Programmiersprachen \ac{vb} und C\# \citeg{mslangstr}. Davor war die Strategie, neue Features in beiden Sprachen zur Verfügung zu stellen. Seit dem Strategiewechsel gibt es eine Abstufung zwischen den beiden Sprachen. Neue .NET Features sind seitdem ggf. nicht mehr in \ac{vb} zu finden.\\
+2020 hat Microsoft bekanntgegeben, \ac{vb} .NET als Sprache nicht mehr weiterzuentwickeln \citeg{msvbnet}. Von da an werden unter Umständen neue Funktionen aus dem .NET-Framework, die Änderungen an \ac{vb} .NET als Programmiersprache notwendig machen würden, von \ac{vb} .NET nicht mehr unterstützt.
 
 %----------- BILD ANFANG -------------
 %(Abb.~\ref{b_vbdreaded})
@@ -917,7 +936,7 @@ HTML & 44.3\%\\ \bottomrule
 %--------- TABELLE ENDE ---------------
 
 Gefördert wurde diese Entwicklung durch Nutzer anderer Hochsprachen wie Java, C oder C++, die eine syntaktische Nähe zu C\# und Distanz zu \ac{vb} haben. Zusätzlich gilt \ac{vb} in dieser Gemeinschaft als einfache Einstiegssprache mit einem schlechten Ruf \citeg{vbbad}.
-Dass die Ökosysteme, die verbreitete Syntax und der Umfang von Sprachen wie Java oder C\# inzwischen \ac{vb} weitaus überlegen sind wird am Stack Overflow Developer Survey von 2018 (Tab.~\ref{t_cited_img}) deutlich. In diesem führte Visual Basic die Liste der Sprache an, die Nutzer ungern einsetzen - Zugleich wurde \ac{vb} dort 2018 das letzte Mal aufgeführt.
+Dass die Ökosysteme, die verbreitete Syntax und der Umfang von Sprachen wie Java oder C\# inzwischen \ac{vb} weitaus überlegen sind, wird am Stack Overflow Developer Survey von 2018 (Tab.~\ref{t_cited_img}) deutlich. In diesem führte Visual Basic die Liste der Sprachen an, die Nutzer ungern einsetzen. Zugleich wurde \ac{vb} dort 2018 das letzte Mal aufgeführt.
 Seit 2019 ist \ac{vb} nicht mehr Bestandteil der Erhebung des Stack Overflow Developer Survey. Mittlerweile führt der nahe Verwandte \ac{vba} die Rangliste \citeg{stacksurvey21}  nach COBOL an.
 
 Entsprechend ungeeignet ist \ac{vb} im Jahr 2021 als Grundlage für ein Softwareprojekt mit gängigen Anforderungen an Portierbarkeit, Erweiterbarkeit und Wartbarkeit.\\
@@ -928,7 +947,7 @@ Eine Portierung des bestehenden Automic\textsuperscript{\textregistered} Archive
 
 \begin{center}
 \begin{tabular}{c}
-\begin{lstlisting}[caption=Ermittlung Zeichenkodierungen archivierter Daten, label=lst:charset_reorg, language=bash]
+\begin{lstlisting}[caption=Ermittlung von Zeichenkodierungen archivierter Daten, label=lst:charset_reorg, language=bash]
 $ file -i ./*
 ./UC_ACMT.TXT: inode/x-empty; charset=binary
 ./UC_AH.IDX:   text/plain; charset=us-ascii
@@ -951,7 +970,7 @@ and other text
 %https://www.google.com/search?q=most+popular+jvms&oq=most+popular+jvms&aqs=chrome..69i57.8534j0j7&sourceid=chrome&ie=UTF-8
 Theoretisch gibt es mehrere Quellcodes für Java Implementierungen. Praktisch relevant ist inzwischen vermehrt der Quellcode des JDK Project\footnote{Quelle: JDK Project, \url{http://openjdk.java.net/projects/jdk/}, Aufruf: 30.07.2021}. Auf Basis dieses Quellcodes werden von verschiedenen Anbietern Java Implementierungen angeboten. Diese Anbieter werden umgangssprachlich auch im deutschen Sprachraum häufig als Java Vendor bezeichnet. Die Bezeichnung geht zurück auf interne Systemeinstellungen in Java, in denen der Anbieter einer Java Implementierung über die Eigenschaft java.vendor seinen Eigennamen definiert. Die Systemeinstellungen können mittels der Methode getProperties() der Klasse System ausgelesen werden \citep[Abs. 31]{jmzvendor}.\\
 Java Implementierungen von verschiedenen Anbietern können sich in der Unterstützung verschiedener Prozessorarchitekturen wie x86, ARM, PPC, SPARC und deren unterschiedlichen Wortbreiten unterscheiden \citeg{jhwarchitekt}, als auch in den zu diesen angebotenen  Betriebssystemen und deren Distributionen. Darüber hinaus sind aus technischer Sicht die Implementierungen häufig auf bestimmte Anwendungszwecke optimiert und der Ursprungsquellcode entsprechend modifiziert. Neben individuellen Modifizierungen eines Anbieters bzgl. der Implementierung unterscheiden sich die angebotenen Implementierungen auch durch das Beinhalten oder Fehlen von Java Erweiterungen wie beispielsweise Java Mission Control, Java Flight Recorder oder JavaFx bzw. OpenJFX \citeg{jadoptmigrate}.\\
-Abgesehen von technischen Unterschieden wie Unterstützung und direkten Funktionsumfang gibt es auch Unterschiede bzgl. der Wartung. Die Anbieter bieten unterschiedlich frei zugängliche Sicherheitspatches an, veröffentlichen regelmäßige  Updates in unterschiedlichen Zyklen und definieren je Version unterschiedlich lange Lebenszyklen. Die Updates selbst werden je nach Anbieter über verschiedene Quellen und Schnittstellen angeboten als auch in verschiedenen Auslieferungsformaten. Insbesondere letzteres ist für standardisierte und automatisierte Updateverfahren seitens des Anwenders nicht zu unterschätzen. Es sollte auch betrachtet werden,wie beständig die Weiterentwicklung einer Implementierung ist. Hierzu sollte beispielsweise der Verbreitungsgrad und die Substanz des Anbieters  selbst begutachtet werden.\\
+Abgesehen von technischen Unterschieden wie Unterstützung und direkten Funktionsumfang gibt es auch Unterschiede bzgl. der Wartung. Die Anbieter bieten unterschiedlich frei zugängliche Sicherheitspatches an, veröffentlichen regelmäßige  Updates in unterschiedlichen Zyklen und definieren je Version unterschiedlich lange Lebenszyklen. Die Updates selbst werden je nach Anbieter über verschiedene Quellen und Schnittstellen angeboten als auch in verschiedenen Auslieferungsformaten. Insbesondere letztere sind für standardisierte und automatisierte Updateverfahren seitens des Anwenders nicht zu unterschätzen. Es sollte auch betrachtet werden,wie beständig die Weiterentwicklung einer Implementierung ist. Hierzu sollte beispielsweise der Verbreitungsgrad und die Substanz des Anbieters  selbst begutachtet werden.\\
 
 %----------- TABELLE START -------------
 %\afterpage{
@@ -1008,7 +1027,7 @@ Other & 4\\ \bottomrule
 }
 
 %--------- TABELLE ENDE ---------------
-Aus organisatorischer und wirtschaftlicher Sicht stellt sich hingegen die Frage, ob ein Anbieter seine Java Implementierung grundsätzlich kostenlos zur Verfügung stellt und ob der Betrieb der \ac{jjvm} in kommerziellen oder öffentlichen, produktiven Umgebungen ebenso unentgeltlich   gestattet ist. Insbesondere dann ist aber auch immer von Interesse, ob und zu welchen Konditionen ein Anbieter Unterstützungsleistungen anbietet, ob die Implementierungen zertifiziert sind oder mit welchen Testverfahren die Implementierungen validiert werden \citeg{jazulcompare}. Und zuletzt wie transparent der Implementierungsprozess ist.
+Aus organisatorischer und wirtschaftlicher Sicht stellt sich hingegen die Frage, ob ein Anbieter seine Java Implementierung grundsätzlich kostenlos zur Verfügung stellt und ob der Betrieb der \ac{jjvm} in kommerziellen oder öffentlichen, produktiven Umgebungen ebenso unentgeltlich   gestattet ist. Insbesondere dann ist aber auch immer von Interesse, ob und zu welchen Konditionen ein Anbieter Unterstützungsleistungen anbietet, ob die Implementierungen zertifiziert sind oder mit welchen Testverfahren die Implementierungen validiert werden \citeg{jazulcompare}. Und zuletzt, wie transparent der Implementierungsprozess ist.
 
 Die nachfolgenden Implementierungen wurden aufgrund ihrer Eigenschaften~\citep[Abs. 4]{joreilvendors} und ihres Verbreitungsgrades (Tab.~\ref{t_jdkspread_20} und Tab.~\ref{t_jdkspread_21}) für die Umsetzung als relevant eingestuft und in die Analyse einbezogen.
 
@@ -1027,7 +1046,7 @@ Das Ziel des Temurin Projektes ist die Bereitstellung eines TCK-zertifizierten \
 Zusätzlich zur TCK-Zertifizierung und der damit verbundenen offiziellen Java SE Kompatibilität durchlaufen die Veröffentlichungen die Eclipse-eigene AQAvit Testinfrastruktur \citeg{jeclaqavit}.
 Veröffentlicht wird Temurin unter der \ac{jgpl} mit Classpath Exception.\\
 Das Temurin Projekt folgt für seine Veröffentlichungen der Roadmap des JDK Project: Neue Versionen mit neuen Features alle 6 Monate, Wartungs- und Sicherheitspatches quartalsweise sowie alle 3 Jahre eine Version mit \ac{jlts}. Versionen wie mit \ac{jlts} werden im Gegensatz zu Oracle's OpenJDK jedoch deutlich länger unterstützt und weiter mit Updates versorgt. Das mindert einen permanenten Migrationsdruck und verringert so den Wartungsaufwand. Hinter der Adoptium Working Group stehen große IT-Konzerne u.a. Alibaba, Azul, Huawei, Karakun, Microsoft, Red Hat und IBM. Da Eclipse als gemeinnützige Gesellschaft nicht die Mittel hat, eigene Sicherheitspatches zu entwickeln, werden diese durch die Mitglieder bereitgestellt.\\
-Für Eclipse Temurin wird durch Eclipse selbst als gemeinnützige Gesellschaft kein kommerzieller Support angeboten. Es gibt lediglich begrenzte Unterstützung bei der Behebung von eindeutig auf die Applikation zurückzuführende Fehler. Azul bietet für Temurin parallel zum hauseigenen Zulu SDK kommerziellen Support an welcher sich im Umfang vom Support für das Zulu SDK selbst unterscheidet.
+Für Eclipse Temurin wird durch Eclipse selbst als gemeinnützige Gesellschaft kein kommerzieller Support angeboten. Es gibt lediglich begrenzte Unterstützung bei der Behebung von eindeutig auf die Applikation zurückzuführende Fehler. Azul bietet für Temurin parallel zum hauseigenen Zulu SDK kommerziellen Support an, welcher sich im Umfang vom Support für das Zulu SDK selbst unterscheidet.
 
 
 \subsection{IBM OpenJDK}
@@ -1073,7 +1092,7 @@ Java Flight Recorder & X & X & - & X & X \\
 Mission Control & - & X & - & X & X \\
 Besonderheit & cloud-ready & JavaFX bundled & Open Source Projekt & Main-tainer & Inte-gration \\ \bottomrule
 \end{tabularx}
-\caption[Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern]{Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern\footnotemark}\label{t_vendorcompare}
+\caption[Vergleich \ac{jjdk} Implementierungen verschiedener Anbieter]{Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern\footnotemark}\label{t_vendorcompare}
 \end{table}
 \footnotetext{Quellen: \citeg{jredhatjdk}, \citeg{jamzcorretto}, \citeg{jazulzulu}, \citeg{jecltemurin}, \citeg{jibmjavasdk}\\ Azul 2021: OpenJDK vs Oracle JDK - Comparison Table, \url{https://www.azul.com/products/core/jdk-comparison-matrix/}, Aufruf: 05.08.2021}
 }
@@ -1103,15 +1122,15 @@ Eclipse Temurin ist damit nicht nur free for production, sondern auch production
 \section{Auswahl des Java GUI-Framework}
 
 Für die Gestaltung der grafischen Oberfläche und Bereitstellung funktional passender Steuerelemente ist für die Umsetzung dieser Arbeit die Auswahl eines GUI-Frameworks notwendig.
-Im Folgenden werden verschiedene Java GUI-Frameworks dazu betrachtet um eines als Grundlage für die Arbeit zu definieren.
+Im Folgenden werden verschiedene Java GUI-Frameworks dazu betrachtet, um eines als Grundlage für die Arbeit zu definieren.
 
 \subsection{Swing}
 
 %https://www.mathematik.uni-marburg.de/~thormae/lectures/graphics1/graphics_2_2_ger_web.html#3
 
-Swing \citeg{jorcswing} ist ein UI-Toolkit welches ursprünglich von Sun entwickelt wurde. Es erweitert das erste native GUI-Framework \ac{jawt} von 1985 um die Swing-Komponenten und bildet zusammen mit dem Java 2D-API, den Unterstützungstechnologien aus Java Accessibility, der Data Transfer-API und \ac{jawt} die \ac{jjfc} zur Erstellung grafischer Benutzeroberflächen \citeg{jthormaehlenswing}. Swing-Komponenten bauen zum Teil auf \ac{jawt} auf und verwenden insbesondere im Event-Handling noch viel \ac{jawt}-Klassen \citeg{jawtevent}. Swing zeichnet sich unter anderem durch eine Vielzahl von einfach zu verwendenden Komponenten und Widgets, Unterstützung von Undo-/Redo-Operationen, 2D Grafik Rendering und veränderbarem Look-and-Feel aus.\\
-Swing ist vollständig in Java geschrieben wodurch es plattformübergreifend nicht von spezifischen Bibliotheken abhängt. Der Nachteil ist, dass das Look-and-Feel einer Swing-Oberfläche sich von dem des nativen Betriebssystems unterscheiden kann. Im Zweifelsfall ist Swing auch von \ac{jawt}-Komponenten abhängig.\\
-Zeitweise gab es mit Java 9 Überlegungen Swing zukünftig zum Vorteil von JavaFX aus der Java Standard Edition herauszulösen. Mit Java 11 ist das Gegenteil eingetreten und JavaFX wurde ausgegliedert \citeg{joraclesmithfx}. Swing ist damit quasi das einzig verbleibende GUI-Framework der Java Standard Edition. Aufgrund der anhaltend hohen Verbreitung ist es teilweise noch Bestandteil der Lehre und wird gerne als Einstieg in die GUI-Entwicklung unter Java verwendet. Es wird jedoch nicht mehr weiterentwickelt oder gewartet.
+Swing \citeg{jorcswing} ist ein UI-Toolkit, welches ursprünglich von Sun entwickelt wurde. Es erweitert das erste native GUI-Framework \ac{jawt} von 1985 um die Swing-Komponenten und bildet zusammen mit dem Java 2D-API, den Unterstützungstechnologien aus Java Accessibility, der Data Transfer-API und \ac{jawt} die \ac{jjfc} zur Erstellung grafischer Benutzeroberflächen \citeg{jthormaehlenswing}. Swing-Komponenten bauen zum Teil auf \ac{jawt} auf und verwenden insbesondere im Event-Handling noch viel \ac{jawt}-Klassen \citeg{jawtevent}. Swing zeichnet sich unter anderem durch eine Vielzahl von einfach zu verwendenden Komponenten und Widgets, Unterstützung von Undo-/Redo-Operationen, 2D Grafik Rendering und veränderbarem Look-and-Feel aus.\\
+Swing ist vollständig in Java geschrieben, wodurch es plattformübergreifend nicht von spezifischen Bibliotheken abhängt. Der Nachteil ist, dass das Look-and-Feel einer Swing-Oberfläche sich von dem des nativen Betriebssystems unterscheiden kann. Im Zweifelsfall ist Swing auch von \ac{jawt}-Komponenten abhängig.\\
+Zeitweise gab es mit Java 9 Überlegungen, Swing zukünftig zum Vorteil von JavaFX aus der Java Standard Edition herauszulösen. Mit Java 11 ist das Gegenteil eingetreten und JavaFX wurde ausgegliedert \citeg{joraclesmithfx}. Swing ist damit quasi das einzig verbleibende GUI-Framework der Java Standard Edition. Aufgrund der anhaltend hohen Verbreitung ist es teilweise noch Bestandteil der Lehre und wird gerne als Einstieg in die GUI-Entwicklung unter Java verwendet. Es wird jedoch nicht mehr weiterentwickelt oder gewartet.
 
 \subsection{JavaFX}
 %https://www.educba.com/java-gui-framework/
@@ -1140,13 +1159,13 @@ Ehemalig sollte mit JavaFx in Verbindung mit Rich Internet Applications und Java
 JavaFX ist als eigenständige Bibliothek entworfen, bringt einen eigenen GUI Builder mit und ermöglicht mittels dem XML-basierten FXML-Format eine Trennung zwischen Darstellung und Logik.
 Durch die große Anzahl unterschiedlicher und ausgereifter Komponenten, der möglichen Gestaltung über \ac{jcss} oder der Unterstützung von 3D Darstellungen entspricht es moderneren Ansprüchen  \citep[1034]{jullenboominsel}. Dabei werden mitunter die Fähigkeiten neuerer Grafikprozessoren durch Hardwarebeschleunigung adäquat unterstützt. Der Umstieg von Swing auf JavaFx wird durch die Swing Integration erleichtert und sanfter gestaltet. Zuletzt ermöglicht JavaFX das Erstellen einer Applikation, die keine bestehende Java Installation mehr voraussetzt, indem bei der Paketierung bereits alles Notwendige mit eingebunden wird.
 
-Mit Java 11 entschied  sich Oracle, die Weiterentwicklung von JavaFX Open Source in das OpenJFX Projekt \citeg{jopenjfxpro}  unter \ac{jgpl}v2 mit Classpath Exception auszugliedern und aus der Java Standard Edition zu entfernen. Innerhalb des OpenJFX Projektes ist es das Ziel verschiedener Unternehmen und Einzelpersonen, gemeinschaftlich ein vollständiges, modernes und effizientes GUI-Framework bereit zu stellen.
+Mit Java 11 entschied  sich Oracle, die Weiterentwicklung von JavaFX Open Source in das OpenJFX Projekt \citeg{jopenjfxpro}  unter \ac{jgpl}v2 mit Classpath Exception auszugliedern und aus der Java Standard Edition zu entfernen. Innerhalb des OpenJFX Projektes ist es das Ziel verschiedener Unternehmen und Einzelpersonen, gemeinschaftlich ein vollständiges, modernes und effizientes GUI-Framework bereitzustellen.
 \subsection{SWT}
-Das \ac{jswt} \citeg{jswtecl} ist ein von IBM ursprünglich für die Entwicklungsumgebung Eclipse als Ersatz zu \ac{jawt} entwickeltes GUI-Framework, welches die nativen grafischen Elemente des darunterliegenden Betriebssystems über das \ac{jjni} verwenden kann. \ac{jswt} erfordert entsprechend keinerlei Abhängigkeiten zu \ac{jawt}/Swing, jedoch zu den verwendeten nativen Elementen des Betriebssystems  und muss daher Applikationen immer mit systemspezifischen, dynamischen Bibliothek ausliefern. Die native Anbindung selbst führte anfangs dazu, dass \ac{jswt} auf dem Zielsystem Windows deutlich performanter als Swing war \citep[1036]{jullenboominsel}. Plattformübergreifend kann dieser Vorteil jedoch schnell zu einem Nachteil werden, da die Voraussetzungen an die nativen UI-Elemente des Systems zumeist nicht gegeben sind und nachempfunden werden müssen. Parallel kann dies dazu führen, dass es im Zuge der Speicherverwaltung zu einem Mehraufwand in der Entwicklung kommen kann.\\ \ac{jswt} verfügt über eine breite Palette an Widgets und bietet die Möglichkeit, optional \ac{jawt}/Swing Komponenten zu integrieren \citeg{jeplswingawtinteg}. Durch die Verwendung nativer UI-Elemente des Betriebssystems kann sich die Oberfläche und die Handhabung einer \ac{jswt}-Applikation mehr an die Optik und das Bedienerlebnis des Betriebssystems  anpassen. Die Entwicklung von \ac{jswt} wird seit deren Gründung, durch die Eclipse Foundation fortgeführt. \ac{jswt} ist von dieser als Open Source unter der \ac{jepl} 2.0 lizenziert und gestattet damit in der Regel eine kommerzielle Nutzung.
+Das \ac{jswt} \citeg{jswtecl} ist ein von IBM ursprünglich für die Entwicklungsumgebung Eclipse als Ersatz zu \ac{jawt} entwickeltes GUI-Framework, welches die nativen grafischen Elemente des darunterliegenden Betriebssystems über das \ac{jjni} verwenden kann. \ac{jswt} erfordert entsprechend keinerlei Abhängigkeiten zu \ac{jawt}/Swing, jedoch zu den verwendeten nativen Elementen des Betriebssystems  und muss daher Applikationen immer mit systemspezifischen, dynamischen Bibliotheken ausliefern. Die native Anbindung selbst führte anfangs dazu, dass \ac{jswt} auf dem Zielsystem Windows deutlich performanter als Swing war \citep[1036]{jullenboominsel}. Plattformübergreifend kann dieser Vorteil jedoch schnell zu einem Nachteil werden, da die Voraussetzungen an die nativen UI-Elemente des Systems zumeist nicht gegeben sind und nachempfunden werden müssen. Parallel kann dies dazu führen, dass es im Zuge der Speicherverwaltung zu einem Mehraufwand in der Entwicklung kommen kann.\\ \ac{jswt} verfügt über eine breite Palette an Widgets und bietet die Möglichkeit, optional \ac{jawt}/Swing Komponenten zu integrieren \citeg{jeplswingawtinteg}. Durch die Verwendung nativer UI-Elemente des Betriebssystems kann sich die Oberfläche und die Handhabung einer \ac{jswt}-Applikation mehr an die Optik und das Bedienerlebnis des Betriebssystems  anpassen. Die Entwicklung von \ac{jswt} wird seit deren Gründung durch die Eclipse Foundation fortgeführt. \ac{jswt} ist von dieser als Open Source unter der \ac{jepl} 2.0 lizenziert und gestattet damit in der Regel eine kommerzielle Nutzung.
 
 \subsection{Ergebnis}
 Unter Swing ist die Umsetzung der Arbeit deutlich aufwendiger als unter JavaFX oder \ac{jswt}, da eine TreeTable-Komponente kein elementarer Bestandteil von Swing ist. Eine solche Komponente müsste in Swing mit entsprechendem Aufwand eigens erstellt, erweitert und gewartet werden. Mit der Einstellung der Weiterentwicklung von Swing und der Definition von JavaFX als Nachfolger durch Oracle sollten Neuentwicklungen in der Regel nicht mehr unter Swing durchgeführt werden. Aus diesen Gründen wird Swing für die Auswahl eines GUI-Frameworks nicht weiterverfolgt.\\Eine durch JavaFX oder \ac{jswt} übersetzte Applikation kann in beiden Fällen nicht plattformunabhängig verwendet werden. In verschiedenen Veröffentlichungen zu dem Thema wird davon ausgegangen, dass sich JavaFX durchsetzen wird \citep[1105]{jschildtninith}, \citep[1036]{jullenboominsel}. Hintergrund sind der geringere Entwicklungsaufwand, die neuere Architektur sowie der damit einhergehende Funktionsumfang. Insbesondere gilt dies für mobile oder eingebettete Systeme.\\
-Vergleicht man die Aktivität der Repositorien weist \ac{jswt} \citeg{jeclswt} mehr als doppelt so viele wie JavaFX \citeg{jjfxcommit}  auf. Wobei zu beachten ist, dass etwa die Hälfte der Commits des \ac{jswt} Repositoriums dem Eclipse Releng Bot entstammen und damit keine direkte Aktivität  für das Repositorium darstellen. Eine aktive Weiterentwicklung ist für beide Frameworks gegeben.\\
+Vergleicht man die Aktivität der Repositorien, weist \ac{jswt} \citeg{jeclswt} mehr als doppelt so viele wie JavaFX \citeg{jjfxcommit}  auf. Dabei ist zu beachten, dass etwa die Hälfte der Commits des \ac{jswt} Repositoriums dem Eclipse Releng Bot entstammen und damit keine direkte Aktivität  für das Repositorium darstellen. Eine aktive Weiterentwicklung ist für beide Frameworks gegeben.\\
 Da im Codevergleich in der Regel weniger Zeilen für eine JavaFX-Anwendung als für eine \ac{jswt}-Anwendung benötigt werden, \ac{jswt} eine abstraktere Logik aufweist, \ac{jswt} durch die native Anbindung zu einer komplexeren Entwicklung sowie zu höherem Portieraufwand führen kann und JavaFX das modernere Framework ist, fällt die Wahl auf JavaFX als GUI-Framework.
 %https://www.hameister.org/JavaSwingTreeTable.html
 
@@ -1264,7 +1283,7 @@ Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.rea
     \draw[gray!50, text=black] (-0.2 cm,\x cm) -- (6.5 cm,\x cm) 
       node at (-0.5 cm,\x cm) {\x};  %Beschriftung der Hilfslinien
 
-    \node at (7.5cm,5cm) {Zeit zum einlesen von 100 MByte};  %Überschrift
+    \node at (7.5cm,5cm) {Zeit zum Einlesen von 100 MByte};  %Überschrift
 
   \foreach \x/\y/\country in {
 %                              0.5/0.27/BufferedInputStream,  %\x ist Anfang der Säulen
@@ -1331,16 +1350,16 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{bpm}[BPM]{Business Process Management}
 \acro{eabpm}[EABPM]{European Association of Business Process Management}
 \acro{cbok}[CBOK\textsuperscript{\textregistered}]{Common Body of Knowledge}
-\acro{hll}[HLL]{Höheren Programmiersprache (High-level language)}
+\acro{hll}[HLL]{\LU{H}{h}öheren Programmiersprache (High-level language)}
 \acro{isms}[ISMS]{Informationssicherheits-Managementsystem}
 \acro{gao}[AO]{Abgabenordnung}
 \acro{jawt}[AWT]{Abstract Widget Toolkit}
 \acro{jjfc}[JFC]{Java Foundation Classes}
 \acro{awp}[WP]{Arbeitsprozesse}
-\acro{apwp}[PWP]{primären Arbeitsprozess}
+\acro{apwp}[PWP]{\LU{P}{p}rimären Arbeitsprozess}
 \acro{acp}[CP]{Kommunikationsprozesse}
-\acro{adwp}[DWP]{Dialogprozesse}
-\acro{ajwp}[JWP]{Java-Arbeitsprozesse}
+\acro{adwp}[DWP]{Dialogprozesse\LU{}{n}}
+\acro{ajwp}[JWP]{Java-Arbeitsprozesse\LU{}{n}}
 \acro{ajcp}[JCP]{Java-Kommunikationsprozess}
 \acro{jcss}[CSS]{Cascading Style Sheets}
 \acro{jswt}[SWT]{Standard Widget Toolkit}
@@ -1352,15 +1371,15 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{gkritisv}[BSI-KritisV]{Verordnung zur Bestimmung Kritischer Infrastrukturen nach dem BSI-Gesetz}
 \acro{gbsig}[BSIG]{Gesetz über das Bundesamt für Sicherheit in der Informationstechnik}
 \acro{bbsi}[BSI]{Bundesamt für Sicherheit in der Informationstechnik}
-\acro{kritis}[KRITIS]{kritischen Infrastruktur}
+\acro{kritis}[KRITIS]{\LU{K}{k}ritische\LU{}{n} Infrastruktur}
 \acro{gbdsg}[BDSG]{Bundesdatenschutzgesetz}
 %Bundesministerium für Wirtschaft und Energie
 \acro{gdsgvo}[DSGVO]{Datenschutz-Grundverordnung}
 \acro{giukdg}[IuKDG]{Informations- und Kommunikationsdienste-Gesetz}
 \acro{gvdg}[VDG]{Vertrauensdienstegesetz}
-\acro{givt}[IVT]{elektronische Identifizierung und Vertrauensdienste für elektronische Transaktionen}
-\acro{gvait}[VAIT]{versicherungsaufsichtlichen Anforderungen an die IT}
-\acro{gvag}[VAG]{Versicherungsaufsichtsgesetzes}
+\acro{givt}[IVT]{\LU{E}{e}lektronische Identifizierung und Vertrauensdienste für elektronische Transaktionen}
+\acro{gvait}[VAIT]{\LU{V}{v}ersicherungsaufsichtlichen Anforderungen an die IT}
+\acro{gvag}[VAG]{Versicherungsaufsichtsgesetz\LU{}{es}}
 \acro{gzpo}[ZPO]{Zivilprozessordnung}
 \acro{gbgb}[BGB]{Bürgerliches Gesetzbuch}
 \acro{gstgb}[StGB]{Strafgesetzbuch}
