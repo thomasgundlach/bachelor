@@ -88,11 +88,9 @@ The thesis should be printed single-sided (simplex). The binding correction (los
  
 \selectlanguage{ngerman}
 \section*{\centering\abstractname}
-Diese \LaTeX-Vorlage berücksichtigt in Form und Layout die Vorgaben für Abschlussarbeiten im Department Medientechnik \glqq Richtlinien zur Erstellung schriftlicher Arbeiten, vorrangig Bachelor-Thesis (BA) und Master-Thesis (MA) im Department Medientechnik in der Fakultät DMI an der HAW Hamburg\grqq, Fassung vom 6. Dezember 2012 von Prof. Wolfgang Willaschek.
- 
-Der Ausdruck soll einseitig erfolgen (Simplex). Je nach Bindung ist ggf. die Bindekorrektur (Verlust am linken Seitenrand durch die Bindung) noch anzupassen. In dieser Vorlage ist eine Bindekorrektur im header der \LaTeX-Datei mit BCOR=1mm für Klebebindung eingestellt.
+Diese Arbeit behandelt die Anforderung und Entwicklung eines relationsorientierten Recherchewerkzeugs für archivierte Protokolldaten aus einer Process Engine. Die Umsetzung erfolgt am Beispiel der Automic\textsuperscript{\textregistered} Automation Engine. Für die Anforderung wird der rechtliche Hintergrund am Beispiel des Versicherungswesens erarbeitet und der Aufbau der Process Engine beschrieben. Thematisiert wird die Auswahl der Grundlagen für die Entwicklung und des Funktionsumfangs für das Recherchewerkzeug mit der daraus folgenden Implementierung.
 
-{\bfseries Das ist die deutsche Version der vorangestellten Zusammenfassung. Beide Versionen -- englisch und deutsch -- sind verbindlich!}
+Ergebnis ist der Prototyp eines Dienstprogramms mit dem die Abhängigkeiten von archivierten Protokollen einer Process Engine dargestellt und mit dem über diese traversiert werden können. Dabei setzt das entstandene Konzept auf eine Kombination aus Eclipse Temurin und OpenJFX. Abschließend wird ein Ausblick auf kommende Anforderungen und die Weiterentwicklung des Prototypes gegeben.
 
 
 %--------------------------- Text -------------------------------
@@ -761,7 +759,7 @@ Kombinierte Filter & X & X & - & X\\
 %--------- TABELLE ENDE ---------------
 \subsubsection{Funktionsumfang Implementierung}
 Auf Grundlage der Benutzeranforderung (Abb. \ref{t_userrequirementa} und Abb. \ref{t_userrequirementb}) wurde der zu implementierende Funktionsumfang definiert.\\
-Innerhalb der Analyse der Abhängigkeiten zwischen den Archivdaten ist ein Softwarefehler im AE DB Archiv ucybdbar aufgefallen. Durch diesen werden ungültige RUNIDs in die Archivdaten für Kommentare UC\_ACMT.TXT geschrieben.
+Innerhalb der Analyse der Abhängigkeiten zwischen den Archivdaten ist ein Softwarefehler im AE DB Archiv $(ucybdbar)$ aufgefallen. Durch diesen werden ungültige RUNIDs in die Archivdaten für Kommentare $(UC\_ACMT.TXT)$ geschrieben.
 Da die Kommentare über die RUNID mit den anderen Archivdaten in Relation gesetzt werden, können durch den Produktfehler die Kommentaren nicht in Relation mit den restlichen Archivdaten gesetzt werden. Daher ist die Benutzeranforderung an dieser Stelle innerhalb dieser Arbeit nicht erfüllbar und wurde für den zu implementierenden Funktionsumfang in dieser Arbeit zurückgestellt.
 Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
 
