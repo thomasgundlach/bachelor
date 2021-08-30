@@ -20,7 +20,7 @@
 %\lstset{xleftmargin=10pt,xrightmargin=10pt}
 
 %Paket zum automatischen setzen von Zeilenumbrüchen
-\usepackage{tabularx}
+\usepackage{tabularx, xltabular}
 
 %Balkendiagramm mit pgfplots 1.17
 \usepackage{pgfplots}
@@ -46,7 +46,7 @@
 %\setlength{\parindent}{0em}
 %-----------------------------Verweisdefinitionen
 \newcommand{\citeg}[1]{\citep[vgl.][]{#1}} %Literaturverzeichnis
-\newcommand{\refg}[1]{vgl. \ref{#1}} %Verknüpfungen
+\newcommand{\refg}[1]{vgl.~\ref{#1}} %Verknüpfungen
 %---------------------------- Titeldefinitionen --------------------------------------
 
 \newcommand{\vorname}{Jan Thomas}
@@ -183,7 +183,7 @@ Eine Process Engine, auch Workflow Engine genannt \citeg{freundruecker6}, dient 
 Hervorzuheben ist hierbei, dass Prozessautomatisierung nicht in jedem Fall eine Automatisierung des gesamten Prozesses bedeutet. Die Process Engine steuert den Prozess vielmehr, indem sie a.) zu erledigende Aufgaben bspw. an Sachbearbeiter delegiert und das Resultat weiterverarbeitet (Human Workflow Management) und b.) Schnittstellen interner/-externer Informationsdienste aufruft (Dienst-Orchestrierung).
 So bleibt ein automatisierter Prozess durch die Prozessbeteiligten beeinflussbar.
 Anhand des technischen Prozessmodells als auch des Resultates eines Service-Aufrufes oder einer beendeten Aufgabe entscheidet die Process Engine, unter welchen Gegebenheiten welche Folgeaufgabe oder -aufruf ausgeführt wird.\\
-Abbildung \ref{fig:bpmn_processauto} veranschaulicht die Vorgehensweise verallgemeinert.
+Abb.~\ref{fig:bpmn_processauto} veranschaulicht die Vorgehensweise verallgemeinert.
 
 %----------- BILD ANFANG -------------
 \afterpage{
@@ -254,7 +254,7 @@ Automic\textsuperscript{\textregistered} Automation \citeg{aae_awa} ist eine Gru
 
 %------------- BILD ENDE ---------------
 
-Ein Workflow (Abb. \ref{fig:aae_workflow}) orchestriert die automatische Durchführung einzelner Aufgaben von beispielsweise Jobs anhand von Bedingungen und Relationen und beschreibt damit deren Abfolge \citeg{aae_workflow}. Betrachtet man einen Workflow aus einem abstrahierten Modellierungsgrad ist die Instanz eines Workflows selbst wieder eine Aufgabe.\\
+Ein Workflow (Abb.~\ref{fig:aae_workflow}) orchestriert die automatische Durchführung einzelner Aufgaben von beispielsweise Jobs anhand von Bedingungen und Relationen und beschreibt damit deren Abfolge \citeg{aae_workflow}. Betrachtet man einen Workflow aus einem abstrahierten Modellierungsgrad ist die Instanz eines Workflows selbst wieder eine Aufgabe.\\
 Mittels Workflows können Geschäftsprozesse oder Teilprozesse aus dem \ac{bpm} technisch beschrieben werden.
 
 \subsection{Jobs}\label{ssec:job}
@@ -269,7 +269,7 @@ Mittels Workflows können Geschäftsprozesse oder Teilprozesse aus dem \ac{bpm} te
   \end{figure}
   \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
 %------------- BILD ENDE ---------------
-Ein Job (Abb. \ref{fig:aae_job}) ist eine Vorlage für eine Aufgabe die eine oder mehrere Anweisungen in einer definierten Reihenfolge für eine durch sie spezifizierte Umgebung enthält \citeg{aae_jobs} . Dadurch sind Jobs Basisbausteine innerhalb von automatisierten Prozessen.\\
+Ein Job (Abb.~\ref{fig:aae_job}) ist eine Vorlage für eine Aufgabe die eine oder mehrere Anweisungen in einer definierten Reihenfolge für eine durch sie spezifizierte Umgebung enthält \citeg{aae_jobs} . Dadurch sind Jobs Basisbausteine innerhalb von automatisierten Prozessen.\\
 Ein Job beschreibt innerhalb des \ac{bpm} einen Teilprozess.
 
 \subsection{Ausführungen}\label{ssec:run}
@@ -279,7 +279,7 @@ Ein Job beschreibt innerhalb des \ac{bpm} einen Teilprozess.
 
 %Durch das Einplanen eines Jobs oder eines Workflows zu einem bestimmten Zeitpunkt oder einer Folge an Zeitpunkten wird mit dessen Aktivierung eine Instanz des selben als Aufgabe erzeugt.
 Durch die Ausführung eines Workflows oder Jobs wird als Instanz dessen eine Aufgabe erzeugt. Die Aufgabe durchläuft anschließend während der Ausführung die Phasen Aktivierung, Generierung, Verarbeitung und Abschluss \citeg{aae_runs} .
-Eine Aufgabe beschreibt innerhalb des \ac{bpm} eine Aktivität und eine Ausführung (Abb. \ref{fig:aae_runs}) dessen Resultat.
+Eine Aufgabe beschreibt innerhalb des \ac{bpm} eine Aktivität und eine Ausführung (Abb.~\ref{fig:aae_runs}) dessen Resultat.
 
 %----------- BILD ANFANG -------------
 \afterpage{
@@ -301,11 +301,11 @@ Beim Erzeugen einer Aufgabe werden alle Ausführungsphasen zwecks Rückverfolgbark
 \subsection{Reorganisation}
 %abbild bspw. reorg-tool
 Unter dem ständigen und insbesondere schnellem Wachstum einer Datenbank kann die Performanz als auch deren Wartbarkeit leiden. Parallel steigen durch den physikalischen Bedarf die Betriebskosten. Um diesem entgegen zu wirken sollten Datenbanken regelmässig reorganisiert werden.\\
-Bei einer Reorganisation (Abb. \ref{fig:aae_workflow}) werden nicht mehr benötige oder verwaiste gelöscht und bestehende Daten ggf. neu strukturiert \citeg{aae_reorg}.
+Bei einer Reorganisation (Abb.~\ref{fig:aae_workflow}) werden nicht mehr benötige oder verwaiste gelöscht und bestehende Daten ggf. neu strukturiert \citeg{aae_reorg}.
 
 \section{Automic\textsuperscript{\textregistered} Archive Browser}
 
-Der Automic\textsuperscript{\textregistered} Archive Browser (Abb. \ref{fig:aae_archbro}) ist ein Dienstprogramm mit dem archivierten Datensätzen aus Automic\textsuperscript{\textregistered} Automation zur Anzeige gebracht werden können und mit dem in diesen recherchiert werden kann \citeg{aae_archbrow}.
+Der Automic\textsuperscript{\textregistered} Archive Browser (Abb.~\ref{fig:aae_archbro}) ist ein Dienstprogramm mit dem archivierten Datensätzen aus Automic\textsuperscript{\textregistered} Automation zur Anzeige gebracht werden können und mit dem in diesen recherchiert werden kann \citeg{aae_archbrow}.
 %----------- BILD ANFANG -------------
 %\afterpage{
   \begin{figure}
@@ -351,7 +351,7 @@ Diesem Umstand begegnet die \ac{gbafin} seit Juli 2018 mit den \ac{gvait} \citeg
 Die \ac{gvait} reguliert die Ausgestaltung der informationstechnischen Systeme als auch der entsprechenden Prozesse. Damit präzisiert die \ac{gvait} die rechtlichen Vorgaben des \ac{gvag} aus §23 bis §32. Bei diesen handelt es sich um \textit{\glqq normeninterpretierende Verwaltungsvorschriften, die eine Selbstbindung der deutschen Aufsicht gegenüber den Versicherungen darstellen\grqq} \citeg{wikivait}.
 
 Insbesondere ergeben sich aus der \ac{gvait} auch aufsichtsrechtliche Vorgaben zur Prozessgestaltung, -dokumentation und -protokollierung.
-Im Mittelpunkt steht hierbei die Ermittlung des unternehmensspezifischen Schutzbedarfes und die Sicherstellung der Schutzziele für denselben (3.21). Da Geschäftsprozesse durch IT-Systeme und \mbox{-}Pro-zesse unterstützt werden (2.8), muss sichergestellt und regelmäßig überprüft werden, dass die ermittelten IT-Prozesse geeignet sind, die Schutzziele zu erreichen (2.15).\\
+Im Mittelpunkt steht hierbei die Ermittlung des unternehmensspezifischen Schutzbedarfes und die Sicherstellung der Schutzziele für denselben (3.21). Da Geschäftsprozesse durch IT-Systeme und Prozesse unterstützt werden (2.8), muss sichergestellt und regelmäßig überprüft werden, dass die ermittelten IT-Prozesse geeignet sind, die Schutzziele zu erreichen (2.15).\\
 Als Grundlage muss eine Informationssicherheitsleitlinie definiert werden, welche in Informationssicherheitsrichtlinien für die jeweiligen Prozesse, insbesondere im Bereich Protokollierung, umgesetzt wird (4.27). In der Folge wird insbesondere für den ermittelten Schutzbedarf eine Prozess- und Änderungsdokumentation verlangt (2.7).
 Parallel sollte es Prozesse zur Protokollierung und Überwachung geben (5.40), die mitunter Systemaktivitäten diesbezüglich  protokollieren (6.51). Die Implementierung der Protokollierung muss manipulationssicher erfolgen (5.41).
 Damit verbunden ist die Erwartung, dass neben anderen Aufgaben zu jeder Zeit ein Überblick über die Geschäftsprozesse sowie deren Abhängigkeiten und Schnittstellen zur Verfügung steht (3.20).\\
@@ -567,21 +567,26 @@ Viele \ac{jgui} Frameworks verfügen darüber hinaus über einen Designer zur mausg
 %	- abkürzungen sichern automation
 Zur Umsetzung eines neuen Recherchewerkzeuges für Archivdaten müssen die Erwartungen und Bedürfnisse der Benutzer geklärt werden.
 \subsubsection{Funktionsumfang}
-In einem ersten Schritt wurde der bestehende Funktionsumfang (Abb. \ref{t_functionrangea} und Abb. \ref{t_functionrangeb}) ermittelt und als Grundlage für einen Workshop mit den Benutzern dokumentiert.
+In einem ersten Schritt wurde der bestehende Funktionsumfang (Tab.~\ref{t_functionrange}) ermittelt und als Grundlage für einen Workshop mit den Benutzern dokumentiert.
 %----------- TABELLE START -------------
-%\afterpage{
-\begin{table}[htp] 
 \rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
-\centering
-%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabularx}{\linewidth}{XXXXXXX}
-%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
-\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
-\toprule
-\multicolumn{5}{c}{\sffamily Definition Automic\textsuperscript{\textregistered} Archive Browser Funktionsumfang Teil 1}\\ \midrule
-\rowcolor{gray!50}
-\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+\begin{xltabular}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+	\toprule
+	\rowcolor {white}
+	\multicolumn{5}{c}{\sffamily Definition Automic\textsuperscript{\textregistered} Archive Browser Funktionsumfang}\\ \midrule
+	\rowcolor{gray!50}
+	\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+\endfirsthead
+    \hline
+	\rowcolor {white}
+	\multicolumn{5}{r}{\footnotesize\textit{Fortsetzung auf der nächsten Seite}}
+\endfoot
+    \rowcolor {white}
+	\caption[Funktionsumfang des Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463 (Abb.~\ref{fig:aae_archbro})]{Funktionsumfang des Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463 (Abb.~\ref{fig:aae_archbro})\protect\footnotemark}
+	\label{t_functionrange}
+	\footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Analyse Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463}
+\endlastfoot
+% table body
 Mandanten laden & X & X & X & X\\
 Mandanten laden mit mehreren Archiven & X & X & X & X\\
 Mehrere Mandanten laden & X & X & X & X\\
@@ -617,28 +622,7 @@ Spalte Type & - & - & X & -\\
 Spalte Status & - & - & - & -\\
 Mehrfach sortieren & X & X & X & X\\
 Filter Client & X & X & X & X\\
-Filter User & X & - & X & X\\ \bottomrule
-\end{tabularx}
-        \caption[Useless Caption]{Funktionsumfang Teil 1 des Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463 (Abb. \ref{fig:aae_archbro})\protect\footnotemark}\label{t_functionrangea}
-\end{table}
-  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Analyse Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463}
-%}
-
-%--------- TABELLE ENDE ---------------
-%----------- TABELLE START -------------
-\afterpage{
-\begin{table}[htp] 
-\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
-\centering
-%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabularx}{\linewidth}{XXXXXXX}
-%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
-\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
-\toprule
-\multicolumn{5}{c}{\sffamily Definition Automic\textsuperscript{\textregistered} Archive Browser Funktionsumfang Teil 2}\\ \midrule
-\rowcolor{gray!50}
-\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Filter User & X & - & X & X\\
 Filter Department & X & - & X & X\\
 Filter Parent (ACT) & X & - & - & -\\
 Filter Date & X & X & X & X\\ 
@@ -653,31 +637,35 @@ Filter Subtype & X & - & - & -\\
 Filter Archive Key 2 & X & - & - & -\\
 Filter Report Type & - & X & - & -\\
 Kombinierte Filter & X & X & X & X\\
-Übergreifende Filter & - & - & - & -\\ \bottomrule
-\end{tabularx}
-        \caption[Useless Caption]{Funktionsumfang Teil 2 des Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463 (Abb. \ref{fig:aae_archbro})\protect\footnotemark}\label{t_functionrangeb}
-\end{table}
-  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Analyse Automic\textsuperscript{\textregistered} Archive Browser v12.3.3+build1591950389463}
-}
-
+Übergreifende Filter & - & - & - & -\\
+\bottomrule
+\end{xltabular}
 %--------- TABELLE ENDE ---------------
+
 \subsubsection{Benutzeranforderungen}
 In einem WebEx-Workshop vom 27.07.2021 wurde die Idee eines relationsbasierten Recherchewerkzeuges vorgestellt und auf Basis des bestehenden Funktionsumfangs daran geknüpfte Anforderungen der Benutzer definiert.\\
-Der Workshop hat für ein relationsbasiertes Recherchewerkzeug zu den Benutzeranforderung unter Abb. \ref{t_userrequirementa} und Abb. \ref{t_userrequirementb} geführt.
+Der Workshop hat für ein relationsbasiertes Recherchewerkzeug zu den Benutzeranforderung unter Tab.~\ref{t_userrequirement} geführt.
+
 %----------- TABELLE START -------------
-\afterpage{
-\begin{table}[htp] 
+%\afterpage{
 \rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
-\centering
-%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabularx}{\linewidth}{XXXXXXX}
-%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
-\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
-\toprule
-\multicolumn{5}{c}{\sffamily Benutzeranforderungen relationsbasiertes Archivdaten-Recherchewerkzeug Teil 1}\\ \midrule
-\rowcolor{gray!50}
-\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+\begin{xltabular}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+	\toprule
+    \rowcolor {white}
+	\multicolumn{5}{c}{\sffamily Benutzeranforderungen relationsbasiertes Archivdaten-Recherchewerkzeug}\\ \midrule
+	\rowcolor{gray!50}
+	\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+\endfirsthead
+    \hline
+	\rowcolor {white}
+	\multicolumn{5}{r}{\footnotesize\textit{Fortsetzung auf der nächsten Seite}}
+\endfoot
+    \rowcolor {white}
+	\caption[Benutzeranforderungen für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation]{Benutzeranforderungen für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}
+	\label{t_userrequirement}
+	\footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Workshop Relationsbasiertes Archivdaten Recherchewerkzeug vom 27.07.2021}
+\endlastfoot
+% table body
 Mandanten laden & X & X & - & X\\
 Mandanten laden mit mehreren Archiven & X & X & - & X\\
 Mehrere Mandanten laden & X & X & - & X\\
@@ -703,28 +691,7 @@ Spalte Parent (PROC) & - & - & - & -\\
 Spalte Date & X & X & - & X\\
 Spalte Host & X & X & - & X\\
 Spalte Subtype & - & - & - & -\\
-Spalte Archive Key 1 & X & X & - & X\\ \bottomrule
-\end{tabularx}
-        \caption[Useless Caption]{Benutzeranforderungen Teil 1 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_userrequirementa}
-\end{table}
-  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Workshop Relationsbasiertes Archivdaten Recherchewerkzeug vom 27.07.2021}
-}
-
-%--------- TABELLE ENDE ---------------
-%----------- TABELLE START -------------
-\afterpage{
-\begin{table}[htp] 
-\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
-\centering
-%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabularx}{\linewidth}{XXXXXXX}
-%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
-\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
-\toprule
-\multicolumn{5}{c}{\sffamily Benutzeranforderungen relationsbasiertes Archivdaten-Recherchewerkzeug Teil 2}\\ \midrule
-\rowcolor{gray!50}
-\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Spalte Archive Key 1 & X & X & - & X\\
 Spalte Object Name & X & X & - & X\\
 Spalte Report Type & - & - & - & -\\
 Spalte Size & - & - & - & -\\
@@ -750,37 +717,45 @@ Filter Archive Key 2 & X & X & - & X\\
 Filter Report Type & - & - & - & -\\
 Kombinierte Filter & X & X & - & X\\
 Übergreifende Filter & X & X & - & X\\ \bottomrule
-\end{tabularx}
-        \caption[Useless Caption]{Benutzeranforderungen Teil 2 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_userrequirementb}
-\end{table}
-  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Workshop Relationsbasiertes Archivdaten Recherchewerkzeug vom 27.07.2021}
-}
+\end{xltabular}
 
 %--------- TABELLE ENDE ---------------
 \subsubsection{Funktionsumfang Implementierung}
-Auf Grundlage der Benutzeranforderung (Abb. \ref{t_userrequirementa} und Abb. \ref{t_userrequirementb}) wurde der zu implementierende Funktionsumfang definiert.\\
+Auf Grundlage der Benutzeranforderung (Tab.~\ref{t_userrequirement}) wurde der zu implementierende Funktionsumfang definiert.\\
 Innerhalb der Analyse der Abhängigkeiten zwischen den Archivdaten ist ein Softwarefehler im AE DB Archiv $(ucybdbar)$ aufgefallen. Durch diesen werden ungültige RUNIDs in die Archivdaten für Kommentare $(UC\_ACMT.TXT)$ geschrieben.
 Da die Kommentare über die RUNID mit den anderen Archivdaten in Relation gesetzt werden, können durch den Produktfehler die Kommentaren nicht in Relation mit den restlichen Archivdaten gesetzt werden. Daher ist die Benutzeranforderung an dieser Stelle innerhalb dieser Arbeit nicht erfüllbar und wurde für den zu implementierenden Funktionsumfang in dieser Arbeit zurückgestellt.
 Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
 
 Da die Meldungen grundsätzlich relationslos sind wurden sie durch die Benutzer als nicht relevant definiert und aus der Implementierung ausgeschlossen.
 
-Der zu implementierende Funktionsumfang für ein relationsbasiertes Archivdaten-Recherchewerkzeug ist in Abb. \ref{t_implfunctionrangea} und Abb. \ref{t_implfunctionrangeb} beschrieben.
+Der zu implementierende Funktionsumfang für ein relationsbasiertes Archivdaten-Recherchewerkzeug ist in Tab.~\ref{t_implfunctionrange} beschrieben.
+
 
 %----------- TABELLE START -------------
-\afterpage{
-\begin{table}[htp] 
 \rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
-\centering
 %\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
 %\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
 %\begin{tabularx}{\linewidth}{XXXXXXX}
 %\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
-\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
-\toprule
-\multicolumn{5}{c}{\sffamily Funktionsumfang Implementierung relationsbasiertes Archivdaten-Recherchewerkzeug Teil 1}\\ \midrule
-\rowcolor{gray!50}
-\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+%\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+\begin{xltabular}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
+    \rowcolor {white}
+	\toprule
+	\rowcolor{white}
+	\multicolumn{5}{c}{\sffamily Funktionsumfang Implementierung relationsbasiertes Archivdaten-Recherchewerkzeug}\\ \midrule
+	\rowcolor{gray!50}
+	\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+\endfirsthead
+    \hline
+	\rowcolor {white}
+	\multicolumn{5}{r}{\footnotesize\textit{Fortsetzung auf der nächsten Seite}}
+\endfoot
+    \rowcolor {white}
+	\caption[Zu implementierender Funktionsumfang für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation]{Zu implementierender Funktionsumfang für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}
+	\label{t_implfunctionrange}
+	\footnotetext{Quelle: Jan Thomas Gundlach, 2021}
+\endlastfoot
+% table body
 Mandanten laden & X & X & - & -\\
 Mandanten laden mit mehreren Archiven & X & X & - & -\\
 Mehrere Mandanten laden & X & X & - & -\\
@@ -806,29 +781,7 @@ Spalte Parent (PROC) & - & - & - & -\\
 Spalte Date & X & X & - & -\\
 Spalte Host & X & X & - & -\\
 Spalte Subtype & - & - & - & -\\
-Spalte Archive Key 1 & X & X & - & -\\ \bottomrule
-\end{tabularx}
-        \caption[Useless Caption]{Zu implementierender Funktionsumfang Teil 1 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_implfunctionrangea}
-\end{table}
-  \footnotetext{Quelle: Jan Thomas Gundlach, 2021}
-}
-
-%--------- TABELLE ENDE ---------------
-
-%----------- TABELLE START -------------
-\afterpage{
-\begin{table}[htp] 
-\rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
-\centering
-%\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabular}{p{3cm}p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
-%\begin{tabularx}{\linewidth}{XXXXXXX}
-%\begin{tabularx}{\textwidth}{@{}l *4{>{\centering\arraybackslash}X}@{}}
-\begin{tabularx}{\textwidth}{>{\tiny\raggedright\arraybackslash}p{6.5cm} *4{>{\tiny\centering\arraybackslash}X}@{}}
-\toprule
-\multicolumn{5}{c}{\sffamily Funktionsumfang Implementierung relationsbasiertes Archivdaten-Recherchewerkzeug Teil 2}\\ \midrule
-\rowcolor{gray!50}
-\textbf{Funktion} & \textbf{Ausführungs-daten} & \textbf{Protokolle} & \textbf{Meldungen} & \textbf{Kommentare}\\
+Spalte Archive Key 1 & X & X & - & -\\
 Spalte Object Name & X & X & - & -\\
 Spalte Report Type & - & - & - & -\\
 Spalte Size & - & - & - & -\\
@@ -854,16 +807,12 @@ Filter Archive Key 2 & X & X & - & -\\
 Filter Report Type & - & - & - & -\\
 Kombinierte Filter & X & X & - & -\\
 Übergreifende Filter & X & X & - & -\\ \bottomrule
-\end{tabularx}
-        \caption[Useless Caption]{Zu implementierender Funktionsumfang Teil 2 für ein relationsbasiertes Archivdaten-Recherchewerkzeug für Automic\textsuperscript{\textregistered} Automation\protect\footnotemark}\label{t_implfunctionrangeb}
-\end{table}
-  \footnotetext{Quelle: Jan Thomas Gundlach, 2021}
-}
-
+\end{xltabular}
 %--------- TABELLE ENDE ---------------
+
 \subsection{Weiterentwicklung}
 Vor einer Neuentwicklung wurde die Weiterentwicklung der bestehenden Lösung betrachtet. In der Auslieferung des Automic\textsuperscript{\textregistered} Automation Image gab es bis zu der Version 11.2.6 den Ordner TOOLS\textbackslash SOURCE\textbackslash UCYBARBR mit dem Quellcode des Automic\textsuperscript{\textregistered} Archive Browser \citeg{wpdbmainaaeutil} in Microsoft \ac{vb}.\\
-An der Struktur des Projektes \citeg{vbmarshall} und der Format-Spezifikation im Quellcode (VERSION 5.0) ist zu erkennen, dass es sich um ein \ac{vb} 5.0 Projekt handelt, siehe Auflistung \ref{lst:module}.\\
+An der Struktur des Projektes \citeg{vbmarshall} und der Format-Spezifikation im Quellcode (VERSION 5.0) ist zu erkennen, dass es sich um ein \ac{vb} 5.0 Projekt handelt, siehe Auflistung~\ref{lst:module}.\\
 
 \begin{center}
 \begin{tabular}{c}
@@ -893,7 +842,7 @@ Die \ac{vb} 5.0 Version basiert noch nicht auf dem .NET-Framework, sondern ist r
 2020 hat Microsoft bekanntgegeben \ac{vb} .NET als Sprache nicht mehr weiterzuentwickeln \citeg{msvbnet}. Von da an werden unter Umständen neue Funktionen aus dem .NET-Framework, die Änderungen an \ac{vb} .NET als Programmiersprache notwendig machen würden, von \ac{vb} .NET nicht mehr unterstützt.
 
 %----------- BILD ANFANG -------------
-%(Abb. \ref{b_vbdreaded})
+%(Abb.~\ref{b_vbdreaded})
 %\begin{figure}[htp]     % h=here, t=top, b=bottom, p=page
 %\centering
 %\includegraphics[width=0.5\textwidth]{bilder/vbdreaded} 
@@ -959,16 +908,16 @@ Haskell & 46.4\%\\
 CSS & 44.9\%\\
 HTML & 44.3\%\\ \bottomrule
 \end{tabular}
-                \caption[Liste unbeliebter Programmiersprachen bei Entwicklern]{Liste unbeliebter Programmiersprachen bei Entwicklern\footnotemark}
-    \label{t_cited_img}
+\caption[Liste unbeliebter Programmiersprachen bei Entwicklern]{Liste unbeliebter Programmiersprachen bei Entwicklern\footnotemark}
+\label{t_cited_img}
 \end{table}
-  \footnotetext{Quelle: Stackoverflow Developer Survey Results 2018 \url{https://insights.stackoverflow.com/survey/2018\#technology-_-most-loved-dreaded-and-wanted-languages} Aufruf: 28.07.2021}
+\footnotetext{Quelle: Stackoverflow Developer Survey Results 2018 \url{https://insights.stackoverflow.com/survey/2018\#technology-_-most-loved-dreaded-and-wanted-languages} Aufruf: 28.07.2021}
 }
 
 %--------- TABELLE ENDE ---------------
 
 Gefördert wurde diese Entwicklung durch Nutzer anderer Hochsprachen wie Java, C oder C++, die eine syntaktische Nähe zu C\# und Distanz zu \ac{vb} haben. Zusätzlich gilt \ac{vb} in dieser Gemeinschaft als einfache Einstiegssprache mit einem schlechten Ruf \citeg{vbbad}.
-Dass die Ökosysteme, die verbreitete Syntax und der Umfang von Sprachen wie Java oder C\# inzwischen \ac{vb} weitaus überlegen sind wird am Stack Overflow Developer Survey von 2018 (Abb. \ref{t_cited_img}) deutlich. In diesem führte Visual Basic die Liste der Sprache an, die Nutzer ungern einsetzen - Zugleich wurde \ac{vb} dort 2018 das letzte Mal aufgeführt.
+Dass die Ökosysteme, die verbreitete Syntax und der Umfang von Sprachen wie Java oder C\# inzwischen \ac{vb} weitaus überlegen sind wird am Stack Overflow Developer Survey von 2018 (Tab.~\ref{t_cited_img}) deutlich. In diesem führte Visual Basic die Liste der Sprache an, die Nutzer ungern einsetzen - Zugleich wurde \ac{vb} dort 2018 das letzte Mal aufgeführt.
 Seit 2019 ist \ac{vb} nicht mehr Bestandteil der Erhebung des Stack Overflow Developer Survey. Mittlerweile führt der nahe Verwandte \ac{vba} die Rangliste \citeg{stacksurvey21}  nach COBOL an.
 
 Entsprechend ungeeignet ist \ac{vb} im Jahr 2021 als Grundlage für ein Softwareprojekt mit gängigen Anforderungen an Portierbarkeit, Erweiterbarkeit und Wartbarkeit.\\
@@ -1027,9 +976,9 @@ Sun & 0.58\\
 Debian & 0.54\\
 Other & 0.10\\ \bottomrule
 \end{tabular}
-        \caption[Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020]{Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020\footnotemark}\label{t_jdkspread}
+\caption[Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020]{Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2020\footnotemark}\label{t_jdkspread_20}
 \end{table}
-  \footnotetext{Quelle: New Relic, Inc. - The State of Java: Trends And Data For One of the World\'s Most Popular Programming Languages 2020, \url{https://newrelic.com/blog/nerd-life/state-of-java}, Aufruf: 03.08.2021}
+\footnotetext{Quelle: New Relic, Inc. - The State of Java: Trends And Data For One of the World\'s Most Popular Programming Languages 2020, \url{https://newrelic.com/blog/nerd-life/state-of-java}, Aufruf: 03.08.2021}
 %}
 
 %--------- TABELLE ENDE ---------------
@@ -1053,15 +1002,15 @@ GraalVM & 4\\
 OpenLogic JDK & 4\\
 Other & 4\\ \bottomrule
 \end{tabular}
-        \caption[Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2021]{Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2021\footnotemark}\label{t_jdkspread}
+\caption[Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2021]{Prozentuale Verbreitung von \ac{jjdk} nach Anbietern 2021\footnotemark}\label{t_jdkspread_21}
 \end{table}
-  \footnotetext{Quelle: JRebel 2021 Java Developer Productivity Report, \url{https://www.jrebel.com/system/files/2021-java-developer-productivity-report.pdf}, Aufruf: 10.08.2021}
+\footnotetext{Quelle: JRebel 2021 Java Developer Productivity Report, \url{https://www.jrebel.com/system/files/2021-java-developer-productivity-report.pdf}, Aufruf: 10.08.2021}
 }
 
 %--------- TABELLE ENDE ---------------
 Aus organisatorischer und wirtschaftlicher Sicht stellt sich hingegen die Frage, ob ein Anbieter seine Java Implementierung grundsätzlich kostenlos zur Verfügung stellt und ob der Betrieb der \ac{jjvm} in kommerziellen oder öffentlichen, produktiven Umgebungen ebenso unentgeltlich   gestattet ist. Insbesondere dann ist aber auch immer von Interesse, ob und zu welchen Konditionen ein Anbieter Unterstützungsleistungen anbietet, ob die Implementierungen zertifiziert sind oder mit welchen Testverfahren die Implementierungen validiert werden \citeg{jazulcompare}. Und zuletzt wie transparent der Implementierungsprozess ist.
 
-Die nachfolgenden Implementierungen wurden aufgrund ihrer Eigenschaften und ihres Verbreitungsgrades für die Umsetzung als relevant eingestuft und in die Analyse \citep[Abs. 4]{joreilvendors} einbezogen.
+Die nachfolgenden Implementierungen wurden aufgrund ihrer Eigenschaften~\citep[Abs. 4]{joreilvendors} und ihres Verbreitungsgrades (Tab.~\ref{t_jdkspread_20} und Tab.~\ref{t_jdkspread_21}) für die Umsetzung als relevant eingestuft und in die Analyse einbezogen.
 
 \subsection{Amazon Corretto}
 Corretto \citeg{jamzcorretto} wird seit 2019 von Amazon angeboten und ist damit die jüngste aller Implementierungen. Dabei handelt es sich um eine plattformübergreifende (Linux, macOS, Windows und Docker) Distribution des OpenJDK, welche unter der \ac{jgpl} mit Classpath Exception lizenziert ist und damit kostenlos in kommerziellen Produktionsumgebungen verwendet werden darf. Sie ist zertifiziert nach TCK, wodurch sie offiziell kompatibel zum Java SE Standard ist. Amazon bietet Corretto mit \ac{jlts} inklusive eigenen Leistungsoptimierungen und Sicherheitspatches an. Updates werden mindestens quartalsweise veröffentlicht.
@@ -1124,14 +1073,14 @@ Java Flight Recorder & X & X & - & X & X \\
 Mission Control & - & X & - & X & X \\
 Besonderheit & cloud-ready & JavaFX bundled & Open Source Projekt & Main-tainer & Inte-gration \\ \bottomrule
 \end{tabularx}
-        \caption[Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern]{Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern\footnotemark}\label{t_vendorcompare}
+\caption[Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern]{Vergleich \ac{jjdk} Implementierungen verschiedener Anbietern\footnotemark}\label{t_vendorcompare}
 \end{table}
-  \footnotetext{Quellen: \citeg{jredhatjdk}, \citeg{jamzcorretto}, \citeg{jazulzulu}, \citeg{jecltemurin}, \citeg{jibmjavasdk}\\ Azul 2021: OpenJDK vs Oracle JDK - Comparison Table, \url{https://www.azul.com/products/core/jdk-comparison-matrix/}, Aufruf: 05.08.2021}
+\footnotetext{Quellen: \citeg{jredhatjdk}, \citeg{jamzcorretto}, \citeg{jazulzulu}, \citeg{jecltemurin}, \citeg{jibmjavasdk}\\ Azul 2021: OpenJDK vs Oracle JDK - Comparison Table, \url{https://www.azul.com/products/core/jdk-comparison-matrix/}, Aufruf: 05.08.2021}
 }
 
 %--------- TABELLE ENDE ---------------
 
-Aufgrund der Analyse wurde Eclipse Temurin gewählt. Eclipse Temurin bietet den Durchschnitt an Unterstützung bzgl. Prozessorarchitektur und Betriebssystemen. Eine Cloudunterstützung wird in der Umsetzung als Client- und Desktopanwendung nicht benötigt. Performancetechnisch sind alle Implementierungen für die hier betrachtete Anwendung bis auf IBMs J9 gleich. Eine OpenJ9 Variante wurde bis Abgabe der Arbeit jedoch noch nicht TCK-zertifiziert durch die Adoptium Working Group veröffentlicht. Für produktive Umgebungen ist eine TCK-Zertifizierung  und damit eine Java SE Kompatibilität oft aufgrund interner Richtlinien und proprietärer Anwendungen maßgeblich. Für J9 als TCK-zertifizierte Variante existiert nur eine Java 11 Implementation. Keine Java 15 oder 16. Da mit Java 17 bereits im September das nächste LTS Release von Java erscheint und der Sprachstandard von Java 16 näher an Java 17 ist als der des letzten LTS Release Java 11, verringert dies in der Regel spätere Migrationsaufwände.\\ Parallel ist die Verbreitung des AdoptOpenJDK von 2020 auf 2021 in Folge der Lizenzkosten von Oracle Java SE am stärksten gestiegen~(\refg{t_jdkspread}). AdoptOpenJDK wurde bereits von vielen Fortune 500-Unternehmen \citeg{jadoptfortune} eingesetzt. Mit der Eclipse Temurin TCK-Zertifizierung wird sich diese Anzahl vermutlich noch erhöhen, da der maßgebliche Nachteil gegenüber anderen Anbietern abgebaut wurde. Neben der TCK-Zertifizierung wird die bereits unter AdoptOpenJDK angewendete Eclipse-eigene AQAvit Testinfrastruktur\citeg{jeclaqavit} weiterhin auch für Eclipse Temurin angewendet.\\
+Aufgrund der Analyse (Tab.~\ref{t_vendorcompare}) wurde Eclipse Temurin gewählt. Eclipse Temurin bietet den Durchschnitt an Unterstützung bzgl. Prozessorarchitektur und Betriebssystemen. Eine Cloudunterstützung wird in der Umsetzung als Client- und Desktopanwendung nicht benötigt. Performancetechnisch sind alle Implementierungen für die hier betrachtete Anwendung bis auf IBMs J9 gleich. Eine OpenJ9 Variante wurde bis Abgabe der Arbeit jedoch noch nicht TCK-zertifiziert durch die Adoptium Working Group veröffentlicht. Für produktive Umgebungen ist eine TCK-Zertifizierung  und damit eine Java SE Kompatibilität oft aufgrund interner Richtlinien und proprietärer Anwendungen maßgeblich. Für J9 als TCK-zertifizierte Variante existiert nur eine Java 11 Implementation. Keine Java 15 oder 16. Da mit Java 17 bereits im September das nächste LTS Release von Java erscheint und der Sprachstandard von Java 16 näher an Java 17 ist als der des letzten LTS Release Java 11, verringert dies in der Regel spätere Migrationsaufwände.\\ Parallel ist die Verbreitung des AdoptOpenJDK von 2020 auf 2021 in Folge der Lizenzkosten von Oracle Java SE am stärksten gestiegen~(Tab.~\refg{t_jdkspread_20} und Tab.~~\refg{t_jdkspread_21}). AdoptOpenJDK wurde bereits von vielen Fortune 500-Unternehmen \citeg{jadoptfortune} eingesetzt. Mit der Eclipse Temurin TCK-Zertifizierung wird sich diese Anzahl vermutlich noch erhöhen, da der maßgebliche Nachteil gegenüber anderen Anbietern abgebaut wurde. Neben der TCK-Zertifizierung wird die bereits unter AdoptOpenJDK angewendete Eclipse-eigene AQAvit Testinfrastruktur\citeg{jeclaqavit} weiterhin auch für Eclipse Temurin angewendet.\\
 Eclipse Temurin ist damit nicht nur free for production, sondern auch production-ready, bietet außerhalb des Extended Supports der Konkurrenz  im Schnitt gleich lange Lebenszyklen für die veröffentlichten Versionen ink. Sicherheits-/Wartungspatches und verfügt im Gegensatz zu Azul Zulu über eine langfristige Open Source Strategie. Unter dem Dach der Eclipse Foundation wird dies gesichert durch eine Vielzahl namhafter IT-Konzerne, die hinter dem Projekt stehen. Mittels OpenJFX können Erweiterungen auch zu Eclipse Temurin hinzugefügt werden. Maßgeblicher Vorteil ist, dass das Gesamtpaket frei zur Verfügung steht.
 
 %https://www.baeldung.com/oracle-jdk-vs-openjdk
@@ -1172,7 +1121,7 @@ Zeitweise gab es mit Java 9 Überlegungen Swing zukünftig zum Vorteil von JavaFX 
 %https://training.cherriz.de/cherriz-training/1.0.0/oberflaechen/javafx.html
 
 JavaFX ist der offiziell von Oracle etablierte Nachfolger von Swing \citeg{jorjavafxfaq}. Noch unter Sun entstand im Jahr 2008 die Version 1. Nach der Übernahme von Sun durch Oracle und einem Redesign von JavaFX mit der Version 2 gewann das Framework zunehmend an Reichweite. Mit Java 8 wurde die Versionierung an die Java Standard Editionsversionen gekoppelt.\\
-Ehemalig sollte mit JavaFx in Verbindung mit Rich Internet Applications und Java Webstart eine Konkurrenz zu Silverlight und Flash aufgebaut werden. Aufgrund der völlig neuen Architektur (Abb. \ref{fig:javafx_arch}) ohne Abhängigkeiten zu Swing und \ac{jawt} bietet es auch abseits davon einen deutlich gesteigerten Funktionsumfang und modernere Ansätze \citeg{jkirschfx}. Dies ermöglicht den Einsatz in verschiedenen Bereichen beispielsweise mit Medieninhalten, mobilen Systemen (iOS, Android) oder in stark von Grafiken geprägten Szenarien.
+Ehemalig sollte mit JavaFx in Verbindung mit Rich Internet Applications und Java Webstart eine Konkurrenz zu Silverlight und Flash aufgebaut werden. Aufgrund der völlig neuen Architektur (Abb.~\ref{fig:javafx_arch}) ohne Abhängigkeiten zu Swing und \ac{jawt} bietet es auch abseits davon einen deutlich gesteigerten Funktionsumfang und modernere Ansätze \citeg{jkirschfx}. Dies ermöglicht den Einsatz in verschiedenen Bereichen beispielsweise mit Medieninhalten, mobilen Systemen (iOS, Android) oder in stark von Grafiken geprägten Szenarien.
 
 %----------- BILD ANFANG -------------
 \afterpage{
@@ -1205,11 +1154,10 @@ Da im Codevergleich in der Regel weniger Zeilen für eine JavaFX-Anwendung als fü
 \section{Java Dateieingangsverarbeitung}
 
 In Java gibt es innerhalb der Pakete \texttt{java.io} und \texttt{java.nio.file} unterschiedliche Klassen, deren Funktionalität sich je nach gewünschter Dateioperation mehr oder weniger eignet.
-Um das Spektrum geeigneter Klassen für die jeweiligen Dateioperationen einzuschränken, werden anhand der Fragestellungen aus Abb. \ref{t_fileopspossibles} die einzusetzenden Klassen ermittelt.
+Um das Spektrum geeigneter Klassen für die jeweiligen Dateioperationen einzuschränken, werden anhand der Fragestellungen aus Tab.~\ref{t_fileopspossibles} die einzusetzenden Klassen ermittelt.
 
 %----------- TABELLE START -------------
-\afterpage{
-\begin{table}[htp] 
+\begin{table}[ht] 
 \rowcolors{1}{}{lgray} % bei jeder Zeile die Farbe wechseln, abwechselnd nix und hellgrau
 \centering
 %\begin{tabular}{rlcccc}  % Spalten nach Ausrichtung: l, c, r, p{breite} 
@@ -1228,10 +1176,10 @@ Soll von Anfang oder ab einer bestimmten Position begonnen werden?  & Anfang & P
 Sollen Daten in einer Schleife oder Anweisungen verarbeitet werden?  & Schleife & Anweisung \\ 
 Klassen/Methoden\footnotemark  & \texttt{InputStreamReader BufferedReader BufferedReader.readLine Files.newBufferedReader} & \texttt{FileChannel} \\ \bottomrule
 \end{tabularx}
-        \caption[Fragestellungen bzgl. Dateioperationen zur Ermittlung einsetzbarer Klassen oder Methoden]{Fragestellungen bzgl. Dateioperationen zur Ermittlung einsetzbarer Klassen oder Methoden}\label{t_fileopspossibles}
+\caption[Fragestellungen bzgl. Dateioperationen zur Ermittlung einsetzbarer Klassen oder Methoden]{Fragestellungen bzgl. Dateioperationen zur Ermittlung einsetzbarer Klassen oder Methoden}
+\label{t_fileopspossibles}
 \end{table}
-  \footnotetext{Quellen: \citeg{jwoltfileop1}, \citeg{jwoltfileop5}}
-}
+\footnotetext{Quellen: \citeg{jwoltfileop1}, \citeg{jwoltfileop5}}
 
 \subsection{Klasse/Methode für Protokolle}
 \begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
@@ -1239,7 +1187,7 @@ Klassen/Methoden\footnotemark  & \texttt{InputStreamReader BufferedReader Buffer
 \item Für rein textbasierte Daten müssen Binäroperationen nicht zwangsweise herangezogen werden.
 \item Kleine, vordefinierte Datenbestände ab einer bestimmten Position sollten innerhalb einer Anweisung in einem Stück gelesen werden, um Zwischenschritte in der Verarbeitung zu vermeiden und die Zugriffe auf das Dateisystem möglichst konstant zu halten.
 \end{itemize}
-Hierdurch lassen sich die relevanten Klassen für die Protokolle auf die unter Abb. \ref{t_fileopspossibles} Klassen/Methoden eingrenzen. Die Analyse der Dateioperationen für die Protokolldaten hat die Klasse \texttt{FileChannel} zum Lesen der Protokolle aus den Archivdateien ergeben.
+Hierdurch lassen sich die relevanten Klassen für die Protokolle auf die unter Tab.~\ref{t_fileopspossibles} Klassen/Methoden eingrenzen. Die Analyse der Dateioperationen für die Protokolldaten hat die Klasse \texttt{FileChannel} zum Lesen der Protokolle aus den Archivdateien ergeben.
 
 \subsection{Klasse/Methode für Ausführungsdaten}
 \begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
@@ -1251,7 +1199,7 @@ Hierdurch lassen sich die relevanten Klassen für die Protokolle auf die unter Ab
 \item Wenn Daten in einer Schleife verarbeitet werden, sollten insbesondere große Daten nicht ungefiltert in Datenstrukturobjekte überführt werden, um den Arbeitsspeicher zu schonen.
 \end{itemize}
 
-Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.readLine}  am schnellsten (vgl. Abb. \ref{fig:fileopsek}), weshalb das Lesen  der Ausführungsdaten aus den Archivdateien durch \texttt{BufferedReader.readLine} umgesetzt wird.
+Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.readLine}  am schnellsten (vgl. Abb.~\ref{fig:fileopsek}), weshalb das Lesen  der Ausführungsdaten aus den Archivdateien durch \texttt{BufferedReader.readLine} umgesetzt wird.
 
 
 %--------- TABELLE ENDE ---------------
