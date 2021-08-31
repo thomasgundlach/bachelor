@@ -158,7 +158,7 @@ Unter den beschrieben Aspekten wird die praktische Umsetzung eines relationsorie
 %Ziel der Arbeit ist, eine geeignete Struktur für eine relationsorientierte Darstellung von reorganisierten Ausführungsprotokollen zu finden.
 Ziel der Arbeit ist eine relationsorientierte Darstellung von archivierten Ausführungsprotokollen und die Implementierung der dafür notwendigen Grundfunktionalitäten. Hierzu gehört die Auswahl einer passenden Umgebung als auch Frameworks und das Erarbeiten einer entsprechenden Architektur. Außerdem soll der rechtliche Hintergrund am Beispiel des Versicherungswesens betrachtet werden, aus dem sich die Anforderung für ein relationsbasiertes Recherchewerkzeug für historische Protokolldaten ableitet. Bei der Umsetzung wird besonderer Wert auf die Benutzerfreundlichkeit gelegt unter der Berücksichtigung des angewendeten Frameworks. Zudem soll auf Basis einer zukunftsfähigen Programmiersprache ein geringer Wartungsaufwand der Applikation erreicht werden.
 \subsection{Anforderung}
-Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Parallel sollen rechtliche Hintergründe anhand des Versicherungswesens aufbereitet werden. Davon ausgehend ist der technische Bedarf für ein relationsorientiertes Recherchewerkzeug für archivierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmter Protokolle komplexer Geschäftsprozesse und das Traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von archivierten Daten, die Darstellung der Relationen der archivierten Daten sowie die Möglichkeit, nach bestimmten Informationen zu filtern.
+Es soll die bestehende Grundlage des Automic\textsuperscript{\textregistered} Archive Browser betrachtet als auch der geforderte Funktionsumfang ermittelt werden. Parallel sollen rechtliche Hintergründe anhand des Versicherungswesens aufbereitet werden. Davon ausgehend ist der technische Bedarf für ein relationsorientiertes Recherchewerkzeug für archivierte Ausführungsprotokolle zu definieren. Darauf aufbauend steht die Implementierung der Grundfunktionalitäten für die Recherche bestimmter Protokolle komplexer Geschäftsprozesse und das Traversieren über deren Abhängigkeiten im Mittelpunkt. Hierzu zählen das Einlesen von archivierten Daten, die Darstellung der Relationen der archivierten Daten sowie die Möglichkeit, nach bestimmten Informationen zu suchen.
 
 \subsection{Abgrenzung}
 
@@ -624,8 +624,8 @@ Anzeige nur Kommentare (ACMT) & - & - & - & X\\
 Ausführungsdaten, Protokolle, Kommentare kombiniert & - & - & - & -\\
 Ausführungsdaten, Protokolle kombiniert & - & - & - & -\\
 Relationen ( RUN\#, Parent (ACT) ) & - & - & - & -\\
-Merken der markierten Zeile beim Filter & - & - & - & -\\
-Mitscrollen der markierten Zeile beim Filter & - & - & - & -\\
+Merken der markierten Zeile beim Suchen & - & - & - & -\\
+Mitscrollen der markierten Zeile beim Suchen & - & - & - & -\\
 Spalte Client & X & X & X & X\\
 Spalte User & X & - & X & X\\
 Spalte Department & X & - & X & X\\
@@ -646,23 +646,23 @@ Spalte Category & - & - & X & -\\
 Spalte Type & - & - & X & -\\
 Spalte Status & - & - & - & -\\
 Mehrfach sortieren & X & X & X & X\\
-Filter Client & X & X & X & X\\
-Filter User & X & - & X & X\\
-Filter Department & X & - & X & X\\
-Filter Parent (ACT) & X & - & - & -\\
-Filter Date & X & X & X & X\\ 
-Filter RUN\#/Add.Info & X & X & - & -\\
-Filter Parent (PROC) & X & - & - & -\\
-Filter Host & X &  & X & X\\
-Filter Type & X & - & - & -\\
-Filter Archive Key 1 & X & - & - & -\\
-Filter Object Name & X & X & - & -\\
-Filter Message Text & - & - & X & X\\
-Filter Subtype & X & - & - & -\\
-Filter Archive Key 2 & X & - & - & -\\
-Filter Report Type & - & X & - & -\\
-Kombinierte Filter & X & X & X & X\\
-Übergreifende Filter & - & - & - & -\\
+Suche Client & X & X & X & X\\
+Suche User & X & - & X & X\\
+Suche Department & X & - & X & X\\
+Suche Parent (ACT) & X & - & - & -\\
+Suche Date & X & X & X & X\\ 
+Suche RUN\#/Add.Info & X & X & - & -\\
+Suche Parent (PROC) & X & - & - & -\\
+Suche Host & X &  & X & X\\
+Suche Type & X & - & - & -\\
+Suche Archive Key 1 & X & - & - & -\\
+Suche Object Name & X & X & - & -\\
+Suche Message Text & - & - & X & X\\
+Suche Subtype & X & - & - & -\\
+Suche Archive Key 2 & X & - & - & -\\
+Suche Report Type & - & X & - & -\\
+Kombinierte Suche & X & X & X & X\\
+Übergreifende Suche & - & - & - & -\\
 \bottomrule
 \end{xltabular}
 %--------- TABELLE ENDE ---------------
@@ -703,8 +703,8 @@ Anzeige nur Kommentare (ACMT) & - & - & - & -\\
 Ausführungsdaten, Protokolle, Kommentare kombiniert & X & X & - & X\\
 Ausführungsdaten, Protokolle kombiniert & - & - & - & -\\
 Relationen ( RUN\#, Parent (ACT) ) & X & X & - & X\\
-Merken der markierten Zeile beim Filter & X & X & - & X\\
-Mitscrollen der markierten Zeile beim Filter & X & X & - & X\\
+Merken der markierten Zeile beim Suchen & X & X & - & X\\
+Mitscrollen der markierten Zeile beim Suchen & X & X & - & X\\
 Spalte Client & X & X & - & X\\
 Spalte User & - & - & - & -\\
 Spalte Department & - & - & - & -\\
@@ -726,23 +726,23 @@ Spalte Type & - & - & - & -\\
 Spalte Status & - & - & - & -\\
 %Spalte Status & X & X & - & X\\
 Mehrfach sortieren & X & X & - & X\\
-Filter Client & X & X & - & X\\
-Filter User & - & - & - & -\\
-Filter Department & - & - & - & -\\
-Filter Parent (ACT) & X & X & - & X\\
-Filter Date & X & X & - & X\\
-Filter RUN\#/Add.Info & X & X & - & X\\
-Filter Parent (PROC) & - & - & - & -\\
-Filter Host & X & X & - & X\\
-Filter Type & X & X & - & X\\
-Filter Archive Key 1 & X & X & - & X\\
-Filter Object Name & X & X & - & X\\
-Filter Message Text & - & - & - & -\\
-Filter Subtype & - & - & - & -\\
-Filter Archive Key 2 & X & X & - & X\\
-Filter Report Type & - & - & - & -\\
-Kombinierte Filter & X & X & - & X\\
-Übergreifende Filter & X & X & - & X\\ \bottomrule
+Suche Client & X & X & - & X\\
+Suche User & - & - & - & -\\
+Suche Department & - & - & - & -\\
+Suche Parent (ACT) & X & X & - & X\\
+Suche Date & X & X & - & X\\
+Suche RUN\#/Add.Info & X & X & - & X\\
+Suche Parent (PROC) & - & - & - & -\\
+Suche Host & X & X & - & X\\
+Suche Type & X & X & - & X\\
+Suche Archive Key 1 & X & X & - & X\\
+Suche Object Name & X & X & - & X\\
+Suche Message Text & - & - & - & -\\
+Suche Subtype & - & - & - & -\\
+Suche Archive Key 2 & X & X & - & X\\
+Suche Report Type & - & - & - & -\\
+Kombinierte Suche & X & X & - & X\\
+Übergreifende Suche & X & X & - & X\\ \bottomrule
 \end{xltabular}
 
 %--------- TABELLE ENDE ---------------
@@ -793,8 +793,8 @@ Anzeige nur Kommentare (ACMT) & - & - & - & -\\
 Ausführungsdaten, Protokolle, Kommentare kombiniert & - & - & - & -\\
 Ausführungsdaten, Protokolle kombiniert & X & X & - & -\\
 Relationen ( RUN\#, Parent (ACT) ) & X & X & - & -\\
-Merken der markierten Zeile beim Filter & X & X & - & -\\
-Mitscrollen der markierten Zeile beim Filter & X & X & - & -\\
+Merken der markierten Zeile beim Suchen & X & X & - & -\\
+Mitscrollen der markierten Zeile beim Suchen & X & X & - & -\\
 Spalte Client & X & X & - & -\\
 Spalte User & - & - & - & -\\
 Spalte Department & - & - & - & -\\
@@ -816,23 +816,23 @@ Spalte Type & - & - & - & -\\
 %Spalte Status & X & X & - & -\\
 Spalte Status & - & - & - & -\\
 Mehrfach sortieren & X & X & - & -\\
-Filter Client & X & X & - & -\\
-Filter User & - & - & - & -\\
-Filter Department & - & - & - & -\\
-Filter Parent (ACT) & X & X & - & -\\
-Filter Date & X & X & - & -\\
-Filter RUN\#/Add.Info & X & X & - & -\\
-Filter Parent (PROC) & - & - & - & -\\
-Filter Host & X & X & - & -\\
-Filter Type & X & X & - & -\\
-Filter Archive Key 1 & X & X & - & -\\
-Filter Object Name & X & X & - & -\\
-Filter Message Text & - & - & - & -\\
-Filter Subtype & - & - & - & -\\
-Filter Archive Key 2 & X & X & - & -\\
-Filter Report Type & - & - & - & -\\
-Kombinierte Filter & X & X & - & -\\
-Übergreifende Filter & X & X & - & -\\ \bottomrule
+Suche Client & X & X & - & -\\
+Suche User & - & - & - & -\\
+Suche Department & - & - & - & -\\
+Suche Parent (ACT) & X & X & - & -\\
+Suche Date & X & X & - & -\\
+Suche RUN\#/Add.Info & X & X & - & -\\
+Suche Parent (PROC) & - & - & - & -\\
+Suche Host & X & X & - & -\\
+Suche Type & X & X & - & -\\
+Suche Archive Key 1 & X & X & - & -\\
+Suche Object Name & X & X & - & -\\
+Suche Message Text & - & - & - & -\\
+Suche Subtype & - & - & - & -\\
+Suche Archive Key 2 & X & X & - & -\\
+Suche Report Type & - & - & - & -\\
+Kombinierte Suche & X & X & - & -\\
+Übergreifende Suche & X & X & - & -\\ \bottomrule
 \end{xltabular}
 %--------- TABELLE ENDE ---------------
 
@@ -984,9 +984,8 @@ Die regulär in ISO 8859-1 kodierten, archivierten Ausführungsdaten und Protokoll
 \setlength{\du}{15\unitlength}
 
 %----------- BILD ANFANG -------------
-%\afterpage{
-  \begin{figure}
-    \begin{center}
+\afterpage{
+\begin{figure}[!htbp]
 \begin{tikzpicture}
 \pgftransformxscale{1.000000}
 \pgftransformyscale{-1.000000}
@@ -1504,12 +1503,11 @@ Die regulär in ISO 8859-1 kodierten, archivierten Ausführungsdaten und Protokoll
 }
 % setfont left to latex
 \end{tikzpicture}
-        \caption[UML-Diagramm Archivdateien Datenstruktur]{UML-Diagramm Archivdateien Datenstruktur\footnotemark}
-    \label{fig:uml_archiv_datastruct}
-    \end{center}
-  \end{figure}
-  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Dia}
-%}
+\caption[UML-Diagramm Archivdateien Datenstruktur]{UML-Diagramm Archivdateien Datenstruktur\protect\footnotemark}
+\label{fig:uml_archiv_datastruct}
+\end{figure}
+\footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Dia}
+}
 
 %------------- BILD ENDE ---------------
 
@@ -1945,11 +1943,20 @@ Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.rea
 %}
 
 \chapter{Implementierung}
+\section{Paketierung}
+Java ist eine verbreitete Plattform, auf der auch andere Desktopanwendungen aufbauen. Dadurch ist meist eine JVM bereits auf dem System eines Nutzers vorhanden.
+Dabei ist nicht ungewöhnlich, dass die Version auf dem System des Nutzers nicht zu der Anforderung einer neuen Anwendung passt.
+Oft kann die \ac{jjvm} aber nicht einfach aktualisiert werden, da bestehende Programme genau diese Version verlangen und für höhere Versionen z.B. noch nicht freigegeben sind.
+Daher wurde eine Lösung favorisiert mittels welcher das relationsorientierte Recherchewerkzeug unabhängig von dieser Problematik existieren kann.
+Mit JLink kann dies erreicht werden. JLink baut bei der Paketierung eine Gruppe von Modulen zusammen und erzeugt ein \ac{jjre} Image.
+Dies beinhaltet eine client-spezifische \ac{jjre}, welche in die Anwendung eingebettet ist.
+Oracle empfiehlt diese Strategie seit für Desktop-Anwendungen seit 2018 \citep[6]{jjlinkrecommand}.\\
+Das Aufspielen, Aktualisieren oder Entfernen des relationsorientierten Recherchewerkzeugs kann so unabhängig zu anderen Java-Applikationen in der Anwenderlandschaft durchgeführt werden.
+Einziger Nachteil ist der erhöhte Festplattenbedarf durch die eigene \ac{jjre} von rund 100 Megabyte. Diese wird in Zeiten von Giga- und Terabyte-Speichergrößen nicht als problematisch angesehen.
 %jlink
 %https://www.computerwoche.de/a/oracle-will-java-verschlanken,3546321
 %screenshot Ergebnis mit Erklärung (Punkte in Grafik + Tabelle die Punkte erklärt)
 %\section{Programmstruktur}
-
 \definecolor{pblue}{rgb}{0.13,0.13,1}
 \definecolor{pgreen}{rgb}{0,0.5,0}
 \definecolor{pred}{rgb}{0.9,0,0}
@@ -2010,19 +2017,6 @@ Zusätzlich steht eine Methode zum Laden von Protokollen aus den Archivdaten zur 
 die von den jeweiligen Knoten aus der Streuwerttabelle referenziert werden.
 
 \begin{lstlisting}[caption=ArchiveData Klassenkopf mit Attributen, label=lst:ArchiveData]
-/*--
- * Java Version: 16.0.2+7
- * Entwicklungsumgebung: Eclipse IDE for Java Developoers
- * Betriebssystem: Windows 10 64bit
- * JavaJFX Version: 16
- *
- * @category   FileOperations, Archive, Automic
- * @package    com.hm.aae
- * @author     Jan Thomas Gundlach <thomas.gundlach@haw-hamburg.de>
- * @copyright  GPLv2
- * @version    0.5
- *
- ***/
 public class ArchiveData {
 
 	// Anhand Hashmap verknuepfte Adjazenzmengen
@@ -2115,15 +2109,111 @@ Diese Methode lädt eine gefundene Protokoll-Indexdatei und ermittelt alle Positi
 	private void collectDataReports(Path path);
 \end{lstlisting}
 
+\section{Klasse ArchiveTreeTable~\protect\footnotemark}
+Diese Klasse (Lst.~\ref{lst:ArchiveTreeTable}) erstellt ein Fenster mit Steuerelementen zur Darstellung von Automic\textsuperscript{\textregistered} Automation
+  Engine Archivdaten in einer tabellarischen Baumstruktur inklusive des jeweiligen Protokolls
+  in Textform. 
+  Darüber hinaus bindet die Klasse Logiken an die Steuerelemente. Darüber wird das kombinierte sowie
+  spaltenübergreifende Suchen in der Baumstruktur mittels Leerzeichen getrennter Schlagwörter
+  sowie das Merken der markierten Spalte währenddessen ermöglichen.
+  Zum Laden der Automic Automation Engine Archivdaten greift diese Klasse auf die Klasse ArchiveData
+  zu.
+\begin{lstlisting}[caption={ArchiveTreeTable Klassenkopf}, label=lst:ArchiveTreeTable]
+public class ArchiveTreeTable extends Application {
 
-\section{Klasse ArchiveTreeTable}
-%\subsubsection{}
-%(Lst.~\ref{lst:})
-%\begin{lstlisting}[caption= Methodenkopf, label=lst:]
-%
-%\end{lstlisting}
-\subsection{Methoden}
+    private TreeItem<Map<String, Object>> treeRoot;
+    private TreeTableView<Map<String, Object>> treeView;
+    private TreeItem<Map<String, Object>> currentChild;
+    private TreeItem<Map<String, Object>> currentRootChild;
+    private ArchiveData archiveData;
+...
+}
+\end{lstlisting}
+  \footnotetext{Quelle: Abgeleitet \citeg{irlitreetableview}}
 
+\subsection{start}
+Diese Methode (Lst.~\ref{lst:attstart}) muss durch die geerbte Klasse \texttt{Application} implementiert werden.
+	 Sie dient zur Initialisierung der Klasse und zeichnen der Steuerelemente
+	 und wird in Folge des Methodenaufrufes \texttt{launch(args)} aufgerufen.
+\subsubsection{}
+\begin{lstlisting}[caption=start Methodenkopf, label=lst:attstart]
+    $$@Override
+    public void start(Stage primaryStage) throws Exception;
+\end{lstlisting}
+
+
+\subsubsection{expandBranch}
+Diese Methode (Lst.~\ref{lst:expandBranch}) klappt rekursiv im Rücklauf alle Elternzweige eines übergebenden Zweiges aus.
+\begin{lstlisting}[caption=expandBranch Methodenkopf, label=lst:expandBranch]
+    private void expandBranch(TreeItem<Map<String, Object>> branch);
+\end{lstlisting}
+
+
+\subsubsection{searchChild}
+Diese Methode (Lst.~\ref{lst:searchChild}) sucht rekursiv nach dem Nachfolgeelement eins Elements nach Neuinitialisierung des Baumes, da die Elemente dann auf 
+	 Objektebene nicht mehr gleich sind. Als eindeutiges Vergleichskriterium wird die RunID verwendet.
+ 	 Eine Neuinitialisierung des Baumes tritt durchs Suchen auf.
+ 	 Die Kenntnis über das Nachfolgeelement ist zum Merken des markierten Elements über das Suchen hinweg notwendig.
+\begin{lstlisting}[caption=searchChild Methodenkopf, label=lst:searchChild]
+    private TreeItem<Map<String, Object>> searchChild(TreeItem<Map<String, Object>> root, TreeItem<Map<String, Object>> searchedChild);
+\end{lstlisting}
+
+
+\subsubsection{searchAgain}
+Diese Methode (Lst.~\ref{lst:searchAgain}) löst einen Suchvorgang durch Veränderung der Eingabe im Suchtextfeld aus.
+	 Zusätzlich sorgt sie dafür, dass die Sortiereinstellung und Zeilenmarkierung nach Abschluss des
+	 Suchvorgangs erhalten bleibt.
+\begin{lstlisting}[caption=searchAgain Methodenkopf, label=lst:searchAgain]
+    private void searchAgain(String searchString);
+\end{lstlisting}
+
+\subsubsection{searchInTree}
+Diese Methode (Lst.~\ref{lst:searchInTree}) durchläuft den Baum und erstellt anhand des Suchbegriffs einen reduzierten Baum.
+	 Es werden nur Aufgaben oder deren Oberaufgaben hinzugefügt in denen alle Schlagwörter in beliebigen Eigenschaften
+	 vorkommen. Parallel wird zu der zuletzt markierten Aufgabe gescrollt und sie erneut markiert,
+	 sofern sie sich in der Suchmenge befindet.
+\begin{lstlisting}[caption=searchInTree Methodenkopf, label=lst:searchInTree]
+    private TreeItem<Map<String, Object>> searchInTree(TreeItem<Map<String, Object>> root, String searchString, TreeItem<Map<String, Object>> searchTree);
+\end{lstlisting}
+
+
+\subsubsection{isContains}
+Diese Methode (Lst.~\ref{lst:isContains}) prüft ob jedes Schlagwort mind. einmal in irgendeiner Aufgabeneigenschaft vorkommt.
+     Die Methode stellt damit den Abgleich für die Funktionalität zum kombinierten und übergreifenden Suchen da.
+\begin{lstlisting}[caption=isContains Methodenkopf, label=lst:isContains]
+    private boolean isContains(Map<String, Object> properties, String[] searchArray);
+\end{lstlisting}
+
+
+\subsubsection{buildTaskTree}
+Diese Methode erstellt rekursiv einen neuen Aufgabenbaum anhand von Daten aus einem Ausführungsdaten- und Protokollarchiv.
+(Lst.~\ref{lst:buildTaskTree})
+\begin{lstlisting}[caption=buildTaskTree Methodenkopf, label=lst:buildTaskTree]
+    private void buildTaskTree(Integer runId, TreeItem<Map<String, Object>> newTaskTree);
+\end{lstlisting}
+
+
+\subsubsection{makeTask}
+Diese Methode (Lst.~\ref{lst:makeTask}) erstellt eine neue Aufgabe, hängt diese in den übergebenden Aufgabenzweig und
+	 gibt die neue Aufgabe an den Aufrufer als Ergebnis zurück.
+\begin{lstlisting}[caption=makeTask Methodenkopf, label=lst:makeTask]
+    private TreeItem<Map<String, Object>> makeTask(TreeItem<Map<String, Object>> taskBranch, String col_objectname, String col_startdate, long col_runid, int col_client,
+    		String col_objecttype, String col_hostname, String col_archivkey1, String col_archivkey2);
+\end{lstlisting}
+
+
+\subsubsection{newColumn}
+Diese Methode (Lst.~\ref{lst:newColumn}) erstellt eine neue Spalte für eine Aufgabeneigenschaft im Aufgabenbaum.
+\begin{lstlisting}[caption=newColumn Methodenkopf, label=lst:newColumn]
+    protected void newColumn(String name, String colIndex);
+\end{lstlisting}
+
+
+\subsubsection{main}
+Statische Methode (Lst.~\ref{lst:attmain}) für die JVM über welche diese die Klasse instanziieren kann.
+\begin{lstlisting}[caption=main Methodenkopf, label=lst:attmain]
+    public static void main(String[] args);
+\end{lstlisting}
 \section{Datenstruktur}
 
 \subsection{Aufbau der Baumstruktur}\label{ssec:imptreedata}
@@ -2147,13 +2237,41 @@ Zum Schluss wird das Wurzel \texttt{TreeItem} Objekt im \texttt{TreeTableView} C
 %ggf. https://www.philipphauer.de/study/se/design-pattern/observer.php
 \section{Klassendiagramm}
 
+\section{Ergebnis}
 
+%----------- BILD ANFANG -------------
+\afterpage{
+  \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.55]{bilder/archivetreetableview.png}
+        \caption[Prototyp eines relationsorientierten Recherchewerkzeugs für Automic\textsuperscript{\textregistered} Automation Engine Archivdaten]{Prototyp eines relationsorientierten Recherchewerkzeugs für Automic\textsuperscript{\textregistered} Automation Engine Archivdaten\footnotemark}
+    \label{fig:imp_archivetreetable}
+    \end{center}
+  \end{figure}
+  \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
+}
+
+%------------- BILD ENDE ---------------
+
+Der Prototyp des relationsorientierten Recherchewerkzeugs für Automic\textsuperscript{\textregistered} Automation Engine Archivdaten verfügt über diese Merkmale:
+\begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
+\item \textbf{1.} Mittels der Schaltfläche öffnen kann ein Ordner ausgewählt werden unterhalb von dem rekursiv nach beliebigen Indexdateien für Ausführungsdaten- oder Protokolle gesucht wird. Jedes gefundene Archiv wird zur Darstellung geladen.
+\item \textbf{2.} Die geladenen Aufgaben und Ihre Ausführungen werden in Relation mit Ihren Ober- und Unteraufgaben in einer Baumstruktur dargestellt.
+\item \textbf{3.} Im Standard sind der Übersicht halber alle Aufgaben eingeklappt. Die jeweiligen Unteraufgaben können durch Anklicken der Pfeilspitzen aufgeklappt werden.
+\item \textbf{4.} Die gesamte Liste kann mittels rechtsbündiger Scrollbar durchgescrollt werden.
+\item \textbf{5.} Um die angezeigten Aufgaben und deren Relationen einzugrenzen können die Aufgaben durch Eingaben von Schlagworten in das Textfeld oberhalb der Baumstruktur durchsucht werden. Durch Leerzeichen getrennte Schlagworte werden als eigenständige Suchbegriffe erkannt. Das Suchkriterium für eine Aufgabe gilt als erfüllt, wenn jedes Schlagwort innerhalb einer beliebigen Spalte einer Aufgabe gefunden wird. Die Suche ist unabhängig von Groß- und Kleinschreibung.
+\item \textbf{6.} Das Markieren einer Aufgaben wird von dem Prototyp bis zum Wechsel der Markierung gespeichert, so dass eine Markierung auch nach der Eingrenzung mittels Schlagwort oder des Entfernens eines Suchbegriffs weiter angezeigt wird. Die Scrollbar folgt bei der Suche der markierten Eintragung.
+\item \textbf{7.} Zugeklappte Unteraufgaben werden, sofern Sie Teil der Treffermenge einer Suche sind, bis zur Unteraufgabe selbst automatisch erweitert.
+\item \textbf{8.} Mit dem Selektieren einer Aufgabe wird das jeweilige Protokolle der Aufgabe, sofern verfügbar, in das darunterliegende Textfeld  geladen.
+\item \textbf{9.} Anhand der rechtsbündigen Scrollbar des Textfeldes können mehrzeilige Protokolle durchgescrollt werden.
+\item \textbf{10.} Innerhalb ein und derselben Sitzung können durch das Dienstprogramm immer wieder andere Archivdaten geladen werden ohne dass ein Neustart der Applikation notwendig ist.
+\end{itemize}
 \chapter{Fazit und Ausblick}
 \section{Fazit}
 rechtliche rahmenbedingungen waren ausschweifend
 Analyse der Software hat unbekannten Bug zum Vorscheinen gebracht
-Die ursprüngliche Vorstellung nur einen Baum verknüpfter RunIDs im Arbeitsspeicher zu halten und alle anderen Ausführungsdaten ausschließlich bei Bedarf nachzuladen konnte aufgrund der Schnittstellen von \texttt{javafx.scene.control.TreeItem} und \texttt{javafx.scene.control.TreeTableView} in einem Prototypen nicht umgesetzt werden. Ein erhöhter Arbeitsspeicherbedarf wurde daher vorerst in Kauf genommen. In Tests ergab sich dieser jedoch insbesondere beim filtern des Protokollbaumes oder beim neu laden von Archivdaten als überproportional hoch. Daher wurden für den Testbetrieb übergangsweise Garbage Collection Anreize an diesen Stellen in den Quellcode implementiert.
-Bei hohem und komplexen Archivdaten kam es seitens des TreeTableView zu reproduzierbaren Fehlanzeigen einiger spezieller \texttt{TreeItems}. Die Analyse diesbzgl. ist bisher ergebnisoffen.
+Die ursprüngliche Vorstellung nur einen Baum verknüpfter RunIDs im Arbeitsspeicher zu halten und alle anderen Ausführungsdaten ausschließlich bei Bedarf nachzuladen konnte aufgrund der Schnittstellen von \texttt{javafx.scene.control.TreeItem} und \texttt{javafx.scene.control.TreeTableView} in einem Prototypen nicht umgesetzt werden. Ein erhöhter Arbeitsspeicherbedarf wurde daher vorerst in Kauf genommen. In Tests ergab sich dieser jedoch insbesondere beim durchsuchen des Aufgabenbaumes oder beim neu laden von Archivdaten als überproportional hoch. Daher wurden für den Testbetrieb übergangsweise Garbage Collection Anreize an diesen Stellen in den Quellcode implementiert.
+Bei großen und komplexen Archivdaten kam es seitens des TreeTableView zu reproduzierbaren Fehlanzeigen einiger spezieller \texttt{TreeItems} in Verbindung mit zwischenspeichern der Sortiervorgaben nach einem Suchvorgang. Die Analyse diesbzgl. ist bisher ergebnisoffen. Ggf. hängt der Fehler mit einem nicht korrekt parametrisierten, generischem Objekt zusammen.
 \section{Ausblick}
 \subsection{Bugs}
 Eine genaue Analyse zum Hintergrund steht noch aus.
@@ -2225,6 +2343,7 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{gtck}[TCK]{Technology Compatibility Kit}
 \acro{jjdk}[JDK]{Java Development Kit}
 \acro{jjvm}[JVM]{Java Virtual Machine}
+\acro{jjre}[JRE]{Java-Laufzeitumgebung}
 \acro{jlts}[LTS]{Long Term Support}
 \acro{jmts}[MTS]{Medium Term Support}
 \acro{jaws}[AWS]{Amazon Web Services}
@@ -2493,6 +2612,12 @@ Basil Bourque
 in: Stack Exchange Inc (Hrsg.): \emph{Difference between JVM and HotSpot?}
 \url{https://stackoverflow.com/questions/16568253/difference-between-jvm-and-hotspot/59295177#59295177}, 23.06.2021, letzter Zugriff: 29. 7. 2021
 
+\bibitem[rli(2014)]{irlitreetableview} 
+rli
+\glqq 1. Antwort\grqq, 
+in: Stack Exchange Inc (Hrsg.): \emph{How to implement filtering for treetableview}
+\url{https://stackoverflow.com/a/33216997}, 19.10.2015, letzter Zugriff: 12. 8. 2021
+
 \bibitem[Fernando Almeida(2018)]{jdzone} 
 Fernando Almeida
 \emph{The JDKs: Which One to Use?}
@@ -2512,6 +2637,11 @@ Java Community Process Management Office:
 %Wikipedia: 
 %\emph{Java Community Process}, 
 %\url{https://en.wikipedia.org/wiki/Java_Community_Process}, 2021, letzter Zugriff: 30. 7. 2021
+
+\bibitem[Oracle Corporation(2018)]{jjlinkrecommand} 
+Oracle Corporation: 
+\emph{Java Client Roadmap Update - An Oracle White Paper}, 
+\url{https://www.oracle.com/technetwork/java/javase/javaclientroadmapupdate2018mar-4414431.pdf}, 2018, letzter Zugriff: 24. 8. 2021
 
 
 \bibitem[Oracle(2021)]{jwikiplattform} 
