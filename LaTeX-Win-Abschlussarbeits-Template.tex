@@ -94,24 +94,26 @@
 \selectlanguage{english}
 \section*{\centering\abstractname}
 %\section*{\centering\abstractname}
-This thesis deals with the requirement and development of a relation-oriented retrieval tool for archived log data from a process engine. The
-implementation is based on the Automic\textsuperscript{\textregistered} Automation Engine. For the requirement the legal background is worked out using the insurance industry as an example and the structure of the process engine is described. The basis for the development and the scope of functions for the search tool is a fundamental part of the thesis as well as the implementation.
-The result is the prototype of a utility, with which the dependencies of archived protocols of a process engine can be traced. The resulting concept is based on a combination of Eclipse Temurin and OpenJFX. Finally, an outlook on future requirements and the further development of the prototype is described.
+This thesis deals with the requirement and development of a relation-oriented retrieval tool for archived log data from a process engine. 
+The implementation is based on the Automic\textsuperscript{\textregistered} Automation Engine.
+For the requirement the legal background is worked out using the insurance industry as an example and the structure of the process engine is described.
+The basis for the development and the scope of functions for the search tool is a fundamental part of the thesis as well as the implementation.
+
+The result is the prototype of a utility, with which the dependencies of archived protocols of a process engine can be traced.
+The resulting concept is based on a combination of Eclipse Temurin and OpenJFX.
+Finally, an outlook on future requirements and the further development of the prototype is described.
  
  
 \selectlanguage{ngerman}
 \section*{\centering\abstractname}
-Diese Arbeit behandelt die Anforderung und Entwicklung eines relationsorientierten Recherchewerkzeugs für archivierte Protokolldaten aus einer Process Engine. Die
-Umsetzung erfolgt am Beispiel der Automic\textsuperscript{\textregistered} Automation Engine. Für die Anforde-
-rung wird der rechtliche Hintergrund am Beispiel des Versicherungswesens erarbeitet
-und der Aufbau der Process Engine beschrieben. Thematisiert wird die Auswahl der
-Grundlagen für die Entwicklung und des Funktionsumfangs für das Recherchewerk-
-zeug mit der daraus folgenden Implementierung.\\
-Ergebnis ist der Prototyp eines Dienstprogramms, mit dem die Abhängigkeiten von
-archivierten Protokollen einer Process Engine dargestellt und mit dem über diese tra-
-versiert werden können. Dabei setzt das entstandene Konzept auf eine Kombination
-aus Eclipse Temurin und OpenJFX. Abschließend wird ein Ausblick auf kommende
-Anforderungen und die Weiterentwicklung des Prototyps gegeben.
+Diese Arbeit behandelt die Anforderung und Entwicklung eines relationsorientierten Recherchewerkzeugs für archivierte Protokolldaten aus einer Process Engine.
+Die Umsetzung erfolgt am Beispiel der Automic\textsuperscript{\textregistered} Automation Engine.
+Für die Anforderung wird der rechtliche Hintergrund am Beispiel des Versicherungswesens erarbeitet und der Aufbau der Process Engine beschrieben.
+Thematisiert wird die Auswahl der Grundlagen für die Entwicklung und des Funktionsumfangs für das Recherchewerkzeug mit der daraus folgenden Implementierung.
+
+Ergebnis ist der Prototyp eines Dienstprogramms, mit dem die Abhängigkeiten von archivierten Protokollen einer Process Engine dargestellt und mit dem über diese traversiert werden können.
+Dabei setzt das entstandene Konzept auf eine Kombination aus Eclipse Temurin und OpenJFX.
+Abschließend wird ein Ausblick auf kommende Anforderungen und die Weiterentwicklung des Prototyps gegeben.
 
 
 %--------------------------- Text -------------------------------
@@ -220,7 +222,7 @@ Abb.~\ref{fig:bpmn_processauto} veranschaulicht die Vorgehensweise verallgemeine
 
 %------------- BILD ENDE ---------------
 
-Abstrakt kann man Prozessautomatisierung als eine Form von Softwareentwicklung bezeichnen, in der die Process Engine der Interpreter und der Quellcode das technische Prozessbild sind.
+Abstrakt kann man Prozessautomatisierung als eine Form von Softwareentwicklung bezeichnen, in der die Process Engine der Interpreter und der Quellcode das technische Prozessbild ist.
 Dabei ist zu beachten, dass eine Process Engine für die Abbildung von Prozesslogik entwickelt ist. Sie verfügt über viele typische, fertige Komponenten und Eigenschaften, die für die technische Umsetzung eines Prozessmodells benötigt werden, welche ansonsten mittels \ac{hll} aufwendig entwickelt werden müssten.
 Dennoch kann mit einer Process Engine keine allgemeine Softwareentwicklung erfolgen, da ihre Sprachmittel und Komponenten auf die Abbildung von Prozessmodellen begrenzt sind.
 
@@ -300,7 +302,7 @@ Ein Job beschreibt innerhalb des \ac{bpm} einen Teilprozess.
 
 %Durch das Einplanen eines Jobs oder eines Workflows zu einem bestimmten Zeitpunkt oder einer Folge an Zeitpunkten wird mit dessen Aktivierung eine Instanz des selben als Aufgabe erzeugt.
 Durch die Ausführung eines Workflows oder Jobs wird als Instanz dessen eine Aufgabe erzeugt. Die Aufgabe durchläuft anschließend während der Ausführung die Phasen Aktivierung, Generierung, Verarbeitung und Abschluss \citeg{aae_runs} .
-Eine Aufgabe beschreibt innerhalb des \ac{bpm} eine Aktivität und eine Ausführung (Abb.~\ref{fig:aae_runs}) dessen Resultat.
+Eine Aufgabe beschreibt innerhalb des \ac{bpm} eine Aktivität und eine Ausführung (Abb.~\ref{fig:aae_runs}) sowie dessen Resultat.
 
 %----------- BILD ANFANG -------------
 \afterpage{
@@ -669,7 +671,7 @@ Kombinierte Suche & X & X & X & X\\
 
 \subsubsection{Benutzeranforderungen}
 In einem WebEx-Workshop vom 27.07.2021 wurde die Idee eines relationsbasierten Recherchewerkzeuges vorgestellt und auf Basis des bestehenden Funktionsumfangs daran geknüpfte Anforderungen der Benutzer definiert.\\
-Der Workshop hat für ein relationsbasiertes Recherchewerkzeug zu den Benutzeranforderung unter Tab.~\ref{t_userrequirement} geführt.
+Der Workshop hat für ein relationsbasiertes Recherchewerkzeug zu den Benutzeranforderungen unter Tab.~\ref{t_userrequirement} geführt.
 
 %----------- TABELLE START -------------
 %\afterpage{
@@ -749,10 +751,10 @@ Kombinierte Suche & X & X & - & X\\
 \subsubsection{Funktionsumfang Implementierung}
 Auf Grundlage der Benutzeranforderung (Tab.~\ref{t_userrequirement}) wurde der zu implementierende Funktionsumfang definiert.\\
 Innerhalb der Analyse der Abhängigkeiten zwischen den Archivdaten ist ein Softwarefehler im AE DB Archiv $(ucybdbar)$ aufgefallen. Durch diesen werden ungültige RUNIDs in die Archivdaten für Kommentare $(UC\_ACMT.TXT)$ geschrieben.
-Obwohl Kommentare über die RunID mit den anderen Archivdaten in Relation gesetzt werden könnten, ist innerhalb der Analyse ein Produktfehler im Dienstprogramm AE DB Archive festgestellt worden der dies unterbindet. Daher ist die Benutzeranforderung an dieser Stelle innerhalb dieser Arbeit nicht erfüllbar und wurde für den zu implementierenden Funktionsumfang in dieser Arbeit zurückgestellt.
+Obwohl Kommentare über die RunID mit den anderen Archivdaten in Relation gesetzt werden könnten, ist innerhalb der Analyse ein Produktfehler im Dienstprogramm AE DB Archive festgestellt worden, der dies unterbindet. Daher ist die Benutzeranforderung an dieser Stelle innerhalb dieser Arbeit nicht erfüllbar und wurde für den zu implementierenden Funktionsumfang in dieser Arbeit zurückgestellt.
 Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
 
-Da die Meldungen von Ihrer Datenstruktur grundsätzlich relationslos in Bezug auf Ausführungen abgelegt werden, wurden sie durch die Benutzer als nicht relevant definiert und aus der Implementierung ausgeschlossen.
+Da die Meldungen von ihrer Datenstruktur grundsätzlich relationslos in Bezug auf Ausführungen abgelegt werden, wurden sie durch die Benutzer als nicht relevant definiert und aus der Implementierung ausgeschlossen.
 
 Der zu implementierende Funktionsumfang für ein relationsbasiertes Archivdaten-Recherchewerkzeug ist in Tab.~\ref{t_implfunctionrange} beschrieben.
 
@@ -1567,14 +1569,14 @@ H3;3000;ACT;SC.PERIODICAL_STARTS;2474844;2021.05.01 00:31:11;2021.05.01 00:31:11
 \end{center}
 
 \subsubsection{Protokolle: UC\_RH.TXT}\label{ssec:ucrhtxt}
-In der Datei UC\_RH.TXT sind die Protokolle der archivierten Aufgaben gespeichert. Zum Auslesen der Protokolle einzelner Aufgaben werden die Posistions- und Größenangaben aus UC\_RH.IDX~(\refg{ssec:ucrhidx}) benötigt.
+In der Datei UC\_RH.TXT sind die Protokolle der archivierten Aufgaben gespeichert. Zum Auslesen der Protokolle einzelner Aufgaben werden die Positions- und Größenangaben aus UC\_RH.IDX~(\refg{ssec:ucrhidx}) benötigt.
 
-Je RunID gibt es mehrere, eigenständigen Datensätze hintereinander.
+Je RunID gibt es mehrere, eigenständige Datensätze hintereinander.
 
 \subsubsection{Meldungsarchiv: UC\_MELD.TXT}\label{ssec:ucmeldtxt}
 Meldungen enthalten Informationen über den Zustand von ausgeführten Aufgaben oder Prozessstatus. Zur Einordnung werden sie in die drei Prioritätsklassen Fehler, Warnungen und Meldungen eingeteilt.\\
 Die Eigenschaften der Meldungen werden bei der Archivierung durch Strichpunkt getrennt zeilenweise (Lst.~\ref{lst:ucmeldtxt}) in die Datei UC\_MELD.TXT abgelegt.
-Meldungen können aufgrund Ihrer archivierten Eigenschaften nicht automatisiert mit dritten Ausführungsdaten in Relation gesetzt werden da ein eindeutiges Kriterium hierfür fehlt.
+Meldungen können aufgrund Ihrer archivierten Eigenschaften nicht automatisiert mit dritten Ausführungsdaten in Relation gesetzt werden, da ein eindeutiges Kriterium hierfür fehlt.
 
 \begin{center}
 \begin{tabular}{c}
@@ -1587,7 +1589,7 @@ U00012109 Script 'SC.PERIODICAL_STARTS' (RunID '0002471778') normal beendet.
 
 \subsubsection{Kommentararchiv: UC\_ACMT.TXT}\label{ssec:acmttxt}
 Zu der Ausführung einer Aufgabe kann programmatisch oder manuell ein Kommentar mit individuellen Informationen zur Ausführung hinzugefügt oder abgerufen werden (wie beispielsweise eine Ticket-Referenz bei Aufgabenabbruch). Mit Archivierung werden Kommentare und deren Eigenschaften separat zu den Ausführungsdaten und referenzierbar über die Eigenschaft RunID in die Datei UC\_ACMT.TXT abgelegt. Die Ablage von Eigenschaften und Kommentaren erfolgt ebenfalls zeilenweise getrennt durch Strichpunkt (Lst.~\ref{lst:ucacmttxt}).\\
-Innnerhalb der Analyse der Datenstrukturen ist ein Produktfehler im Dienstprogramm AE DB Archive festgestellt worden, welcher die Relation zwischen Ausführungsdaten und Kommentaren unterbindet. Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
+Innerhalb der Analyse der Datenstrukturen ist ein Produktfehler im Dienstprogramm AE DB Archive festgestellt worden, welcher die Relation zwischen Ausführungsdaten und Kommentaren unterbindet. Der Softwarefehler wurde beim TIER1-Partner des Herstellers \citeg{aae_captureucybdbar} gemeldet.
 
 \begin{center}
 \begin{tabular}{c}
@@ -1674,7 +1676,7 @@ Amazon setzt Corretto selbst in vielen produktiven Diensten in der \ac{jaws} ein
 
 \subsection{Azul Zulu}
 Azul bietet unter dem Namen Zulu JDK \citeg{jazulzulu} eine eigene, kostenlose und plattformübergreifende (Linux, Windows, macOS, Solaris und Docker) OpenJDK Implementierung an. Diese kann ebenfalls  kostenlos in kommerziellen Produktionsumgebungen eingesetzt werden. Zur Verfügung stehende Patches zur Korrektur von Sicherheitslücken und Softwarefehlern sind  jedoch nur kostenpflichtig über die Azul Platform Core erhältlich \citeg{jazulsecure}. Azul zertifiziert das Zulu JDK mittels TCK und stellt damit offiziell eine Kompatibilität zum Java SE Standard her. Azul hält sich bei der Definition der Versionszyklen an Oracle JDK und verlängert den Lebenszyklus des Zulu JDK jeweils zusätzlich um ein Jahr. Darüber hinaus  bietet Azul ein Archiv aller Veröffentlichungen  eines Majorrelease innerhalb des Lebenszyklus an. Der kostenlose Zugang zu dem Angebot ist Teil der Zulu Community. Es gibt hierzu jedoch keine explizite Zusicherung seitens Zulu, dieses Angebot langfristig aufrechtzuerhalten \citeg{jbourquestack}.
-Azul stellt umfangreiche, kostenpflichtige Supportangebote zur Verfügung. Unter anderem gilt das auch für die \ac{jmts} Veröffentlichungen sowie eine generelle 24/7-Erreichbarkeit. Das Supportangebot berechnet sich dabei nicht je CPU, sondern je System. Parallel dazu bietet Azul unter Zing eine performanceorientierte Java Plattform an.
+Azul stellt umfangreiche, kostenpflichtige Supportangebote zur Verfügung. Unter anderem gilt das auch für die \ac{jmts} Veröffentlichungen sowie eine generelle 24/7-Erreichbarkeit. Die Supportangebote berechnen sich dabei nicht je CPU, sondern je System. Parallel dazu bietet Azul unter Zing eine performanceorientierte Java Plattform an.
 
 
 \subsection{Eclipse Temurin}
@@ -1697,7 +1699,7 @@ Bis 2019 mit der Version 8u202 war die Verwendung in produktiven Umgebungen kost
 
 \subsection{Red Hat OpenJDK}
 Red Hat bietet mit seinem OpenJDK \citeg{jredhatjdk} eine plattformbeschränkte (Linux und Windows) Java Implementierung des Oracle OpenJDK an. Sie ist der Java-Standard des hauseigenen, kommerziellen Betriebssystems Red Hat Enterprise Linux und steht auch in dessen freien Fork CentOS zur Verfügung. Dadurch kann es kostenfrei in produktiven Umgebungen eingesetzt werden. Zusätzlich ist es in verschiedene Produkte der Red Hat Containerwelt integriert. Im Gegensatz zur Konkurrenz verfolgt Red Hat weniger eine breite Platte an unterstützten Plattformen, sondern mehr eine besonders auf die jeweilige Plattform abgestimmte und damit besser integrierte Implementierung \citeg{jdzone} . Dadurch handelt es sich beim Red Hat OpenJDK um eine modifizierte Implementierung des Oracle OpenJDK.\\
-Updates werden von Red Hat mind. quartalsweise veröffentlich und analog zur Roadmap des JDK Project als \ac{jlts} Versionen angeboten. Red Hat bietet für beide Plattformen Support-Optionen an.
+Updates werden von Red Hat mind. quartalsweise veröffentlicht und analog zur Roadmap des JDK Project als \ac{jlts} Versionen angeboten. Red Hat bietet für beide Plattformen Support-Optionen an.
 
 \subsection{Ergebnis}
 
@@ -1945,12 +1947,12 @@ Die Verarbeitung der Ausführungsdaten erfolgt mittels \texttt{BufferedReader.rea
 \chapter{Implementierung}
 \section{Paketierung}
 Java ist eine verbreitete Plattform, auf der auch andere Desktopanwendungen aufbauen. Dadurch ist meist eine JVM bereits auf dem System eines Nutzers vorhanden.
-Dabei ist nicht ungewöhnlich, dass die Version auf dem System des Nutzers nicht zu der Anforderung einer neuen Anwendung passt.
+Dabei ist es nicht ungewöhnlich, dass die Version auf dem System des Nutzers nicht zu der Anforderung einer neuen Anwendung passt.
 Oft kann die \ac{jjvm} aber nicht einfach aktualisiert werden, da bestehende Programme genau diese Version verlangen und für höhere Versionen z.B. noch nicht freigegeben sind.
-Daher wurde eine Lösung favorisiert mittels welcher das relationsorientierte Recherchewerkzeug unabhängig von dieser Problematik existieren kann.
+Daher wurde eine Lösung favorisiert, mittels welcher das relationsorientierte Recherchewerkzeug unabhängig von dieser Problematik existieren kann.
 Mit JLink kann dies erreicht werden. JLink baut bei der Paketierung eine Gruppe von Modulen zusammen und erzeugt ein \ac{jjre} Image.
 Dies beinhaltet eine client-spezifische \ac{jjre}, welche in die Anwendung eingebettet ist.
-Oracle empfiehlt diese Strategie seit für Desktop-Anwendungen seit 2018 \citep[6]{jjlinkrecommand}.\\
+Oracle empfiehlt diese Strategie für Desktop-Anwendungen seit 2018 \citep[6]{jjlinkrecommand}.\\
 Das Aufspielen, Aktualisieren oder Entfernen des relationsorientierten Recherchewerkzeugs kann so unabhängig zu anderen Java-Applikationen in der Anwenderlandschaft durchgeführt werden.
 Einziger Nachteil ist der erhöhte Festplattenbedarf durch die eigene \ac{jjre} von rund 100 Megabyte. Diese wird in Zeiten von Giga- und Terabyte-Speichergrößen nicht als problematisch angesehen.
 %jlink
@@ -2021,11 +2023,11 @@ public class ArchiveData {
 
 	// Anhand Hashmap verknuepfte Adjazenzmengen
 	private HashMap<Integer,HashSet<Integer>> parents = new HashMap<>();
-	// Streuwerttabelle Knoten mit Referenz auf Ausfuehungsdaten
+	// Streuwerttabelle Knoten mit Referenz auf Ausfuehrungsdaten
 	private HashMap<Integer,String[]> runids = new HashMap<>();
 	
 	// Indexkonstanten zum verwalten und zugreifen der
-	// Ausfuehungsdaten der run-ID Knoten der Streuwerttabelle
+	// Ausfuehrungsdaten der run-ID Knoten der Streuwerttabelle
 	public final int AH_CLIENT = 0;
 	public final int AH_OBJECTTYPE = 1;
 	public final int AH_RUNID = 2;
@@ -2048,7 +2050,7 @@ public class ArchiveData {
 
 
 \subsubsection{Konstruktor ArchiveData}
-Der Konstruktor (Lst.~\ref{lst:KArchiveData}) initialisiert dieses Objekt nach dem instanzieren.
+Der Konstruktor (Lst.~\ref{lst:KArchiveData}) initialisiert dieses Objekt nach dem Instanziieren.
 	 Er stösst das rekursive Suchen nach Indexdateien und das Einlesen dieser
 	 in die Datenstruktur dieser Klasse durch Folgeaufrufe an.
 \begin{lstlisting}[caption= Konstruktor der Klasse ArchiveData, label=lst:KArchiveData]
@@ -2081,9 +2083,8 @@ und liest das angefragte Protokoll aus dem Protokollarchiv.
 \end{lstlisting}
 
 \subsubsection{walkArchiveTree}
-Diese Methode (Lst.~\ref{lst:walkArchiveTree}) öffnet einen ausgewählten Ordner im Dateisystem und durchsucht ihn rekursiv nach Indexdateien
-nebensliegend Ausführungdaten- oder Protokollarchiven.
-Gefundene Indexdateien werden üeber Drittmethoden ausgelesen sowie der Streuwerttabelle und den Adjazenzmengen
+Diese Methode (Lst.~\ref{lst:walkArchiveTree}) öffnet einen ausgewählten Ordner im Dateisystem und durchsucht ihn rekursiv nach zu Ausführungsdaten- oder Protokollarchiven logisch benachbarten Indexdateien.
+Gefundene Indexdateien werden über Drittmethoden ausgelesen sowie der Streuwerttabelle und den Adjazenzmengen
 über diese hinzugefügt.
 Diese Methode ist nicht sicher gegen nicht alphabetisch sortierten Ordnerstrukturen.
 \begin{lstlisting}[caption=walkArchiveTree Methodenkopf, label=lst:walkArchiveTree]
@@ -2129,11 +2130,12 @@ public class ArchiveTreeTable extends Application {
 ...
 }
 \end{lstlisting}
-  \footnotetext{Quelle: Abgeleitet \citeg{irlitreetableview}}
+\footnotetext{Quelle: Stack Exchange Inc - rli \url{https://stackoverflow.com/a/33216997} Aufruf: 12.08.2021}
+
 
 \subsection{start}
 Diese Methode (Lst.~\ref{lst:attstart}) muss durch die geerbte Klasse \texttt{Application} implementiert werden.
-	 Sie dient zur Initialisierung der Klasse und zeichnen der Steuerelemente
+	 Sie dient zur Initialisierung der Klasse und zum Zeichnen der Steuerelemente
 	 und wird in Folge des Methodenaufrufes \texttt{launch(args)} aufgerufen.
 \subsubsection{}
 \begin{lstlisting}[caption=start Methodenkopf, label=lst:attstart]
@@ -2150,7 +2152,7 @@ Diese Methode (Lst.~\ref{lst:expandBranch}) klappt rekursiv im Rücklauf alle Elt
 
 
 \subsubsection{searchChild}
-Diese Methode (Lst.~\ref{lst:searchChild}) sucht rekursiv nach dem Nachfolgeelement eins Elements nach Neuinitialisierung des Baumes, da die Elemente dann auf 
+Diese Methode (Lst.~\ref{lst:searchChild}) sucht rekursiv nach dem Nachfolgeelement eines Elements nach Neuinitialisierung des Baumes, da die Elemente dann auf 
 	 Objektebene nicht mehr gleich sind. Als eindeutiges Vergleichskriterium wird die RunID verwendet.
  	 Eine Neuinitialisierung des Baumes tritt durchs Suchen auf.
  	 Die Kenntnis über das Nachfolgeelement ist zum Merken des markierten Elements über das Suchen hinweg notwendig.
@@ -2168,8 +2170,8 @@ Diese Methode (Lst.~\ref{lst:searchAgain}) löst einen Suchvorgang durch Veränder
 \end{lstlisting}
 
 \subsubsection{searchInTree}
-Diese Methode (Lst.~\ref{lst:searchInTree}) durchläuft den Baum und erstellt anhand des Suchbegriffs einen reduzierten Baum.
-	 Es werden nur Aufgaben oder deren Oberaufgaben hinzugefügt in denen alle Schlagwörter in beliebigen Eigenschaften
+Diese Methode (Lst.~\ref{lst:searchInTree}) durchläuft den Baum und erstellt anhand des Suchbegriffes einen reduzierten Baum.
+	 Es werden nur Aufgaben oder deren Oberaufgaben hinzugefügt, in denen alle Schlagwörter in beliebigen Eigenschaften
 	 vorkommen. Parallel wird zu der zuletzt markierten Aufgabe gescrollt und sie erneut markiert,
 	 sofern sie sich in der Suchmenge befindet.
 \begin{lstlisting}[caption=searchInTree Methodenkopf, label=lst:searchInTree]
@@ -2178,8 +2180,8 @@ Diese Methode (Lst.~\ref{lst:searchInTree}) durchläuft den Baum und erstellt anh
 
 
 \subsubsection{isContains}
-Diese Methode (Lst.~\ref{lst:isContains}) prüft ob jedes Schlagwort mind. einmal in irgendeiner Aufgabeneigenschaft vorkommt.
-     Die Methode stellt damit den Abgleich für die Funktionalität zum kombinierten und übergreifenden Suchen da.
+Diese Methode (Lst.~\ref{lst:isContains}) prüft, ob jedes Schlagwort mindestens einmal in irgendeiner Aufgabeneigenschaft vorkommt.
+     Die Methode stellt damit den Abgleich für die Funktionalität zum kombinierten und übergreifenden Suchen dar.
 \begin{lstlisting}[caption=isContains Methodenkopf, label=lst:isContains]
     private boolean isContains(Map<String, Object> properties, String[] searchArray);
 \end{lstlisting}
@@ -2210,25 +2212,26 @@ Diese Methode (Lst.~\ref{lst:newColumn}) erstellt eine neue Spalte für eine Aufg
 
 
 \subsubsection{main}
-Statische Methode (Lst.~\ref{lst:attmain}) für die JVM über welche diese die Klasse instanziieren kann.
+Statische Methode (Lst.~\ref{lst:attmain}) für die JVM, über welche diese die Klasse instanziieren kann.
 \begin{lstlisting}[caption=main Methodenkopf, label=lst:attmain]
     public static void main(String[] args);
 \end{lstlisting}
 \section{Datenstruktur}
 
 \subsection{Aufbau der Baumstruktur}\label{ssec:imptreedata}
-In der vorgestellt Archivdatenstruktur~(\refg{ssec:analysedatastruct}) der Automic\textsuperscript{\textregistered} Automation Engine kann über die RunID und die Parent RunID (ACT) aus der Indexdatei für Ausführungsdaten~(\refg{ssec:ucahidx}) eine Baumstruktur erstellt werden mit einer logischen Ursprungsaufgabe als Wurzel.
-Hierzu werden alle Parent Runids in einer Streuwerttabelle mit ihren Adjazenzmengen verknüpft. In einer weiteren Streuwerttabelle werden alle RunIDs mit Ihren Ausführungsdaten in Form eines Feldes verknüpft.
-Zuletzt wird die Differenzmenge von Parent-RunIDs und RunIDs bestimmt und darüber alle Parent-RunIDs bestimmt deren Parent-RunIDs selbst nicht bekannt sind.
+In der vorgestellten Archivdatenstruktur~(\refg{ssec:analysedatastruct}) der Automic\textsuperscript{\textregistered} Automation Engine kann über die RunID und die Parent RunID (ACT) aus der Indexdatei für Ausführungsdaten~(\refg{ssec:ucahidx}) eine Baumstruktur erstellt werden mit einer logischen Ursprungsaufgabe als Wurzel.
+Hierzu werden alle Parent RunIDs in einer Streuwerttabelle mit ihren Adjazenzmengen verknüpft. In einer weiteren Streuwerttabelle werden alle RunIDs mit ihren Ausführungsdaten in Form eines Feldes verknüpft.
+Zuletzt wird die Differenzmenge von Parent-RunIDs und RunIDs bestimmt und darüber alle Parent-RunIDs bestimmt, deren Parent-RunIDs selbst nicht bekannt sind.
 Diese verbleibenden Parent-RundIDs bilden zusammen mit den bereits ermittelten RunIDs der Tiefe 1 das Niveau 1 des Baumes.
-Von dieser Ebene ausgehend können anhand der Streuwerttabelle mit den Parent RunIDs nun alle nachfolgenden Ebenen ermittelt werden.
+Von dieser Ebene ausgehend, können anhand der Streuwerttabelle mit den Parent RunIDs nun alle nachfolgenden Ebenen ermittelt werden.
 
 \subsection{Darstellung der Baumstruktur}
 
-Die Baumstruktur kann in JavaFx durch das Control\\ \texttt{javafx.scene.control.TreeTableView} dargestellt werden.
-Der Baum besteht dabei aus Objekten von \texttt{javafx.scene.control.TreeItem}. Jedes \texttt{TreeItem} bildet einen Knoten.
-Von der Wurzel mit der logischen RunID 0 aus werden dabei alle RunID-Kindsknoten einer Adjazenzmenge eines Parent-RunID \texttt{TreeItem} Objekts diesem via \texttt{TreeItem.getChildren().add(child)} hinzugefügt.
-Zum Schluss wird das Wurzel \texttt{TreeItem} Objekt im \texttt{TreeTableView} Control als Wurzel definiert und so der Baum im \texttt{TreeTableView} dargestellt.
+Die Baumstruktur kann in JavaFx durch das Control \texttt{javafx.scene.control.TreeTableView} dargestellt werden.
+Der Baum besteht dabei aus Objekten von \texttt{javafx.scene.control.TreeItem}. Jedes \texttt{TreeItem} bildet einen Knoten vom Typ \texttt{Node}.
+Eine Untertyp von \texttt{Node} ist \texttt{Parent}. Diese sind alle Knoten denen jeweils alle RunID-Kinderknoten einer Adjazenzmenge als Liste von Kindern hinzugefügt werden.
+Von der Wurzel mit der logischen RunID 0 aus werden dazu alle RunID-Kinderknoten einer Adjazenzmenge eines Parent-RunID \texttt{TreeItem} Objekts diesem via \texttt{TreeItem.getChildren().add(child)} hinzugefügt.
+Zum Schluss wird das Wurzel \texttt{TreeItem} Objekt im \texttt{TreeTableView} Control als Wurzel der Baumstruktur definiert und so der Baum im \texttt{TreeTableView} dargestellt.
 
 
 %\section{Entwurfsmuster}
@@ -2241,11 +2244,11 @@ Zum Schluss wird das Wurzel \texttt{TreeItem} Objekt im \texttt{TreeTableView} C
 
 %----------- BILD ANFANG -------------
 \afterpage{
-  \begin{figure}
+  \begin{figure}[!htbp]
     \begin{center}
       \includegraphics[scale=0.55]{bilder/archivetreetableview.png}
         \caption[Prototyp eines relationsorientierten Recherchewerkzeugs für Automic\textsuperscript{\textregistered} Automation Engine Archivdaten]{Prototyp eines relationsorientierten Recherchewerkzeugs für Automic\textsuperscript{\textregistered} Automation Engine Archivdaten\footnotemark}
-    \label{fig:imp_archivetreetable}
+    \label{fig:imp_archivetreetable} 
     \end{center}
   \end{figure}
   \footnotetext{Quelle: Jan Thomas Gundlach, 2021 - Screenshot}
@@ -2255,23 +2258,23 @@ Zum Schluss wird das Wurzel \texttt{TreeItem} Objekt im \texttt{TreeTableView} C
 
 Der Prototyp des relationsorientierten Recherchewerkzeugs für Automic\textsuperscript{\textregistered} Automation Engine Archivdaten verfügt über diese Merkmale:
 \begin{itemize}\setlength{\itemsep}{0ex} % itemsep ist der Abstand zwischen den Punkten der Aufzählung
-\item \textbf{1.} Mittels der Schaltfläche öffnen kann ein Ordner ausgewählt werden unterhalb von dem rekursiv nach beliebigen Indexdateien für Ausführungsdaten- oder Protokolle gesucht wird. Jedes gefundene Archiv wird zur Darstellung geladen.
-\item \textbf{2.} Die geladenen Aufgaben und Ihre Ausführungen werden in Relation mit Ihren Ober- und Unteraufgaben in einer Baumstruktur dargestellt.
+\item \textbf{1.} Mittels der Schaltfläche Öffnen kann ein Ordner ausgewählt werden, unterhalb von dem rekursiv nach beliebigen Indexdateien für Ausführungsdaten oder Protokolle gesucht wird. Jedes gefundene Archiv wird zur Darstellung geladen.
+\item \textbf{2.} Die geladenen Aufgaben und ihre Ausführungen werden in Relation mit ihren Ober- und Unteraufgaben in einer Baumstruktur dargestellt.
 \item \textbf{3.} Im Standard sind der Übersicht halber alle Aufgaben eingeklappt. Die jeweiligen Unteraufgaben können durch Anklicken der Pfeilspitzen aufgeklappt werden.
 \item \textbf{4.} Die gesamte Liste kann mittels rechtsbündiger Scrollbar durchgescrollt werden.
-\item \textbf{5.} Um die angezeigten Aufgaben und deren Relationen einzugrenzen können die Aufgaben durch Eingaben von Schlagworten in das Textfeld oberhalb der Baumstruktur durchsucht werden. Durch Leerzeichen getrennte Schlagworte werden als eigenständige Suchbegriffe erkannt. Das Suchkriterium für eine Aufgabe gilt als erfüllt, wenn jedes Schlagwort innerhalb einer beliebigen Spalte einer Aufgabe gefunden wird. Die Suche ist unabhängig von Groß- und Kleinschreibung.
-\item \textbf{6.} Das Markieren einer Aufgaben wird von dem Prototyp bis zum Wechsel der Markierung gespeichert, so dass eine Markierung auch nach der Eingrenzung mittels Schlagwort oder des Entfernens eines Suchbegriffs weiter angezeigt wird. Die Scrollbar folgt bei der Suche der markierten Eintragung.
-\item \textbf{7.} Zugeklappte Unteraufgaben werden, sofern Sie Teil der Treffermenge einer Suche sind, bis zur Unteraufgabe selbst automatisch erweitert.
-\item \textbf{8.} Mit dem Selektieren einer Aufgabe wird das jeweilige Protokolle der Aufgabe, sofern verfügbar, in das darunterliegende Textfeld  geladen.
+\item \textbf{5.} Um die angezeigten Aufgaben und deren Relationen einzugrenzen, können die Aufgaben durch Eingaben von Schlagworten in das Textfeld oberhalb der Baumstruktur durchsucht werden. Durch Leerzeichen getrennte Schlagworte werden als eigenständige Suchbegriffe erkannt. Das Suchkriterium für eine Aufgabe gilt als erfüllt, wenn jedes Schlagwort innerhalb einer beliebigen Spalte einer Aufgabe gefunden wird. Die Suche ist unabhängig von Groß- und Kleinschreibung.
+\item \textbf{6.} Das Markieren einer Aufgabe wird von dem Prototyp bis zum Wechsel der Markierung gespeichert, so dass eine Markierung auch nach der Eingrenzung mittels Schlagwort oder des Entfernens eines Suchbegriffs weiter angezeigt wird. Die Scrollbar folgt bei der Suche der markierten Eintragung.
+\item \textbf{7.} Zugeklappte Unteraufgaben werden, sofern sie Teil der Treffermenge einer Suche sind, bis zur Unteraufgabe selbst automatisch erweitert.
+\item \textbf{8.} Mit dem Selektieren einer Aufgabe wird das jeweilige Protokoll der Aufgabe, sofern verfügbar, in das darunterliegende Textfeld  geladen.
 \item \textbf{9.} Anhand der rechtsbündigen Scrollbar des Textfeldes können mehrzeilige Protokolle durchgescrollt werden.
-\item \textbf{10.} Innerhalb ein und derselben Sitzung können durch das Dienstprogramm immer wieder andere Archivdaten geladen werden ohne dass ein Neustart der Applikation notwendig ist.
+\item \textbf{10.} Innerhalb ein und derselben Sitzung können durch das Dienstprogramm immer wieder andere Archivdaten geladen werden, ohne dass ein Neustart der Applikation notwendig ist.
 \end{itemize}
 \chapter{Fazit und Ausblick}
 \section{Fazit}
-rechtliche rahmenbedingungen waren ausschweifend
-Analyse der Software hat unbekannten Bug zum Vorscheinen gebracht
-Die ursprüngliche Vorstellung nur einen Baum verknüpfter RunIDs im Arbeitsspeicher zu halten und alle anderen Ausführungsdaten ausschließlich bei Bedarf nachzuladen konnte aufgrund der Schnittstellen von \texttt{javafx.scene.control.TreeItem} und \texttt{javafx.scene.control.TreeTableView} in einem Prototypen nicht umgesetzt werden. Ein erhöhter Arbeitsspeicherbedarf wurde daher vorerst in Kauf genommen. In Tests ergab sich dieser jedoch insbesondere beim durchsuchen des Aufgabenbaumes oder beim neu laden von Archivdaten als überproportional hoch. Daher wurden für den Testbetrieb übergangsweise Garbage Collection Anreize an diesen Stellen in den Quellcode implementiert.
-Bei großen und komplexen Archivdaten kam es seitens des TreeTableView zu reproduzierbaren Fehlanzeigen einiger spezieller \texttt{TreeItems} in Verbindung mit zwischenspeichern der Sortiervorgaben nach einem Suchvorgang. Die Analyse diesbzgl. ist bisher ergebnisoffen. Ggf. hängt der Fehler mit einem nicht korrekt parametrisierten, generischem Objekt zusammen.
+Die rechtliche Rahmenbedingungen waren ausschweifend
+Analyse der Software hat unbekannten Bug zum Vorschein gebracht
+Die ursprüngliche Vorstellung, nur einen Baum verknüpfter RunIDs im Arbeitsspeicher zu halten und alle anderen Ausführungsdaten ausschließlich bei Bedarf nachzuladen, konnte aufgrund der Schnittstellen von \texttt{javafx.scene.control.TreeItem} und \texttt{javafx.scene.control.TreeTableView} in einem Prototypen nicht umgesetzt werden. Ein erhöhter Arbeitsspeicherbedarf wurde daher vorerst in Kauf genommen. In Tests ergab sich dieser jedoch insbesondere beim Durchsuchen des Aufgabenbaumes oder beim Neuladen von Archivdaten als überproportional hoch. Daher wurden für den Testbetrieb übergangsweise Garbage Collection Anreize an diesen Stellen in den Quellcode implementiert.
+Bei großen und komplexen Archivdaten kam es seitens des TreeTableView zu reproduzierbaren Fehlanzeigen einiger spezieller \texttt{TreeItems} in Verbindung mit Zwischenspeichern der Sortiervorgaben nach einem Suchvorgang. Die Analyse diesbzgl. ist bisher ergebnisoffen. Ggf. hängt der Fehler mit einem nicht korrekt parametrisierten, generischen Objekt zusammen.
 \section{Ausblick}
 \subsection{Bugs}
 Eine genaue Analyse zum Hintergrund steht noch aus.
@@ -2281,7 +2284,7 @@ hinzufügen von reportgröße als spalte
 \subsection{DORA}
 
 %https://www.capgemini.com/de-de/2021/03/dora-versicherungsunternehmen/
-\ac{gdora} sieht vor eine	 Meldepflicht für den gesamten Finanzsektor zu etablieren. Das \ac{gdora} ist ein Legislativvorschlag der EU-Kommission, der allerdings erst am24. September 2020 veröffentlicht wurde und derzeit von den Mitgliedstaaten verhandelt wird.
+\ac{gdora} sieht vor, eine	 Meldepflicht für den gesamten Finanzsektor zu etablieren. Das \ac{gdora} ist ein Legislativvorschlag der EU-Kommission, der allerdings erst am 24. September 2020 veröffentlicht wurde und derzeit von den Mitgliedstaaten verhandelt wird.
 
 %https://exccon.com/dora-bafin-eu/
 Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dann voraussichtlich 2022 in Kraft treten.
@@ -2301,7 +2304,7 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{bpm}[BPM]{Business Process Management}
 \acro{eabpm}[EABPM]{European Association of Business Process Management}
 \acro{cbok}[CBOK\textsuperscript{\textregistered}]{Common Body of Knowledge}
-\acro{hll}[HLL]{\LU{H}{h}öheren Programmiersprache (High-level language)}
+\acro{hll}[HLL]{\LU{H}{h}öhere\LU{}{r} Programmiersprache (High-level language)}
 \acro{isms}[ISMS]{Informationssicherheits-Managementsystem}
 \acro{gao}[AO]{Abgabenordnung}
 \acro{jawt}[AWT]{Abstract Widget Toolkit}
@@ -2316,7 +2319,7 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{jswt}[SWT]{Standard Widget Toolkit}
 \acro{jjni}[JNI]{Java Native Interface}
 \acro{jepl}[EPL]{Eclipse Public License}
-\acro{ghgb}[HGB]{Handelstgesetzbuch}
+\acro{ghgb}[HGB]{Handelsgesetzbuch}
 \acro{ggodb}[GoDB]{Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form sowie zum Datenzugriff}
 \acro{gitsig}[ITSiG]{IT-Sicherheitsgesetz}
 \acro{gkritisv}[BSI-KritisV]{Verordnung zur Bestimmung Kritischer Infrastrukturen nach dem BSI-Gesetz}
@@ -2343,7 +2346,7 @@ Mit einer Beschlussfassung ist noch im Jahr 2021 zu rechnen, das Gesetz wird dan
 \acro{gtck}[TCK]{Technology Compatibility Kit}
 \acro{jjdk}[JDK]{Java Development Kit}
 \acro{jjvm}[JVM]{Java Virtual Machine}
-\acro{jjre}[JRE]{Java-Laufzeitumgebung}
+\acro{jjre}[JRE]{Java-Laufzeitumgebung\LU{}{s}}
 \acro{jlts}[LTS]{Long Term Support}
 \acro{jmts}[MTS]{Medium Term Support}
 \acro{jaws}[AWS]{Amazon Web Services}
@@ -2903,7 +2906,7 @@ Spehr, Georg (Hrsg.):
 % Formatierung für ein einzelnes Kapitel eines speziellen Autors aus einem Fachbuch mit mehreren Autoren
 \bibitem[Sowodniok(2009)]{sowodniok}
 Sowodniok, Ulrike: 
-\glqq Funktionaler Stimmklang -- Ein Prozess mit Nachhalligkeit\grqq, 
+\glqq Funktionaler Stimmklang -- Ein Prozess mit Nachhaltigkeit\grqq, 
 in: Spehr, Georg (Hrsg.): \emph{Funktionale Klänge}, transcript 2009
 
 % Formatierung für Aufsatz / Paper: Titel in Anführungszeichen, Zeitschriftentitel kursiv
